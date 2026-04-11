@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NV-UV · Tester Guides</title>
+<meta name="description" content="NV-UV — GPU Undervolting companion tool for NVIDIA RTX 50-series. Tester guides in English and German.">
+<style>
+  :root {
+    --bg: #0a0a09;
+    --bg-card: #111110;
+    --bg-card-hover: #1a1a18;
+    --border: #333330;
+    --orange: #E86820;
+    --orange-dim: #D05818;
+    --orange-glow: rgba(232,104,32,0.15);
+    --gold: #CCB420;
+    --white: #E8E8E0;
+    --dim: #888880;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--white);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh;
+  }
+  body {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 32px 16px;
+  }
+  .wrap { max-width: 720px; width: 100%; text-align: center; }
+  h1 {
+    font-size: 56px; margin: 0 0 8px;
+    color: var(--orange);
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+  .tagline {
+    font-size: 16px; color: var(--dim);
+    margin: 0 0 8px;
+  }
+  .build {
+    font-size: 13px; color: var(--gold);
+    margin: 0 0 48px;
+    letter-spacing: 1px;
+  }
+  .buttons {
+    display: flex; flex-direction: column; gap: 16px;
+    max-width: 480px; margin: 0 auto 48px;
+  }
+  .btn {
+    display: block; padding: 24px 32px;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 18px; font-weight: 600;
+    transition: all 0.15s;
+    text-align: left;
+  }
+  .btn:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--orange);
+    box-shadow: 0 0 20px var(--orange-glow);
+    transform: translateY(-2px);
+  }
+  .btn .flag { font-size: 28px; margin-right: 12px; vertical-align: middle; }
+  .btn .label { vertical-align: middle; }
+  .btn .sub {
+    display: block; font-size: 13px; color: var(--dim);
+    margin-top: 6px; margin-left: 44px; font-weight: 400;
+  }
+  .footer {
+    margin-top: 24px; font-size: 13px; color: var(--dim);
+    line-height: 1.7;
+  }
+  .footer a { color: var(--orange); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+  @media (max-width: 600px) {
+    h1 { font-size: 42px; }
+    .btn { padding: 20px 24px; font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>NV—UV</h1>
+    <p class="tagline">GPU Undervolting Companion · NVIDIA RTX 50-Series</p>
+    <p class="build">Build 22 · Cantor · Open Alpha</p>
+
+    <div class="buttons">
+      <a class="btn" href="NV-UV_Tester_Guide_DE.html">
+        <span class="flag">🇩🇪</span><span class="label">Tester Guide — Deutsch</span>
+        <span class="sub">Installation, Voltage Step Scanner, Optimize Point, FAQ</span>
+      </a>
+      <a class="btn" href="NV-UV_Tester_Guide_EN.html">
+        <span class="flag">🇬🇧</span><span class="label">Tester Guide — English</span>
+        <span class="sub">Installation, Voltage Step Scanner, Optimize Point, FAQ</span>
+      </a>
+    </div>
+
+    <div class="footer">
+      Forum: <a href="https://extreme.pcgameshardware.de/forums/nv-uv.3601/">PCGH NV-UV Subforum</a><br>
+      Community: Discord (Invite via Forum)
+    </div>
+  </div>
+</body>
+</html>
