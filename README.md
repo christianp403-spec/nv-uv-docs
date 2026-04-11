@@ -1,6 +1,6 @@
 # NV-UV Documentation
 
-Public documentation site for **NV-UV**, a GPU undervolting companion tool for NVIDIA RTX 50-series (Blackwell) GPUs.
+Public documentation site for **NV-UV**, a GPU undervolting companion tool for NVIDIA RTX 50-series (Blackwell) and RTX 40-series (Ada Lovelace, experimental) GPUs.
 
 ## Live Site
 
@@ -14,7 +14,7 @@ Public documentation site for **NV-UV**, a GPU undervolting companion tool for N
 
 ## About NV-UV
 
-NV-UV is a free, closed-source companion app for MSI Afterburner that simplifies GPU undervolting on the NVIDIA RTX 50-series. It is currently in **Open Alpha**, hosted at the [PCGH NV-UV subforum](https://extreme.pcgameshardware.de/forums/nv-uv.3601/) with an active Discord community.
+NV-UV is a free, closed-source companion app for MSI Afterburner that simplifies GPU undervolting on the NVIDIA RTX 50-series (Blackwell) and RTX 40-series (Ada Lovelace, experimental). It is currently in **Open Alpha**, hosted at the [PCGH NV-UV subforum](https://extreme.pcgameshardware.de/forums/nv-uv.3601/) with an active Discord community.
 
 NV-UV does **not** replace MSI Afterburner — it integrates with it as a write backend and adds preset switching, scanner-based optimization, crash recovery, and a streamlined UI for the undervolting workflow.
 
