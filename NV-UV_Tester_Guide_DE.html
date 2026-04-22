@@ -356,7 +356,7 @@
   <!-- ═══ WAS IST NV-UV ═══ -->
   <section>
     <h2 class="orange"><span class="icon">⚡</span>Was ist NV-UV?</h2>
-    <p>NV-UV ist ein GPU-Undervolting-Tool für die <strong>NVIDIA RTX 50-Serie</strong> (Blackwell) und seit kurzem auch für die <strong>RTX 40-Serie</strong> (Ada Lovelace, noch experimentell). Es vereinfacht den Undervolt-Prozess, der normalerweise über MSI Afterburner's Kurven-Editor läuft.</p>
+    <p>NV-UV ist ein GPU-Undervolting-Tool speziell für die <strong>NVIDIA RTX 50-Serie</strong> (Blackwell). Es vereinfacht den Undervolt-Prozess, der normalerweise über MSI Afterburner's Kurven-Editor läuft.</p>
     <p>NV-UV nutzt Afterburner als Backend, du brauchst also <strong>MSI Afterburner + RTSS</strong> installiert.</p>
 
     <h3>Features</h3>
@@ -454,6 +454,26 @@
       automatischen Lösung dafür.
     </div>
 
+    <div class="warn">
+      <strong>„Start with Windows" in Afterburner deaktivieren während UV-Experimenten.</strong><br>
+      Solange du mit Undervolting experimentierst, sollte AB <em>nicht</em> automatisch
+      mit Windows starten. Grund: Falls ein instabiles Profil aktiv ist, läuft AB nach
+      dem Booten sofort mit dem fehlerhaften UV-Profil los, noch bevor du NV-UV
+      öffnen kannst, um es zurückzusetzen. Das kann in Boot-Schleifen oder
+      Treiber-Resets vor dem Login enden.<br><br>
+      Afterburner öffnen → Einstellungen (⚙) → General Tab → Haken bei
+      <code>Start with Windows</code> <strong>entfernen</strong>. Erst wieder
+      aktivieren, wenn dein UV-Profil stabil ist und du es dauerhaft nutzen willst.
+    </div>
+
+    <div class="warn">
+      <strong>AB Profil-Lock (🔒 Schloss-Symbol) deaktivieren.</strong><br>
+      Wenn du in Afterburner einen Profil-Slot mit dem 🔒 Schloss-Symbol gesperrt
+      hast, kann NV-UV diesen Slot <strong>nicht beschreiben</strong>. Apply-UV und
+      Scanner schlagen stumm fehl oder hängen. Das Schloss neben dem Profil-Slot
+      (1–5) muss <strong>offen</strong> sein, solange du NV-UV nutzt.
+    </div>
+
     <div class="step">
       <div class="step-num">3</div>
       <div class="step-content">
@@ -463,15 +483,13 @@
     </div>
 
     <div class="info">
-      <strong>🔗 Erster Start, Kurvenerkennung:</strong><br>
-      NV-UV braucht die echte VF-Kurve deiner GPU. Das läuft seit Build 22 vollautomatisch:<br>
-      Beim ersten Start liest NV-UV die Stock-Kurve direkt über NVAPI aus, kein Zutun nötig.<br><br>
-      Falls die Auto-Erkennung mal nicht klappt (z.B. bei exotischen Treiber-/Hardwarekombis), greift automatisch der Fallback-Wizard:<br>
+      <strong>🔗 Erster Start, Verbindungs-Wizard:</strong><br>
+      NV-UV braucht die echte VF-Kurve deiner GPU. Beim ersten Start öffnet sich der Wizard:<br>
       1. Afterburner öffnen, alle Regler auf Standard (kein OC/UV aktiv)<br>
       2. In Afterburner auf 💾 Speichern klicken<br>
       3. Einen Profil-Slot (1-5) wählen<br>
-      4. NV-UV liest die Kurve aus dem AB-Profil<br><br>
-      Muss in beiden Fällen nur einmal gemacht werden. NV-UV speichert die Kurve lokal.
+      4. NV-UV erkennt die Kurve automatisch<br><br>
+      Muss nur einmal gemacht werden. NV-UV speichert die Kurve lokal.
     </div>
 
     <div class="info">
@@ -650,6 +668,11 @@
     <h3>Lernschleife (Neu in Antares)</h3>
     <p>Game Replay merkt sich jetzt pro Spiel die Crash-Adjustments. Beim nächsten Start desselben Spiels wendet der UV-Pilot automatisch die reduzierte Frequenz an. Ein Spiel crasht einmal, beim nächsten Mal wird direkt das sichere Profil geladen.</p>
 
+    <h3>Pro Profil eigene Historie <span style="color:var(--gold);">(Neu in v0.94)</span></h3>
+    <p>Crash-Historien werden ab v0.94 pro Kombination <strong>Spiel + Profil</strong> geführt. Vorher zog z.B. ein Performance-Crash für ein Spiel auch auf ein später zugewiesenes Custom-Profil durch. Seit v0.94 hat jedes Profil (Eco / Balanced / Performance / Max / Custom XYZ) seine eigene saubere Historie. Ein Custom-Profil erbt nicht mehr die Crashes der Presets.</p>
+    <div class="info">Beim ersten Start von v0.94 wird die bestehende <code>nv-uv_game_replay_adjustments.json</code> als altes Format erkannt und einmalig geleert (Log-Warnung: „Altes Adjustment-Format erkannt — verworfen"). Danach baut sich die Historie pro Profil neu auf. Kein manueller Eingriff nötig.</div>
+    <p style="font-size:0.9em;color:var(--text-dim);">Manuelle Applies (Slot-Button-Klick ohne UV-Pilot) persistieren weiterhin nicht: Bei einem Crash greift der Live-Downstep, aber es wird kein JSON-Eintrag geschrieben, weil ohne Pilot-Kontext nicht eindeutig einem Profil zugeordnet werden kann.</p>
+
     <h3>Zwei Crash-Modi</h3>
     <table>
       <tr><th>Typ</th><th>Was passiert</th></tr>
@@ -702,6 +725,12 @@
     <p>3DMark wird erkannt, aber kein UV-Tier zugeordnet — das aktive Profil bleibt bestehen. So könnt ihr mit eurem gewählten UV benchen ohne dass der Pilot umschaltet. Über den Game Browser kann optional ein Custom Profile zugewiesen werden.</p>
     <h3>Auto-Mini beim Gaming</h3>
     <p>Rechtsklick auf UV-Pilot → "📐 Mini-View beim Gaming". Wechselt automatisch auf Mini View bei Game-Detection, spart GPU-Overhead vom WPF-Hauptfenster. Standardmäßig deaktiviert.</p>
+
+    <h3>Foreground-Priorität <span style="color:var(--gold);">(Neu in v0.94)</span></h3>
+    <p>Der UV-Pilot priorisiert ab v0.94 den Prozess des aktuell fokussierten Fensters. Das löst Fälle auf in denen zwei oder mehr Einträge der Spiele-Datenbank gleichzeitig laufen, typisch Browser + Spiel.</p>
+    <p><strong>Vorher:</strong> Chrome war offen (Eco), man startete ein Spiel → Chrome-Eco-Profil blieb aktiv bis Chrome vollständig geschlossen wurde.<br>
+    <strong>Jetzt:</strong> Sobald das Spiel-Fenster fokussiert ist, erkennt der Pilot den Wechsel und schaltet auf das passende Spiel-Profil. Der Wechsel zurück funktioniert analog, Alt-Tab zu Chrome schaltet auf Eco, Alt-Tab ins Spiel wieder auf Performance.</p>
+    <div class="info">Fallback bleibt: Wenn der Foreground-Prozess kein DB-Eintrag ist (Explorer, Desktop, etc.), behält der Pilot den aktuellen Lock. Alt-Tab zum Desktop killt also keinen Gaming-Lock.</div>
   </section>
 
   <!-- ═══ OPTIONEN ═══ -->
@@ -833,6 +862,8 @@
     </table>
     <p style="font-size:0.9em;color:var(--text-dim);">Hinweis: Die 5060 (non-Ti) nutzt diese Tabelle als Fallback. Da sie ein kleinerer GB206-Cut mit niedrigerer TBP ist, cappt sie sich automatisch über das Power-Limit, die Werte bleiben sicher.</p>
 
+    <div class="info" style="margin-top:1em;"><strong>🧪 Ada-Status (v0.94, „Ada improved"):</strong> Der Ada-Schreibpfad (byte-exaktes VF-Curve-Encoding) wurde auf einer KFA2 RTX 4070 Ti (AD104-Chip) verifiziert und läuft dort end-to-end in Apply / Scanner / Game Replay / UV-Pilot. Alle Ada-Karten bleiben im Guide weiterhin als <strong>experimentell</strong> markiert, bis weitere Chip-Varianten (AD102 / AD103) von Testern bestätigt sind. Die Preset-Werte basieren weiter auf Community-Werten — siehe Tabellen unten. Ada-Tester willkommen im PCGH-Subforum und auf Discord.</div>
+
     <h3>RTX 4090 <span style="color:var(--gold);">(experimentell)</span></h3>
     <table>
       <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
@@ -856,9 +887,10 @@
       <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>925 mV</td><td>2550 MHz</td><td>100%</td></tr>
       <tr><td>⚡ Balanced</td><td>940 mV</td><td>2640 MHz</td><td>100%</td></tr>
-      <tr><td>🚀 Performance</td><td>950 mV</td><td>2730 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>950 mV</td><td>4070 Ti Super: 2730 MHz<br>4070 Ti: 2685 MHz</td><td>100%</td></tr>
       <tr><td>🔥 Max</td><td>975 mV</td><td>2820 MHz</td><td>100%</td></tr>
     </table>
+    <p style="font-size:0.9em;color:var(--text-dim);">Der 4070-Ti-Performance-Wert wurde von 2730 auf 2685 MHz rekalibriert. Die 4070 Ti (AD104 voller Die, schlechteres Binning) braucht ca. 30 MHz weniger Headroom bei gleicher Spannung als die 4070 Ti Super (AD103-Cut, bessere Chip-Selektion). Andere Presets (Eco / Balanced / Max) sind auf beiden Karten identisch.</p>
 
     <h3>RTX 4070 / 4070 Super <span style="color:var(--gold);">(experimentell)</span></h3>
     <table>
@@ -884,6 +916,14 @@
     <h3>Ist Undervolting sicher?</h3>
     <p>Es werden keine Spannungen erhöht, sondern nur gesenkt. Alles resettbar durch Stock-Button oder Recalibrate. Allerdings übernehme ich für Schäden die direkt oder indirekt durch Undervolting auftreten sollten keine Haftung.</p>
 
+    <h3>Warum fehlen bei Ada-Karten die Optionen Boost Override / V-Step Fix / Idle-Optimierung?</h3>
+    <p>Das ist Absicht, kein Bug. Diese drei Optionen sind Blackwell-spezifisch:</p>
+    <ul>
+      <li><strong>Boost Override (+1200 MHz statt +1000 MHz)</strong> gilt nur für Blackwell-XOC-Karten (Lightning / Matrix / HOF).</li>
+      <li><strong>V-Step Fix</strong> kompensiert den point-before-flatten-Bug der Blackwell-Kurve.</li>
+      <li><strong>Idle-Optimierung</strong> baut auf dem Blackwell-Fantasy-Frequency-Encoding auf.</li>
+    </ul>
+    <p>Ada nutzt einen komplett eigenen UV-Pfad (native 4-Zonen-Kurve), der keine dieser drei Kompensationen braucht. Deshalb werden die Checkboxen auf Ada-Karten im Haupt- und Mini-View automatisch ausgeblendet.</p>
     <h3>Warum zeigt NV-UV keine Spannung an? (0 mV / kein Wert)</h3>
     <div class="warn" style="border-left-width:5px;">
       Das ist die <strong>häufigste</strong> Stolperfalle. Ursache: in Afterburner sind
@@ -938,14 +978,14 @@
     <p>Nicht geplant. Der DXR Stress Test benötigt Windows 11.</p>
 
     <h3>RTX 40-Serie Support?</h3>
-    <p><strong>Experimentell.</strong> NV-UV erkennt RTX 40-Karten (Ada Lovelace),
-    liest die Stock-Kurve und <strong>Apply UV funktioniert</strong>. Was noch
-    Probleme macht, ist der Import bestehender AB-Profile auf Ada, die Kurvenformel
-    unterscheidet sich von Blackwell und manche Profile kommen noch nicht sauber
-    rein. Stock-basierte Workflows (Presets, V-Lock, Scanner) sollten laufen. Falls
-    ihr auf Ada in Probleme lauft, vor allem beim AB-Profil-Import, bitte Logs +
-    AB-Profil per PCGH-Forum oder Discord schicken, damit wir die Lücken schließen
-    können.</p>
+    <p><strong>Experimentell (schreibend).</strong> Seit „Ada improved" (v0.94) ist der native Ada-Schreibpfad aktiv. Der byte-exakte Kurven-Encoder wurde auf einer KFA2 RTX 4070 Ti (AD104) verifiziert und läuft dort end-to-end — Apply, Scanner, Game Replay und UV-Pilot funktionieren.</p>
+    <p>Die Status-Lage pro Chip:</p>
+    <ul>
+      <li><strong>AD104</strong> (RTX 4070 / 4070 Super / 4070 Ti) — byte-exakt verifiziert auf KFA2 4070 Ti.</li>
+      <li><strong>AD103</strong> (RTX 4080 / 4080 Super / 4070 Ti Super) — Code läuft, aber noch keine byte-exakte Tester-Verifikation.</li>
+      <li><strong>AD102</strong> (RTX 4090) — Code läuft, noch keine byte-exakte Verifikation.</li>
+    </ul>
+    <p>Alle Ada-Karten bleiben daher im Preset-Bereich weiter als <strong>experimentell</strong> markiert. Wer eine 4090 oder 4080 hat und testen möchte: Gerne im PCGH-Forum oder auf Discord melden, wir brauchen Logs und AB-Profile zur finalen Verifikation der Per-Chip-Konstanten.</p>
 
     <h3>Wird NV-UV Open Source?</h3>
     <p>Aktuell Closed Source. Eine Open-Source Version ist langfristig denkbar, aber kein konkreter Zeitplan.</p>
