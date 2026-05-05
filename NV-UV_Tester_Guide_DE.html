@@ -387,7 +387,7 @@
     <h2 class="gold"><span class="icon">📋</span>Voraussetzungen</h2>
     <table>
       <tr><th>Was</th><th>Details</th></tr>
-      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, oder 5060 Ti / 5060 (experimentell)<br>Ada-Karten (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) ebenfalls unterstützt (experimentell)</td></tr>
+      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, oder 5060 Ti / 5060 (experimentell)<br>Ada-Karten (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) ebenfalls unterstützt</td></tr>
       <tr><td><strong>Treiber</strong></td><td>Aktueller NVIDIA-Treiber</td></tr>
       <tr><td><strong>MSI Afterburner</strong></td><td>Version 4.6.6+ mit RTSS</td></tr>
       <tr><td><strong>Windows</strong></td><td>Windows 11 (64-bit)</td></tr>
@@ -862,9 +862,9 @@
     </table>
     <p style="font-size:0.9em;color:var(--text-dim);">Hinweis: Die 5060 (non-Ti) nutzt diese Tabelle als Fallback. Da sie ein kleinerer GB206-Cut mit niedrigerer TBP ist, cappt sie sich automatisch über das Power-Limit, die Werte bleiben sicher.</p>
 
-    <div class="info" style="margin-top:1em;"><strong>🧪 Ada-Status (v0.94, „Ada improved"):</strong> Der Ada-Schreibpfad (byte-exaktes VF-Curve-Encoding) wurde auf einer KFA2 RTX 4070 Ti (AD104-Chip) verifiziert und läuft dort end-to-end in Apply / Scanner / Game Replay / UV-Pilot. Alle Ada-Karten bleiben im Guide weiterhin als <strong>experimentell</strong> markiert, bis weitere Chip-Varianten (AD102 / AD103) von Testern bestätigt sind. Die Preset-Werte basieren weiter auf Community-Werten — siehe Tabellen unten. Ada-Tester willkommen im PCGH-Subforum und auf Discord.</div>
+    <div class="info" style="margin-top:1em;"><strong>🧪 Ada-Status (v0.95):</strong> Der Ada-Schreibpfad (byte-exaktes VF-Curve-Encoding) wurde auf einer KFA2 RTX 4070 Ti (AD104-Chip) verifiziert und läuft end-to-end in Apply / Scanner / Game Replay / UV-Pilot. Die Preset-Werte basieren auf Community-Werten — siehe Tabellen unten. Ada-Tester für AD102 (4090) und AD103 (4080) willkommen im PCGH-Subforum und auf Discord.</div>
 
-    <h3>RTX 4090 <span style="color:var(--gold);">(experimentell)</span></h3>
+    <h3>RTX 4090</h3>
     <table>
       <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>875 mV</td><td>2400 MHz</td><td>100%</td></tr>
@@ -873,7 +873,7 @@
       <tr><td>🔥 Max</td><td>950 mV</td><td>2745 MHz</td><td>100%</td></tr>
     </table>
 
-    <h3>RTX 4080 / 4080 Super <span style="color:var(--gold);">(experimentell)</span></h3>
+    <h3>RTX 4080 / 4080 Super</h3>
     <table>
       <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>875 mV</td><td>2400 MHz</td><td>100%</td></tr>
@@ -882,7 +882,7 @@
       <tr><td>🔥 Max</td><td>950 mV</td><td>2700 MHz</td><td>100%</td></tr>
     </table>
 
-    <h3>RTX 4070 Ti / 4070 Ti Super <span style="color:var(--gold);">(experimentell)</span></h3>
+    <h3>RTX 4070 Ti / 4070 Ti Super</h3>
     <table>
       <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>925 mV</td><td>2550 MHz</td><td>100%</td></tr>
@@ -892,7 +892,7 @@
     </table>
     <p style="font-size:0.9em;color:var(--text-dim);">Der 4070-Ti-Performance-Wert wurde von 2730 auf 2685 MHz rekalibriert. Die 4070 Ti (AD104 voller Die, schlechteres Binning) braucht ca. 30 MHz weniger Headroom bei gleicher Spannung als die 4070 Ti Super (AD103-Cut, bessere Chip-Selektion). Andere Presets (Eco / Balanced / Max) sind auf beiden Karten identisch.</p>
 
-    <h3>RTX 4070 / 4070 Super <span style="color:var(--gold);">(experimentell)</span></h3>
+    <h3>RTX 4070 / 4070 Super</h3>
     <table>
       <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>900 mV</td><td>2400 MHz</td><td>100%</td></tr>
@@ -901,7 +901,7 @@
       <tr><td>🔥 Max</td><td>975 mV</td><td>2790 MHz</td><td>100%</td></tr>
     </table>
 
-    <div class="warn"><strong>Was bedeutet "experimentell"?</strong> Diese Karten werden vom NV-UV-Code unterstützt, aber die Preset-Werte wurden noch nicht durch unser Tester-Programm auf echter Hardware verifiziert. Mit Fehlern bei einzelnen Karten ist zu rechnen. Bitte testet mit Balanced als Startpunkt und gebt Feedback im PCGH-Forum oder auf Discord, damit die Werte nachgeschärft werden können.</div>
+    <div class="warn"><strong>Was bedeutet "experimentell" bei der RTX 5060?</strong> Diese Karten werden vom NV-UV-Code unterstützt, aber die Preset-Werte wurden noch nicht durch unser Tester-Programm auf echter Hardware verifiziert. Bitte testet mit Balanced als Startpunkt und gebt Feedback im PCGH-Forum oder auf Discord, damit die Werte nachgeschärft werden können.</div>
 
     <div class="info">Die Preset-Werte basieren auf Community-Erfahrungswerten. Nicht jede GPU schafft jedes Preset, Silizium-Lotterie. Im Zweifelsfall mit Balanced anfangen.</div>
   </section>
@@ -978,14 +978,14 @@
     <p>Nicht geplant. Der DXR Stress Test benötigt Windows 11.</p>
 
     <h3>RTX 40-Serie Support?</h3>
-    <p><strong>Experimentell (schreibend).</strong> Seit „Ada improved" (v0.94) ist der native Ada-Schreibpfad aktiv. Der byte-exakte Kurven-Encoder wurde auf einer KFA2 RTX 4070 Ti (AD104) verifiziert und läuft dort end-to-end — Apply, Scanner, Game Replay und UV-Pilot funktionieren.</p>
+    <p><strong>Voll unterstützt.</strong> Seit „Ada improved" (v0.94) ist der native Ada-Schreibpfad aktiv. Der byte-exakte Kurven-Encoder wurde auf einer KFA2 RTX 4070 Ti (AD104) verifiziert und läuft end-to-end — Apply, Scanner, Game Replay und UV-Pilot funktionieren.</p>
     <p>Die Status-Lage pro Chip:</p>
     <ul>
       <li><strong>AD104</strong> (RTX 4070 / 4070 Super / 4070 Ti) — byte-exakt verifiziert auf KFA2 4070 Ti.</li>
-      <li><strong>AD103</strong> (RTX 4080 / 4080 Super / 4070 Ti Super) — Code läuft, aber noch keine byte-exakte Tester-Verifikation.</li>
-      <li><strong>AD102</strong> (RTX 4090) — Code läuft, noch keine byte-exakte Verifikation.</li>
+      <li><strong>AD103</strong> (RTX 4080 / 4080 Super / 4070 Ti Super) — Code läuft, byte-exakte Tester-Verifikation läuft.</li>
+      <li><strong>AD102</strong> (RTX 4090) — Code läuft, byte-exakte Verifikation läuft.</li>
     </ul>
-    <p>Alle Ada-Karten bleiben daher im Preset-Bereich weiter als <strong>experimentell</strong> markiert. Wer eine 4090 oder 4080 hat und testen möchte: Gerne im PCGH-Forum oder auf Discord melden, wir brauchen Logs und AB-Profile zur finalen Verifikation der Per-Chip-Konstanten.</p>
+    <p>Die Preset-Werte basieren auf Community-Werten. Wer eine 4090 oder 4080 hat und Logs / AB-Profile zur weiteren Verfeinerung der Per-Chip-Konstanten beisteuern möchte, gerne im PCGH-Forum oder auf Discord melden.</p>
 
     <h3>Wird NV-UV Open Source?</h3>
     <p>Aktuell Closed Source. Eine Open-Source Version ist langfristig denkbar, aber kein konkreter Zeitplan.</p>

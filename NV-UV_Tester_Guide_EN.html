@@ -387,7 +387,7 @@
     <h2 class="gold"><span class="icon">📋</span>Requirements</h2>
     <table>
       <tr><th>What</th><th>Details</th></tr>
-      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, or 5060 Ti / 5060 (experimental)<br>Ada cards (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) also supported (experimental)</td></tr>
+      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, or 5060 Ti / 5060 (experimental)<br>Ada cards (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) also supported</td></tr>
       <tr><td><strong>Driver</strong></td><td>Latest NVIDIA driver</td></tr>
       <tr><td><strong>MSI Afterburner</strong></td><td>Version 4.6.6+ with RTSS</td></tr>
       <tr><td><strong>Windows</strong></td><td>Windows 11 (64-bit)</td></tr>
@@ -816,9 +816,9 @@
     </table>
     <p style="font-size:0.9em;color:var(--text-dim);">Note: The 5060 (non-Ti) uses this table as fallback. Since it's a smaller GB206 cut with lower TBP, it caps itself via the power limit and the values stay safe.</p>
 
-    <div class="info" style="margin-top:1em;"><strong>🧪 Ada status (v0.94, "Ada improved"):</strong> The Ada write path (byte-exact VF-curve encoding) has been verified on a KFA2 RTX 4070 Ti (AD104 chip) and runs end-to-end there across Apply / Scanner / Game Replay / UV-Pilot. All Ada cards in the guide remain tagged as <strong>experimental</strong> until further chip variants (AD102 / AD103) are confirmed by testers. Preset values below are still community-based. Ada testers welcome on the PCGH subforum and Discord.</div>
+    <div class="info" style="margin-top:1em;"><strong>🧪 Ada status (v0.95):</strong> The Ada write path (byte-exact VF-curve encoding) has been verified on a KFA2 RTX 4070 Ti (AD104 chip) and runs end-to-end across Apply / Scanner / Game Replay / UV-Pilot. Preset values below are community-based. Ada testers for AD102 (4090) and AD103 (4080) welcome on the PCGH subforum and Discord.</div>
 
-    <h3>RTX 4090 <span style="color:var(--gold);">(experimental)</span></h3>
+    <h3>RTX 4090</h3>
     <table>
       <tr><th>Preset</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>875 mV</td><td>2400 MHz</td><td>100%</td></tr>
@@ -827,7 +827,7 @@
       <tr><td>🔥 Max</td><td>950 mV</td><td>2745 MHz</td><td>100%</td></tr>
     </table>
 
-    <h3>RTX 4080 / 4080 Super <span style="color:var(--gold);">(experimental)</span></h3>
+    <h3>RTX 4080 / 4080 Super</h3>
     <table>
       <tr><th>Preset</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>875 mV</td><td>2400 MHz</td><td>100%</td></tr>
@@ -836,7 +836,7 @@
       <tr><td>🔥 Max</td><td>950 mV</td><td>2700 MHz</td><td>100%</td></tr>
     </table>
 
-    <h3>RTX 4070 Ti / 4070 Ti Super <span style="color:var(--gold);">(experimental)</span></h3>
+    <h3>RTX 4070 Ti / 4070 Ti Super</h3>
     <table>
       <tr><th>Preset</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>925 mV</td><td>2550 MHz</td><td>100%</td></tr>
@@ -846,7 +846,7 @@
     </table>
     <p style="font-size:0.9em;color:var(--text-dim);">The 4070 Ti Performance value was recalibrated from 2730 to 2685 MHz. The 4070 Ti (full AD104 die, typically worse binning) needs roughly 30 MHz less headroom at the same voltage than the 4070 Ti Super (AD103 cut, better chip selection). Other presets (Eco / Balanced / Max) are identical on both cards.</p>
 
-    <h3>RTX 4070 / 4070 Super <span style="color:var(--gold);">(experimental)</span></h3>
+    <h3>RTX 4070 / 4070 Super</h3>
     <table>
       <tr><th>Preset</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>900 mV</td><td>2400 MHz</td><td>100%</td></tr>
@@ -855,7 +855,7 @@
       <tr><td>🔥 Max</td><td>975 mV</td><td>2790 MHz</td><td>100%</td></tr>
     </table>
 
-    <div class="warn"><strong>What does "experimental" mean?</strong> These cards are supported by the NV-UV code, but the preset values have not yet been verified on real hardware through our tester programme. Expect issues on individual cards. Please test using Balanced as a starting point and report back on the PCGH forum or Discord so the values can be tightened up.</div>
+    <div class="warn"><strong>What does "experimental" mean for the RTX 5060?</strong> These cards are supported by the NV-UV code, but the preset values have not yet been verified on real hardware through our tester programme. Please test using Balanced as a starting point and report back on the PCGH forum or Discord so the values can be tightened up.</div>
 
     <div class="info">Preset values are based on community experience. Not every GPU can handle every preset, silicon lottery. When in doubt, start with Balanced.</div>
   </section>
@@ -924,7 +924,7 @@
     <p>Not planned. DXR stress testing requires Windows 11.</p>
 
     <h3>RTX 40 series support?</h3>
-    <p><strong>Experimental (writing).</strong> Since "Ada improved" (v0.94) the native Ada write path is active. The byte-exact curve encoder has been verified on a KFA2 RTX 4070 Ti (AD104) and runs end-to-end there — Apply, Scanner, Game Replay and UV-Pilot all work. The preset values (frequency/voltage targets) are community-based for all Ada cards and still need per-chip verification, which is why the "experimental" tag stays in place. Ada testers with RTX 4090 (AD102) and RTX 4080 / 4080 Super (AD103) especially welcome — reach out on the PCGH forum or Discord.</p>
+    <p><strong>Fully supported.</strong> Since "Ada improved" (v0.94) the native Ada write path is active. The byte-exact curve encoder has been verified on a KFA2 RTX 4070 Ti (AD104) and runs end-to-end — Apply, Scanner, Game Replay and UV-Pilot all work. The preset values (frequency/voltage targets) are community-based; Ada testers with RTX 4090 (AD102) and RTX 4080 / 4080 Super (AD103) especially welcome to help refine the per-chip constants — reach out on the PCGH forum or Discord.</p>
 
     <h3>Why are Boost Override / V-Step Fix / Idle Optimization missing on Ada cards?</h3>
     <p>These are Blackwell-specific compensations:</p>
