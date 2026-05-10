@@ -373,7 +373,7 @@
       <tr><td>🖥 <strong>Smart Hz</strong></td><td>Desktop 60Hz, Gaming native Hz. Spart ~10W Idle.</td></tr>
       <tr><td>🌍 <strong>DE/EN</strong></td><td>Komplette Oberfläche Deutsch/Englisch, Live-Toggle im Footer</td></tr>
       <tr><td>🔥 <strong>3D Stress Test</strong></td><td>DX12 + DXR Render-Engine (headless) mit Heartbeat-Lastmuster</td></tr>
-      <tr><td>⚓ <strong>Anker-Profil</strong></td><td>Rechtsklick auf Slot — wird nach Spielende automatisch geladen (UV-Pilot erforderlich)</td></tr>
+      <tr><td>⚓ <strong>Anker-Profil</strong></td><td>Rechtsklick auf Slot — wird beim Programmstart geladen, nach Spielende durch UV-Pilot wiederhergestellt</td></tr>
       <tr><td>🧊 <strong>Idle-Optimierung</strong></td><td>Unter 850 mV = Stock, spart Strom bei Desktop/Idle</td></tr>
       <tr><td>🔧 <strong>V-Step Fix</strong></td><td>Kompensiert den Blackwell point-before-flatten Bug</td></tr>
       <tr><td>📐 <strong>Mini View</strong></td><td>Kompakte Ansicht, perfekt neben AB's Curve Editor</td></tr>
@@ -387,7 +387,7 @@
     <h2 class="gold"><span class="icon">📋</span>Voraussetzungen</h2>
     <table>
       <tr><th>Was</th><th>Details</th></tr>
-      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, oder 5060 Ti / 5060 (experimentell)<br>Ada-Karten (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) ebenfalls unterstützt</td></tr>
+      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, oder 5060 Ti / 5060 (experimentell)<br>Ada-Karten (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) ebenfalls unterstützt<br>RTX 4060 Ti / 4060 (experimentell)</td></tr>
       <tr><td><strong>Treiber</strong></td><td>Aktueller NVIDIA-Treiber</td></tr>
       <tr><td><strong>MSI Afterburner</strong></td><td>Version 4.6.6+ mit RTSS</td></tr>
       <tr><td><strong>Windows</strong></td><td>Windows 11 (64-bit)</td></tr>
@@ -733,6 +733,27 @@
     <div class="info">Fallback bleibt: Wenn der Foreground-Prozess kein DB-Eintrag ist (Explorer, Desktop, etc.), behält der Pilot den aktuellen Lock. Alt-Tab zum Desktop killt also keinen Gaming-Lock.</div>
   </section>
 
+  <!-- ═══ ANKER-PROFIL ═══ -->
+  <section>
+    <h2 class="gold"><span class="icon">⚓</span>Anker-Profil</h2>
+    <p>Das Anker-Profil ist euer "Heimat-Slot". Es legt fest, welches UV-Profil NV-UV in zwei Situationen automatisch laden soll: beim Programmstart und nach Spielende.</p>
+
+    <h3>Setzen</h3>
+    <p>Rechtsklick auf einen Slot mit gespeichertem UV-Profil → <strong>⚓ Als Anker setzen</strong>. Der Slot bekommt das ⚓ Symbol und wird in der Slot-Übersicht markiert.</p>
+
+    <h3>Verhalten im Detail</h3>
+    <table>
+      <tr><th>Situation</th><th>Was passiert</th></tr>
+      <tr><td><strong>Programmstart <span style="color:var(--gold);">(Neu in v0.95 hf1)</span></strong></td><td>NV-UV erkennt das Anker-Profil und lädt es automatisch beim Start. Funktioniert auch ohne UV-Pilot, ideal für Autostart mit Windows.</td></tr>
+      <tr><td><strong>Nach Spielende</strong></td><td>UV-Pilot erkennt das Spielende und stellt das Anker-Profil wieder her, statt zum vorherigen Slot zurückzukehren. Setzt aktiven UV-Pilot voraus.</td></tr>
+    </table>
+
+    <h3>Praxis-Beispiel</h3>
+    <p>Ihr habt euer Daily-UV in Slot 1 (z.B. 2902 MHz @ 950 mV) und setzt diesen als Anker. Beim Windows-Start fährt NV-UV hoch (Autostart), AB wird gestartet und Slot 1 ist sofort aktiv, ohne dass ihr was anklicken müsst. Startet ihr ein Spiel das mit UV-Pilot auf Tier "Max" läuft, wechselt der Pilot kurz auf Slot 4. Nach Spiel-Ende geht's zurück zu Slot 1 (Anker), nicht zum vorherigen Zustand.</p>
+
+    <div class="info">Tipp: Auch ein Stock-Anker funktioniert. Wenn ihr einen leeren Slot als Anker setzt, lädt NV-UV beim Start eben Stock-Werte. Der Anker ist eine explizite "Heimat"-Anweisung, kein "Nur-wenn-UV"-Hinweis.</div>
+  </section>
+
   <!-- ═══ OPTIONEN ═══ -->
   <section>
     <h2 class="cyan"><span class="icon">🔧</span>Optionale Features</h2>
@@ -901,7 +922,26 @@
       <tr><td>🔥 Max</td><td>975 mV</td><td>2790 MHz</td><td>100%</td></tr>
     </table>
 
-    <div class="warn"><strong>Was bedeutet "experimentell" bei der RTX 5060?</strong> Diese Karten werden vom NV-UV-Code unterstützt, aber die Preset-Werte wurden noch nicht durch unser Tester-Programm auf echter Hardware verifiziert. Bitte testet mit Balanced als Startpunkt und gebt Feedback im PCGH-Forum oder auf Discord, damit die Werte nachgeschärft werden können.</div>
+    <h3>RTX 4060 Ti <span style="color:var(--gold);">(experimentell)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>900 mV</td><td>2400 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>925 mV</td><td>2550 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>950 mV</td><td>2650 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>2750 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 4060 <span style="color:var(--gold);">(experimentell)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>875 mV</td><td>2300 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>900 mV</td><td>2450 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>2600 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2730 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="font-size:0.9em; opacity:0.8;">Hinweis zur RTX 4060: Der AD107-Chip skaliert ungewöhnlich schwach mit zusätzlicher Voltage. Höhere mV bringen kaum mehr MHz, daher liegen die Tier-Werte enger beieinander als bei größeren Ada-Chips.</p>
+
+    <div class="warn"><strong>Was bedeutet "experimentell" bei den RTX 5060- und RTX 4060-Modellen?</strong> Diese Karten werden vom NV-UV-Code unterstützt, aber die Preset-Werte wurden noch nicht durch unser Tester-Programm auf echter Hardware verifiziert. Sie basieren auf KI-DeepSearch-Recherche aus Community-Daten (Reddit, Hardwareluxx, Igor's Lab, OCN). Bitte testet mit Balanced als Startpunkt und gebt Feedback im PCGH-Forum oder auf Discord, damit die Werte nachgeschärft werden können.</div>
 
     <div class="info">Die Preset-Werte basieren auf Community-Erfahrungswerten. Nicht jede GPU schafft jedes Preset, Silizium-Lotterie. Im Zweifelsfall mit Balanced anfangen.</div>
   </section>
@@ -984,8 +1024,10 @@
       <li><strong>AD104</strong> (RTX 4070 / 4070 Super / 4070 Ti) — byte-exakt verifiziert auf KFA2 4070 Ti.</li>
       <li><strong>AD103</strong> (RTX 4080 / 4080 Super / 4070 Ti Super) — Code läuft, byte-exakte Tester-Verifikation läuft.</li>
       <li><strong>AD102</strong> (RTX 4090) — Code läuft, byte-exakte Verifikation läuft.</li>
+      <li><strong>AD106</strong> (RTX 4060 Ti, 8GB + 16GB) — Code läuft, Preset-Werte experimentell (KI-DeepSearch).</li>
+      <li><strong>AD107</strong> (RTX 4060) — Code läuft, Preset-Werte experimentell (KI-DeepSearch).</li>
     </ul>
-    <p>Die Preset-Werte basieren auf Community-Werten. Wer eine 4090 oder 4080 hat und Logs / AB-Profile zur weiteren Verfeinerung der Per-Chip-Konstanten beisteuern möchte, gerne im PCGH-Forum oder auf Discord melden.</p>
+    <p>Die Preset-Werte basieren auf Community-Werten. Wer eine 4090, 4080, 4060 Ti oder 4060 hat und Logs / AB-Profile zur weiteren Verfeinerung der Per-Chip-Konstanten beisteuern möchte, gerne im PCGH-Forum oder auf Discord melden.</p>
 
     <h3>Wird NV-UV Open Source?</h3>
     <p>Aktuell Closed Source. Eine Open-Source Version ist langfristig denkbar, aber kein konkreter Zeitplan.</p>
