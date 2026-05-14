@@ -331,7 +331,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="sep">—</span><span class="uv">UV</span></h1>
     <div class="subtitle">GPU Undervolt · User Guide</div>
-    <div class="build">Build 22 · Cantor · Open Alpha · April 2026</div>
+    <div class="build">Build 22 · Cantor · Open Alpha · Mai 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -366,7 +366,7 @@
       <tr><td>🔍 <strong>Stock Curve Discovery</strong></td><td>Liest automatisch die echte VF-Kurve deiner spezifischen GPU aus AB</td></tr>
       <tr><td>🔬 <strong>OCS → UV</strong></td><td>AB OC Scanner Ergebnis importieren, chipspezifische UV-Kurve bauen</td></tr>
       <tr><td>🎮 <strong>Game Replay</strong></td><td>Automatischer Step-Down bei Crash, mit Lernschleife pro Spiel</td></tr>
-      <tr><td>✈️ <strong>UV-Pilot</strong></td><td>Erkennt 588 Spiele automatisch, schaltet zum optimalen Preset</td></tr>
+      <tr><td>✈️ <strong>UV-Pilot</strong></td><td>Erkennt 633 Spiele automatisch, schaltet zum optimalen Preset</td></tr>
       <tr><td>⚡ <strong>Voltage Step Scanner</strong></td><td>Stage 1 (höchste stabile Frequenz) + Stage 2 (niedrigste stabile Spannung), DX12/DXR Stress-Engine</td></tr>
       <tr><td>🎯 <strong>Optimize Point</strong> <span style="color:var(--gold);">NEU</span></td><td>Stage 2 — niedrigste Voltage zu einer festen Frequenz finden, Feinabstimmung nach Stage 1</td></tr>
       <tr><td>📐 <strong>V-Step Compensation</strong> <span style="color:var(--gold);">NEU</span></td><td>Scanner kompensiert V-Droop automatisch für präzisere Tests</td></tr>
@@ -639,6 +639,7 @@
 
     <h3>Neu in Cantor</h3>
     <table>
+      <tr><td><strong>✨ MFG-Tier (v0.95 hf3)</strong></td><td>Eigenes Tier für Multi Frame Generation Titel, alle RTX 50-Karten. Volles Power-Limit bei Eco-Spannung und leicht reduziertem Takt. Wird über die Spiele-Datenbank pro Spiel zugewiesen.</td></tr>
       <tr><td><strong>NVAPI Direct Mode</strong></td><td>Scanner schreibt Frequenz/Voltage jetzt direkt in den Treiber statt über AB-Profile, ~50 ms statt ~2 s pro Punkt. Drastisch schnellere Scans.</td></tr>
       <tr><td><strong>VRAM-OC ab Phase 1</strong></td><td>Wenn du im Scanner einen VRAM-Offset setzt, läuft der jetzt schon während der Frequenzsuche mit, nicht erst in der Verifikation. Stabilitäts-Verdicts werden dadurch realistischer.</td></tr>
       <tr><td><strong>Stage 2 Optimize Point</strong></td><td>Niedrigste stabile Voltage zu einer festen Frequenz finden, siehe oben.</td></tr>
@@ -716,11 +717,13 @@
       <tr><td><strong>🚀 Performance</strong></td><td>Stark, Elden Ring, Hogwarts Legacy</td></tr>
       <tr><td><strong>⚡ Balanced</strong></td><td>Standard, CS2, Valorant, die meisten Spiele</td></tr>
       <tr><td><strong>🌿 Eco</strong></td><td>Sparsam, ältere/leichte Spiele</td></tr>
+      <tr><td><strong>✨ MFG</strong></td><td>Für Multi Frame Generation Titel, nur RTX 50-Karten. Über die Spiele-Datenbank zuweisbar.</td></tr>
     </table>
+    <p style="font-size:0.9em;color:var(--text-dim);">Das MFG-Tier nutzt die Eco-Spannung mit vollem Power-Limit und leicht reduziertem Takt. Es ist über die Tier-Buttons im Hauptfenster nicht direkt wählbar, sondern wird pro Spiel in der Spiele-Datenbank zugewiesen. Empfohlen ab 3x oder 4x MFG, dort ist die Ersparnis bei hohen Bildraten am größten.</p>
     <h3>Custom-Profile</h3>
     <p>Neu: Eigene UV-Profile pro Spiel möglich. Rechtsklick auf einen Slot: "Zu UV-Pilot hinzufügen", erstellt ein Custom-Profil. In der Spiele-Datenbank zuweisbar.</p>
     <h3>Spiele-Datenbank</h3>
-    <p>Rechtsklick auf UV-Pilot → 🎮 Spiele-Datenbank öffnet den Game Browser mit 588 Spielen + Benchmarks. Tier-Zuordnungen anpassbar, eigene Spiele hinzufügbar.</p>
+    <p>Rechtsklick auf UV-Pilot → 🎮 Spiele-Datenbank öffnet den Game Browser mit 633 Spielen + Benchmarks. Tier-Zuordnungen anpassbar, eigene Spiele hinzufügbar.</p>
     <h3>Benchmarks (3DMark etc.)</h3>
     <p>3DMark wird erkannt, aber kein UV-Tier zugeordnet — das aktive Profil bleibt bestehen. So könnt ihr mit eurem gewählten UV benchen ohne dass der Pilot umschaltet. Über den Game Browser kann optional ein Custom Profile zugewiesen werden.</p>
     <h3>Auto-Mini beim Gaming</h3>
@@ -799,7 +802,7 @@
     Standardmäßig aktiviert.</p>
 
     <h3>🔋 Power Limit</h3>
-    <p>Slider begrenzt maximale Leistungsaufnahme. Eco-Presets setzen PL auf 85%, Performance/Max auf 100%.</p>
+    <p>Slider begrenzt maximale Leistungsaufnahme. Eco-Presets setzen PL reduziert, MFG / Performance / Max auf 100%.</p>
 
     <h3>💾 VRAM Offset</h3>
     <p>Speichertakt-Offset. Standard: 0 MHz. GDDR7 profitiert selten von Memory-OC.</p>

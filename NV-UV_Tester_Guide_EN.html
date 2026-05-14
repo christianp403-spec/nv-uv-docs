@@ -331,7 +331,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="sep">—</span><span class="uv">UV</span></h1>
     <div class="subtitle">GPU Undervolt · User Guide</div>
-    <div class="build">Build 22 · Cantor · Open Alpha · April 2026</div>
+    <div class="build">Build 22 · Cantor · Open Alpha · May 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -366,7 +366,7 @@
       <tr><td>🔍 <strong>Stock Curve Discovery</strong></td><td>Automatically reads the real VF curve of your specific GPU from AB</td></tr>
       <tr><td>🔬 <strong>OCS → UV</strong></td><td>Import AB OC Scanner results, build chip-specific UV curve</td></tr>
       <tr><td>🎮 <strong>Game Replay</strong></td><td>Automatic step-down on crash, with per-game learning loop</td></tr>
-      <tr><td>✈️ <strong>UV-Pilot</strong></td><td>Detects 588 games automatically, switches to the optimal preset</td></tr>
+      <tr><td>✈️ <strong>UV-Pilot</strong></td><td>Detects 633 games automatically, switches to the optimal preset</td></tr>
       <tr><td>⚡ <strong>Voltage Step Scanner</strong></td><td>Stage 1 (highest stable frequency) + Stage 2 (lowest stable voltage), DX12/DXR stress engine</td></tr>
       <tr><td>🎯 <strong>Optimize Point</strong> <span style="color:var(--gold);">NEW</span></td><td>Stage 2 — find the lowest voltage for a fixed frequency, fine-tuning after Stage 1</td></tr>
       <tr><td>📐 <strong>V-Step Compensation</strong> <span style="color:var(--gold);">NEW</span></td><td>Scanner automatically compensates V-Droop for more precise tests</td></tr>
@@ -618,6 +618,7 @@
 
     <h3>New in Cantor</h3>
     <table>
+      <tr><td><strong>✨ MFG Tier (v0.95 hf3)</strong></td><td>Dedicated tier for Multi Frame Generation titles, all RTX 50-series cards. Full power limit at Eco voltage with a slightly reduced clock. Assigned per game via the game database.</td></tr>
       <tr><td><strong>NVAPI Direct Mode</strong></td><td>Scanner now writes frequency/voltage directly through the driver instead of going via AB profiles, ~50 ms instead of ~2 s per point. Drastically faster scans.</td></tr>
       <tr><td><strong>VRAM OC from Phase 1</strong></td><td>If you set a VRAM offset in the scanner, it's now active during the frequency search, not only during verification. Stability verdicts become much more realistic.</td></tr>
       <tr><td><strong>Stage 2 Optimize Point</strong></td><td>Find the lowest stable voltage for a fixed frequency, see above.</td></tr>
@@ -684,11 +685,13 @@
       <tr><td><strong>🚀 Performance</strong></td><td>Strong, Elden Ring, Hogwarts Legacy</td></tr>
       <tr><td><strong>⚡ Balanced</strong></td><td>Standard, CS2, Valorant, most games</td></tr>
       <tr><td><strong>🌿 Eco</strong></td><td>Efficient, older/lighter games</td></tr>
+      <tr><td><strong>✨ MFG</strong></td><td>For Multi Frame Generation titles, RTX 50-series only. Assignable via the game database.</td></tr>
     </table>
+    <p style="font-size:0.9em;color:var(--text-dim);">The MFG tier uses the Eco voltage with full power limit and a slightly reduced clock. It is not directly selectable via the tier buttons in the main window, it is assigned per game in the game database. Recommended at 3x or 4x MFG, where savings at high frame rates are largest.</p>
     <h3>Custom Profiles</h3>
     <p>Right-click a slot: "Add to UV-Pilot" creates a custom profile. Assignable per game in the game database.</p>
     <h3>Game Database</h3>
-    <p>Right-click UV-Pilot → 🎮 Game Database. 588 games + benchmarks, tier assignments adjustable, custom games addable.</p>
+    <p>Right-click UV-Pilot → 🎮 Game Database. 633 games + benchmarks, tier assignments adjustable, custom games addable.</p>
     <h3>Benchmarks (3DMark etc.)</h3>
     <p>3DMark is recognized but no UV tier is assigned — your active profile stays as-is. This lets you benchmark with your chosen UV without the Pilot switching profiles. A custom profile can optionally be assigned via the Game Browser.</p>
     <h3>Auto-Mini on Gaming</h3>
@@ -764,7 +767,7 @@
     Enabled by default.</p>
 
     <h3>🔋 Power Limit</h3>
-    <p>Slider limits maximum power draw. Eco presets set PL to 85%, Performance/Max to 100%.</p>
+    <p>Slider limits maximum power draw. Eco presets set PL reduced, MFG / Performance / Max to 100%.</p>
     <h3>💾 VRAM Offset</h3>
     <p>Memory clock offset. Default: 0 MHz. GDDR7 rarely benefits from memory OC.</p>
     <h3>🔓 Override Safe Limit</h3>
