@@ -299,6 +299,7 @@
       <li><a href="#updates">Game library updates</a></li>
       <li><a href="#troubleshooting">Troubleshooting</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="#third-party">Third-Party Components</a></li>
     </ul>
   </div>
 
@@ -336,7 +337,7 @@
       <li>Put it anywhere you like: Desktop, Programs folder, USB stick, whatever fits</li>
       <li>Double-click to run</li>
     </ol>
-    <p>No installer, no admin rights needed for first start. Windows will prompt for elevation when Play needs it to talk to NVAPI. First run shows a one-time license acceptance, then you're in.</p>
+    <p>No installer, no admin rights needed for first start. Windows will prompt for elevation when Play needs it to talk to NVAPI.</p>
     <div class="tip"><strong>Portable.</strong> Play stores its settings under <code>%LocalAppData%\NV-UV-Play\</code>. The EXE itself stays where you put it and you can move it freely between machines. Settings travel via the LocalAppData folder.</div>
   </section>
 
@@ -345,7 +346,6 @@
     <h2 class="green"><span class="icon">▶</span>First run</h2>
     <p>When Play starts the first time, here's what happens:</p>
     <ol>
-      <li><strong>License screen</strong>: one-time acceptance, then you're in.</li>
       <li><strong>Hardware detection</strong>: Play reads your GPU, family, BIOS variant, and the stock VF curve. This takes a second or two.</li>
       <li><strong>Tier defaults</strong>: Play loads the community-tuned defaults for your card. You'll see them in the main window.</li>
       <li><strong>Game library</strong>: Play loads its bundled game database and checks GitHub for an update in the background.</li>
@@ -672,13 +672,42 @@
     <p>Not at this time. The license is permissive for personal and non-commercial use (free to use, free for content creators, free for helping friends and community members). Commercial use, OEM bundling, and selling tuning services with Play require a separate commercial license, see the License section of the readme.</p>
 
     <h3>Can I bundle Play with my gaming PC?</h3>
-    <p>OEM bundling requires a commercial license. Contact: <strong>christian.papaioannou@gmx.de</strong></p>
+    <p>OEM bundling requires a commercial license. Reach out via the <a href="https://extreme.pcgameshardware.de/forums/nv-uv.3601/" style="color: var(--green);">PCGH NV-UV Subforum</a> or the NV⚡UV Discord (invite via the forum).</p>
 
     <h3>How is Play different from NV-UV main?</h3>
     <p>NV-UV main has a full Voltage Step Scanner, OC Scanner integration, render stress tests, in-app curve editor preview, Mini View, German UI, three skins, and Afterburner integration. Play has none of that. It's tier picker + auto-apply + stabilizer + nothing else. Different tools for different needs.</p>
 
     <h3>Why is it called Play?</h3>
     <p>Because that's what it does. Pick a tier, hit Start, play.</p>
+  </section>
+
+  <!-- ═══ THIRD-PARTY COMPONENTS ═══ -->
+  <section id="third-party">
+    <h2 class="cyan"><span class="icon">🔖</span>Third-Party Components</h2>
+    <p>NV⚡UV Play uses <code>NvApiNative.dll</code>, a native NVAPI bridge derived from the open-source project <strong>Green Curve</strong> by aufkrawall. Green Curve demonstrated how to access the VF curve on Blackwell GPUs directly via NVAPI entry points. NV⚡UV Play applies this approach for the Voltage Lock apply path on all supported GPU families.</p>
+    <p>Project repository: <a href="https://github.com/aufkrawall/green-curve" style="color: var(--green);">github.com/aufkrawall/green-curve</a></p>
+    <p>The full text of the MIT license is reproduced below:</p>
+    <pre style="background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 16px; font-size: 12px; line-height: 1.5; color: var(--dim); overflow-x: auto; white-space: pre-wrap;">MIT License
+
+Copyright (c) 2026 aufkrawall
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
   </section>
 
   <div class="led-bar gold"></div>
