@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NV⚡UV Play · User Guide · v0.1.0-alpha</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
+
+  :root {
+    --bg: #000000;
+    --bg-card: #0a0a0a;
+    --bg-card-hover: #141414;
+    --border: #1f1f1f;
+    --border-dim: #141414;
+    --green: #4ADE80;
+    --green-dim: #22A050;
+    --green-glow: rgba(74,222,128,0.18);
+    --cyan: #38BDF8;
+    --gold: #FACC15;
+    --gold-dim: #B8950F;
+    --gold-glow: rgba(250,204,21,0.14);
+    --orange: #FB923C;
+    --red: #F87171;
+    --purple: #C084FC;
+    --white: #F5F5F5;
+    --dim: #8C8C8C;
+    --dimmer: #555555;
+    --mono: 'JetBrains Mono', 'Consolas', monospace;
+    --display: 'Orbitron', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      linear-gradient(90deg, transparent 49.5%, var(--border-dim) 49.5%, var(--border-dim) 50.5%, transparent 50.5%),
+      linear-gradient(0deg, transparent 49.5%, var(--border-dim) 49.5%, var(--border-dim) 50.5%, transparent 50.5%);
+    background-size: 80px 80px;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .led-bar {
+    height: 4px;
+    border-radius: 2px;
+    margin: 0 40px;
+  }
+  .led-bar.green { background: var(--green-dim); box-shadow: 0 0 12px var(--green-glow); }
+  .led-bar.gold { background: var(--gold-dim); box-shadow: 0 0 12px var(--gold-glow); }
+
+  .header {
+    text-align: center;
+    padding: 48px 0 32px;
+  }
+  .header h1 {
+    font-family: var(--display);
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 4px;
+  }
+  .header h1 .nv { color: var(--white); }
+  .header h1 .bolt { color: var(--green); text-shadow: 0 0 18px var(--green-glow); margin: 0 4px; }
+  .header h1 .uv { color: var(--white); }
+  .header h1 .play {
+    color: var(--green);
+    font-size: 36px;
+    margin-left: 12px;
+    letter-spacing: 2px;
+  }
+  .header .subtitle {
+    color: var(--dim);
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .header .build {
+    color: var(--dimmer);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  section::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px; right: -1px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--green-dim), transparent);
+    opacity: 0.5;
+  }
+
+  h2 {
+    font-family: var(--display);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  h2.green { color: var(--green); }
+  h2.gold { color: var(--gold); }
+  h2.cyan { color: var(--cyan); }
+  h2.orange { color: var(--orange); }
+  h2.purple { color: var(--purple); }
+  h2 .icon { font-size: 24px; }
+
+  h3 {
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+  h3:first-child { margin-top: 0; }
+
+  p { margin-bottom: 14px; color: var(--white); }
+  p.dim { color: var(--dim); font-size: 12px; }
+
+  strong { color: var(--green); font-weight: 600; }
+  em { color: var(--gold); font-style: normal; }
+
+  ul, ol { margin-left: 20px; margin-bottom: 14px; }
+  li { margin-bottom: 6px; color: var(--white); }
+
+  code {
+    background: var(--bg-card-hover);
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-size: 13px;
+    color: var(--green);
+    border: 1px solid var(--border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    margin-bottom: 14px;
+  }
+  table th, table td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table th {
+    background: var(--bg-card-hover);
+    color: var(--green);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child { width: 35%; }
+
+  .warn {
+    background: rgba(248,113,113,0.08);
+    border-left: 3px solid var(--red);
+    padding: 12px 16px;
+    margin: 14px 0;
+    border-radius: 2px;
+    font-size: 13px;
+  }
+  .tip {
+    background: rgba(74,222,128,0.06);
+    border-left: 3px solid var(--green);
+    padding: 12px 16px;
+    margin: 14px 0;
+    border-radius: 2px;
+    font-size: 13px;
+  }
+  .note {
+    background: rgba(250,204,21,0.05);
+    border-left: 3px solid var(--gold);
+    padding: 12px 16px;
+    margin: 14px 0;
+    border-radius: 2px;
+    font-size: 13px;
+  }
+
+  .tier-table th { color: var(--green); }
+  .tier-eco { color: var(--green); font-weight: 600; }
+  .tier-balanced { color: var(--cyan); font-weight: 600; }
+  .tier-mfg { color: var(--purple); font-weight: 600; }
+  .tier-perf { color: var(--gold); font-weight: 600; }
+  .tier-max { color: var(--red); font-weight: 600; }
+
+  .toc {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px 28px;
+    margin-bottom: 32px;
+  }
+  .toc-title {
+    color: var(--dim);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .toc ul { list-style: none; margin: 0; padding: 0; column-count: 2; column-gap: 20px; }
+  .toc li { margin-bottom: 6px; break-inside: avoid; }
+  .toc a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: 1px dotted var(--dimmer);
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .toc a:hover { color: var(--green); border-bottom-color: var(--green); }
+
+  .footer {
+    text-align: center;
+    padding: 40px 0 20px;
+    color: var(--dimmer);
+    font-size: 12px;
+  }
+  .footer a { color: var(--green); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 720px) {
+    .container { padding: 20px 14px; }
+    .header h1 { font-size: 38px; letter-spacing: 2px; }
+    .header h1 .play { font-size: 24px; }
+    section { padding: 20px 18px; }
+    .toc ul { column-count: 1; }
+    table td:first-child { width: 40%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="led-bar green"></div>
+
+  <div class="header">
+    <h1><span class="nv">NV</span><span class="bolt">⚡</span><span class="uv">UV</span><span class="play">Play</span></h1>
+    <div class="subtitle">Simple game undervolting · User guide</div>
+    <div class="build">v0.1.0-alpha · Open Alpha · May 2026</div>
+  </div>
+
+  <div class="led-bar gold"></div>
+
+  <!-- ═══ TOC ═══ -->
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ul>
+      <li><a href="#what">What is Play?</a></li>
+      <li><a href="#requirements">Requirements</a></li>
+      <li><a href="#install">Installation</a></li>
+      <li><a href="#first-run">First run</a></li>
+      <li><a href="#tiers">The tiers</a></li>
+      <li><a href="#game-library">Game library</a></li>
+      <li><a href="#custom">Custom profiles</a></li>
+      <li><a href="#advanced">Advanced options</a></li>
+      <li><a href="#apply-style">Apply style</a></li>
+      <li><a href="#vdroop">V-droop compensation</a></li>
+      <li><a href="#stabilizer">Stabilizer</a></li>
+      <li><a href="#monitoring">Monitoring</a></li>
+      <li><a href="#updates">Game library updates</a></li>
+      <li><a href="#troubleshooting">Troubleshooting</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══ WHAT IS NV-UV PLAY ═══ -->
+  <section id="what">
+    <h2 class="green"><span class="icon">⚡</span>What is NV⚡UV Play?</h2>
+    <p>NV⚡UV Play is a lightweight undervolting tool for NVIDIA GeForce GPUs. The idea: pick a tier, hit Start, play. The tool watches for your games, applies your chosen voltage/frequency lock when a game launches, and resets to stock when you quit.</p>
+    <p>Pre-tuned community tiers cover the common cases. A custom profile slot per tier lets you dial things in further if you want to go beyond the defaults.</p>
+    <p>Play is the standalone sibling of <strong>NV-UV</strong>, the full-featured undervolting and stress-testing toolkit. Where NV-UV is the workbench, Play is the light switch. They share the same VF-curve math but Play has no scanner, no stress test, no MSI Afterburner dependency. It just talks directly to the NVIDIA driver through a native bridge.</p>
+  </section>
+
+  <!-- ═══ REQUIREMENTS ═══ -->
+  <section id="requirements">
+    <h2 class="gold"><span class="icon">📋</span>Requirements</h2>
+    <table>
+      <tr><th>What</th><th>Details</th></tr>
+      <tr><td><strong>GPU</strong></td><td>
+        <strong>RTX 50-series (Blackwell)</strong> · <span style="color: var(--green);">✅ verified</span>, daily-driver test platform<br>
+        <strong>RTX 40-series (Ada Lovelace)</strong> · 🧪 should work in theory, code is 1:1 from NV-UV main but unverified on real hardware<br>
+        <strong>RTX 30 / 20-series (Ampere / Turing)</strong> · ⚙ best-guess via Voltage Lock fallback, similar to MSI Afterburner with manual config<br>
+        <strong>RTX 10-series and older</strong> · ❌ not supported (no NVML SetClockOffsets API)
+      </td></tr>
+      <tr><td><strong>Operating system</strong></td><td>Windows 11 (latest cumulative update)</td></tr>
+      <tr><td><strong>.NET runtime</strong></td><td>Bundled in the EXE, no separate install needed</td></tr>
+      <tr><td><strong>NVIDIA driver</strong></td><td>Latest Game Ready driver</td></tr>
+      <tr><td><strong>MSI Afterburner</strong></td><td>Not required, Play talks to NVAPI directly</td></tr>
+    </table>
+  </section>
+
+  <!-- ═══ INSTALLATION ═══ -->
+  <section id="install">
+    <h2 class="cyan"><span class="icon">🔧</span>Installation</h2>
+    <ol>
+      <li>Download <code>NV-UV-Play-&lt;version&gt;.exe</code> from the <a href="https://github.com/christianp403-spec/nv-uv-play/releases" style="color: var(--green);">Releases page</a></li>
+      <li>Put it anywhere you like: Desktop, Programs folder, USB stick, whatever fits</li>
+      <li>Double-click to run</li>
+    </ol>
+    <p>No installer, no admin rights needed for first start. Windows will prompt for elevation when Play needs it to talk to NVAPI. First run shows a one-time license acceptance, then you're in.</p>
+    <div class="tip"><strong>Portable.</strong> Play stores its settings under <code>%LocalAppData%\NV-UV-Play\</code>. The EXE itself stays where you put it and you can move it freely between machines. Settings travel via the LocalAppData folder.</div>
+  </section>
+
+  <!-- ═══ FIRST RUN ═══ -->
+  <section id="first-run">
+    <h2 class="green"><span class="icon">▶</span>First run</h2>
+    <p>When Play starts the first time, here's what happens:</p>
+    <ol>
+      <li><strong>License screen</strong>: one-time acceptance, then you're in.</li>
+      <li><strong>Hardware detection</strong>: Play reads your GPU, family, BIOS variant, and the stock VF curve. This takes a second or two.</li>
+      <li><strong>Tier defaults</strong>: Play loads the community-tuned defaults for your card. You'll see them in the main window.</li>
+      <li><strong>Game library</strong>: Play loads its bundled game database and checks GitHub for an update in the background.</li>
+      <li><strong>Tray icon</strong>: an icon appears in the system tray. That's Play's home, single-click to toggle the main window.</li>
+    </ol>
+    <p>To get going, set the Activate toggle in the main window. Play is now armed. When a known game launches, the lock applies automatically. When the game quits, Play resets the GPU to stock.</p>
+    <div class="tip"><strong>Right out of the box, nothing is overclocked.</strong> The bundled tier presets are conservative undervolt targets. Eco saves the most power, Max pushes performance. Both run cooler and quieter than stock.</div>
+  </section>
+
+  <!-- ═══ TIERS ═══ -->
+  <section id="tiers">
+    <h2 class="green"><span class="icon">🎚</span>The tiers</h2>
+    <p>Play uses a tier system. Each tier is a preset: a target voltage, a target frequency, a power limit, and (optionally) a VRAM offset. On Blackwell there are five tiers; on Ada / Ampere / Turing four (no MFG tier).</p>
+
+    <table class="tier-table">
+      <tr><th>Tier</th><th>What it does</th><th>Use case</th></tr>
+      <tr>
+        <td><span class="tier-eco">Eco</span></td>
+        <td>Aggressive undervolt, conservative target clock</td>
+        <td>Older games, indie titles, summer days when the case gets hot</td>
+      </tr>
+      <tr>
+        <td><span class="tier-mfg">MFG</span> <span style="color: var(--dim); font-size: 11px;">(Blackwell only)</span></td>
+        <td>Tuned for Multi-Frame-Generation workloads, balanced voltage + clock</td>
+        <td>Games with MFG / DLSS 4 enabled, the GPU stays in MFG's preferred operating band</td>
+      </tr>
+      <tr>
+        <td><span class="tier-balanced">Balanced</span></td>
+        <td>Moderate undervolt, slightly less clock than stock peak</td>
+        <td>Daily gaming default, good FPS-per-watt sweet spot</td>
+      </tr>
+      <tr>
+        <td><span class="tier-perf">Performance</span></td>
+        <td>Light undervolt, close to stock clock</td>
+        <td>Competitive games, when you want fps and don't mind a bit more wattage</td>
+      </tr>
+      <tr>
+        <td><span class="tier-max">Max</span></td>
+        <td>Minimal undervolt, target clock at or beyond stock peak</td>
+        <td>Performance ceiling, expect more heat and noise</td>
+      </tr>
+    </table>
+
+    <p>Pick the tier per game in the Game Library, or set a global default that applies to everything not specifically assigned.</p>
+
+    <div class="note"><strong>Every silicon sample is different.</strong> The bundled tiers are community-validated starting points, not guaranteed-stable settings for your exact card. If Max crashes, drop to Performance. If Performance crashes, drop to Balanced. The Stabilizer (see below) automates this when it happens during a game.</div>
+  </section>
+
+  <!-- ═══ GAME LIBRARY ═══ -->
+  <section id="game-library">
+    <h2 class="cyan"><span class="icon">🎮</span>Game library</h2>
+    <p>Open the Game Library from the main window. Three things live here:</p>
+    <ul>
+      <li><strong>Game list</strong>: every game Play knows about. Each row shows the bundled default tier and your override (if any).</li>
+      <li><strong>Tier defaults editor</strong>: globally re-tune what Eco / Balanced / Performance / Max mean on your card. Affects all games that use the default.</li>
+      <li><strong>Per-game overrides</strong>: per-game tier choice or custom profile.</li>
+    </ul>
+
+    <h3>Adding a game manually</h3>
+    <p>Click <code>+ Add Game</code> in the toolbar, then either:</p>
+    <ul>
+      <li><strong>Browse for .exe</strong>: opens a file picker, Play extracts the process name and the display title automatically</li>
+      <li><strong>Type the process name</strong>: for games that are running or that you remember from earlier</li>
+    </ul>
+    <p>Pick the initial tier from the RadioButtons. <strong>MFG</strong> is only shown on Blackwell GPUs — on Ada/Ampere/Turing you'll see Eco / Balanced / Performance / Max only.</p>
+
+    <h3>Per-game tier override</h3>
+    <p>Each row has a tier dropdown. Set it to Eco / Balanced / Performance / Max / Custom or "off". Default is unset (uses the bundled default if any, otherwise no lock).</p>
+
+    <div class="tip"><strong>Game library updates from GitHub.</strong> Play checks the public repo on startup and pulls in new games and refined tier defaults automatically. See <a href="#updates" style="color: var(--green);">Game library updates</a>.</div>
+  </section>
+
+  <!-- ═══ CUSTOM PROFILES ═══ -->
+  <section id="custom">
+    <h2 class="purple"><span class="icon">🛠</span>Custom profiles</h2>
+    <p>Each tier has one custom-profile slot. Use this if the bundled tier defaults don't quite fit your card or your needs.</p>
+
+    <h3>Creating one</h3>
+    <ol>
+      <li>In the Game Library, pick the row for the game</li>
+      <li>Change its tier dropdown to <strong>Custom</strong></li>
+      <li>The Custom Tier Editor opens, pre-filled with your current tier's default values</li>
+      <li><strong>Give it a name</strong> — e.g. "KCD-stable", "MyAggressive", "EvenMore". The name is what surfaces throughout the UI</li>
+      <li>Adjust voltage / target MHz / power limit / VRAM offset as you want</li>
+      <li>Save</li>
+    </ol>
+
+    <h3>Where the name shows up</h3>
+    <p>Once saved, the profile name appears in three places so you always know which configuration is active:</p>
+    <ul>
+      <li><strong>Tier dropdown</strong> · <code>✎ KCD-stable</code> instead of the generic <code>✎ Custom...</code></li>
+      <li><strong>Override label</strong> · <code>Override: Custom "KCD-stable" (default Performance)</code></li>
+      <li><strong>Stabilizer line</strong> (if there's crash history) · <code>🎮 KCD-stable · 3050 MHz @ 950 mV · Crash #1</code></li>
+    </ul>
+    <p>Hovering the dropdown shows the same V/F/PL summary you get for built-in tiers: <code>KCD-stable · 950 mV / 3100 MHz · PL 100%</code>. If a VRAM offset is set, it appears too.</p>
+
+    <h3>What you can adjust</h3>
+    <table>
+      <tr><th>Field</th><th>Range</th><th>Notes</th></tr>
+      <tr><td><strong>Voltage</strong></td><td>700 – 1100 mV</td><td>The lock point. Lower = more efficient, harder to keep target clock</td></tr>
+      <tr><td><strong>Target frequency</strong></td><td>500 – 3500 MHz</td><td>What you want the GPU to run at under load</td></tr>
+      <tr><td><strong>Power limit</strong></td><td>60 – 100 %</td><td>Hard cap on watts. Available only with Expert Overrides on</td></tr>
+      <tr><td><strong>VRAM offset</strong></td><td>0 – 3000 MHz</td><td>Memory clock above stock. Overclocking, Expert Overrides only</td></tr>
+    </table>
+    <p>Per-tier customs make sense if you want, say, Performance with 25 MHz less clock to stay stable, while still having the regular Balanced for browsing and lighter games.</p>
+
+    <h3>Export and Import</h3>
+    <p>The Game Library has <strong>Export</strong> and <strong>Import</strong> buttons in the toolbar. Use them to back up your custom profiles before a reinstall, or to share a working config with a friend.</p>
+    <ul>
+      <li><strong>Export</strong> writes a JSON file with all your authored custom profiles (the per-game tuning). Tier overrides for built-in tiers are <em>not</em> included — they're reproducible from a clean install. Default filename includes today's date.</li>
+      <li><strong>Import</strong> reads a JSON file produced by Export. If any imported profiles would replace existing local ones, a dialog asks: overwrite, keep local (skip duplicates), or cancel. After import, the Game Library refreshes automatically.</li>
+    </ul>
+  </section>
+
+  <!-- ═══ ADVANCED OPTIONS ═══ -->
+  <section id="advanced">
+    <h2 class="orange"><span class="icon">⚙</span>Advanced options</h2>
+    <p>The Advanced Options dialog is reachable via the gear icon. It hosts four sections from top to bottom:</p>
+    <ul>
+      <li><strong>Apply Style</strong>: Gradient Lock or Voltage Lock</li>
+      <li><strong>V-Droop Compensation</strong>: the +1 VF-step bump</li>
+      <li><strong>Expert Overrides</strong>: Power Limit and VRAM offset sliders</li>
+      <li><strong>Notifications</strong>: toast position picker (Bottom-right default, plus Bottom-left, Top-right, Top-left). Changing the position fires a preview toast so you can see where the corner lands.</li>
+    </ul>
+    <p>Most settings change on the next game start; a running game is not re-applied mid-session. Exception: toast position is live (preview right when you change it).</p>
+  </section>
+
+  <!-- ═══ APPLY STYLE ═══ -->
+  <section id="apply-style">
+    <h2 class="green"><span class="icon">📐</span>Apply style</h2>
+    <p>Two algorithms for writing the VF curve. Same end goal (the GPU runs at your target voltage / frequency), different shapes of the curve below the lock point.</p>
+
+    <h3>Gradient Lock</h3>
+    <p>Smooth ramp up to the target frequency below the lock voltage, then plateau above. The shape familiar from Afterburner curve editors. Default on Blackwell and Ada.</p>
+    <p>On Ampere / Turing, Gradient Lock has no certified path and Play falls back to Voltage Lock automatically.</p>
+    <div class="note"><strong>Telemetry vs. requested target.</strong> The telemetry readout may differ from what you set. NVAPI quantization adds ±10-30 MHz drift around the plateau, and under heavy load voltage droop can pull the achieved clock further below the target. V-Step Compensation below can compensate, or for guaranteed frequency author a custom profile with more voltage (trades efficiency for stability).</div>
+
+    <h3>Voltage Lock</h3>
+    <p>Strict voltage lock: stock curve untouched below, target frequency above. Direct NVAPI write, flat-tail above the lock. Works on every family including Ampere / Turing.</p>
+    <p>Voltage Lock produces a different curve shape than what Afterburner users typically see, but it's mechanically the same idea, just without the ramp below.</p>
+
+    <div class="tip"><strong>Which one?</strong> On Blackwell or Ada: Gradient Lock unless you have a specific reason. On Ampere / Turing: Voltage Lock. The difference under load is usually subtle.</div>
+  </section>
+
+  <!-- ═══ V-DROOP COMPENSATION ═══ -->
+  <section id="vdroop">
+    <h2 class="gold"><span class="icon">📐</span>V-droop compensation</h2>
+    <p>Under load, the voltage rail sags 10-20 mV below what you asked for. The GPU then lands on a lower point of the VF curve, so the clock drops too. This is normal silicon behaviour, not a Play bug.</p>
+
+    <h3>What the dropdown does</h3>
+    <p>V-Step Compensation locks the GPU N VF-grid points above your requested voltage. When voltage droop kicks in under load, the rail sags down toward your actual target instead of below it. The dropdown lets you pick how many steps:</p>
+    <ul>
+      <li><strong>Off</strong> · default. No compensation, lock exactly at your requested voltage.</li>
+      <li><strong>+1 VF step</strong> · gentle bump. Roughly 5-7 mV on Blackwell, 10-12 mV on Ada, coarser on Ampere/Turing.</li>
+      <li><strong>+2 VF steps</strong> · moderate bump. Use when +1 doesn't hold the clock under heavy load.</li>
+      <li><strong>+3 VF steps</strong> · aggressive bump. Last resort before authoring a custom profile with explicitly higher voltage.</li>
+    </ul>
+
+    <h3>When to use it</h3>
+    <ul>
+      <li>If telemetry shows a voltage 10-20 mV below what you set</li>
+      <li>If the requested clock is not held under heavy load</li>
+      <li>If you've authored a custom profile right at a tier boundary and want the clock locked tight</li>
+    </ul>
+
+    <h3>Precision per family</h3>
+    <table>
+      <tr><th>Family</th><th>VF grid step</th><th>Precision</th></tr>
+      <tr><td>Blackwell</td><td>~5 to 7 mV</td><td>Highest</td></tr>
+      <tr><td>Ada</td><td>~10 to 12 mV</td><td>Good</td></tr>
+      <tr><td>Ampere / Turing</td><td>~12 to 15 mV</td><td>Coarser, may over- or undershoot</td></tr>
+    </table>
+    <p>Default off everywhere. Enable when you need it, and remember it trades efficiency for stability.</p>
+  </section>
+
+  <!-- ═══ STABILIZER ═══ -->
+  <section id="stabilizer">
+    <h2 class="orange"><span class="icon">🛟</span>Stabilizer</h2>
+    <p>Crash recovery for the times when a tier is too aggressive for a specific game. Detects driver crashes (TDR) via Windows Event Log and adjusts the lock for the next launch.</p>
+
+    <h3>How it works</h3>
+    <ol>
+      <li>Game crashes (driver reset, blue screen of the GPU kind)</li>
+      <li>Windows logs the TDR event from <code>nvlddmkm</code></li>
+      <li>Play's Stabilizer reads that event and notes which game was running</li>
+      <li>On the next launch, Play applies the adjusted profile automatically</li>
+      <li>After a few clean runs, the adjustment resets back to your original tier</li>
+    </ol>
+
+    <h3>How you see it</h3>
+    <p>Two visual signals confirm the Stabilizer is doing its job:</p>
+    <ul>
+      <li><strong>Toast notifications</strong>. The Stabilizer fires twice on a crash: an immediate toast right after the crash event, and a "recovery confirmed" toast about 20 seconds later once the driver has finished re-initializing. The immediate toast may get swallowed by a hard crash; the recovery toast is the reliable confirmation that the adjustment landed.</li>
+      <li><strong>Game Library row</strong>. The affected game shows a third line in orange under the override label:
+        <br><code style="color: var(--orange);">🎮 3050 MHz @ 950 mV · Crash #1</code><br>
+        For Custom profiles, the profile's name is prefixed:<br>
+        <code style="color: var(--orange);">🎮 KCD-Crash2 · 3050 MHz @ 950 mV · Crash #1</code><br>
+        These are the actual values that will apply on the next launch. The line updates in real time when new crashes happen.<br>
+        <em>Per-tier semantics:</em> the Stabilizer keeps separate crash history per (game, tier) pair. If you crashed on Custom "Aggressive" and switch the override to Performance, the orange line disappears (Performance has no crash history). Switching back to Custom makes it reappear.</li>
+    </ul>
+
+    <h3>Resetting an adjustment manually</h3>
+    <p>If you want to retry the original profile (e.g. after a driver update fixed the instability), right-click the game row in the Game Library and choose <strong>Reset Stabilizer adjustment</strong>. The orange line disappears and the next launch uses the unmodified tier values for the currently displayed tier. Crash history for other tiers on the same game remains intact — if you crashed on Custom and switched to Performance, then reset Performance, your Custom history is still there if you switch back.</p>
+
+    <h3>Strategies</h3>
+    <table>
+      <tr><th>Strategy</th><th>What it does</th><th>Default step</th></tr>
+      <tr><td><strong>Both (recommended)</strong></td><td>Lowers clock and raises voltage together. Balanced mix, best stability for most users.</td><td>-50 MHz + +5 mV</td></tr>
+      <tr><td><strong>Frequency Down</strong></td><td>Lowers target clock only. More power-efficient, no extra voltage, less aggressive stability gain.</td><td>-50 MHz</td></tr>
+      <tr><td><strong>Voltage Up</strong></td><td>Raises target voltage only. Keeps the clock, higher power draw, holds the lock under heavy load.</td><td>+5 mV</td></tr>
+    </table>
+    <p><strong>Default since hf55:</strong> Both. The author found that pure frequency-down on Blackwell sometimes didn't recover from edge-case crashes — a small voltage bump alongside the clock reduction handles those cases reliably.</p>
+
+    <h3>Safety limits</h3>
+    <ul>
+      <li>Frequency never drops below <strong>1500 MHz</strong></li>
+      <li>Voltage never rises above <strong>1050 mV</strong></li>
+      <li>Per-game persistence: Cyberpunk's bumpy ride does not penalize Doom Eternal</li>
+    </ul>
+
+    <p>Configure via right-click on the Stabilizer toggle in the main window: Strategy, step sizes, floors. Default behaviour works well for most users.</p>
+  </section>
+
+  <!-- ═══ MONITORING ═══ -->
+  <section id="monitoring">
+    <h2 class="cyan"><span class="icon">📊</span>Monitoring</h2>
+    <p>Play has no built-in voltage / frequency / temperature overlay. By design: the goal is a minimal apply-tool, not a Swiss-army monitoring suite.</p>
+    <p>For real-time readouts, use what you already know:</p>
+    <table>
+      <tr><th>Tool</th><th>What it gives you</th></tr>
+      <tr><td><a href="https://www.guru3d.com/download/msi-afterburner-beta-download/" style="color: var(--green);">MSI Afterburner + RTSS</a></td><td>The standard. Full overlay customization, sensor logging, screenshot/recording hooks</td></tr>
+      <tr><td><a href="https://www.techpowerup.com/download/gpu-z/" style="color: var(--green);">GPU-Z</a></td><td>Quick sensor view, easy sensor logging</td></tr>
+      <tr><td><a href="https://www.hwinfo.com/" style="color: var(--green);">HWiNFO</a></td><td>Deep telemetry, RTSS integration</td></tr>
+      <tr><td>NVIDIA App overlay</td><td>Built into the GeForce driver. Simple readouts, no install</td></tr>
+    </table>
+    <div class="tip"><strong>Why no overlay in Play?</strong> Building one means parsing NVAPI sensors at 60+ Hz, drawing to a DirectX/OpenGL overlay, and competing with the four tools above. None of which would make Play any better at undervolting.</div>
+  </section>
+
+  <!-- ═══ GAME LIBRARY UPDATES ═══ -->
+  <section id="updates">
+    <h2 class="purple"><span class="icon">🔄</span>Game library updates</h2>
+    <p>The bundled list of games would go stale within weeks without updates. Play keeps the database fresh via this GitHub repo: <a href="https://github.com/christianp403-spec/nv-uv-play" style="color: var(--green);">github.com/christianp403-spec/nv-uv-play</a></p>
+    <p>On startup Play checks if the repo has a newer <code>GameDatabase.json</code> and pulls it down if so. New games and refined defaults arrive automatically, no Play update needed.</p>
+
+    <div class="note"><strong>Coming soon:</strong> the auto-update infrastructure is wired up and live in this build, but the remote starter database is still being populated. Until then, "Check now" will return "no newer version available". The 631 bundled games carry you through until the public DB gets its first refresh.</div>
+
+    <h3>Controlling it</h3>
+    <p>Open the Game Library → header strip on top:</p>
+    <ul>
+      <li><strong>Auto-check at startup</strong>: on by default, toggle off if you prefer manual control</li>
+      <li><strong>Check now</strong>: forces an immediate check. Useful right after a Play update or when you've heard about a new release on Discord</li>
+    </ul>
+
+    <h3>Submitting a game</h3>
+    <p>If a game you play is missing from the library, two ways to add it:</p>
+    <ul>
+      <li>Open an <a href="https://github.com/christianp403-spec/nv-uv-play/issues" style="color: var(--green);">Issue</a> on GitHub with the executable name and a Steam/store link</li>
+      <li>Open a Pull Request against <code>games/GameDatabase.json</code> with the new entry inline</li>
+    </ul>
+    <p>You can also add games locally inside Play via Add Game → Browse for .exe. Your local additions live in <code>%LocalAppData%\NV-UV-Play\game_overrides.json</code> and survive every database update.</p>
+
+    <div class="tip"><strong>Privacy.</strong> The update check is the only network call Play ever makes. No telemetry, no analytics, no usage statistics. The HTTP request goes to GitHub's raw-content CDN and that's it.</div>
+  </section>
+
+  <!-- ═══ TROUBLESHOOTING ═══ -->
+  <section id="troubleshooting">
+    <h2 class="red" style="color: var(--red);"><span class="icon">🔧</span>Troubleshooting</h2>
+
+    <h3>Play doesn't detect my GPU</h3>
+    <p>Check that you're on the latest NVIDIA Game Ready driver. If you're on a 10-series (Pascal) or older card: those are not supported, NVAPI exposes a fundamentally different VF interface.</p>
+
+    <h3>The voltage I set isn't what telemetry shows</h3>
+    <p>Voltage droop under load is normal silicon behaviour. The rail sags 10-20 mV below the request. Enable V-Step Compensation in Advanced Options to compensate, or author a custom profile with more voltage if you need a guaranteed value (trades efficiency).</p>
+
+    <h3>The MHz I set isn't held</h3>
+    <p>Same root cause. When voltage droops, the GPU drops to a lower VF point with a lower clock. Same two remedies: V-Step Compensation or a custom profile with more voltage.</p>
+
+    <h3>Telemetry shows ±10-30 MHz drift around my target</h3>
+    <p>NVAPI quantization. The driver snaps frequencies to its internal grid. Affects every undervolt tool, not just Play. Within normal noise for boost-algorithm behaviour.</p>
+
+    <h3>Game crashes when Play applies the lock</h3>
+    <p>The tier is too aggressive for your silicon. Stabilizer will auto-adjust on the next launch and you'll see two confirmations: a toast notification 20 seconds after the crash, and an orange line under the game in the Game Library showing the new adjusted values. If you want to skip the auto-adjust dance, drop to a lower tier manually in the Game Library. To clear an existing adjustment (e.g. after a driver update fixed the stability), right-click the game row and pick "Reset Stabilizer adjustment".</p>
+
+    <h3>Play doesn't apply when I launch a game</h3>
+    <p>Three things to check:</p>
+    <ul>
+      <li>Is the <strong>Activate</strong> toggle on in the main window?</li>
+      <li>Is the game in the Game Library and does it have a tier assigned? (Or is there a global default?)</li>
+      <li>Is the game's process name the one Play expects? Some games launch via a launcher process first, then spawn a different process for the actual game. Use the Alias-Switch feature: Play follows multi-process games like UE5 titles automatically.</li>
+    </ul>
+
+    <h3>Tray-icon click doesn't bring Play to the foreground</h3>
+    <p>Right after Windows logon, the foreground-lock can prevent Play from popping into focus on tray-icon click — you'll see the taskbar button flash but no window. Click the tray icon a second time and it should come up properly. The fix landed in hf55; if it still happens reliably, please file an Issue.</p>
+
+    <h3>Play uses too much memory</h3>
+    <p>Play sits at ~50 MB resident memory at idle, ~80 MB while a game is running. If you see more, that's likely the WPF renderer; restart Play and it should return to normal.</p>
+
+    <h3>Logs</h3>
+    <p>Active log: <code>%LocalAppData%\NV-UV-Play\logs\current.log</code><br>
+    Previous session: <code>%LocalAppData%\NV-UV-Play\logs\previous.log</code></p>
+    <p>For bug reports, use the built-in <strong>Settings → Export Log</strong> button. It bundles both logs plus a <code>system_info.txt</code> (GPU model, BIOS, driver version, OS version) into a single ZIP ready to attach to a GitHub Issue.</p>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section id="faq">
+    <h2 class="green"><span class="icon">💬</span>FAQ</h2>
+
+    <h3>Does Play need MSI Afterburner?</h3>
+    <p>No. Play talks to NVAPI directly through a native bridge. Afterburner can run alongside Play; the two don't interfere with each other.</p>
+
+    <h3>Can I use Play and Afterburner together?</h3>
+    <p>Yes. If you want a more detailed curve editor, use Afterburner. Many testers run Afterburner for RTSS / overlay duty and Play for the actual apply work.</p>
+
+    <h3>What about Green Curve?</h3>
+    <p>Green Curve is the curve-editing tool by aufkrawall that Play's native bridge is built on (MIT License, full credit in the About dialog). If you want per-point control of the VF curve, Green Curve is the tool. Play stays at the tier level intentionally, simple game undervolting, not curve sculpting.</p>
+
+    <h3>Will my warranty be affected?</h3>
+    <p>Modifying GPU voltage and frequency settings may affect your hardware warranty depending on your card maker. Check with your manufacturer. NV-UV Play takes no responsibility for warranty disputes, hardware damage, or system instability. Use at your own risk.</p>
+
+    <h3>Does Play work on laptops?</h3>
+    <p>Mostly no. Mobile GPUs expose different NVAPI behaviour and many laptop vendors lock parts of the VF interface in firmware. If detection works and a tier applies, great. If not, Play tells you.</p>
+
+    <h3>Will Play be open-source?</h3>
+    <p>Not at this time. The license is permissive for personal and non-commercial use (free to use, free for content creators, free for helping friends and community members). Commercial use, OEM bundling, and selling tuning services with Play require a separate commercial license, see the License section of the readme.</p>
+
+    <h3>Can I bundle Play with my gaming PC?</h3>
+    <p>OEM bundling requires a commercial license. Contact: <strong>christian.papaioannou@gmx.de</strong></p>
+
+    <h3>How is Play different from NV-UV main?</h3>
+    <p>NV-UV main has a full Voltage Step Scanner, OC Scanner integration, render stress tests, in-app curve editor preview, Mini View, German UI, three skins, and Afterburner integration. Play has none of that. It's tier picker + auto-apply + stabilizer + nothing else. Different tools for different needs.</p>
+
+    <h3>Why is it called Play?</h3>
+    <p>Because that's what it does. Pick a tier, hit Start, play.</p>
+  </section>
+
+  <div class="led-bar gold"></div>
+
+  <div class="footer">
+    <p><a href="https://github.com/christianp403-spec/nv-uv-play">github.com/christianp403-spec/nv-uv-play</a></p>
+    <p style="margin-top: 8px;">NV⚡UV Play · v0.1.0-alpha · Open Alpha · May 2026</p>
+    <p style="margin-top: 4px;">© 2026 Christian Papaioannou. NV⚡UV and the lightning bolt are trademarks of the author.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
