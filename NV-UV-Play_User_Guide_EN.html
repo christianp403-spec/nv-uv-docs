@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NV⚡UV Play · User Guide · v0.1.0-alpha</title>
+<title>NV⚡UV Play · User Guide · v0.1.1-alpha</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
 
@@ -275,7 +275,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="bolt">⚡</span><span class="uv">UV</span><span class="play">Play</span></h1>
     <div class="subtitle">Simple game undervolting · User guide</div>
-    <div class="build">v0.1.0-alpha · Open Alpha · May 2026</div>
+    <div class="build">v0.1.1-alpha · Open Alpha · May 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -553,11 +553,11 @@
     <h3>Strategies</h3>
     <table>
       <tr><th>Strategy</th><th>What it does</th><th>Default step</th></tr>
-      <tr><td><strong>Both (recommended)</strong></td><td>Lowers clock and raises voltage together. Balanced mix, best stability for most users.</td><td>-50 MHz + +5 mV</td></tr>
+      <tr><td><strong>Both (recommended)</strong></td><td>Lowers clock and raises voltage together. Balanced mix, best stability for most users.</td><td>-50 MHz + +10 mV</td></tr>
       <tr><td><strong>Frequency Down</strong></td><td>Lowers target clock only. More power-efficient, no extra voltage, less aggressive stability gain.</td><td>-50 MHz</td></tr>
-      <tr><td><strong>Voltage Up</strong></td><td>Raises target voltage only. Keeps the clock, higher power draw, holds the lock under heavy load.</td><td>+5 mV</td></tr>
+      <tr><td><strong>Voltage Up</strong></td><td>Raises target voltage only. Keeps the clock, higher power draw, holds the lock under heavy load.</td><td>+10 mV</td></tr>
     </table>
-    <p><strong>Default since hf55:</strong> Both. The author found that pure frequency-down on Blackwell sometimes didn't recover from edge-case crashes — a small voltage bump alongside the clock reduction handles those cases reliably.</p>
+    <p><strong>Default since hf55:</strong> Both. The author found that pure frequency-down on Blackwell sometimes didn't recover from edge-case crashes — a small voltage bump alongside the clock reduction handles those cases reliably. <strong>v0.1.1 update:</strong> the voltage step is now +10 mV (was +5). On weakly binned Ada cards, a single +5 mV step often fell short of the voltage-droop gap and let the Stabilizer crash again before recovery; +10 mV per crash typically reaches a stable point in one step.</p>
 
     <h3>Safety limits</h3>
     <ul>
@@ -714,7 +714,7 @@ SOFTWARE.</pre>
 
   <div class="footer">
     <p><a href="https://github.com/christianp403-spec/nv-uv-play">github.com/christianp403-spec/nv-uv-play</a></p>
-    <p style="margin-top: 8px;">NV⚡UV Play · v0.1.0-alpha · Open Alpha · May 2026</p>
+    <p style="margin-top: 8px;">NV⚡UV Play · v0.1.1-alpha · Open Alpha · May 2026</p>
     <p style="margin-top: 4px;">© 2026 Christian Papaioannou. NV⚡UV and the lightning bolt are trademarks of the author.</p>
   </div>
 
