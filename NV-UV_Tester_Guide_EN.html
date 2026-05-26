@@ -366,7 +366,7 @@
       <tr><td>🔍 <strong>Stock Curve Discovery</strong></td><td>Automatically reads the real VF curve of your specific GPU from AB</td></tr>
       <tr><td>🔬 <strong>OCS → UV</strong></td><td>Import AB OC Scanner results, build chip-specific UV curve</td></tr>
       <tr><td>🎮 <strong>Game Replay</strong></td><td>Automatic step-down on crash, with per-game learning loop</td></tr>
-      <tr><td>✈️ <strong>UV-Pilot</strong></td><td>Detects 633 games automatically, switches to the optimal preset</td></tr>
+      <tr><td>✈️ <strong>UV-Pilot</strong></td><td>Detects 632 games automatically, switches to the optimal preset</td></tr>
       <tr><td>⚡ <strong>Voltage Step Scanner</strong></td><td>Stage 1 (highest stable frequency) + Stage 2 (lowest stable voltage), DX12/DXR stress engine</td></tr>
       <tr><td>🎯 <strong>Optimize Point</strong> <span style="color:var(--gold);">NEW</span></td><td>Stage 2 — find the lowest voltage for a fixed frequency, fine-tuning after Stage 1</td></tr>
       <tr><td>📐 <strong>V-Step Compensation</strong> <span style="color:var(--gold);">NEW</span></td><td>Scanner automatically compensates V-Droop for more precise tests</td></tr>
@@ -618,6 +618,8 @@
 
     <h3>New in Cantor</h3>
     <table>
+      <tr><td><strong>🔄 Game DB Auto-Update (v0.96)</strong></td><td>The Game Browser now has a new "🔄 Updates" button. Click it to download the latest game database from GitHub. Optionally, enable automatic checks on each start in the same popup. Updates come from the central nv-uv-docs repository; your own games and overrides remain untouched.</td></tr>
+      <tr><td><strong>💡 Hover Tooltips (v0.96)</strong></td><td>In the Game Browser, the tier dropdowns now show the concrete values of each profile on hover (e.g. "Performance · 975 mV / 3000 MHz · PL 100%"). Also works for the filter dropdown at the top.</td></tr>
       <tr><td><strong>✨ MFG Tier (v0.95 hf3)</strong></td><td>Dedicated tier for Multi Frame Generation titles, all RTX 50-series cards. Full power limit at Eco voltage with a slightly reduced clock. Assigned per game via the game database.</td></tr>
       <tr><td><strong>NVAPI Direct Mode</strong></td><td>Scanner now writes frequency/voltage directly through the driver instead of going via AB profiles, ~50 ms instead of ~2 s per point. Drastically faster scans.</td></tr>
       <tr><td><strong>VRAM OC from Phase 1</strong></td><td>If you set a VRAM offset in the scanner, it's now active during the frequency search, not only during verification. Stability verdicts become much more realistic.</td></tr>
@@ -691,7 +693,7 @@
     <h3>Custom Profiles</h3>
     <p>Right-click a slot: "Add to UV-Pilot" creates a custom profile. Assignable per game in the game database.</p>
     <h3>Game Database</h3>
-    <p>Right-click UV-Pilot → 🎮 Game Database. 633 games + benchmarks, tier assignments adjustable, custom games addable.</p>
+    <p>Right-click UV-Pilot → 🎮 Game Database. 632 games + benchmarks, tier assignments adjustable, custom games addable.</p>
     <h3>Benchmarks (3DMark etc.)</h3>
     <p>3DMark is recognized but no UV tier is assigned — your active profile stays as-is. This lets you benchmark with your chosen UV without the Pilot switching profiles. A custom profile can optionally be assigned via the Game Browser.</p>
     <h3>Auto-Mini on Gaming</h3>
@@ -1004,6 +1006,9 @@
     <p>Latest NVIDIA driver installed? Start NV-UV after Windows desktop has loaded.</p>
     <h3>No MAHM connection (no voltage reading)</h3>
     <p>AB + RTSS must be running. Enable voltage monitoring in AB (see FAQ above). Restart AB.</p>
+    <h3>Voltage reading jumps or shows invalid values</h3>
+    <p>In AB under <strong>Settings → Monitoring → Active hardware monitoring graphs</strong>, disable the plug-ins <code>GPU.dll</code> and <code>HwInfo.dll</code>. These access the same GPU sensors in parallel that NV-UV uses via MAHM, which causes conflicting sensor reads. MAHM then only returns valid values sporadically (voltage jumps, shows 0 or unrealistic numbers).</p>
+    <div class="info">Thanks to Martin from the PCGH forum for this finding.</div>
     <h3>Apply does nothing / voltage unchanged</h3>
     <p>Enable <code>Unlock Voltage Control</code> in AB. Missing stock curve? Click 🔄 Recalibrate.</p>
     <h3>Game crashes after UV</h3>

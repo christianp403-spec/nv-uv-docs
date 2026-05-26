@@ -366,7 +366,7 @@
       <tr><td>🔍 <strong>Stock Curve Discovery</strong></td><td>Liest automatisch die echte VF-Kurve deiner spezifischen GPU aus AB</td></tr>
       <tr><td>🔬 <strong>OCS → UV</strong></td><td>AB OC Scanner Ergebnis importieren, chipspezifische UV-Kurve bauen</td></tr>
       <tr><td>🎮 <strong>Game Replay</strong></td><td>Automatischer Step-Down bei Crash, mit Lernschleife pro Spiel</td></tr>
-      <tr><td>✈️ <strong>UV-Pilot</strong></td><td>Erkennt 633 Spiele automatisch, schaltet zum optimalen Preset</td></tr>
+      <tr><td>✈️ <strong>UV-Pilot</strong></td><td>Erkennt 632 Spiele automatisch, schaltet zum optimalen Preset</td></tr>
       <tr><td>⚡ <strong>Voltage Step Scanner</strong></td><td>Stage 1 (höchste stabile Frequenz) + Stage 2 (niedrigste stabile Spannung), DX12/DXR Stress-Engine</td></tr>
       <tr><td>🎯 <strong>Optimize Point</strong> <span style="color:var(--gold);">NEU</span></td><td>Stage 2 — niedrigste Voltage zu einer festen Frequenz finden, Feinabstimmung nach Stage 1</td></tr>
       <tr><td>📐 <strong>V-Step Compensation</strong> <span style="color:var(--gold);">NEU</span></td><td>Scanner kompensiert V-Droop automatisch für präzisere Tests</td></tr>
@@ -639,6 +639,8 @@
 
     <h3>Neu in Cantor</h3>
     <table>
+      <tr><td><strong>🔄 Spiele-DB Auto-Update (v0.96)</strong></td><td>Im Spielebrowser gibt es einen neuen Button „🔄 Updates". Damit lädst du die neuste Spiele-Datenbank von GitHub. Optional kannst du im selben Popup aktivieren, dass NV-UV bei jedem Start automatisch prüft. Updates fließen aus dem zentralen nv-uv-docs Repository, deine eigenen Spiele und Überschreibungen bleiben unangetastet.</td></tr>
+      <tr><td><strong>💡 Hover-Tooltips (v0.96)</strong></td><td>Im Spielebrowser zeigen die Tier-Dropdowns jetzt beim Drüberfahren die konkreten Werte des jeweiligen Profils (z.B. „Performance · 975 mV / 3000 MHz · PL 100%"). Gilt auch fürs Filter-Dropdown oben.</td></tr>
       <tr><td><strong>✨ MFG-Tier (v0.95 hf3)</strong></td><td>Eigenes Tier für Multi Frame Generation Titel, alle RTX 50-Karten. Volles Power-Limit bei Eco-Spannung und leicht reduziertem Takt. Wird über die Spiele-Datenbank pro Spiel zugewiesen.</td></tr>
       <tr><td><strong>NVAPI Direct Mode</strong></td><td>Scanner schreibt Frequenz/Voltage jetzt direkt in den Treiber statt über AB-Profile, ~50 ms statt ~2 s pro Punkt. Drastisch schnellere Scans.</td></tr>
       <tr><td><strong>VRAM-OC ab Phase 1</strong></td><td>Wenn du im Scanner einen VRAM-Offset setzt, läuft der jetzt schon während der Frequenzsuche mit, nicht erst in der Verifikation. Stabilitäts-Verdicts werden dadurch realistischer.</td></tr>
@@ -723,7 +725,7 @@
     <h3>Custom-Profile</h3>
     <p>Neu: Eigene UV-Profile pro Spiel möglich. Rechtsklick auf einen Slot: "Zu UV-Pilot hinzufügen", erstellt ein Custom-Profil. In der Spiele-Datenbank zuweisbar.</p>
     <h3>Spiele-Datenbank</h3>
-    <p>Rechtsklick auf UV-Pilot → 🎮 Spiele-Datenbank öffnet den Game Browser mit 633 Spielen + Benchmarks. Tier-Zuordnungen anpassbar, eigene Spiele hinzufügbar.</p>
+    <p>Rechtsklick auf UV-Pilot → 🎮 Spiele-Datenbank öffnet den Game Browser mit 632 Spielen + Benchmarks. Tier-Zuordnungen anpassbar, eigene Spiele hinzufügbar.</p>
     <h3>Benchmarks (3DMark etc.)</h3>
     <p>3DMark wird erkannt, aber kein UV-Tier zugeordnet — das aktive Profil bleibt bestehen. So könnt ihr mit eurem gewählten UV benchen ohne dass der Pilot umschaltet. Über den Game Browser kann optional ein Custom Profile zugewiesen werden.</p>
     <h3>Auto-Mini beim Gaming</h3>
@@ -1066,6 +1068,10 @@
 
     <h3>MAHM nicht verbunden (Spannung zeigt nichts)</h3>
     <p>AB + RTSS müssen laufen. In AB: Voltage Monitoring aktivieren (siehe FAQ oben). AB neustarten.</p>
+
+    <h3>Spannungs-Auslese springt oder zeigt ungültige Werte</h3>
+    <p>In AB unter <strong>Einstellungen → Überwachung → Aktivierung von Hardware-Überwachungsdiagrammen</strong> die Plug-ins <code>GPU.dll</code> und <code>HwInfo.dll</code> deaktivieren. Diese greifen parallel auf die gleichen GPU-Sensoren zu wie NV-UV über MAHM, was zu konkurrierenden Sensor-Zugriffen führt. MAHM liefert dann nur noch sporadisch gültige Werte (Spannung springt, zeigt 0 oder unrealistische Zahlen).</p>
+    <div class="info">Danke an Martin aus dem PCGH-Forum für diesen Hinweis.</div>
 
     <h3>Apply tut nichts / Spannung ändert sich nicht</h3>
     <p>In AB: <code>Unlock Voltage Control</code> aktivieren. Stock-Kurve fehlt? 🔄 Recalibrate klicken.</p>
