@@ -1,1 +1,5356 @@
-
+{
+  "version": "2.3",
+  "source": "nvidia-drs-profiles + dlss-all-versions",
+  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 | NV-UV-Play: Max defaults curated to Performance",
+  "generated": "2026-05-26",
+  "games": [
+    {
+      "name": "007 First Light",
+      "process": "engine.exe",
+      "tier": "Performance",
+      "scaling": "glacier",
+      "confidence": "estimated",
+      "note": "DLSS 4.5 + Path Tracing, IO Interactive Glacier engine",
+      "aliases": [
+        "007firstlight.exe"
+      ]
+    },
+    {
+      "name": "2XKO",
+      "process": "lion-win64-shipping.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "ue5"
+    },
+    {
+      "name": "3DMark",
+      "process": "3dmark.exe",
+      "tier": "",
+      "confidence": "nvidia-verified",
+      "source": "benchmark",
+      "aliases": [
+        "3dmarkcmd.exe",
+        "3dmarklauncher.exe"
+      ]
+    },
+    {
+      "name": "7 Days to Die",
+      "process": "7daystodie.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "A Difficult Game About ROLLING - ReUpRise",
+      "process": "reuprise-win64-shipping.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "ue5"
+    },
+    {
+      "name": "A Hat in Time",
+      "process": "hatintimegame.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "light"
+    },
+    {
+      "name": "A Plague Tale: Innocence",
+      "process": "aplaguetaleinnocence_x64.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "A Plague Tale: Requiem",
+      "process": "aplaguetalerequiem_x64.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "A Quiet Place: The Road Ahead",
+      "process": "aquietplace.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "aquietplace-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "A Virus Named TOM",
+      "process": "avirusnamedtom.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "AaaaaAAaaaAAAaaAAAAaAAAAA!!! for the Awesome",
+      "process": "aaaa.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Abiotic Factor",
+      "process": "abioticfactor-win64-shipping.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "abioticfactor.exe",
+        "abioticfactor-win64-test.exe"
+      ],
+      "scaling": "ue5"
+    },
+    {
+      "name": "ABZU",
+      "process": "abzugame-win64-shipping.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "light"
+    },
+    {
+      "name": "ACE COMBAT 7: SKIES UNKNOWN",
+      "process": "ace7game.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "Across the Obelisk",
+      "process": "acrosstheobelisk.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "light"
+    },
+    {
+      "name": "Against the Storm",
+      "process": "against the storm.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "light"
+    },
+    {
+      "name": "Age of Empires II (2013)",
+      "process": "aoe2hd_s_launcher.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Age of Empires II: Definitive Edition",
+      "process": "aoe2de_s.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "cpu"
+    },
+    {
+      "name": "Age of Empires III: Definitive Edition",
+      "process": "aoe3de_s.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "cpu"
+    },
+    {
+      "name": "Age of Empires IV",
+      "process": "ageofempires4.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "reliccardinal.exe"
+      ]
+    },
+    {
+      "name": "Age of Wonders 4",
+      "process": "aow4.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Age of Wonders: Planetfall",
+      "process": "aowpf.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "cpu"
+    },
+    {
+      "name": "Aim Hero",
+      "process": "aimhero.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Akimbot",
+      "process": "akimbot-win64-shipping.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "akimbot.exe"
+      ],
+      "scaling": "ue5"
+    },
+    {
+      "name": "Alan Wake",
+      "process": "alanwake.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Alan Wake 2",
+      "process": "alanwake2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "game_rmdwin7_r.exe"
+      ]
+    },
+    {
+      "name": "Alan Wake Remastered",
+      "process": "game_f_x64.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "game_f_x64_eos.exe",
+        "game_x64.exe"
+      ]
+    },
+    {
+      "name": "Alan Wake's American Nightmare",
+      "process": "alan_wakes_american_nightmare.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Albion Online",
+      "process": "albion-online.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "light"
+    },
+    {
+      "name": "Alien Rogue Incursion VR",
+      "process": "midnight-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "ue5"
+    },
+    {
+      "name": "Alien: Isolation",
+      "process": "ai.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Aliens vs. Predator",
+      "process": "avp_dx11.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Aliens: Colonial Marines",
+      "process": "acm.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Aliens: Fireteam Elite",
+      "process": "endeavor.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Alone in the Dark",
+      "process": "alone.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "AMID EVIL",
+      "process": "amidevil.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "amidevil-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Amnesia: The Dark Descent",
+      "process": "amnesia.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Among Us",
+      "process": "among us.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Ancestors: The Humankind Odyssey",
+      "process": "ancestors-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "Anno 1404",
+      "process": "anno4.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Anno 1800",
+      "process": "anno7.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "anno1800.exe"
+      ]
+    },
+    {
+      "name": "Anomaly Zone",
+      "process": "anomalyzone.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Arc Raiders",
+      "process": "arcraiders.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "pioneergame.exe",
+        "pioneergame-d.exe",
+        "pioneergame-e.exe"
+      ]
+    },
+    {
+      "name": "ArmA 3",
+      "process": "arma3_x64.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "cpu"
+    },
+    {
+      "name": "Assassin's Creed IV Black Flag",
+      "process": "ac4bfsp.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Assassin's Creed Mirage",
+      "process": "acmirage.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "acmirage_plus.exe",
+        "scimitar_engine_win64_vs2019_dx12_fx.exe",
+        "scimitar_engine_win64_vs2019_dx12_mx.exe"
+      ]
+    },
+    {
+      "name": "Assassin's Creed Shadows",
+      "process": "acshadows.exe",
+      "tier": "Performance",
+      "scaling": "mixed",
+      "confidence": "estimated",
+      "note": "Anvil Next 2.0, ray tracing heavy"
+    },
+    {
+      "name": "Assassin's Creed Valhalla",
+      "process": "acvalhalla.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "acvalhalla_plus.exe",
+        "discoverytourvikingage.exe",
+        "discoverytourvikingage_plus.exe"
+      ]
+    },
+    {
+      "name": "Assetto Corsa EVO",
+      "process": "assettocorsaevo.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Assetto Corsa Rally",
+      "process": "acr.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "ASTRONEER",
+      "process": "astro-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "Atomfall",
+      "process": "atomfall.exe",
+      "tier": "Balanced",
+      "scaling": "mixed",
+      "confidence": "estimated",
+      "note": "Rebellion open world survival"
+    },
+    {
+      "name": "Atomic Heart",
+      "process": "atomicheart.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "atomicheart-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Atonement: Scourge of Time",
+      "process": "atonement.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Audiosurf",
+      "process": "questviewer.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Avowed",
+      "process": "avowed.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "avowed-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Back 4 Blood",
+      "process": "gobi.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "back4blood.exe",
+        "gobi-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Baldur's Gate 3",
+      "process": "bg3.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "bg3_dx11.exe",
+        "bg3_release.exe",
+        "bg3_shipping.exe"
+      ]
+    },
+    {
+      "name": "Baldur's Gate: Enhanced Edition",
+      "process": "bgee.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Banishers: Ghosts of New Eden",
+      "process": "banishers-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "Baphomets Fluch 5 - Der Sündenfall",
+      "process": "bs5.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Bastion",
+      "process": "bastion.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Batman: Arkham City GOTY",
+      "process": "batmanac.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Battlefield 2042",
+      "process": "bf.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "bf2042.exe",
+        "battlefieldgame.exe"
+      ]
+    },
+    {
+      "name": "Battlefield 6",
+      "process": "bf6.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Battlefield V",
+      "process": "bf5.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "bfv.exe",
+        "bfvob.exe",
+        "casablanca.exe"
+      ]
+    },
+    {
+      "name": "Beat Hazard",
+      "process": "beathazard.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Bellwright",
+      "process": "bellwrightgame-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "Ben and Ed - Blood Party",
+      "process": "benanded.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "BioShock",
+      "process": "bioshock.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "BioShock 2",
+      "process": "bioshock2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "BioShock 2 Remastered",
+      "process": "bioshock2hd.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "BioShock Infinite",
+      "process": "bioshockinfinite.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "BioShock Remastered",
+      "process": "bioshockhd.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Black Desert",
+      "process": "blackdesert32.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "blackdesert64.exe",
+        "blackdesert_launcher.exe"
+      ]
+    },
+    {
+      "name": "Black Mesa",
+      "process": "bms.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Black Myth: Wukong",
+      "process": "b1.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "b1-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Bleeding Edge",
+      "process": "mobladeclient-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "Blood Bowl: Legendary Edition",
+      "process": "bloodbowl.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Bloodstained: Ritual of the Night",
+      "process": "bloodstainedrotn-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "Bongo Cat",
+      "process": "bongocat.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Borderlands 2",
+      "process": "borderlands2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Borderlands 4",
+      "process": "borderlands4.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Borderlands: The Pre-Sequel",
+      "process": "borderlandspresequel.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Braid",
+      "process": "braid.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Breathedge",
+      "process": "breathedge-win64-shipping.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "Bright Memory: Infinite",
+      "process": "brightmemoryinfinite.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "brightmemoryinfinite-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Broforce",
+      "process": "broforce_beta.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Brütal Legend",
+      "process": "brutallegend.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Bud Spencer & Terence Hill - Slaps And Beans",
+      "process": "slapsandbeans.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Bulletstorm: Full Clip Edition",
+      "process": "stormgame-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "Bunch Of Heroes",
+      "process": "comcat.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "light"
+    },
+    {
+      "name": "Call of Duty: Black Ops",
+      "process": "blackops.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Call of Duty: Black Ops 6",
+      "process": "sp24-cod.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "cod24-cod.exe"
+      ]
+    },
+    {
+      "name": "Call of Duty: Black Ops 7",
+      "process": "cod25-cod.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "mp25-cod.exe"
+      ]
+    },
+    {
+      "name": "Call of Duty: Black Ops Cold War",
+      "process": "blackopscoldwar.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "blackopscoldwaresports.exe"
+      ]
+    },
+    {
+      "name": "Call of Duty: Ghosts",
+      "process": "iw6mp64_ship.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Call of Duty: Modern Warfare 2 (2022)",
+      "process": "sp22-cod.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "cod22-cod.exe"
+      ]
+    },
+    {
+      "name": "Call of Duty: Modern Warfare 2019",
+      "process": "modernwarfare.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "modernwarfare_cdl.exe",
+        "modern warfare launcher.exe"
+      ]
+    },
+    {
+      "name": "Call of Duty: Modern Warfare 3 (2023)",
+      "process": "sp23-cod.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "cod23-cod.exe"
+      ]
+    },
+    {
+      "name": "Call of Duty: Vanguard",
+      "process": "vanguard.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Call of Duty: WWII",
+      "process": "s2_mp64_ship.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "s2_sp64_ship.exe"
+      ]
+    },
+    {
+      "name": "Call of Juarez",
+      "process": "coj.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Call of Juarez Gunslinger",
+      "process": "cojgunslinger.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Call of Juarez: Bound in Blood",
+      "process": "cojbibgame_x86.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Carmageddon: Max Damage",
+      "process": "carmagedon_md.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Carmageddon: Reincarnation",
+      "process": "carmageddonreincarnation.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Castlevania: Lords of Shadow - Ultimate Edition",
+      "process": "castlevanialosu.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Cave Story+",
+      "process": "cavestory+.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Chernobylite",
+      "process": "chernobylgame.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "chernobylgame-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Chernobylite Complete Edition",
+      "process": "chernobylite.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Chivalry 2",
+      "process": "chivalry2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "chivalry2-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Chivalry: Medieval Warfare",
+      "process": "cmw.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Chorus",
+      "process": "chorus.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "spaceprototype.exe",
+        "chorus-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Chrome",
+      "process": "chrome.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Cinemaware Anthology: 1986-1991",
+      "process": "cinemaware.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Cities XL Platinum",
+      "process": "citiesxl2012.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Cities: Skylines II",
+      "process": "cities2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Civilization VII",
+      "process": "civ7_win64_dx12_finalrelease.exe",
+      "tier": "Balanced",
+      "scaling": "mixed",
+      "confidence": "verified",
+      "note": "Strategy, DX12/Vulkan, moderate GPU load",
+      "aliases": [
+        "civ7_win64_vulkan_finalrelease.exe",
+        "civ7_win64_dx12_release.exe",
+        "civ7_win64_vulkan_release.exe"
+      ]
+    },
+    {
+      "name": "Clair Obscur: Expedition 33",
+      "process": "expedition33_steam.exe",
+      "tier": "Performance",
+      "scaling": "ue5",
+      "confidence": "verified",
+      "note": "JRPG UE5, DLSS support",
+      "aliases": [
+        "sandfall-win64-shipping.exe",
+        "sandfalleos-win64-shipping.exe",
+        "expedition33_egs.exe"
+      ]
+    },
+    {
+      "name": "Code Vein",
+      "process": "codevein-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "Cogs",
+      "process": "cogs.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Command & Conquer Remastered Collection",
+      "process": "cncremasteredited.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Company of Heroes 2",
+      "process": "reliccoh2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Company of Heroes 3",
+      "process": "reliccoh3.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "bssndrpt64.exe"
+      ]
+    },
+    {
+      "name": "Conan Exiles Enhanced",
+      "process": "conansandbox-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "gpu-heavy",
+      "aliases": [
+        "conansandbox.exe"
+      ]
+    },
+    {
+      "name": "Confrontation",
+      "process": "confrontation.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Contraband Police",
+      "process": "contrabandpolice.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Control",
+      "process": "control.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "control_dx11.exe",
+        "control_dx12.exe",
+        "game_rmdwin10_r.exe"
+      ]
+    },
+    {
+      "name": "Counter-Strike 2",
+      "process": "cs2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Craftopia",
+      "process": "craftopia.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Crayon Physics Deluxe",
+      "process": "crayonphysics.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Crazy Taxi",
+      "process": "crazytaxi.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Crime Boss: Rockay City",
+      "process": "crimeboss.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Crimson Desert",
+      "process": "crimsondesert.exe",
+      "tier": "Performance",
+      "scaling": "ue5",
+      "confidence": "verified",
+      "note": "DLSS 4 MFG + Ray Reconstruction, UE5 open world"
+    },
+    {
+      "name": "Crysis",
+      "process": "crysis.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Crysis 2 Remastered",
+      "process": "crysis2remastered.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Crysis 3 Remastered",
+      "process": "crysis3remastered.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Crysis Remastered",
+      "process": "crysisremastered.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Crysis Warhead",
+      "process": "crysis64.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Cthulhu: The Cosmic Abyss",
+      "process": "cthulhu-win64-shipping.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "cthulhu.exe",
+        "cosmicabyss-win64-shipping.exe",
+        "cosmicabyss.exe",
+        "thecosmicabyss-win64-shipping.exe"
+      ],
+      "scaling": "ue5"
+    },
+    {
+      "name": "Cyberpunk 2077",
+      "process": "cyberpunk2077.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "DAEMON X MACHINA",
+      "process": "deathangel-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "Dakar Desert Rally",
+      "process": "dakar2game.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "dakar2game-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Dark Messiah of Might & Magic",
+      "process": "mm.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Dark Sector",
+      "process": "darksector.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Darwinia",
+      "process": "darwinia.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "DayZ",
+      "process": "dayz_x64.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Dead Island",
+      "process": "deadisland.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Dead Island Definitive Edition",
+      "process": "deadislandgame.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Dead Rising 2: Off the Record",
+      "process": "deadrising2otr.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Dead Rising 3",
+      "process": "deadrising3.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Dead Rising 4",
+      "process": "deadrising4.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Dead Rising Deluxe Remaster",
+      "process": "deadrisingdeluxeremaster.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Dead Space (Remake)",
+      "process": "dead space.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Deadlight",
+      "process": "deadlight.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Dear Esther",
+      "process": "dearesther.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Dear Esther: Landmark Edition",
+      "process": "dearesther_le.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Death Stranding",
+      "process": "ds.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "deathstranding.exe"
+      ]
+    },
+    {
+      "name": "DEATH STRANDING 2: ON THE BEACH",
+      "process": "ds2.exe",
+      "tier": "Performance",
+      "scaling": "fixed",
+      "confidence": "verified",
+      "note": "DLSS 4 MFG + Reflex, Decima engine"
+    },
+    {
+      "name": "Deathloop",
+      "process": "deathloop.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "deathloop_retail.exe"
+      ]
+    },
+    {
+      "name": "DEFCON",
+      "process": "defcon.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Deliver Us Mars",
+      "process": "deliverusmars.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "deliverusmars-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Delta Force",
+      "process": "deltaforceclient-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "Deponia",
+      "process": "deponia.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Destiny 2",
+      "process": "destiny2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Detroit: Become Human",
+      "process": "detroitbecomehuman.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Deus Ex: Human Revolution - Director's Cut",
+      "process": "dxhr.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Diablo IV",
+      "process": "diablo iv.exe",
+      "tier": "Balanced",
+      "confidence": "community-verified",
+      "source": "manual",
+      "aliases": [
+        "fenris.exe"
+      ]
+    },
+    {
+      "name": "Directive 8020",
+      "process": "directive8020-win64-shipping.exe",
+      "tier": "Performance",
+      "scaling": "ue5",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "DLSS 4 Multi Frame Generation + Path Tracing, UE5",
+      "aliases": [
+        "directive8020.exe"
+      ]
+    },
+    {
+      "name": "DiRT 3",
+      "process": "dirt3.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "DiRT 3 Complete Edition",
+      "process": "dirt3_game.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "DiRT Showdown",
+      "process": "showdown.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Disco Elysium",
+      "process": "disco.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Divinity II: Developer's Cut",
+      "process": "divinity2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Divinity: Original Sin Enhanced Edition",
+      "process": "eos.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Don't Starve Together",
+      "process": "dontstarvetogether.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "light"
+    },
+    {
+      "name": "DOOM (2016)",
+      "process": "doommain64vk.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "DOOM + DOOM II",
+      "process": "doom2.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "DOOM 3",
+      "process": "doom3.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "DOOM 3 BFG Edition",
+      "process": "doom3bfg.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "DOOM 64",
+      "process": "doom64_x64.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "light"
+    },
+    {
+      "name": "Doom Eternal",
+      "process": "ghostx64vk.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "doometernalx64vk.exe"
+      ]
+    },
+    {
+      "name": "DOOM: The Dark Ages",
+      "process": "doomthedarkages.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "titanx64vk.exe"
+      ]
+    },
+    {
+      "name": "Dorfromantik",
+      "process": "dorfromantik.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Dota 2",
+      "process": "dota.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "dota2.exe"
+      ]
+    },
+    {
+      "name": "Dragon Age: The Veilguard",
+      "process": "dragon age the veilguard.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "morrison.main_win64_final.exe",
+        "dragon age the veilguard ea.exe"
+      ]
+    },
+    {
+      "name": "Dragon's Dogma 2",
+      "process": "dd2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "dd2_denuvo.exe"
+      ]
+    },
+    {
+      "name": "Draw a Stickman: EPIC",
+      "process": "drawastickman.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Draw a Stickman: EPIC 2",
+      "process": "drawastickman2.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Draw Your Game",
+      "process": "drawyourgame.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "DUCKSIDE",
+      "process": "ducksideclient.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "ducksideclient-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Duke Nukem 3D: Megaton Edition",
+      "process": "duke3d.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Dune: Awakening",
+      "process": "dunesandbox.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "dunesandbox-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Dungeon Siege III",
+      "process": "dungeon siege iii.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Dungeonborne",
+      "process": "dungeonborne.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Dungeons of Dredmor",
+      "process": "dungeonsofdredmor.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Dying Light",
+      "process": "dyinglightgame.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Dying Light 2 Stay Human",
+      "process": "dyinglightgame_x64_rd.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "dyinglightgame_x64_rwp.exe",
+        "dyinglightgame_x64_rwdi.exe"
+      ]
+    },
+    {
+      "name": "Dying Light: The Beast",
+      "process": "dyinglightgame_thebeast_x64_rd.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "dyinglightgame_thebeast_x64_rwm.exe",
+        "dyinglightgame_thebeast_x64_rwp.exe",
+        "dyinglightgame_thebeast_x64_rwdi.exe"
+      ]
+    },
+    {
+      "name": "DYNASTY WARRIORS: ORIGINS",
+      "process": "dworigins.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "EA SPORTS F1 25",
+      "process": "f1_25.exe",
+      "tier": "Performance",
+      "scaling": "gpu",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "DLSS 4 + Frame Generation + Path Tracing, Codemasters EGO Engine",
+      "aliases": [
+        "f1_2025_beta_vs2022_win64_steam_debugopt_dx12_clang_unity.exe",
+        "f1_2025_beta_vs2022_win64_steam_profile_dx12_clang_unity.exe",
+        "f1_2025_vs2022_win64_steam_profile_dx12_clang_unity.exe",
+        "f1_2025_beta_vs2022_win64_steam_release_dx12_clang_unity.exe"
+      ]
+    },
+    {
+      "name": "Eets",
+      "process": "eets.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Eets Munchies",
+      "process": "eetsmunchies.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Elden Ring",
+      "process": "eldenring.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "ELDEN RING NIGHTREIGN",
+      "process": "nightreign.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Electronic Super Joy",
+      "process": "electronicsuperjoy.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "ELEX",
+      "process": "elex.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Empire of the Ants",
+      "process": "empire.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "empire-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Enshrouded",
+      "process": "enshrouded.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Escape From Tarkov",
+      "process": "escapefromtarkov.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Eufloria",
+      "process": "eufloria.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Eufloria HD",
+      "process": "eufloriahd.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Euro Truck Simulator 2",
+      "process": "eurotrucks2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "EVERSPACE 2",
+      "process": "everspace2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "es2-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Evolve Stage 2",
+      "process": "evolve.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "F.E.A.R.",
+      "process": "fear.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "F.E.A.R. 2: Project Origin",
+      "process": "fear2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "F.E.A.R. 3",
+      "process": "f.e.a.r.3.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "F.E.A.R.: Extraction Point",
+      "process": "fearxp.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "F.E.A.R.: Perseus Mandate",
+      "process": "fearpm.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "F.I.S.T.: Forged In Shadow Torch",
+      "process": "zinganggame.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "zinganggame-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "F1 2022",
+      "process": "f1_22.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "f1_2022_vs2019_win64_steam_release_dx12_unity.exe"
+      ]
+    },
+    {
+      "name": "F1 23",
+      "process": "f1_23.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "f1_2023_vs2022_win64_steam_release_dx12_clang_unity.exe"
+      ]
+    },
+    {
+      "name": "F1 24",
+      "process": "f1_24.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "f1_2024_vs2022_win64_steam_release_dx12_clang_unity.exe"
+      ]
+    },
+    {
+      "name": "F1 25",
+      "process": "f1_25.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Fallout",
+      "process": "falloutw.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Fallout 2",
+      "process": "fallout2.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Fallout 4",
+      "process": "fallout4.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Far Cry",
+      "process": "farcry.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Far Cry 2",
+      "process": "farcry2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Far Cry 3",
+      "process": "farcry3.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Far Cry 6",
+      "process": "farcry6.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "fclaunch_p64d3d12.exe",
+        "fclaunch_r64d3d12.exe",
+        "fclaunch_rt64d3d12.exe"
+      ]
+    },
+    {
+      "name": "FBC: Firebreak",
+      "process": "fbcfirebreak.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "FEZ",
+      "process": "fez.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "FINAL FANTASY VII REBIRTH",
+      "process": "ff7rebirth_.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "FINAL FANTASY XIV Online",
+      "process": "ffxiv_dx11.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Final Fantasy XV Windows Edition",
+      "process": "ffxv.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "ffxv_o.exe",
+        "ffxv_s.exe",
+        "ffxv_u.exe"
+      ]
+    },
+    {
+      "name": "Final Fantasy XVI",
+      "process": "ffxvi.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Fingered",
+      "process": "fingered.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Five Nights at Freddy's: Security Breach",
+      "process": "fnaf9.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "fnaf9-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Flintlock: The Siege of Dawn",
+      "process": "saltpeter.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "saltpeter-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Foreign Legion: Buckets of Blood",
+      "process": "foreignlegion.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Fortnite",
+      "process": "fortniteclient.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "fortnitelauncher.exe",
+        "fortniteclient-win64-shipping.exe",
+        "fortniteclient-win64-shipping_be.exe"
+      ]
+    },
+    {
+      "name": "Forza Horizon 5",
+      "process": "forzahorizon5.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "forza_gaming.desktop.x64_release.exe",
+        "forza_gaming.desktop.x64_release_noagility.exe"
+      ]
+    },
+    {
+      "name": "Forza Horizon 6",
+      "process": "forzahorizon6.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "DLSS 4 Multi Frame Generation"
+    },
+    {
+      "name": "Forza Motorsport",
+      "process": "forza_gaming.desktop.x64_release_final.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "forza_steamworks_release_final.exe"
+      ]
+    },
+    {
+      "name": "Fractal: Make Blooms Not War",
+      "process": "fractal.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Frostpunk 2",
+      "process": "frostpunk2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "frostpunk2-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "FTL: Faster Than Light",
+      "process": "ftlgame.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Funko Fusion",
+      "process": "funkofusion.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "funkofusion-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Game Dev Tycoon",
+      "process": "gamedevtycoon.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Game of Thrones",
+      "process": "shippingpc-agotgame.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Gemini Rue",
+      "process": "geminirue.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Genshin Impact",
+      "process": "genshinimpact.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Geometry Wars: Retro Evolved",
+      "process": "geometrywars.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Ghost of Tsushima: Directors Cut",
+      "process": "ghostoftsushima.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Ghostbusters: The Video Game",
+      "process": "ghost_w32.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Ghostrunner",
+      "process": "ghostrunner.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "ghostrunner-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Ghostrunner 2",
+      "process": "ghostrunner2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "ghostrunner2-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "GhostWire: Tokyo",
+      "process": "gwt.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "snowfall.exe"
+      ]
+    },
+    {
+      "name": "God of War",
+      "process": "gow.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "God of War Ragnarok",
+      "process": "gowr.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Golf It!",
+      "process": "golfit.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Gone Home",
+      "process": "gonehome.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Gotham Knights",
+      "process": "mercury.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "gothamknights.exe",
+        "mercurypredenuvo.exe",
+        "mercury-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Gothic 1 Classic",
+      "process": "gothic.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Gothic 3",
+      "process": "gothic3.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Gothic II: Gold Classic",
+      "process": "gothic2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Gothic Playable Teaser",
+      "process": "gothicpt.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Grand Theft Auto IV: The Complete Edition",
+      "process": "gtaiv.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "GRAV",
+      "process": "colonygame.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Gravel",
+      "process": "gravel-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "Gray Zone Warfare",
+      "process": "gzwclient.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "gzwclienteac.exe",
+        "gzwclientsteam.exe",
+        "gzwclient-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Grim Dawn",
+      "process": "grim dawn.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "GROUND BRANCH",
+      "process": "groundbranch.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "groundbranch-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Hacker Evolution",
+      "process": "hackerevolution.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Half-Life 2",
+      "process": "hl2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Half-Life 2 RTX",
+      "process": "hl2rtx.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Half-Life: Source",
+      "process": "hl1.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Halo Infinite",
+      "process": "game_release.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "haloinfinite.exe"
+      ]
+    },
+    {
+      "name": "Hard Reset",
+      "process": "hardreset.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Hard Reset Redux",
+      "process": "hardresetredux.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Hellbound",
+      "process": "hellbound.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "HELLDIVERS 2",
+      "process": "helldivers2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Heroes & Generals",
+      "process": "hng.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Hitman 2: Silent Assassin",
+      "process": "hitman2.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Hitman 3",
+      "process": "hitman3.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Hitman: Absolution",
+      "process": "hma.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Hitman: Blood Money",
+      "process": "hitmanbloodmoney.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Hitman: Codename 47",
+      "process": "hitman.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Hogwarts Legacy",
+      "process": "hogwartslegacy.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Homefront: The Revolution",
+      "process": "homefront2_release.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Honkai: Star Rail",
+      "process": "starrail.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Horizon Forbidden West Complete Edition",
+      "process": "horizonforbiddenwest.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "nip.wingamesteam.releasesym.dx12.exe",
+        "nip.wingamesteam.releasesymrtdbg.dx12.exe"
+      ]
+    },
+    {
+      "name": "Horizon Zero Dawn Complete Edition",
+      "process": "horizonzerodawn.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Horizon Zero Dawn Remastered",
+      "process": "horizonzerodawnremastered.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "nip.wingamesteam.releasesym.exe",
+        "nip.wingamesteam.submission.exe",
+        "nip.wingamestream.submission.exe"
+      ]
+    },
+    {
+      "name": "How to Survive",
+      "process": "howtosurvive.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Humankind",
+      "process": "humankind.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Hyper Light Breaker",
+      "process": "hyperlightbreaker.exe",
+      "tier": "Balanced",
+      "scaling": "mixed",
+      "confidence": "estimated",
+      "note": "Roguelike action, moderate load"
+    },
+    {
+      "name": "ICARUS",
+      "process": "icarus.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "icarus-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Immortals of Aveum",
+      "process": "immortalsofaveum.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "immortalsofaveum-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Incitement 3",
+      "process": "incitement3.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Indiana Jones And The Great Circle",
+      "process": "thegreatcircle.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "platinum.exe"
+      ]
+    },
+    {
+      "name": "INDUSTRIA",
+      "process": "industria.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "INDUSTRIA 2",
+      "process": "industria2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "industria2-win64-shipping.exe"
+      ],
+      "scaling": "ue5"
+    },
+    {
+      "name": "Insurgency",
+      "process": "insurgency.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Ion Fury",
+      "process": "fury.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Jet Set Radio",
+      "process": "jetsetradio.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Joe Danger 2: The Movie",
+      "process": "joedanger2.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Jurassic World Evolution 2",
+      "process": "jwe2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "galileo.exe",
+        "jwe2.release.exe",
+        "galileo.final.exe"
+      ]
+    },
+    {
+      "name": "Just Cause",
+      "process": "justcause.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Just Cause 2",
+      "process": "justcause2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Kane & Lynch 2: Dog Days",
+      "process": "kl2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Kane & Lynch: Dead Men",
+      "process": "kaneandlynch.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Ken Follett's The Pillars of the Earth",
+      "process": "pillarsoftheearth.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Kena: Bridge of Spirits",
+      "process": "kena.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "kena-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Killing Floor 2",
+      "process": "kfgame.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Kingdom Come: Deliverance II",
+      "process": "kingdomcome.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Kingdoms of Amalur: Reckoning",
+      "process": "reckoning.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Kings of Kung Fu",
+      "process": "kingsofkungfu.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "L.A. Noire",
+      "process": "lanoire.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Lara Croft and the Temple of Osiris",
+      "process": "lc2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "light"
+    },
+    {
+      "name": "Layers of Fear",
+      "process": "layersoffear.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "layers of fear.exe",
+        "layersoffear-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Left 4 Dead 2",
+      "process": "left4dead2.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Legendary",
+      "process": "legendary.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "LEGO Batman: Legacy of the Dark Knight",
+      "process": "legobatmanlotdk.exe",
+      "tier": "Balanced",
+      "scaling": "mixed",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "DLSS Super Resolution + Frame Generation, TT Games LEGO engine, low-to-medium GPU workload",
+      "aliases": [
+        "legobatmanlotdk-win64-test.exe"
+      ]
+    },
+    {
+      "name": "LEGO Star Wars: The Complete Saga",
+      "process": "legostarwarssaga.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Lies of P",
+      "process": "lop.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "lop-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Life is Strange 2",
+      "process": "lifeisstrange2.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Lightfish",
+      "process": "lightfish.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Like a Dragon: Pirate Yakuza in Hawaii",
+      "process": "likeadragonpirates.exe",
+      "tier": "Performance",
+      "scaling": "mixed",
+      "confidence": "verified",
+      "note": "Dragon Engine, DLSS support"
+    },
+    {
+      "name": "LIMBO",
+      "process": "limbo.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Lost Ark",
+      "process": "lostark.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Lost Planet: Extreme Condition",
+      "process": "lostplanet.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Mad Max",
+      "process": "madmax.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Mafia II (Classic)",
+      "process": "mafia2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Mafia II: Definitive Edition",
+      "process": "mafia ii definitive edition.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Mafia: Definitive Edition",
+      "process": "mafiadefinitiveedition.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Mafia: The Old Country",
+      "process": "mafiatheoldcountry.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Manor Lords",
+      "process": "manorlords.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "manorlords-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Marauders",
+      "process": "raidgame-win64-shipping.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Mark of the Ninja",
+      "process": "markoftheninja.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Marvel Rivals",
+      "process": "marvel.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "marvel-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Marvel's Avengers",
+      "process": "av1.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "avengers.exe",
+        "av1_x64_gm.exe",
+        "av1_x64_final.exe"
+      ]
+    },
+    {
+      "name": "Marvel's Guardians of the Galaxy",
+      "process": "gotg.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Marvel's Midnight Suns",
+      "process": "midnightsuns.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "midnightsuns-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Marvel's Spider-Man Remastered",
+      "process": "spider-man.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "i20_steam_final.exe",
+        "i20_steam_finaldm.exe",
+        "i20_steam_release.exe"
+      ]
+    },
+    {
+      "name": "Marvel's Spider-Man: Miles Morales",
+      "process": "milesmorales.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "i31_steam_finaldm.exe",
+        "i31_steam_release.exe"
+      ]
+    },
+    {
+      "name": "Marvels Spider-Man 2",
+      "process": "spider-man2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "i30_steam_finaldm.exe",
+        "i30_steam_release.exe"
+      ]
+    },
+    {
+      "name": "Max Payne 3",
+      "process": "maxpayne3.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Mecha Break",
+      "process": "mechabreak.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Mechwarrior 5: Clans",
+      "process": "mechwarrior.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "mechwarrior-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Medieval Dynasty",
+      "process": "medieval_dynasty.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "METAL SLUG",
+      "process": "mslug.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Metal: Hellsinger",
+      "process": "metal.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Metro 2033",
+      "process": "metro2033.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Metro Exodus Enhanced Edition",
+      "process": "metroexodus.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Metro: Last Light Complete Edition",
+      "process": "metroll.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Microsoft Flight Simulator",
+      "process": "flightsimulator.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Microsoft Flight Simulator 2024",
+      "process": "flightsimulator2024.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "kittyhawkx64_steam_pcr.exe",
+        "sunrisex64_steam_pcr.exe"
+      ]
+    },
+    {
+      "name": "Middle-earth: Shadow of Mordor",
+      "process": "shadowofmordor.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Minecraft RTX",
+      "process": "minecraft.windows.exe",
+      "tier": "Balanced",
+      "confidence": "community-verified",
+      "source": "manual"
+    },
+    {
+      "name": "Mirror's Edge",
+      "process": "mirrorsedge.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "MISSING: An Interactive Thriller - Episode One",
+      "process": "missing.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "MONGIL: STAR DIVE",
+      "process": "mongil.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "mongil-win64-shipping.exe",
+        "stardive.exe",
+        "stardive-win64-shipping.exe",
+        "mongilstardive.exe"
+      ],
+      "scaling": "ue5"
+    },
+    {
+      "name": "Monster Hunter Rise",
+      "process": "monsterhunterrise.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Monster Hunter Wilds",
+      "process": "monsterhunterwilds.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Mortal Kombat 1",
+      "process": "mk12.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "mk12-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Mortal Kombat 11",
+      "process": "mk11.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "mk11_dx12.exe",
+        "mk11game-retail.exe",
+        "mk11game-retaildx12.exe"
+      ]
+    },
+    {
+      "name": "Mortal Kombat Kollection",
+      "process": "mka.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Mortal Kombat Komplete Edition",
+      "process": "mkke.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Mortal Kombat X",
+      "process": "mk10.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Mortal Online 2",
+      "process": "mortalonline2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "mortalonline2-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Mortal Shell",
+      "process": "mortalshell.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "dungeonhaven.exe",
+        "dungeonhaven-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "MotoGP 19",
+      "process": "motogp19-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "Mount & Blade II: Bannerlord",
+      "process": "bannerlord.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "bannerlord_be.exe",
+        "managedstarter.exe",
+        "bannerlord.native.exe"
+      ]
+    },
+    {
+      "name": "MudRunner",
+      "process": "spintires.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "MURDERED: SOUL SUSPECT",
+      "process": "murdered.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "My Time At Sandrock",
+      "process": "sandrock.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "NARAKA: BLADEPOINT",
+      "process": "narakabladepoint.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Need for Speed Unbound",
+      "process": "needforspeedunbound.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "nfs22.main_win64_final.exe",
+        "nfs22.main_win64_retail.exe",
+        "nfs22.main_win64_release.exe"
+      ]
+    },
+    {
+      "name": "Need For Speed: Heat",
+      "process": "needforspeedheat.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Need for Speed: Hot Pursuit",
+      "process": "nfs11.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Nexuiz",
+      "process": "nexuiz.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "NieR Replicant",
+      "process": "nier replicant ver.1.22474487139.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "NieR:Automata",
+      "process": "nierautomata.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Nightingale",
+      "process": "nwx.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "nwxclient.exe",
+        "nwx-win64-shipping.exe",
+        "nwxclient-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "No Man's Sky",
+      "process": "nms.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "No Rest for the Wicked",
+      "process": "norestforthewicked.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "NotTheNameWeWanted",
+      "process": "notthenamewewanted.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "NTE: Neverness to Everness",
+      "process": "nte.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "nte-win64-shipping.exe",
+        "ntegame.exe",
+        "nteclient.exe",
+        "neverness.exe",
+        "neverness-win64-shipping.exe"
+      ],
+      "scaling": "ue5"
+    },
+    {
+      "name": "Once Human",
+      "process": "once_human.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Orcs Must Die! Unchained",
+      "process": "orcsmustidie.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Outcast 1.1",
+      "process": "outcast.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Outriders",
+      "process": "madness.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "outriders.exe",
+        "eac_outriders.exe",
+        "madness-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Overload Playable Teaser",
+      "process": "overload.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Overwatch 2",
+      "process": "overwatch.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "overwatch launcher.exe"
+      ]
+    },
+    {
+      "name": "Pacific Drive",
+      "process": "pendriverpro.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "pendriverpro-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Palworld",
+      "process": "palworld.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "palworld-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Papers, Please",
+      "process": "papersplease.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Party Animals",
+      "process": "partyanimals.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Path of Exile 2",
+      "process": "pathofexile.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "pathofexile_kg.exe",
+        "pathofexileegs.exe",
+        "pathofexile_x64.exe"
+      ]
+    },
+    {
+      "name": "PAYDAY 3",
+      "process": "payday3.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "payday3client.exe",
+        "payday3client-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "PC Building Simulator",
+      "process": "pcbs.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Phantasmagoria",
+      "process": "phantasmagoria.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Phantasmagoria 2",
+      "process": "phantasmagoria2.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Pinball Arcade",
+      "process": "pinballarcade.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Pinball FX2",
+      "process": "pinballfx2.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "PixelJunk Eden",
+      "process": "pixeljunkeden.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Plain Sight",
+      "process": "plainsight.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Planet Coaster 2",
+      "process": "planetcoaster2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "PlanetSide 2",
+      "process": "planetside2_x64.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Poker Night 2",
+      "process": "pokernight2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Police Quest Collection",
+      "process": "scidhuv.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Portal",
+      "process": "portal.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Portal with RTX",
+      "process": "portalrtx.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "POSTAL 2",
+      "process": "postal2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Postal 3",
+      "process": "p3.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "light"
+    },
+    {
+      "name": "POSTAL 4: No Regerts",
+      "process": "postal4.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "PRAGMATA",
+      "process": "pragmata.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "pragmata-win64-shipping.exe"
+      ],
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Project Borealis: Prologue",
+      "process": "projectborealis.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Project CARS",
+      "process": "pcars.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Project CARS 2",
+      "process": "pcars2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Psychonauts",
+      "process": "psychonauts.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "PUBG: BATTLEGROUNDS",
+      "process": "tslgame.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Quake (2021)",
+      "process": "quake_x64_steam.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Quake Champions",
+      "process": "quakechampions.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Quake II",
+      "process": "quake2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Quake II RTX",
+      "process": "q2rtx.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Quake III Arena",
+      "process": "quake3.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Quake Live",
+      "process": "quakelive_steam.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Quake Mission Pack 1: Scourge of Armagon",
+      "process": "quake.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "R.U.S.E",
+      "process": "ruse.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "RAGE",
+      "process": "rage64.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Ratchet & Clank: Rift Apart",
+      "process": "riftapart.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "i29_steam_finaldm.exe",
+        "i29_steam_release.exe"
+      ]
+    },
+    {
+      "name": "RAW - Realms of Ancient War",
+      "process": "raw.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Ready Or Not",
+      "process": "readyornot.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "readyornot-win64-shipping.exe",
+        "readyornotsteam-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Real World Racing",
+      "process": "realworldracing.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Red Dead Redemption 2",
+      "process": "rdr2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "red2.exe"
+      ]
+    },
+    {
+      "name": "Red Faction Guerrilla Re-Mars-tered",
+      "process": "rfg.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Red Faction: Guerrilla Steam Edition",
+      "process": "rfgsteam.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "REMATCH",
+      "process": "runtimeclient-win64-shipping.exe",
+      "tier": "Performance",
+      "scaling": "ue5",
+      "confidence": "verified",
+      "note": "DLSS 4, Sloclap fighting game",
+      "aliases": [
+        "runtimeclient.exe"
+      ]
+    },
+    {
+      "name": "Remnant 2",
+      "process": "remnant2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "remnant2-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Resident Evil",
+      "process": "bhd.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Resident Evil 2 / Biohazard 2",
+      "process": "re2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Resident Evil 3 Remake",
+      "process": "re3.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "re3_online.exe",
+        "re3_offline.exe"
+      ]
+    },
+    {
+      "name": "Resident Evil 4 / Biohazard 4",
+      "process": "re4.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "bio4.exe"
+      ]
+    },
+    {
+      "name": "Resident Evil 7",
+      "process": "re7.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Resident Evil Re:Verse",
+      "process": "rerev.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Resident Evil Requiem",
+      "process": "re9.exe",
+      "tier": "Performance",
+      "scaling": "mixed",
+      "confidence": "verified",
+      "note": "DLSS 4, RE Engine path tracing"
+    },
+    {
+      "name": "RESIDENT EVIL RESISTANCE",
+      "process": "reresistance.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Resident Evil: Village/Biohazard Village",
+      "process": "re8.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Returnal",
+      "process": "returnal.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "returnal-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Revenge of the Titans",
+      "process": "revengeofthetitans.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Rise of the Tomb Raider",
+      "process": "tr2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "rottr.exe",
+        "rottr_uap.exe",
+        "rottr_orig.exe"
+      ]
+    },
+    {
+      "name": "Rise of the Triad",
+      "process": "rott.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Risen 2 - Dark Waters",
+      "process": "risen2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Risen 3 - Titan Lords",
+      "process": "risen3.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Rising Storm 2: Vietnam",
+      "process": "risingstorm2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "RoboCop: Rogue City",
+      "process": "robocop.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "robocop-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Rock of Ages",
+      "process": "rockofages.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Rocket League",
+      "process": "rocketleague.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Rocketbirds: Hardboiled Chicken",
+      "process": "rocketbirds.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "RUST",
+      "process": "rust.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "rustclient.exe"
+      ]
+    },
+    {
+      "name": "Ryse: Son of Rome",
+      "process": "ryse.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "process": "stalker2-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "stalker2.exe"
+      ]
+    },
+    {
+      "name": "Sacrifice",
+      "process": "sacrifice.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Saints Row IV",
+      "process": "saintsrowiv.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Satisfactory",
+      "process": "factorygame.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "factorygameegs.exe",
+        "factorygamesteam.exe",
+        "factorygame-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Scorn",
+      "process": "scorn.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "scorn-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "SCUM",
+      "process": "scum.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "SEGA Bass Fishing",
+      "process": "bassfishing.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "light"
+    },
+    {
+      "name": "SEGA Mega Drive & Genesis Classics",
+      "process": "segaclassics.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Sekiro: Shadows Die Twice",
+      "process": "sekiro.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Senua's Saga: Hellblade II",
+      "process": "hellblade2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "hellblade2-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Serious Sam 3: BFE",
+      "process": "sam3.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Serious Sam HD: The First Encounter",
+      "process": "samhd.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "light"
+    },
+    {
+      "name": "Serious Sam HD: The Second Encounter",
+      "process": "samhd_tse.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Serious Sam: The Random Encounter",
+      "process": "ssamre.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Shadow of the Tomb Raider",
+      "process": "tr11.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "sottr.exe",
+        "tr11_final.exe",
+        " tr11_final.exe"
+      ]
+    },
+    {
+      "name": "Shadow Warrior",
+      "process": "sw.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Shadow Warrior 2",
+      "process": "sw2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Shadow Warrior 3",
+      "process": "sw3.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Shadowrun Returns",
+      "process": "shadowrunreturns.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Shadowrun: Dragonfall - Director's Cut",
+      "process": "shadowrundragonfall.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Shatterline",
+      "process": "shatterline.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Shiftlings",
+      "process": "shiftlings.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Sid Meier's Civilization V",
+      "process": "civilizationv_dx11.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Sifu",
+      "process": "sifu.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "sifu-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "SILENT HILL 2",
+      "process": "shproto.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "shproto-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "SimCity 4 Deluxe",
+      "process": "simcity4.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Sins of a Solar Empire: Rebellion",
+      "process": "sins of a solar empire rebellion.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Smalland: Survive the Wilds",
+      "process": "smalland.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "smalland-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "SMITE 2",
+      "process": "hemingway.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "hemingway-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Sniper Elite",
+      "process": "sniperelite.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Sniper Elite 3",
+      "process": "sniperelite3.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Sniper Elite 4",
+      "process": "sniperelite4.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Sniper Elite 5",
+      "process": "sniper5_dx12.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "sniperelite5.exe",
+        "sniper5_vulkan.exe",
+        "sniperelite5_dx12.exe"
+      ]
+    },
+    {
+      "name": "Sniper Elite V2",
+      "process": "sniperelitev2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Sniper Elite: Zombie Army 2",
+      "process": "zombiearmy2.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "SnowRunner",
+      "process": "snowrunner.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Solar 2",
+      "process": "solar2.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Sonic & All-Stars Racing Transformed Collection",
+      "process": "asr.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Sonic Generations",
+      "process": "sonicgenerations.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Soundboxing",
+      "process": "soundboxing.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Spec Ops: The Line",
+      "process": "specopstheline.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Split Fiction",
+      "process": "splitfiction.exe",
+      "tier": "Balanced",
+      "scaling": "ue5",
+      "confidence": "verified",
+      "note": "Hazelight coop adventure, UE5"
+    },
+    {
+      "name": "SpongeBob SquarePants: Battle for Bikini Bottom - Rehydrated",
+      "process": "pineapple-win64-shipping.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "light"
+    },
+    {
+      "name": "Sprint Vector",
+      "process": "sprintvector.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Star Trek: Bridge Crew",
+      "process": "startrekbridgecrew.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "STAR WARS Empire at War: Gold Pack",
+      "process": "sweaw.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "STAR WARS Galactic Battlegrounds Saga",
+      "process": "battlegrounds.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Star Wars Jedi: Fallen Order",
+      "process": "swgame.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "swgame-win64-shipping.exe",
+        "starwarsjedifallenorder.exe"
+      ]
+    },
+    {
+      "name": "STAR WARS Jedi: Survivor",
+      "process": "jedisurvivor.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "STAR WARS Knights of the Old Republic",
+      "process": "swkotor.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "STAR WARS Knights of the Old Republic II",
+      "process": "swkotor2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Star Wars Outlaws",
+      "process": "outlaws.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "helixclient_x64_final.exe",
+        "helixclient_x64_release.exe"
+      ]
+    },
+    {
+      "name": "STAR WARS Rebellion",
+      "process": "rebellion.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "STAR WARS: TIE Fighter Special Edition",
+      "process": "tie95.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "STAR WARS: X-Wing Alliance",
+      "process": "xwingalliance.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "STAR WARS: X-Wing Special Edition",
+      "process": "xwing95.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Starfield",
+      "process": "starfield.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Steelrising",
+      "process": "steelrising.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "steelrisingdo.exe"
+      ]
+    },
+    {
+      "name": "Still Wakes the Deep",
+      "process": "stillwakesthedeep.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Stormgate",
+      "process": "stormgate.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "stormgate-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Strange Brigade",
+      "process": "strangebrigade.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Stray",
+      "process": "stray.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "stray-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Subnautica 2",
+      "process": "subnautica2.exe",
+      "tier": "Balanced",
+      "scaling": "ue5",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "UE5 underwater survival, DLSS 4 Frame Generation",
+      "aliases": [
+        "subnautica2-win64-test.exe"
+      ]
+    },
+    {
+      "name": "Supreme Commander",
+      "process": "supremecommander.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Supreme Commander 2",
+      "process": "supcomm2.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Supreme Commander: Forged Alliance",
+      "process": "forgedalliance.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "Sven Co-op",
+      "process": "svencoop.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "System Shock",
+      "process": "systemshock.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "systemreshock.exe",
+        "systemreshock-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "System Shock 2 (1999)",
+      "process": "shock2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Tales Of Arise",
+      "process": "tales of arise.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Teardown",
+      "process": "teardown.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Tekken 8",
+      "process": "tekken 8.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "polaris-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Terminator: Resistance",
+      "process": "terminator-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Tesla Effect",
+      "process": "teslaeffect.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Test Drive Unlimited Solar Crown",
+      "process": "tdusc.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Tex Murphy: Martian Memorandum",
+      "process": "texmurphy.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "The 11th Hour",
+      "process": "the11thhour.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "The 7th Guest",
+      "process": "the7thguest.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "The Apogee Throwback Pack",
+      "process": "apogee.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "The Ascent",
+      "process": "theascent.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "theascent-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "The Bureau: XCOM Declassified",
+      "process": "thebureau.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "The Callisto Protocol",
+      "process": "phoenix.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "thecallistoprotocol.exe",
+        "thecallistoprotocol-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "The Dark Eye: Chains of Satinav",
+      "process": "chainsofsatinav.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "The Darkness II",
+      "process": "darknessii.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "The Elder Scrolls III: Morrowind",
+      "process": "morrowind.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "The Elder Scrolls IV: Oblivion Remastered",
+      "process": "oblivionremastered.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "oblivionremastered-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "The Elder Scrolls V: Skyrim",
+      "process": "tesv.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "The Elder Scrolls V: Skyrim Special Edition",
+      "process": "skyrimse.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "The Expendabros",
+      "process": "expendabros.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "The Finals",
+      "process": "discovery.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "thefinals.exe",
+        "discovery-d.exe",
+        "discovery-e.exe"
+      ]
+    },
+    {
+      "name": "The First Descendant",
+      "process": "m1-win64-shipping.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "thefirstdescendant.exe"
+      ]
+    },
+    {
+      "name": "The Gallery - Episode 1: Call of the Starseed",
+      "process": "thegallery.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "The Incredible Adventures of Van Helsing",
+      "process": "vanhelsing.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "The Incredible Adventures of Van Helsing II",
+      "process": "vanhelsing_x86.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "The Lab",
+      "process": "thelab.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "The Last of Us Part I",
+      "process": "tlou-i.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "tlou-i-l.exe"
+      ]
+    },
+    {
+      "name": "The Last of Us™ Part II Remastered",
+      "process": "tlou-ii.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "tlou-ii-l.exe",
+        "t2r-steam-rtm.exe",
+        "t2r-steam-final.exe"
+      ]
+    },
+    {
+      "name": "The Medium",
+      "process": "medium-win64-shipping.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "The Outer Worlds",
+      "process": "theouterworlds.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "indiana-win64-shipping.exe",
+        "indianawindowsstore-win64-shipping.exe",
+        "indianaepicgamestore-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "The Riftbreaker",
+      "process": "riftbreaker_win_release.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "The Sinking City",
+      "process": "tscgame.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "tscgame-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "The Stanley Parable",
+      "process": "stanley.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "light"
+    },
+    {
+      "name": "The Swapper",
+      "process": "theswapper.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "The Thaumaturge",
+      "process": "thethaumaturge.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "thethaumaturge-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "The Vanishing of Ethan Carter",
+      "process": "ethan.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "The Vanishing of Ethan Carter Redux",
+      "process": "ethancarterredux.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "The Walking Dead: Saints & Sinners",
+      "process": "twd-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "The Witcher 2: Assassins of Kings",
+      "process": "witcher2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "The Witcher 3",
+      "process": "witcher3.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "witcher3release.exe"
+      ]
+    },
+    {
+      "name": "Thief (2014)",
+      "process": "thief.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "THRONE AND LIBERTY",
+      "process": "tl.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "tl-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Tiny Tina's Wonderlands",
+      "process": "wonderlands.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Titan Quest Anniversary Edition",
+      "process": "tq.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Titan Quest II",
+      "process": "tq2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Titan Quest: Immortal Throne",
+      "process": "tqit.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Tom Clancy's Ghost Recon Breakpoint",
+      "process": "grb.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "grb_upp.exe",
+        "grb_vulkan.exe",
+        "grb_vulkan_upp.exe"
+      ]
+    },
+    {
+      "name": "Tom Clancy's H.A.W.X. 2",
+      "process": "hawx2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Tom Clancy's Rainbow Six Extraction",
+      "process": "r6-extraction.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "r6-extraction_be.exe"
+      ]
+    },
+    {
+      "name": "Tom Clancy's Splinter Cell: Conviction",
+      "process": "conviction_game.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Tom Clancy's The Division 2",
+      "process": "thedivision2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "rogue_x64_retail.exe"
+      ]
+    },
+    {
+      "name": "Tomb Raider (2013)",
+      "process": "tombraider.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Torchlight II",
+      "process": "torchlight2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Torchlight: Infinite",
+      "process": "torchlight_infinite.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Total War: Warhammer III",
+      "process": "warhammer3.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Tower 57",
+      "process": "tower57.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Tower of Fantasy",
+      "process": "qrsl.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Train Simulator Classic",
+      "process": "railworks.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Trine 2",
+      "process": "trine2_32bit.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Tropico 4",
+      "process": "tropico4.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "cpu-heavy"
+    },
+    {
+      "name": "UNCHARTED: Legacy of Thieves Collection",
+      "process": "u4-l.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "tll-l.exe",
+        "tll.exe",
+        "u4.exe"
+      ]
+    },
+    {
+      "name": "UNDECEMBER",
+      "process": "undecember.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "undecember-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Universe Sandbox Legacy",
+      "process": "universesandbox.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Urban Trial Freestyle",
+      "process": "urbantrialfreestyle.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "scaling": "light"
+    },
+    {
+      "name": "V Rising",
+      "process": "vrising.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Valorant",
+      "process": "valorant.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "valorant-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Vampire: The Masquerade - Bloodlines",
+      "process": "vampire.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Vampyr",
+      "process": "avgame-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "nvidia-drs",
+      "scaling": "gpu"
+    },
+    {
+      "name": "Velvet Assassin",
+      "process": "velvetassassin.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Victor Vran",
+      "process": "victorvran.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Viscera Cleanup Detail: Shadow Warrior",
+      "process": "vcd.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "War Thunder",
+      "process": "aces.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "aces64.exe",
+        "launcher.exe"
+      ]
+    },
+    {
+      "name": "Warframe",
+      "process": "warframe.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "warframe.x64.exe"
+      ]
+    },
+    {
+      "name": "Warhammer 40,000: Space Marine 2",
+      "process": "spacemarine2.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Warhammer 40000: Darktide",
+      "process": "darktide.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "launcher.exe",
+        "stingray_win64_release_x64.exe"
+      ]
+    },
+    {
+      "name": "Warhammer 40000: SPACE MARINE 2",
+      "process": "warhammer 40000 space marine 2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "warhammer 40,000 space marine 2 - retail.exe"
+      ]
+    },
+    {
+      "name": "Warhammer: End Times - Vermintide",
+      "process": "vermintide.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Warhammer: Vermintide 2",
+      "process": "vermintide2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "vermintide2_dx12.exe"
+      ]
+    },
+    {
+      "name": "Watch Dogs: Legion",
+      "process": "watchdogslegion.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "watchdogslegion_be.exe",
+        "watchdogs_clang_r64_dx11.exe",
+        "watchdogs_clang_r64_dx12.exe"
+      ]
+    },
+    {
+      "name": "Windrose",
+      "process": "windrose-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "windrose.exe",
+        "crosswind-win64-shipping.exe",
+        "crosswind.exe"
+      ],
+      "scaling": "ue5"
+    },
+    {
+      "name": "WitchFire",
+      "process": "witchfire.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "witchfire-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Wo Long: Fallen Dynasty",
+      "process": "wolong.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Wolfenstein: The Old Blood",
+      "process": "wolfoldblood_x64.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Wolfenstein: Youngblood",
+      "process": "youngblood_x64vk.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "youngblood_x64vk__2019_07_31__12_17_28.exe"
+      ]
+    },
+    {
+      "name": "World of Tanks: HEAT",
+      "process": "engine_launcher.exe",
+      "tier": "Balanced",
+      "scaling": "mixed",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "DLSS Super Resolution + Frame Generation + NVIDIA Reflex, Wargaming Core/Lodestar engine, esports-oriented",
+      "aliases": []
+    },
+    {
+      "name": "World War Z",
+      "process": "wwzretail.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "wwzrelease.exe",
+        "wwzretailegs.exe",
+        "wwzretailegs__2019_04_19__11_38_56.exe"
+      ]
+    },
+    {
+      "name": "Worms",
+      "process": "worms.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "WRATH: Aeon of Ruin",
+      "process": "wrath.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "WRC Powerslide",
+      "process": "wrcpowerslide.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Wreckfest",
+      "process": "wreckfest_x64.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library"
+    },
+    {
+      "name": "Wreckfest 2",
+      "process": "wreckfest2.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Wuthering Waves",
+      "process": "wuthering waves.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "client.exe",
+        "client-win64-shipping.exe"
+      ]
+    },
+    {
+      "name": "Yet Another Zombie Defense",
+      "process": "yazd.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "You Suck at Parking - Complete Edition",
+      "process": "yousuckatparking.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Zenless Zone Zero",
+      "process": "zenlesszonezero.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Zeno Clash",
+      "process": "zenoclash.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    },
+    {
+      "name": "Zombie Army 4: Dead War",
+      "process": "zombiearmy4.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "steam-library"
+    },
+    {
+      "name": "Zombie Army Trilogy",
+      "process": "zat.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs"
+    },
+    {
+      "name": "Zombie Driver",
+      "process": "zombiedriver.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "steam-library",
+      "scaling": "light"
+    }
+  ]
+}
