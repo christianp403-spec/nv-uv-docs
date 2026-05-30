@@ -1,5 +1,5 @@
 {
-  "version": "2.4",
+  "version": "2.5",
   "source": "nvidia-drs-profiles + dlss-all-versions",
   "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance",
   "generated": "2026-05-30",
@@ -347,7 +347,7 @@
     {
       "name": "Anno 1404",
       "process": "anno4.exe",
-      "tier": "Balanced",
+      "tier": "Eco",
       "confidence": "nvidia-verified",
       "source": "steam-library",
       "scaling": "cpu-heavy"
