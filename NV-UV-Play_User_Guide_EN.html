@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NV⚡UV Play · User Guide · v0.1.6-alpha</title>
+<title>NV⚡UV Play · User Guide · v0.1.7-alpha</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
 
@@ -275,7 +275,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="bolt">⚡</span><span class="uv">UV</span><span class="play">Play</span></h1>
     <div class="subtitle">Simple game undervolting · User guide</div>
-    <div class="build">v0.1.6-alpha · Open Alpha · May 2026</div>
+    <div class="build">v0.1.7-alpha · Open Alpha · June 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -411,9 +411,22 @@
       <li><strong>Type the process name</strong>: for games that are running or that you remember from earlier</li>
     </ul>
     <p>Pick the initial tier from the RadioButtons. <strong>MFG</strong> is only shown on Blackwell GPUs — on Ada/Ampere/Turing you'll see Eco / Balanced / Performance / Max only.</p>
+    <p>To remove a game you added yourself, <strong>right-click its row and choose "Remove from Library"</strong>. Bundled database entries can't be removed this way (right-clicking only offers it for your own additions); reset their override instead.</p>
 
     <h3>Per-game tier override</h3>
     <p>Each row has a tier dropdown. Set it to Eco / Balanced / Performance / Max / Custom or "off". Default is unset (uses the bundled default if any, otherwise no lock).</p>
+
+    <h3>Global override · one profile for everything</h3>
+    <p>In <strong>Edit Tiers &amp; Override</strong> you can set a global profile. When it's active, it applies to <strong>every</strong> running game — including games you gave their own tier. A global profile is the master switch: turn it on and everything runs on that tier, regardless of per-game settings.</p>
+
+    <h3>"No Override" · keep a game out of the global profile</h3>
+    <p>Sometimes you want one game left alone while a global profile is active — a browser you added to the library, or a title that doesn't react well to undervolting. <strong>Right-click the row and tick "Ignore global profile (No Override)".</strong></p>
+    <ul>
+      <li>The game ignores the global profile and uses its own tier instead.</li>
+      <li>If it has no tier of its own, it simply stays at stock (no notification — that's the point).</li>
+      <li>The flag is independent of the tier, so you can protect a game with or without giving it a tier.</li>
+    </ul>
+    <div class="tip">Toggling "No Override" while a game is running takes effect immediately — the lock is re-applied or released on the spot, no restart needed.</div>
 
     <div class="tip"><strong>Game library updates from GitHub.</strong> Play checks the public repo on startup and pulls in new games and refined tier defaults automatically. See <a href="#updates" style="color: var(--green);">Game library updates</a>.</div>
   </section>
@@ -434,11 +447,12 @@
     </ol>
 
     <h3>Where the name shows up</h3>
-    <p>Once saved, the profile name appears in three places so you always know which configuration is active:</p>
+    <p>Once saved, the profile name appears so you always know which configuration is active:</p>
     <ul>
       <li><strong>Tier dropdown</strong> · <code>✎ KCD-stable</code> instead of the generic <code>✎ Custom...</code></li>
       <li><strong>Override label</strong> · <code>Override: Custom "KCD-stable" (default Performance)</code></li>
       <li><strong>Stabilizer line</strong> (if there's crash history) · <code>🎮 KCD-stable · 3050 MHz @ 950 mV · Crash #1</code></li>
+      <li><strong>Global override dropdown</strong> (in Edit Tiers &amp; Override) · <code>Custom · KCD-stable</code> instead of <code>Custom · your own values</code></li>
     </ul>
     <p>Hovering the dropdown shows the same V/F/PL summary you get for built-in tiers: <code>KCD-stable · 950 mV / 3100 MHz · PL 100%</code>. If a VRAM offset is set, it appears too.</p>
 
@@ -544,7 +558,7 @@
         For Custom profiles, the profile's name is prefixed:<br>
         <code style="color: var(--orange);">🎮 KCD-Crash2 · 3050 MHz @ 950 mV · Crash #1</code><br>
         These are the actual values that will apply on the next launch. The line updates in real time when new crashes happen.<br>
-        <em>Per-tier semantics:</em> the Stabilizer keeps separate crash history per (game, tier) pair. If you crashed on Custom "Aggressive" and switch the override to Performance, the orange line disappears (Performance has no crash history). Switching back to Custom makes it reappear.</li>
+        <em>Per-tier semantics:</em> the Stabilizer keeps separate crash history per (game, tier) pair. If you crashed on Custom "Aggressive" and switch the override to Performance, the orange line disappears (Performance has no crash history). Switching back to Custom makes it reappear. A crash under a global profile and a crash under a per-game override of the <em>same</em> tier now share one history, so a tier you've already stabilized stays stabilized whether it ran globally or per-game.</li>
     </ul>
 
     <h3>Resetting an adjustment manually</h3>
@@ -630,10 +644,11 @@
     <p>The tier is too aggressive for your silicon. Stabilizer will auto-adjust on the next launch and you'll see two confirmations: a toast notification 20 seconds after the crash, and an orange line under the game in the Game Library showing the new adjusted values. If you want to skip the auto-adjust dance, drop to a lower tier manually in the Game Library. To clear an existing adjustment (e.g. after a driver update fixed the stability), right-click the game row and pick "Reset Stabilizer adjustment".</p>
 
     <h3>Play doesn't apply when I launch a game</h3>
-    <p>Three things to check:</p>
+    <p>Things to check:</p>
     <ul>
       <li>Is the <strong>Activate</strong> toggle on in the main window?</li>
       <li>Is the game in the Game Library and does it have a tier assigned? (Or is there a global default?)</li>
+      <li>Does the game have <strong>"Ignore global profile (No Override)"</strong> ticked, with no tier of its own? Then it's deliberately left at stock — that's expected. Untick it or give it a tier if you want a lock.</li>
       <li>Is the game's process name the one Play expects? Some games launch via a launcher process first, then spawn a different process for the actual game. Use the Alias-Switch feature: Play follows multi-process games like UE5 titles automatically.</li>
     </ul>
 
@@ -714,7 +729,7 @@ SOFTWARE.</pre>
 
   <div class="footer">
     <p><a href="https://github.com/christianp403-spec/nv-uv-play">github.com/christianp403-spec/nv-uv-play</a></p>
-    <p style="margin-top: 8px;">NV⚡UV Play · v0.1.6-alpha · Open Alpha · May 2026</p>
+    <p style="margin-top: 8px;">NV⚡UV Play · v0.1.7-alpha · Open Alpha · June 2026</p>
     <p style="margin-top: 4px;">© 2026 Christian Papaioannou. NV⚡UV and the lightning bolt are trademarks of the author.</p>
   </div>
 
