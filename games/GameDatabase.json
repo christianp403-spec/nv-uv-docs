@@ -1,8 +1,8 @@
 {
-  "version": "2.7",
+  "version": "2.8",
   "source": "nvidia-drs-profiles + dlss-all-versions",
   "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup",
-  "generated": "2026-06-03",
+  "generated": "2026-06-04",
   "games": [
     {
       "name": "007 First Light",
@@ -13,7 +13,8 @@
       "note": "DLSS 4.5 + Path Tracing, IO Interactive Glacier engine",
       "aliases": [
         "007firstlight.exe"
-      ]
+      ],
+      "ambiguous": true
     },
     {
       "name": "2XKO",
@@ -270,7 +271,8 @@
       "tier": "Performance",
       "confidence": "nvidia-verified",
       "source": "steam-library",
-      "scaling": "gpu-heavy"
+      "scaling": "gpu-heavy",
+      "ambiguous": true
     },
     {
       "name": "Aliens vs. Predator",
@@ -285,7 +287,8 @@
       "process": "acm.exe",
       "tier": "Eco",
       "confidence": "nvidia-verified",
-      "source": "steam-library"
+      "source": "steam-library",
+      "ambiguous": true
     },
     {
       "name": "Aliens: Fireteam Elite",
@@ -442,7 +445,8 @@
       "tier": "Balanced",
       "confidence": "nvidia-verified",
       "source": "nvidia-drs",
-      "scaling": "gpu-heavy"
+      "scaling": "gpu-heavy",
+      "ambiguous": true
     },
     {
       "name": "ASTRONEER",
@@ -517,7 +521,8 @@
         "bg3_dx11.exe",
         "bg3_release.exe",
         "bg3_shipping.exe"
-      ]
+      ],
+      "ambiguous": true
     },
     {
       "name": "Baldur's Gate: Enhanced Edition",
@@ -541,7 +546,8 @@
       "tier": "Eco",
       "confidence": "nvidia-verified",
       "source": "steam-library",
-      "scaling": "light"
+      "scaling": "light",
+      "ambiguous": true
     },
     {
       "name": "Bastion",
@@ -567,7 +573,8 @@
       "aliases": [
         "bf2042.exe",
         "battlefieldgame.exe"
-      ]
+      ],
+      "ambiguous": true
     },
     {
       "name": "Battlefield 6",
@@ -575,7 +582,8 @@
       "tier": "Performance",
       "confidence": "nvidia-verified",
       "source": "steam-library",
-      "scaling": "gpu-heavy"
+      "scaling": "gpu-heavy",
+      "ambiguous": true
     },
     {
       "name": "Battlefield V",
@@ -587,7 +595,8 @@
         "bfv.exe",
         "bfvob.exe",
         "casablanca.exe"
-      ]
+      ],
+      "ambiguous": true
     },
     {
       "name": "Beat Hazard",
@@ -666,7 +675,8 @@
       "process": "bms.exe",
       "tier": "Balanced",
       "confidence": "nvidia-verified",
-      "source": "steam-library"
+      "source": "steam-library",
+      "ambiguous": true
     },
     {
       "name": "Black Myth: Wukong",
@@ -676,7 +686,8 @@
       "source": "nvidia-drs",
       "aliases": [
         "b1-win64-shipping.exe"
-      ]
+      ],
+      "ambiguous": true
     },
     {
       "name": "Bleeding Edge",
@@ -894,7 +905,8 @@
       "process": "coj.exe",
       "tier": "Balanced",
       "confidence": "nvidia-verified",
-      "source": "steam-library"
+      "source": "steam-library",
+      "ambiguous": true
     },
     {
       "name": "Call of Juarez Gunslinger",
@@ -974,7 +986,8 @@
       "process": "cmw.exe",
       "tier": "Balanced",
       "confidence": "nvidia-verified",
-      "source": "steam-library"
+      "source": "steam-library",
+      "ambiguous": true
     },
     {
       "name": "Chorus",
@@ -1130,7 +1143,8 @@
       "tier": "Balanced",
       "confidence": "nvidia-verified",
       "source": "steam-library",
-      "scaling": "cpu-heavy"
+      "scaling": "cpu-heavy",
+      "ambiguous": true
     },
     {
       "name": "Craftopia",
@@ -1255,7 +1269,8 @@
       "process": "mm.exe",
       "tier": "Balanced",
       "confidence": "nvidia-verified",
-      "source": "steam-library"
+      "source": "steam-library",
+      "ambiguous": true
     },
     {
       "name": "Dark Sector",
@@ -1362,7 +1377,8 @@
       "source": "nvidia-drs",
       "aliases": [
         "deathstranding.exe"
-      ]
+      ],
+      "ambiguous": true
     },
     {
       "name": "DEATH STRANDING 2: ON THE BEACH",
@@ -1370,7 +1386,8 @@
       "tier": "Performance",
       "scaling": "fixed",
       "confidence": "verified",
-      "note": "DLSS 4 MFG + Reflex, Decima engine"
+      "note": "DLSS 4 MFG + Reflex, Decima engine",
+      "ambiguous": true
     },
     {
       "name": "Deathloop",
@@ -1499,7 +1516,8 @@
       "process": "eos.exe",
       "tier": "Balanced",
       "confidence": "nvidia-verified",
-      "source": "steam-library"
+      "source": "steam-library",
+      "ambiguous": true
     },
     {
       "name": "Don't Starve Together",
@@ -1605,7 +1623,8 @@
       "source": "nvidia-drs",
       "aliases": [
         "dd2_denuvo.exe"
-      ]
+      ],
+      "ambiguous": true
     },
     {
       "name": "Draw a Stickman: EPIC",
@@ -1991,7 +2010,8 @@
       "tier": "Eco",
       "confidence": "nvidia-verified",
       "source": "steam-library",
-      "scaling": "light"
+      "scaling": "light",
+      "ambiguous": true
     },
     {
       "name": "FINAL FANTASY VII REBIRTH",
@@ -2219,14 +2239,16 @@
       "source": "nvidia-drs",
       "aliases": [
         "snowfall.exe"
-      ]
+      ],
+      "ambiguous": true
     },
     {
       "name": "God of War",
       "process": "gow.exe",
       "tier": "Balanced",
       "confidence": "nvidia-verified",
-      "source": "nvidia-drs"
+      "source": "nvidia-drs",
+      "ambiguous": true
     },
     {
       "name": "God of War Ragnarok",
@@ -2380,7 +2402,8 @@
       "process": "hl2.exe",
       "tier": "Balanced",
       "confidence": "nvidia-verified",
-      "source": "steam-library"
+      "source": "steam-library",
+      "ambiguous": true
     },
     {
       "name": "Half-Life 2 RTX",
@@ -2395,7 +2418,8 @@
       "process": "hl1.exe",
       "tier": "Balanced",
       "confidence": "community",
-      "source": "steam-library"
+      "source": "steam-library",
+      "ambiguous": true
     },
     {
       "name": "Halo Infinite",
@@ -2441,7 +2465,8 @@
       "process": "hng.exe",
       "tier": "Eco",
       "confidence": "nvidia-verified",
-      "source": "steam-library"
+      "source": "steam-library",
+      "ambiguous": true
     },
     {
       "name": "Hitman 2: Silent Assassin",
@@ -2463,7 +2488,8 @@
       "process": "hma.exe",
       "tier": "Eco",
       "confidence": "nvidia-verified",
-      "source": "nvidia-drs"
+      "source": "nvidia-drs",
+      "ambiguous": true
     },
     {
       "name": "Hitman: Blood Money",
@@ -2674,7 +2700,8 @@
       "process": "kl2.exe",
       "tier": "Eco",
       "confidence": "nvidia-verified",
-      "source": "nvidia-drs"
+      "source": "nvidia-drs",
+      "ambiguous": true
     },
     {
       "name": "Kane & Lynch: Dead Men",
@@ -2743,7 +2770,8 @@
       "tier": "Eco",
       "confidence": "nvidia-verified",
       "source": "nvidia-drs",
-      "scaling": "light"
+      "scaling": "light",
+      "ambiguous": true
     },
     {
       "name": "Layers of Fear",
@@ -2798,7 +2826,8 @@
       "source": "nvidia-drs",
       "aliases": [
         "lop-win64-shipping.exe"
-      ]
+      ],
+      "ambiguous": true
     },
     {
       "name": "Life is Strange 2",
@@ -2929,7 +2958,8 @@
         "avengers.exe",
         "av1_x64_gm.exe",
         "av1_x64_final.exe"
-      ]
+      ],
+      "ambiguous": true
     },
     {
       "name": "Marvel's Guardians of the Galaxy",
@@ -3156,7 +3186,8 @@
       "tier": "Eco",
       "confidence": "nvidia-verified",
       "source": "steam-library",
-      "scaling": "light"
+      "scaling": "light",
+      "ambiguous": true
     },
     {
       "name": "Mortal Kombat Komplete Edition",
@@ -3299,14 +3330,16 @@
         "nwxclient.exe",
         "nwx-win64-shipping.exe",
         "nwxclient-win64-shipping.exe"
-      ]
+      ],
+      "ambiguous": true
     },
     {
       "name": "No Man's Sky",
       "process": "nms.exe",
       "tier": "Eco",
       "confidence": "nvidia-verified",
-      "source": "nvidia-drs"
+      "source": "nvidia-drs",
+      "ambiguous": true
     },
     {
       "name": "No Rest for the Wicked",
@@ -3336,7 +3369,8 @@
         "neverness.exe",
         "neverness-win64-shipping.exe"
       ],
-      "scaling": "ue5"
+      "scaling": "ue5",
+      "ambiguous": true
     },
     {
       "name": "Once Human",
@@ -3565,7 +3599,8 @@
       "tier": "Eco",
       "confidence": "nvidia-verified",
       "source": "nvidia-drs",
-      "scaling": "light"
+      "scaling": "light",
+      "ambiguous": true
     },
     {
       "name": "POSTAL 4: No Regerts",
@@ -3707,7 +3742,8 @@
       "tier": "Eco",
       "confidence": "community",
       "source": "steam-library",
-      "scaling": "light"
+      "scaling": "light",
+      "ambiguous": true
     },
     {
       "name": "Ready Or Not",
@@ -3743,7 +3779,8 @@
       "process": "rfg.exe",
       "tier": "Performance",
       "confidence": "nvidia-verified",
-      "source": "steam-library"
+      "source": "steam-library",
+      "ambiguous": true
     },
     {
       "name": "Red Faction: Guerrilla Steam Edition",
@@ -3779,14 +3816,16 @@
       "tier": "Eco",
       "confidence": "nvidia-verified",
       "source": "steam-library",
-      "scaling": "light"
+      "scaling": "light",
+      "ambiguous": true
     },
     {
       "name": "Resident Evil 2 / Biohazard 2",
       "process": "re2.exe",
       "tier": "Balanced",
       "confidence": "nvidia-verified",
-      "source": "nvidia-drs"
+      "source": "nvidia-drs",
+      "ambiguous": true
     },
     {
       "name": "Resident Evil 3 Remake",
@@ -3797,7 +3836,8 @@
       "aliases": [
         "re3_online.exe",
         "re3_offline.exe"
-      ]
+      ],
+      "ambiguous": true
     },
     {
       "name": "Resident Evil 4 / Biohazard 4",
@@ -3807,14 +3847,16 @@
       "source": "nvidia-drs",
       "aliases": [
         "bio4.exe"
-      ]
+      ],
+      "ambiguous": true
     },
     {
       "name": "Resident Evil 7",
       "process": "re7.exe",
       "tier": "Balanced",
       "confidence": "nvidia-verified",
-      "source": "nvidia-drs"
+      "source": "nvidia-drs",
+      "ambiguous": true
     },
     {
       "name": "Resident Evil Re:Verse",
@@ -3829,7 +3871,8 @@
       "tier": "Performance",
       "scaling": "mixed",
       "confidence": "verified",
-      "note": "DLSS 4, RE Engine path tracing"
+      "note": "DLSS 4, RE Engine path tracing",
+      "ambiguous": true
     },
     {
       "name": "RESIDENT EVIL RESISTANCE",
@@ -3843,7 +3886,8 @@
       "process": "re8.exe",
       "tier": "Balanced",
       "confidence": "nvidia-verified",
-      "source": "nvidia-drs"
+      "source": "nvidia-drs",
+      "ambiguous": true
     },
     {
       "name": "Returnal",
@@ -3873,7 +3917,8 @@
         "rottr.exe",
         "rottr_uap.exe",
         "rottr_orig.exe"
-      ]
+      ],
+      "ambiguous": true
     },
     {
       "name": "Rise of the Triad",
@@ -4091,21 +4136,24 @@
       "process": "sw.exe",
       "tier": "Balanced",
       "confidence": "nvidia-verified",
-      "source": "steam-library"
+      "source": "steam-library",
+      "ambiguous": true
     },
     {
       "name": "Shadow Warrior 2",
       "process": "sw2.exe",
       "tier": "Performance",
       "confidence": "nvidia-verified",
-      "source": "steam-library"
+      "source": "steam-library",
+      "ambiguous": true
     },
     {
       "name": "Shadow Warrior 3",
       "process": "sw3.exe",
       "tier": "Eco",
       "confidence": "nvidia-verified",
-      "source": "nvidia-drs"
+      "source": "nvidia-drs",
+      "ambiguous": true
     },
     {
       "name": "Shadowrun Returns",
@@ -4271,7 +4319,8 @@
       "tier": "Eco",
       "confidence": "community",
       "source": "steam-library",
-      "scaling": "light"
+      "scaling": "light",
+      "ambiguous": true
     },
     {
       "name": "Sonic Generations",
@@ -4891,7 +4940,8 @@
       "source": "nvidia-drs",
       "aliases": [
         "tl-win64-shipping.exe"
-      ]
+      ],
+      "ambiguous": true
     },
     {
       "name": "Tiny Tina's Wonderlands",
@@ -4905,14 +4955,16 @@
       "process": "tq.exe",
       "tier": "Balanced",
       "confidence": "community",
-      "source": "steam-library"
+      "source": "steam-library",
+      "ambiguous": true
     },
     {
       "name": "Titan Quest II",
       "process": "tq2.exe",
       "tier": "Balanced",
       "confidence": "nvidia-verified",
-      "source": "steam-library"
+      "source": "steam-library",
+      "ambiguous": true
     },
     {
       "name": "Titan Quest: Immortal Throne",
@@ -4932,7 +4984,8 @@
         "grb_upp.exe",
         "grb_vulkan.exe",
         "grb_vulkan_upp.exe"
-      ]
+      ],
+      "ambiguous": true
     },
     {
       "name": "Tom Clancy's H.A.W.X. 2",
@@ -5123,7 +5176,8 @@
       "process": "vcd.exe",
       "tier": "Balanced",
       "confidence": "community",
-      "source": "steam-library"
+      "source": "steam-library",
+      "ambiguous": true
     },
     {
       "name": "War Thunder",
@@ -5363,7 +5417,8 @@
       "process": "zat.exe",
       "tier": "Eco",
       "confidence": "nvidia-verified",
-      "source": "nvidia-drs"
+      "source": "nvidia-drs",
+      "ambiguous": true
     },
     {
       "name": "Zombie Driver",
