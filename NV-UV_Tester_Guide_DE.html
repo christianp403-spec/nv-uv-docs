@@ -356,7 +356,7 @@
   <!-- ═══ WAS IST NV-UV ═══ -->
   <section>
     <h2 class="orange"><span class="icon">⚡</span>Was ist NV-UV?</h2>
-    <p>NV-UV ist ein GPU-Undervolting-Tool speziell für die <strong>NVIDIA RTX 50-Serie</strong> (Blackwell). Es vereinfacht den Undervolt-Prozess, der normalerweise über MSI Afterburner's Kurven-Editor läuft.</p>
+    <p>NV-UV ist ein GPU-Undervolting-Tool für moderne NVIDIA-Grafikkarten: <strong>RTX 50-Serie</strong> (Blackwell), <strong>RTX 40-Serie</strong> (Ada) und, neu in v0.97, <strong>RTX 30-Serie</strong> (Ampere). Es vereinfacht den Undervolt-Prozess, der normalerweise über MSI Afterburner's Kurven-Editor läuft.</p>
     <p>NV-UV nutzt Afterburner als Backend, du brauchst also <strong>MSI Afterburner + RTSS</strong> installiert.</p>
 
     <h3>Features</h3>
@@ -387,12 +387,18 @@
     <h2 class="gold"><span class="icon">📋</span>Voraussetzungen</h2>
     <table>
       <tr><th>Was</th><th>Details</th></tr>
-      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, oder 5060 Ti / 5060 (experimentell)<br>Ada-Karten (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) ebenfalls unterstützt<br>RTX 4060 Ti / 4060 (experimentell)</td></tr>
+      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, oder 5060 Ti / 5060 (experimentell)<br>Ada-Karten (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) ebenfalls unterstützt<br>RTX 4060 Ti / 4060 (experimentell)<br>RTX 30-Serie (Ampere) <span style="color:var(--gold);">NEU in v0.97</span>, nur auf RTX 3090 verifiziert, alle anderen Ampere-Modelle experimentell</td></tr>
       <tr><td><strong>Treiber</strong></td><td>Aktueller NVIDIA-Treiber</td></tr>
       <tr><td><strong>MSI Afterburner</strong></td><td>Version 4.6.6+ mit RTSS</td></tr>
       <tr><td><strong>Windows</strong></td><td>Windows 11 (64-bit)</td></tr>
     </table>
     <div class="warn">NV-UV benötigt MSI Afterburner im Hintergrund. Ohne AB kann NV-UV keine Spannungen ändern!</div>
+    <div class="info"><strong>Ampere (RTX 30) ist neu und noch nicht fertig.</strong> Die Integration ist bisher nur auf einer einzigen Karte verifiziert (RTX 3090). Alle anderen Ampere-Modelle sind ungetestet. Vor allem der Voltage Step Scanner verhält sich evtl. noch nicht korrekt, besonders auf kleineren Karten. Testen ist ausdrücklich erwünscht, aber um Probleme zu fixen brauche ich ein Log (Export-Button unten rechts). Zwei Dinge laufen auf Ampere anders:
+      <ul>
+        <li><strong>Live View</strong>: Ampere rastet den angeforderten Takt im Treiber auf ein festes Plateau ein. NV-UV spiegelt diesen echten, vom Treiber gerasteten Takt in die Anzeige, damit der angezeigte Wert dem entspricht, was die GPU wirklich fährt. Der von dir gewählte Zielwert bleibt der, der geschrieben wird.</li>
+        <li><strong>Temp-Limit</strong>: ein Temperatur-Limit-Slider ist nur auf Ampere verfügbar (Ada und Blackwell graut Afterburner ihn aus). Wenn aktiviert, wird er beim Übernehmen ins AB-Profil geschrieben, unabhängig vom Power-Limit.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- ═══ INSTALLATION ═══ -->
@@ -639,6 +645,7 @@
 
     <h3>Neu in Cantor</h3>
     <table>
+      <tr><td><strong>🛡️ Ambiguous-Name-Schutz (v0.96 hf2)</strong></td><td>Behebt Fehlalarme bei generischen Prozessnamen wie <code>ai.exe</code>, <code>engine.exe</code> oder <code>cs2.exe</code>. Wenn ein Hintergrund-Daemon zufällig den gleichen Namen wie ein Spiel hat, hat NV-UV früher fälschlich auf das Spiel-Profil umgeschaltet. Jetzt wird bei ambigen Namen zusätzlich geprüft, ob der Prozess ein sichtbares Fenster hat oder im Vordergrund läuft. Echte Spiele werden weiterhin sofort erkannt, Daemons fallen raus. Die DB markiert aktuell 55 Einträge als ambig.</td></tr>
       <tr><td><strong>🔄 Spiele-DB Auto-Update (v0.96)</strong></td><td>Im Spielebrowser gibt es einen neuen Button „🔄 Updates". Damit lädst du die neuste Spiele-Datenbank von GitHub. Optional kannst du im selben Popup aktivieren, dass NV-UV bei jedem Start automatisch prüft. Updates fließen aus dem zentralen nv-uv-docs Repository, deine eigenen Spiele und Überschreibungen bleiben unangetastet.</td></tr>
       <tr><td><strong>💡 Hover-Tooltips (v0.96)</strong></td><td>Im Spielebrowser zeigen die Tier-Dropdowns jetzt beim Drüberfahren die konkreten Werte des jeweiligen Profils (z.B. „Performance · 975 mV / 3000 MHz · PL 100%"). Gilt auch fürs Filter-Dropdown oben.</td></tr>
       <tr><td><strong>✨ MFG-Tier (v0.95 hf3)</strong></td><td>Eigenes Tier für Multi Frame Generation Titel, alle RTX 50-Karten. Volles Power-Limit bei Eco-Spannung und leicht reduziertem Takt. Wird über die Spiele-Datenbank pro Spiel zugewiesen.</td></tr>
@@ -947,6 +954,89 @@
     <p style="font-size:0.9em; opacity:0.8;">Hinweis zur RTX 4060: Der AD107-Chip skaliert ungewöhnlich schwach mit zusätzlicher Voltage. Höhere mV bringen kaum mehr MHz, daher liegen die Tier-Werte enger beieinander als bei größeren Ada-Chips.</p>
 
     <div class="warn"><strong>Was bedeutet "experimentell" bei den RTX 5060- und RTX 4060-Modellen?</strong> Diese Karten werden vom NV-UV-Code unterstützt, aber die Preset-Werte wurden noch nicht durch unser Tester-Programm auf echter Hardware verifiziert. Sie basieren auf KI-DeepSearch-Recherche aus Community-Daten (Reddit, Hardwareluxx, Igor's Lab, OCN). Bitte testet mit Balanced als Startpunkt und gebt Feedback im PCGH-Forum oder auf Discord, damit die Werte nachgeschärft werden können.</div>
+
+    <div class="info" style="margin-top:1em;"><strong>🧪 Ampere-Status (v0.97):</strong> Die Ampere-Integration wurde bisher nur auf einer einzigen Karte verifiziert, einer RTX 3090 (GA102). Alle anderen Ampere-Modelle sind ungetestet. Die Preset-Werte unten basieren auf Community-Recherche, nicht auf Hardware-Verifikation, daher sind alle RTX-30-Karten außer der 3090 als experimentell zu behandeln. Vor allem der Voltage Step Scanner verhält sich evtl. noch nicht korrekt, besonders auf den kleineren Chips. Ampere-Tester sind sehr willkommen im PCGH-Subforum und auf Discord. Bitte bei Problemen ein Log mitschicken (Export-Button unten rechts).</div>
+
+    <h3>RTX 3090 <span style="color:var(--cyan);">(Referenzkarte, Integration verifiziert)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1700 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1830 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1900 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>1965 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 3090 Ti <span style="color:var(--gold);">(experimentell)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>825 mV</td><td>1700 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1830 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>1950 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>2025 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 3080 Ti <span style="color:var(--gold);">(experimentell)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1710 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1870 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1920 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>1980 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 3080 12GB <span style="color:var(--gold);">(experimentell)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1700 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1860 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1920 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2000 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 3080 10GB <span style="color:var(--gold);">(experimentell)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1750 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1890 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1950 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2010 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 3070 Ti <span style="color:var(--gold);">(experimentell)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>825 mV</td><td>1770 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1905 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1950 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>1995 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 3070 <span style="color:var(--gold);">(experimentell)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>775 mV</td><td>1700 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1900 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>1950 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2010 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 3060 Ti <span style="color:var(--gold);">(experimentell)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1750 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1875 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>1935 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>1980 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 3060 <span style="color:var(--gold);">(experimentell)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1750 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>850 mV</td><td>1840 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1900 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>1950 MHz</td><td>100%</td></tr>
+    </table>
 
     <div class="info">Die Preset-Werte basieren auf Community-Erfahrungswerten. Nicht jede GPU schafft jedes Preset, Silizium-Lotterie. Im Zweifelsfall mit Balanced anfangen.</div>
   </section>
