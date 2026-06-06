@@ -2805,7 +2805,9 @@
       "process": "legendary.exe",
       "tier": "Eco",
       "confidence": "nvidia-verified",
-      "source": "steam-library"
+      "source": "steam-library",
+      "ambiguous": true,
+      "note": "Process name collides with the Legendary CLI (Epic launcher replacement used by Heroic); gated by window/foreground check"
     },
     {
       "name": "LEGO Batman: Legacy of the Dark Knight",
