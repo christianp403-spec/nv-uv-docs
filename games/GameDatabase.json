@@ -1,8 +1,8 @@
 {
-  "version": "2.9",
+  "version": "2.10",
   "source": "nvidia-drs-profiles + dlss-all-versions",
   "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup",
-  "generated": "2026-06-12",
+  "generated": "2026-06-16",
   "games": [
     {
       "name": "007 First Light",
@@ -5436,6 +5436,15 @@
       "confidence": "estimated",
       "source": "manual",
       "note": "Tested manually on RTX 5090. WARNING: generic process name (slasher.exe) - watch for collisions with other Slasher-titled games; switch to path-based or a more specific exe if a conflict appears."
+    },
+    {
+      "name": "Gothic 1 Remake",
+      "process": "g1r-win64-shipping.exe",
+      "tier": "Performance",
+      "scaling": "unreal",
+      "confidence": "community",
+      "source": "steam-library",
+      "note": "Unreal Engine 5, Steam: steamapps/common/Gothic 1 Remake"
     }
   ]
 }
