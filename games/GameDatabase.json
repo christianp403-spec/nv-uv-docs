@@ -5183,13 +5183,11 @@
     },
     {
       "name": "Warframe",
-      "process": "warframe.exe",
+      "process": "warframe.x64.exe",
       "tier": "Eco",
       "confidence": "nvidia-verified",
       "source": "nvidia-drs",
-      "aliases": [
-        "warframe.x64.exe"
-      ]
+      "note": "process targets the x64 game client, not the warframe.exe launcher, so no lock is applied during the launcher phase (launcher-pattern, same as War Thunder aces.exe)"
     },
     {
       "name": "Warhammer 40,000: Space Marine 2",
