@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NV⚡UV Play · User Guide · v0.1.7-alpha</title>
+<title>NV⚡UV Play · User Guide · v0.1.9-alpha</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
 
@@ -275,7 +275,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="bolt">⚡</span><span class="uv">UV</span><span class="play">Play</span></h1>
     <div class="subtitle">Simple game undervolting · User guide</div>
-    <div class="build">v0.1.7-alpha · Open Alpha · June 2026</div>
+    <div class="build">v0.1.9-alpha · Open Alpha · June 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -295,6 +295,7 @@
       <li><a href="#apply-style">Apply style</a></li>
       <li><a href="#vdroop">V-droop compensation</a></li>
       <li><a href="#stabilizer">Stabilizer</a></li>
+      <li><a href="#smart-hz">Smart Hz</a></li>
       <li><a href="#monitoring">Monitoring</a></li>
       <li><a href="#updates">Game library updates</a></li>
       <li><a href="#troubleshooting">Troubleshooting</a></li>
@@ -583,6 +584,29 @@
     <p>Configure via right-click on the Stabilizer toggle in the main window: Strategy, step sizes, floors. Default behaviour works well for most users.</p>
   </section>
 
+  <!-- ═══ SMART HZ ═══ -->
+  <section id="smart-hz">
+    <h2 class="cyan"><span class="icon">🖥</span>Smart Hz</h2>
+    <p>Smart Hz lowers your monitor's refresh rate on the desktop and restores the native rate the moment a mapped game launches. When you quit the game it drops back to the idle rate. The toggle sits in the main window under Autostart.</p>
+
+    <p>The point is desktop power. A lower refresh rate on an idle desktop keeps the display memory in a lower clock state, which on many cards is where the idle power saving actually comes from. During gaming you always get your full native rate, so there is no performance trade-off in-game.</p>
+
+    <h3>Setting the idle rate</h3>
+    <ul>
+      <li><strong>Right-click the Smart Hz toggle</strong> to pick the idle rate inline. The list shows the refresh rates your monitor actually reports, so you can only pick a rate the display supports.</li>
+      <li><strong>Settings, "Configure Smart Hz..."</strong> opens the same choice in a dialog.</li>
+    </ul>
+
+    <div class="note"><strong>Smart Hz turns Activate on.</strong> It relies on the same game detection as the tier system, so enabling Smart Hz also enables Activate. If you turn Activate off, Smart Hz stops switching too.</div>
+
+    <h3>Good to know</h3>
+    <ul>
+      <li>G-Sync / VRR compatible. The idle rate is a normal display mode switch through the standard Windows path.</li>
+      <li>The rate reverts to your native desktop rate on logoff or reboot, so a switch can never get "stuck".</li>
+      <li>If you change the idle rate while the desktop is already idle, it applies on the next idle transition (after the next game quits), not instantly.</li>
+    </ul>
+  </section>
+
   <!-- ═══ MONITORING ═══ -->
   <section id="monitoring">
     <h2 class="cyan"><span class="icon">📊</span>Monitoring</h2>
@@ -729,7 +753,7 @@ SOFTWARE.</pre>
 
   <div class="footer">
     <p><a href="https://github.com/christianp403-spec/nv-uv-play">github.com/christianp403-spec/nv-uv-play</a></p>
-    <p style="margin-top: 8px;">NV⚡UV Play · v0.1.7-alpha · Open Alpha · June 2026</p>
+    <p style="margin-top: 8px;">NV⚡UV Play · v0.1.9-alpha · Open Alpha · June 2026</p>
     <p style="margin-top: 4px;">© 2026 Christian Papaioannou. NV⚡UV and the lightning bolt are trademarks of the author.</p>
   </div>
 
