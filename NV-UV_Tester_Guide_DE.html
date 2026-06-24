@@ -356,7 +356,7 @@
   <!-- ═══ WAS IST NV-UV ═══ -->
   <section>
     <h2 class="orange"><span class="icon">⚡</span>Was ist NV-UV?</h2>
-    <p>NV-UV ist ein GPU-Undervolting-Tool für moderne NVIDIA-Grafikkarten: <strong>RTX 50-Serie</strong> (Blackwell), <strong>RTX 40-Serie</strong> (Ada) und, neu in v0.97, <strong>RTX 30-Serie</strong> (Ampere). Es vereinfacht den Undervolt-Prozess, der normalerweise über MSI Afterburner's Kurven-Editor läuft.</p>
+    <p>NV-UV ist ein GPU-Undervolting-Tool für moderne NVIDIA-Grafikkarten: <strong>RTX 50-Serie</strong> (Blackwell), <strong>RTX 40-Serie</strong> (Ada) und, neu in v0.98, <strong>RTX 30-Serie</strong> (Ampere). Es vereinfacht den Undervolt-Prozess, der normalerweise über MSI Afterburner's Kurven-Editor läuft.</p>
     <p>NV-UV nutzt Afterburner als Backend, du brauchst also <strong>MSI Afterburner + RTSS</strong> installiert.</p>
 
     <h3>Features</h3>
@@ -366,18 +366,20 @@
       <tr><td>🔍 <strong>Stock Curve Discovery</strong></td><td>Liest automatisch die echte VF-Kurve deiner spezifischen GPU aus AB</td></tr>
       <tr><td>🔬 <strong>OCS → UV</strong></td><td>AB OC Scanner Ergebnis importieren, chipspezifische UV-Kurve bauen</td></tr>
       <tr><td>🎮 <strong>Game Replay</strong></td><td>Automatischer Step-Down bei Crash, mit Lernschleife pro Spiel</td></tr>
-      <tr><td>✈️ <strong>UV-Pilot</strong></td><td>Erkennt 632 Spiele automatisch, schaltet zum optimalen Preset</td></tr>
+      <tr><td>✈️ <strong>UV-Pilot</strong></td><td>Erkennt Spiele automatisch, wechselt zum optimalen Preset</td></tr>
+      <tr><td>⚡ <strong>UV⚡Try</strong> <span style="color:var(--gold);">NEU</span></td><td>Community-UV-Werte für deine Karte durchstöbern und auf einen Slot anwenden</td></tr>
+      <tr><td>🌍 <strong>Global / Kein Override</strong> <span style="color:var(--gold);">NEU</span></td><td>Eine Stufe für alle Spiele, oder einzelne Spiele davon ausnehmen</td></tr>
       <tr><td>⚡ <strong>Voltage Step Scanner</strong></td><td>Stage 1 (höchste stabile Frequenz) + Stage 2 (niedrigste stabile Spannung), DX12/DXR Stress-Engine</td></tr>
       <tr><td>🎯 <strong>Optimize Point</strong> <span style="color:var(--gold);">NEU</span></td><td>Stage 2 — niedrigste Voltage zu einer festen Frequenz finden, Feinabstimmung nach Stage 1</td></tr>
       <tr><td>📐 <strong>V-Step Compensation</strong> <span style="color:var(--gold);">NEU</span></td><td>Scanner kompensiert V-Droop automatisch für präzisere Tests</td></tr>
-      <tr><td>🖥 <strong>Smart Hz</strong></td><td>Desktop 60Hz, Gaming native Hz. Spart ~10W Idle.</td></tr>
+      <tr><td>🖥 <strong>Smart Hz</strong></td><td>Niedrige Desktop-Rate, native Hz beim Spielen. Rechtsklick zur Wahl der Idle-Rate. Spart ~10-25W Idle.</td></tr>
       <tr><td>🌍 <strong>DE/EN</strong></td><td>Komplette Oberfläche Deutsch/Englisch, Live-Toggle im Footer</td></tr>
       <tr><td>🔥 <strong>3D Stress Test</strong></td><td>DX12 + DXR Render-Engine (headless) mit Heartbeat-Lastmuster</td></tr>
       <tr><td>⚓ <strong>Anker-Profil</strong></td><td>Rechtsklick auf Slot — wird beim Programmstart geladen, nach Spielende durch UV-Pilot wiederhergestellt</td></tr>
       <tr><td>🧊 <strong>Idle-Optimierung</strong></td><td>Unter 850 mV = Stock, spart Strom bei Desktop/Idle</td></tr>
       <tr><td>🔧 <strong>V-Step Fix</strong></td><td>Kompensiert den Blackwell point-before-flatten Bug</td></tr>
       <tr><td>📐 <strong>Mini View</strong></td><td>Kompakte Ansicht, perfekt neben AB's Curve Editor</td></tr>
-      <tr><td>🎨 <strong>3 Skins</strong></td><td>Dark + UV-Party + Royal Blue</td></tr>
+      <tr><td>🎨 <strong>4 Skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity</td></tr>
       <tr><td>⏻ <strong>System Tray</strong></td><td>Läuft im Hintergrund. Autostart kommt sobald die EXE signiert ist.</td></tr>
     </table>
   </section>
@@ -387,7 +389,7 @@
     <h2 class="gold"><span class="icon">📋</span>Voraussetzungen</h2>
     <table>
       <tr><th>Was</th><th>Details</th></tr>
-      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, oder 5060 Ti / 5060 (experimentell)<br>Ada-Karten (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) ebenfalls unterstützt<br>RTX 4060 Ti / 4060 (experimentell)<br>RTX 30-Serie (Ampere) <span style="color:var(--gold);">NEU in v0.97</span>, nur auf RTX 3090 verifiziert, alle anderen Ampere-Modelle experimentell</td></tr>
+      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, oder 5060 Ti / 5060 (experimentell)<br>Ada-Karten (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) ebenfalls unterstützt<br>RTX 4060 Ti / 4060 (experimentell)<br>RTX 30-Serie (Ampere) <span style="color:var(--gold);">NEU in v0.98</span>, nur auf RTX 3090 verifiziert, alle anderen Ampere-Modelle experimentell</td></tr>
       <tr><td><strong>Treiber</strong></td><td>Aktueller NVIDIA-Treiber</td></tr>
       <tr><td><strong>MSI Afterburner</strong></td><td>Version 4.6.6+ mit RTSS</td></tr>
       <tr><td><strong>Windows</strong></td><td>Windows 11 (64-bit)</td></tr>
@@ -521,6 +523,7 @@
     <div class="step"><div class="step-num">2</div><div class="step-content"><strong>UV anwenden:</strong> AB-Slot (1-5) wählen, dann ⚡ UV anwenden.</div></div>
     <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Testen:</strong> Spiel starten, Spannung + Temperatur beobachten. Stabil = fertig!</div></div>
     <div class="warn">Fang mit <strong>Balanced</strong> an! Eco kann bei manchen GPUs zu aggressiv sein.</div>
+    <div class="warn" style="margin-top:0.6em;"><strong>⚠ Blackwell-Spannungsfloor (RTX 50):</strong> Bei rund 875 mV und darunter hält der Blackwell-Treiber den V-Lock nicht - er boostet auf einen höheren Spannungspunkt zurück, der Undervolt greift dann nicht wie eingestellt (ein Lock bei 845 mV landet höher als gewählt). Für einen stabilen Lock auf Blackwell über 875 mV wählen. NV-UV zeigt bei diesem Wert und darunter einen Hinweis direkt im V-Lock-Tab. Das ist Treiberverhalten, das NV-UV nicht überschreiben kann.</div>
   </section>
 
   <!-- ═══ OCS → UV ═══ -->
@@ -826,15 +829,31 @@
   <!-- ═══ SMART HZ ═══ -->
   <section>
     <h2 class="cyan"><span class="icon">🖥</span>Smart Hz</h2>
-    <p>NV-UV schaltet den Desktop automatisch auf 60Hz wenn kein Spiel läuft und auf die native Refresh-Rate sobald der UV-Pilot ein Spiel erkennt. Spart ~10W im Idle.</p>
-    <p>Der Smart Hz Toggle ist direkt in der Toolbar sichtbar. Der Tooltip zeigt „experimental" — das Feature funktioniert, ist aber bei Multi-Monitor-Setups noch nicht ausgiebig getestet.</p>
+    <p>NV-UV schaltet den Desktop automatisch auf eine niedrige Refresh-Rate, wenn kein Spiel läuft, und zurück auf die native Rate, sobald der UV-Pilot ein Spiel erkennt. Spart rund 10-25W im Idle. Der Toggle ist direkt in der Toolbar.</p>
+    <p><strong>Idle-Rate wählen (neu):</strong> Rechtsklick auf den Smart-Hz-Button öffnet ein Menü mit den Refresh-Raten, die dein Monitor tatsächlich unterstützt (z.B. 60 / 120 / 144 Hz). Die Auswahl aktiviert Smart Hz gleich mit, ein separates Ein-/Ausschalten ist nicht nötig. Die gewählte Rate bleibt über Neustarts erhalten.</p>
     <table>
-      <tr><td><strong>Desktop/Idle</strong></td><td>60Hz</td></tr>
+      <tr><td><strong>Desktop/Idle</strong></td><td>gewählte Rate (z.B. 60/120Hz)</td></tr>
       <tr><td><strong>Spiel erkannt</strong></td><td>Native Rate (z.B. 120/144/165Hz)</td></tr>
-      <tr><td><strong>Spiel beendet</strong></td><td>Zurück auf 60Hz</td></tr>
+      <tr><td><strong>Spiel beendet</strong></td><td>Zurück auf die gewählte Idle-Rate</td></tr>
       <tr><td><strong>NV-UV beendet</strong></td><td>Native Rate wiederhergestellt</td></tr>
     </table>
-    <div class="warn">Bei Multi-Monitor-Setups kann es zu Problemen kommen. Im Zweifelsfall deaktiviert lassen.</div>
+    <div class="warn">Bei Multi-Monitor-Setups kann es zu Problemen kommen. Im Zweifelsfall deaktiviert lassen. Benötigt UV-Pilot für die Spielerkennung.</div>
+  </section>
+
+  <!-- ═══ UV-TRY ═══ -->
+  <section>
+    <h2 class="cyan"><span class="icon">⚡</span>UV⚡Try (Community-UV-Datenbank)</h2>
+    <p>UV⚡Try öffnet eine durchsuchbare Datenbank mit Community-Undervolt-Werten für deine GPU, gruppiert in Eco, Balanced und UV+OC. Jeder Eintrag zeigt Spannung, Takt, Power Limit, VRAM-Offset, Board, ein Vertrauens-Label und den Quellen-Link. Die Liste wählt deine erkannte Karte vor.</p>
+    <p>Geöffnet wird sie über den <strong>UV⚡Try</strong>-Button neben den Presets (Eco / Bal / Perf / Max). Zum Übernehmen einen Eintrag rechtsklicken und einen Profil-Slot (1-5) wählen, genau wie in der Scanner-Historie.</p>
+    <p><strong>Bewertung (Phase 1):</strong> Die Sterne-Spalte ist deine persönliche Notiz (nur lokal) - bewerte, welche Werte bei dir funktioniert haben. Community-Bewertungen und das Hochladen eigener Settings kommen im nächsten Build.</p>
+    <div class="warn">Community-Werte sind nur ein Startpunkt. Jede Karte ist anders (Silizium-Lotterie) - verifiziere einen Wert immer auf deiner eigenen Karte, bevor du dich darauf verlässt.</div>
+  </section>
+
+  <!-- ═══ GLOBAL / NO OVERRIDE ═══ -->
+  <section>
+    <h2 class="cyan"><span class="icon">🌍</span>Globaler Override &amp; Kein Override</h2>
+    <p>In der Spiele-Bibliothek lässt sich ein <strong>globaler Override</strong> setzen (Dropdown in der Toolbar): Er zwingt jedes laufende Spiel auf die gewählte Stufe (Eco / Bal / Perf / Max) und überschreibt deren individuelle Zuordnungen. Praktisch, wenn du nur den UV-Piloten nutzt und überall dieselbe Stufe willst.</p>
+    <p><strong>Kein Override</strong> nimmt ein einzelnes Spiel vom globalen Override aus - es löst dann normal auf (eigene Stufe, Datenbank-Stufe oder Stock). Setzbar entweder im Per-Game-Override-Dropdown („⊘ Kein Override") oder per Rechtsklick auf die Spielzeile. Nützlich z.B. für einen Browser, den der UV-Pilot nicht anfassen soll.</p>
   </section>
 
   <!-- ═══ MINI VIEW ═══ -->
@@ -861,8 +880,8 @@
     <h3><span class="gpu-badge gpu-5080">RTX 5080</span></h3>
     <table>
       <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
-      <tr><td>🍃 Eco</td><td>850 mV</td><td>2800 MHz</td><td>88%</td></tr>
-      <tr><td>⚡ Balanced</td><td>900 mV</td><td>2800 MHz</td><td>90%</td></tr>
+      <tr><td>🍃 Eco</td><td>850 mV</td><td>2650 MHz</td><td>88%</td></tr>
+      <tr><td>⚡ Balanced</td><td>900 mV</td><td>2750 MHz</td><td>90%</td></tr>
       <tr><td>🚀 Performance</td><td>925 mV</td><td>2980 MHz</td><td>100%</td></tr>
       <tr><td>🔥 Max</td><td>975 mV</td><td>3150 MHz</td><td>100%</td></tr>
     </table>
@@ -955,7 +974,7 @@
 
     <div class="warn"><strong>Was bedeutet "experimentell" bei den RTX 5060- und RTX 4060-Modellen?</strong> Diese Karten werden vom NV-UV-Code unterstützt, aber die Preset-Werte wurden noch nicht durch unser Tester-Programm auf echter Hardware verifiziert. Sie basieren auf KI-DeepSearch-Recherche aus Community-Daten (Reddit, Hardwareluxx, Igor's Lab, OCN). Bitte testet mit Balanced als Startpunkt und gebt Feedback im PCGH-Forum oder auf Discord, damit die Werte nachgeschärft werden können.</div>
 
-    <div class="info" style="margin-top:1em;"><strong>🧪 Ampere-Status (v0.97):</strong> Die Ampere-Integration wurde bisher nur auf einer einzigen Karte verifiziert, einer RTX 3090 (GA102). Alle anderen Ampere-Modelle sind ungetestet. Die Preset-Werte unten basieren auf Community-Recherche, nicht auf Hardware-Verifikation, daher sind alle RTX-30-Karten außer der 3090 als experimentell zu behandeln. Vor allem der Voltage Step Scanner verhält sich evtl. noch nicht korrekt, besonders auf den kleineren Chips. Ampere-Tester sind sehr willkommen im PCGH-Subforum und auf Discord. Bitte bei Problemen ein Log mitschicken (Export-Button unten rechts).</div>
+    <div class="info" style="margin-top:1em;"><strong>🧪 Ampere-Status (v0.98):</strong> Die Ampere-Integration wurde bisher nur auf einer einzigen Karte verifiziert, einer RTX 3090 (GA102). Alle anderen Ampere-Modelle sind ungetestet. Die Preset-Werte unten basieren auf Community-Recherche, nicht auf Hardware-Verifikation, daher sind alle RTX-30-Karten außer der 3090 als experimentell zu behandeln. Vor allem der Voltage Step Scanner verhält sich evtl. noch nicht korrekt, besonders auf den kleineren Chips. Ampere-Tester sind sehr willkommen im PCGH-Subforum und auf Discord. Bitte bei Problemen ein Log mitschicken (Export-Button unten rechts).</div>
 
     <h3>RTX 3090 <span style="color:var(--cyan);">(Referenzkarte, Integration verifiziert)</span></h3>
     <table>
@@ -1032,10 +1051,10 @@
     <h3>RTX 3060 <span style="color:var(--gold);">(experimentell)</span></h3>
     <table>
       <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
-      <tr><td>🍃 Eco</td><td>800 mV</td><td>1750 MHz</td><td>80%</td></tr>
-      <tr><td>⚡ Balanced</td><td>850 mV</td><td>1840 MHz</td><td>90%</td></tr>
-      <tr><td>🚀 Performance</td><td>900 mV</td><td>1900 MHz</td><td>100%</td></tr>
-      <tr><td>🔥 Max</td><td>950 mV</td><td>1950 MHz</td><td>100%</td></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1560 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>850 mV</td><td>1680 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1800 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>1850 MHz</td><td>100%</td></tr>
     </table>
 
     <div class="info">Die Preset-Werte basieren auf Community-Erfahrungswerten. Nicht jede GPU schafft jedes Preset, Silizium-Lotterie. Im Zweifelsfall mit Balanced anfangen.</div>
