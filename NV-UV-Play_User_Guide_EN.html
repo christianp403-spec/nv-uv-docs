@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NV⚡UV Play · User Guide · v0.1.9-alpha</title>
+<title>NV⚡UV Play · User Guide · v0.1.9.1-alpha</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
 
@@ -275,7 +275,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="bolt">⚡</span><span class="uv">UV</span><span class="play">Play</span></h1>
     <div class="subtitle">Simple game undervolting · User guide</div>
-    <div class="build">v0.1.9-alpha · Open Alpha · June 2026</div>
+    <div class="build">v0.1.9.1-alpha · Open Alpha · June 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -289,6 +289,7 @@
       <li><a href="#install">Installation</a></li>
       <li><a href="#first-run">First run</a></li>
       <li><a href="#tiers">The tiers</a></li>
+      <li><a href="#presets">Preset reference</a></li>
       <li><a href="#game-library">Game library</a></li>
       <li><a href="#custom">Custom profiles</a></li>
       <li><a href="#advanced">Advanced options</a></li>
@@ -393,6 +394,230 @@
     <p>Pick the tier per game in the Game Library, or set a global default that applies to everything not specifically assigned.</p>
 
     <div class="note"><strong>Every silicon sample is different.</strong> The bundled tiers are community-validated starting points, not guaranteed-stable settings for your exact card. If Max crashes, drop to Performance. If Performance crashes, drop to Balanced. The Stabilizer (see below) automates this when it happens during a game.</div>
+  </section>
+
+  <!-- ═══ PRESETS ═══ -->
+  <section id="presets">
+    <h2 class="cyan"><span class="icon">📑</span>Preset reference</h2>
+    <p>The exact bundled tier values per GPU, straight from the build. Voltage is the lock point, frequency the target clock, PL the power limit. MFG is Blackwell only. These are community-validated starting points, not guaranteed-stable for your exact sample.</p>
+
+    <h3 class="green">Blackwell · RTX 50 <span style="color:var(--dim);font-size:12px;">✅ verified</span></h3>
+    <p style="margin:10px 0 4px;"><strong>RTX 5090</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>900 mV</td><td>2700 MHz</td><td>85%</td></tr>
+      <tr><td>⚡ MFG</td><td>900 mV</td><td>2650 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>950 mV</td><td>2900 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>975 mV</td><td>3000 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>3100 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 5080</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>850 mV</td><td>2650 MHz</td><td>88%</td></tr>
+      <tr><td>⚡ MFG</td><td>850 mV</td><td>2650 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>900 mV</td><td>2750 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>2980 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>3150 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 5070 Ti</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>850 mV</td><td>2500 MHz</td><td>83%</td></tr>
+      <tr><td>⚡ MFG</td><td>850 mV</td><td>2450 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>900 mV</td><td>2800 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>2950 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>3000 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 5070</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>850 mV</td><td>2600 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ MFG</td><td>850 mV</td><td>2550 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>900 mV</td><td>2750 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>940 mV</td><td>3000 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>3150 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 5060 Ti / RTX 5060</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>2500 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ MFG</td><td>800 mV</td><td>2450 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>2700 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>2900 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>3000 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3 class="green">Ada Lovelace · RTX 40 <span style="color:var(--dim);font-size:12px;">✅ supported</span></h3>
+    <p style="margin:10px 0 4px;"><strong>RTX 4090</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>875 mV</td><td>2400 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>900 mV</td><td>2550 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>2625 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2700 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 4080</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>875 mV</td><td>2400 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>900 mV</td><td>2520 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>2640 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2700 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 4070 Ti Super</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>900 mV</td><td>2430 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>925 mV</td><td>2550 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>940 mV</td><td>2640 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2715 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 4070 Ti</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>925 mV</td><td>2550 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>925 mV</td><td>2580 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>950 mV</td><td>2685 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2730 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 4070 Super</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>900 mV</td><td>2400 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>925 mV</td><td>2550 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>940 mV</td><td>2610 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2715 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 4070</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>900 mV</td><td>2400 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>925 mV</td><td>2550 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>2580 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2700 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 4060 Ti</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>900 mV</td><td>2400 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>925 mV</td><td>2550 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>2580 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2670 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 4060</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>875 mV</td><td>2300 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>900 mV</td><td>2400 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>2520 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>925 mV</td><td>2580 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3 class="gold">Ampere · RTX 30 <span style="color:var(--dim);font-size:12px;">⚠ experimental (Voltage Lock)</span></h3>
+    <p style="margin:10px 0 4px;"><strong>RTX 3090 Ti</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>825 mV</td><td>1700 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1830 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>1950 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>2025 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 3090</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1700 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1830 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1900 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>1965 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 3080 Ti</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1710 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1870 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1920 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>1980 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 3080 (12 GB)</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1700 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1860 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1920 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2000 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 3080 (10 GB)</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1750 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1890 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1950 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2010 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 3070 Ti</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>825 mV</td><td>1770 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1905 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1950 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>1995 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 3070</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>775 mV</td><td>1700 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1900 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>1950 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2010 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 3060 Ti</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1750 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1875 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>1935 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>1980 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 3060</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1560 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>850 mV</td><td>1680 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1800 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>1850 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3 class="gold">Turing · RTX 20 <span style="color:var(--dim);font-size:12px;">⚠ experimental (Voltage Lock)</span></h3>
+    <p style="margin:10px 0 4px;"><strong>RTX 2080 Ti</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>825 mV</td><td>1700 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>900 mV</td><td>1850 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>950 mV</td><td>1950 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>1000 mV</td><td>2010 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 2080 Super</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>850 mV</td><td>1800 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>900 mV</td><td>1900 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>950 mV</td><td>1965 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>1000 mV</td><td>2000 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 2080</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>825 mV</td><td>1700 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1800 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1900 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>1965 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 2070 Super</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1750 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1890 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>950 mV</td><td>1980 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>1000 mV</td><td>1995 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 2070</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>825 mV</td><td>1650 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1800 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>1860 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>1900 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 2060 Super</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>825 mV</td><td>1700 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1830 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>1890 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>1950 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="margin:10px 0 4px;"><strong>RTX 2060</strong></p>
+    <table><tr><th>Tier</th><th>Voltage</th><th>Frequency</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>825 mV</td><td>1650 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1785 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>1860 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>1920 MHz</td><td>100%</td></tr>
+    </table>
+
+    <div class="note">Values are read live per card. The number you set is the requested target; NVAPI quantization and voltage droop can shift the achieved clock a little (see V-droop compensation).</div>
   </section>
 
   <!-- ═══ GAME LIBRARY ═══ -->
@@ -753,7 +978,7 @@ SOFTWARE.</pre>
 
   <div class="footer">
     <p><a href="https://github.com/christianp403-spec/nv-uv-play">github.com/christianp403-spec/nv-uv-play</a></p>
-    <p style="margin-top: 8px;">NV⚡UV Play · v0.1.9-alpha · Open Alpha · June 2026</p>
+    <p style="margin-top: 8px;">NV⚡UV Play · v0.1.9.1-alpha · Open Alpha · June 2026</p>
     <p style="margin-top: 4px;">© 2026 Christian Papaioannou. NV⚡UV and the lightning bolt are trademarks of the author.</p>
   </div>
 
