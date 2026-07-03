@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NV⚡UV Play · User Guide · v0.1.9.1-alpha</title>
+<title>NV⚡UV Play · User Guide · v0.1.9.2-alpha</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
 
@@ -275,7 +275,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="bolt">⚡</span><span class="uv">UV</span><span class="play">Play</span></h1>
     <div class="subtitle">Simple game undervolting · User guide</div>
-    <div class="build">v0.1.9.1-alpha · Open Alpha · June 2026</div>
+    <div class="build">v0.1.9.2-alpha · Open Alpha · June 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -720,14 +720,14 @@
 
     <h3>Gradient Lock</h3>
     <p>Smooth ramp up to the target frequency below the lock voltage, then plateau above. The shape familiar from Afterburner curve editors. Default on Blackwell and Ada.</p>
-    <p>On Ampere / Turing, Gradient Lock has no certified path and Play falls back to Voltage Lock automatically.</p>
+    <p>On Ampere (RTX 30) there is now a Gradient Lock path too, built from the RTX 3090 reference. It is experimental and off by default, so Ampere keeps using Voltage Lock until you enable it under Advanced Options, Ampere Gradient Lock. On Turing (RTX 20) Gradient Lock has no certified path and Play falls back to Voltage Lock automatically.</p>
     <div class="note"><strong>Telemetry vs. requested target.</strong> The telemetry readout may differ from what you set. NVAPI quantization adds ±10-30 MHz drift around the plateau, and under heavy load voltage droop can pull the achieved clock further below the target. V-Step Compensation below can compensate, or for guaranteed frequency author a custom profile with more voltage (trades efficiency for stability).</div>
 
     <h3>Voltage Lock</h3>
     <p>Strict voltage lock: stock curve untouched below, target frequency above. Direct NVAPI write, flat-tail above the lock. Works on every family including Ampere / Turing.</p>
     <p>Voltage Lock produces a different curve shape than what Afterburner users typically see, but it's mechanically the same idea, just without the ramp below.</p>
 
-    <div class="tip"><strong>Which one?</strong> On Blackwell or Ada: Gradient Lock unless you have a specific reason. On Ampere / Turing: Voltage Lock. The difference under load is usually subtle.</div>
+    <div class="tip"><strong>Which one?</strong> On Blackwell or Ada: Gradient Lock unless you have a specific reason. On Ampere: Voltage Lock by default, or switch on the experimental Ampere Gradient Lock if you want to test it. On Turing: Voltage Lock. The difference under load is usually subtle.</div>
   </section>
 
   <!-- ═══ V-DROOP COMPENSATION ═══ -->
@@ -978,7 +978,7 @@ SOFTWARE.</pre>
 
   <div class="footer">
     <p><a href="https://github.com/christianp403-spec/nv-uv-play">github.com/christianp403-spec/nv-uv-play</a></p>
-    <p style="margin-top: 8px;">NV⚡UV Play · v0.1.9.1-alpha · Open Alpha · June 2026</p>
+    <p style="margin-top: 8px;">NV⚡UV Play · v0.1.9.2-alpha · Open Alpha · June 2026</p>
     <p style="margin-top: 4px;">© 2026 Christian Papaioannou. NV⚡UV and the lightning bolt are trademarks of the author.</p>
   </div>
 
