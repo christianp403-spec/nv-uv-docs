@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NV-UV · Руководство пользователя · Build 22 · Cantor</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
+
+  :root {
+    --bg: #0a0a09;
+    --bg-card: #111110;
+    --bg-card-hover: #1a1a18;
+    --border: #333330;
+    --border-dim: #222220;
+    --orange: #E86820;
+    --orange-dim: #D05818;
+    --orange-glow: rgba(232,104,32,0.15);
+    --gold: #CCB420;
+    --gold-dim: #998810;
+    --gold-glow: rgba(204,180,32,0.12);
+    --cyan: #00AACC;
+    --green: #4CAF50;
+    --red: #CC4444;
+    --purple: #8B5CF6;
+    --purple-dim: #6D28D9;
+    --platinum: #C0C0C0;
+    --white: #E8E8E0;
+    --dim: #888880;
+    --dimmer: #666660;
+    --mono: 'JetBrains Mono', 'Consolas', monospace;
+    --display: 'Orbitron', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      linear-gradient(90deg, transparent 49.5%, var(--border-dim) 49.5%, var(--border-dim) 50.5%, transparent 50.5%),
+      linear-gradient(0deg, transparent 49.5%, var(--border-dim) 49.5%, var(--border-dim) 50.5%, transparent 50.5%);
+    background-size: 80px 80px;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .led-bar {
+    height: 4px;
+    border-radius: 2px;
+    margin: 0 40px;
+  }
+  .led-bar.orange { background: var(--orange-dim); box-shadow: 0 0 12px var(--orange-glow); }
+  .led-bar.gold { background: var(--gold-dim); box-shadow: 0 0 12px var(--gold-glow); }
+
+  .header {
+    text-align: center;
+    padding: 48px 0 32px;
+  }
+  .header h1 {
+    font-family: var(--display);
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 4px;
+  }
+  .header h1 .nv { color: var(--orange); }
+  .header h1 .sep { color: var(--dimmer); margin: 0 2px; }
+  .header h1 .uv { color: var(--gold); }
+  .header .subtitle {
+    font-size: 13px;
+    color: var(--dim);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .header .build {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 4px 16px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 11px;
+    color: var(--cyan);
+    letter-spacing: 1px;
+  }
+
+  section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin: 20px 0;
+  }
+  section:hover { border-color: #444440; }
+
+  .new-badge {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 3px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: rgba(139,92,246,0.2);
+    color: var(--purple);
+    border: 1px solid var(--purple-dim);
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+
+  h2 {
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2 .icon { margin-right: 8px; }
+  h2.orange { color: var(--orange); border-color: var(--orange-dim); }
+  h2.gold { color: var(--gold); border-color: var(--gold-dim); }
+  h2.cyan { color: var(--cyan); border-color: #006680; }
+  h2.green { color: var(--green); border-color: #2E7D32; }
+  h2.red { color: var(--red); border-color: #882222; }
+  h2.purple { color: var(--purple); border-color: var(--purple-dim); }
+
+  h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--orange);
+    margin: 16px 0 8px;
+    letter-spacing: 1px;
+  }
+
+  p { margin: 8px 0; color: var(--white); }
+  p.dim { color: var(--dim); font-size: 13px; }
+
+  .step {
+    display: flex;
+    gap: 16px;
+    margin: 12px 0;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 6px;
+    border-left: 3px solid var(--border);
+  }
+  .step:hover { border-left-color: var(--orange-dim); background: rgba(255,255,255,0.03); }
+  .step-num {
+    font-family: var(--display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--orange);
+    min-width: 32px;
+    text-align: center;
+  }
+  .step-content { flex: 1; }
+  .step-content strong { color: var(--gold); }
+
+  code {
+    background: rgba(255,255,255,0.06);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: var(--cyan);
+  }
+  pre {
+    background: #0d0d0c;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 10px 0;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 14px;
+    margin: 4px 0;
+    border-radius: 6px;
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+  .checklist li:hover { background: rgba(255,255,255,0.03); }
+  .checklist li input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg);
+    cursor: pointer;
+    margin-top: 1px;
+    position: relative;
+  }
+  .checklist li input[type="checkbox"]:checked {
+    background: var(--orange-dim);
+    border-color: var(--orange);
+  }
+  .checklist li input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: -1px; left: 3px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+  }
+  .checklist li label { cursor: pointer; flex: 1; }
+  .checklist li .hint {
+    display: block;
+    font-size: 12px;
+    color: var(--dim);
+    margin-top: 2px;
+  }
+
+  .warn {
+    background: rgba(232,104,32,0.08);
+    border: 1px solid var(--orange-dim);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  .warn::before { content: '⚠ '; color: var(--orange); font-weight: bold; }
+
+  .info {
+    background: rgba(0,170,204,0.06);
+    border: 1px solid #006680;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  .info::before { content: 'ℹ '; color: var(--cyan); font-weight: bold; }
+
+  .new-info {
+    background: rgba(139,92,246,0.06);
+    border: 1px solid var(--purple-dim);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  .new-info::before { content: '🤖 '; font-weight: bold; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  th {
+    text-align: left;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.04);
+    border-bottom: 1px solid var(--border);
+    color: var(--dim);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border-dim);
+  }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .gpu-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .gpu-5090 { background: rgba(232,104,32,0.2); color: var(--orange); border: 1px solid var(--orange-dim); }
+  .gpu-5080 { background: rgba(204,180,32,0.15); color: var(--gold); border: 1px solid var(--gold-dim); }
+  .gpu-5070ti { background: rgba(0,170,204,0.15); color: var(--cyan); border: 1px solid #006680; }
+  .gpu-5070 { background: rgba(76,175,80,0.15); color: var(--green); border: 1px solid #2E7D32; }
+
+  .footer {
+    text-align: center;
+    padding: 32px 0 16px;
+    font-size: 11px;
+    color: var(--dimmer);
+    letter-spacing: 1px;
+  }
+
+  @media print {
+    body { background: #fff; color: #222; }
+    body::before { display: none; }
+    section { border: 1px solid #ccc; }
+    .checklist li input[type="checkbox"] { border-color: #999; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="led-bar orange"></div>
+<div class="header">
+<h1><span class="nv">NV</span><span class="sep">—</span><span class="uv">UV</span></h1>
+<div class="subtitle">GPU Undervolt · Руководство пользователя</div>
+<div class="build">Build 22 · Cantor · Open Alpha · Май 2026</div>
+</div>
+<div class="led-bar gold"></div>
+<section>
+<h2 class="orange"><span class="icon">📝</span>Предисловие</h2>
+<p>Перед началом — несколько слов, которые для меня важны.</p>
+<p><strong>MSI Afterburner был и остаётся лучшим инструментом для видеокарт NVIDIA на рынке.</strong> То, чего Алексей “Unwinder” Николайчук добился за эти годы, действительно выдающийся результат. Afterburner — золотой стандарт для настройки GPU, OSD, управления вентиляторами и расширенного редактирования кривой. NV-UV не пытается заменить Afterburner. Ни сейчас, ни в будущем. NV-UV — это <strong>Companion Tool</strong>: он упрощает первые шаги в undervolting на Blackwell и автоматизирует такие вещи, как переключение пресетов, восстановление после сбоев и оптимизацию через scanner. Но для тонкого редактирования кривой, overclocking, OSD и всего, что выходит за рамки undervolting, Afterburner остаётся основным инструментом. Когда вы нашли стабильную UV-настройку через NV-UV, NV-UV можно закрыть и дальше оставить работу AB: профиль находится в AB и работает оттуда как обычно.</p>
+<p>NV-UV начинался как небольшой сторонний проект — для моей RTX 5090 и друзей, которым я хотел показать undervolting. Честно говоря, я не ожидал, что он превратится в инструмент, которым реально захотят пользоваться так много людей. Такой интерес меня сильно удивил.</p>
+<p>Отдельное спасибо <strong>моему NV-UV Discord-сообществу</strong>, тестерам, которые часами доводили scanner до пределов, тестерам, которые помогали дорабатывать интерфейс, и всем, чья обратная связь постепенно делала NV-UV лучше. Спасибо также моим друзьям и семье, которые терпели, что последние недели меня почти не было рядом. И отдельная благодарность технической прессе, особенно <strong>Raphael</strong> (PCGH), который нашёл инструмент и показал его более широкой аудитории, а также <strong>Andreas</strong> (Hardwareluxx), который внимательно рассмотрел NV-UV. Спасибо и <strong>PCGH Hardware</strong> за то, что они дали NV-UV место на своём форуме. Именно в этом уже много лет и состоит PC-сообщество: настройка, тестирование, игры и удовольствие от процесса. Спасибо от всего сердца. ❤️</p>
+<p class="dim">— Christian</p>
+</section>
+<section>
+<h2 class="orange"><span class="icon">⚡</span>Что такое NV-UV?</h2>
+<p>NV-UV — инструмент для undervolting современных видеокарт NVIDIA: <strong>RTX 50 Series</strong> (Blackwell), <strong>RTX 40 Series</strong> (Ada) и, начиная с v0.98, <strong>RTX 30 Series</strong> (Ampere). Он упрощает процесс undervolting, который обычно требует ручного редактирования кривой в MSI Afterburner.</p>
+<p>NV-UV использует Afterburner как backend, поэтому должны быть установлены <strong>MSI Afterburner + RTSS</strong>.</p>
+<h3>Возможности</h3>
+<table>
+<tr><td>🎚️ <strong>Voltage Lock</strong></td><td>Один клик — GPU работает в точно заданной точке напряжения/частоты</td></tr>
+<tr><td>📊 <strong>4 Preset Levels</strong></td><td>Eco · Balanced · Performance · Max, значения для каждой модели GPU проверены сообществом</td></tr>
+<tr><td>🔍 <strong>Stock Curve Discovery</strong></td><td>Автоматически считывает реальную VF-кривую конкретно вашей видеокарты из AB</td></tr>
+<tr><td>🔬 <strong>OCS → UV</strong></td><td>Импорт результатов AB OC Scanner и построение UV-кривой под конкретный чип</td></tr>
+<tr><td>🎮 <strong>Game Replay</strong></td><td>Автоматическое снижение частоты после сбоя, с обучением отдельно для каждой игры</td></tr>
+<tr><td>✈️ <strong>UV-Pilot</strong></td><td>Автоматически определяет игры и переключается на оптимальный preset</td></tr>
+<tr><td>⚡ <strong>UV⚡Try</strong> <span style="color:var(--gold);">НОВОЕ</span></td><td>Просмотр community UV-значений для вашей карты и применение их в слот</td></tr>
+<tr><td>🌍 <strong>Global / No Override</strong> <span style="color:var(--gold);">НОВОЕ</span></td><td>Один tier для всех игр или исключение отдельных игр из него</td></tr>
+<tr><td>⚡ <strong>Voltage Step Scanner</strong></td><td>Stage 1 (максимальная стабильная частота) + Stage 2 (минимальное стабильное напряжение), стресс-движок DX12/DXR</td></tr>
+<tr><td>🎯 <strong>Optimize Point</strong> <span style="color:var(--gold);">НОВОЕ</span></td><td>Stage 2 — поиск минимального напряжения для фиксированной частоты; тонкая настройка после Stage 1</td></tr>
+<tr><td>📐 <strong>V-Step Compensation</strong> <span style="color:var(--gold);">НОВОЕ</span></td><td>Scanner автоматически компенсирует V-Droop для более точных тестов</td></tr>
+<tr><td>🖥 <strong>Smart Hz</strong></td><td>Низкая частота обновления на рабочем столе и нативная частота в играх. Правый клик — выбор частоты в простое. Экономит около 10–25 Вт в idle.</td></tr>
+<tr><td>🌍 <strong>DE/EN</strong></td><td>Полный интерфейс на немецком/английском, переключение в футере без перезапуска</td></tr>
+<tr><td>🔥 <strong>3D Stress Test</strong></td><td>Render engine DX12 + DXR без окна вывода (headless), с пульсирующими паттернами нагрузки</td></tr>
+<tr><td>⚓ <strong>Anchor Profile</strong></td><td>Правый клик по слоту — применяется при запуске, восстанавливается UV-Pilot после завершения игр</td></tr>
+<tr><td>🧊 <strong>Idle Optimization</strong></td><td>Низкие напряжения = stock; снижает потребление на рабочем столе/в простое</td></tr>
+<tr><td>🔧 <strong>V-Step Fix</strong></td><td>Компенсирует Blackwell-ошибку point-before-flatten</td></tr>
+<tr><td>📐 <strong>Mini View</strong></td><td>Компактный вид, удобен рядом с редактором кривой AB</td></tr>
+<tr><td>🎨 <strong>4 Skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity</td></tr>
+<tr><td>⏻ <strong>System Tray</strong></td><td>Работает в фоне. Autostart будет добавлен после подписи EXE.</td></tr>
+</table>
+</section>
+<section>
+<h2 class="gold"><span class="icon">📋</span>Требования</h2>
+<table>
+<tr><th>Что</th><th>Подробности</th></tr>
+<tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070 или 5060 Ti / 5060 (experimental)<br/>Карты Ada (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) также поддерживаются<br/>RTX 4060 Ti / 4060 (experimental)<br/>RTX 30 Series (Ampere) <span style="color:var(--gold);">НОВОЕ в v0.98</span>, проверено только на RTX 3090; все остальные модели Ampere — experimental</td></tr>
+<tr><td><strong>Драйвер</strong></td><td>Последний драйвер NVIDIA</td></tr>
+<tr><td><strong>MSI Afterburner</strong></td><td>Версия 4.6.6+ с RTSS</td></tr>
+<tr><td><strong>Windows</strong></td><td>Windows 11 (64-bit)</td></tr>
+</table>
+<div class="warn">NV-UV требует, чтобы MSI Afterburner работал в фоне. Без AB NV-UV не сможет менять напряжения!</div>
+<div class="info"><strong>Ampere (RTX 30) — новая и ещё не завершённая интеграция.</strong> На данный момент она проверена только на одной карте (RTX 3090). Все остальные модели Ampere не тестировались. В частности, Voltage Step Scanner может работать некорректно, особенно на младших картах. Тестирование приветствуется, но для исправления любой проблемы нужен log (кнопка Export внизу справа). На Ampere две вещи работают иначе:
+      <ul>
+<li><strong>Live View</strong>: Ampere привязывает запрошенную частоту к фиксированному plateau внутри драйвера. NV-UV отображает эту реальную, уже округлённую драйвером частоту, поэтому вы видите то значение, на котором GPU фактически работает. Выбранное вами целевое значение остаётся тем, которое записывается.</li>
+<li><strong>Temp Limit</strong>: slider ограничения температуры доступен только на Ampere (на Ada и Blackwell Afterburner делает его неактивным). Если он включён, при Apply он записывается в профиль AB независимо от power limit.</li>
+</ul>
+</div>
+</section>
+<section>
+<h2 class="cyan"><span class="icon">🔧</span>Установка</h2>
+<div class="warn" style="border-left-width:6px; padding:18px 20px; margin:20px 0; font-size:1.05em;">
+<strong>ВАЖНО, не пропускайте:</strong> чтобы NV-UV мог читать и записывать напряжение GPU, в Afterburner нужно включить несколько параметров. Без этих настроек NV-UV показывает <code>0 mV</code>, V-Lock применяется некорректно, а scanner выдаёт неправильные результаты. Шаги 1 и 2 ниже <strong>обязательные</strong>, а не optional.
+    </div>
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<strong>Prepare Afterburner, General Tab</strong><br/>
+        AB Settings (⚙), вкладка <strong>General</strong>:<br/>
+        Выберите вашу NVIDIA GPU в поле <em>Master graphics processor selection</em><br/><br/>
+        Включите эти флажки:<br/>
+        ✓ <code>Enable hardware control and monitoring</code><br/>
+        ✓ <code>Enable low-level IO driver</code><br/>
+        ✓ <code>Enable low-level hardware access interface</code> → <strong>user mode</strong><br/>
+        ✓ <strong><code>Unlock voltage control</code> → standard MSI</strong>  ⬅ критично<br/>
+        ✓ <strong><code>Unlock voltage monitoring</code></strong>  ⬅ критично<br/><br/>
+        Нажмите <strong>OK</strong> (не Cancel!) и <strong>перезапустите Afterburner</strong>.
+      </div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<strong>Prepare Afterburner, Monitoring Tab</strong><br/>
+        Settings (⚙), вкладка <strong>Monitoring</strong>. Прокрутите длинный список sensors и включите:<br/><br/>
+        ✓ <strong><code>GPU voltage</code></strong>  ⬅ без этого нет V-Lock<br/>
+        ✓ <code>GPU power</code><br/><br/>
+        Нажмите <strong>OK</strong> и <strong>перезапустите Afterburner</strong>.<br/><br/>
+<em>Проверка:</em> в главном окне AB поле "VOLT" теперь должно показывать реальное напряжение (например, <code>905 mV</code>) вместо <code>0 mV</code>. Если там всё ещё 0, AB не принял изменение — вернитесь к шагу 1 и убедитесь, что оба параметра <code>Unlock</code> действительно включены.
+      </div>
+</div>
+<div class="info">
+<strong>Примечание для Reference-Design RTX 5090:</strong> на некоторых reference-картах Afterburner иногда сам сбрасывает флажки <code>Unlock</code>. Если через некоторое время показания напряжения внезапно падают до 0 mV, просто повторите шаги 1+2. Для этого готовится автоматическое исправление.
+    </div>
+<div class="warn">
+<strong>Отключите "Start with Windows" в Afterburner на время экспериментов с UV.</strong><br/>
+      Пока вы подбираете undervolt, AB <em>не должен</em> автоматически запускаться вместе с Windows. Причина: если активен нестабильный профиль, AB применит сломанный UV-профиль сразу после загрузки, раньше чем вы успеете открыть NV-UV и откатить его. Это может привести к boot loops или сбросам драйвера ещё до входа в систему.<br/><br/>
+      В Afterburner: Settings (⚙) → вкладка General → <strong>снимите флажок</strong> <code>Start with Windows</code>. Включайте его обратно только после того, как UV-профиль подтверждён как стабильный и вы действительно хотите применять его постоянно.
+    </div>
+<div class="warn">
+<strong>Отключите блокировку профиля AB (иконка 🔒 lock).</strong><br/>
+      Если слот профиля в Afterburner заблокирован через иконку 🔒 lock, NV-UV <strong>не сможет записывать</strong> в этот слот. Apply-UV и scanner будут молча завершаться неудачей или зависать. Иконка замка рядом со слотом профиля (1–5) должна быть <strong>открыта</strong>, пока вы используете NV-UV.
+    </div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<strong>Extract + run NV-UV</strong><br/>
+        Распакуйте в любую папку, например <code>C:\NV-UV\</code>, и дважды нажмите <code>NV-UV.exe</code> (права администратора не нужны).
+      </div>
+</div>
+<div class="info">
+<strong>🔗 Первый запуск, Connection Wizard:</strong><br/>
+      NV-UV нужна реальная VF-кривая вашей GPU. При первом запуске:<br/>
+      1. Откройте Afterburner, все sliders должны быть в default (без OC/UV)<br/>
+      2. Нажмите 💾 Save в Afterburner<br/>
+      3. Выберите profile slot (1–5)<br/>
+      4. NV-UV автоматически определит кривую<br/><br/>
+      Это разовая настройка. NV-UV сохранит кривую локально.
+    </div>
+<div class="info">
+<strong>🔄 Recalibrate (Toolbar):</strong><br/>
+      Полный reset: автоматически создаёт backup профилей AB, удаляет только GPU-specific profiles и cache NV-UV, затем перезапускается. Overlay settings, fan curves и другие настройки AB сохраняются.
+    </div>
+</section>
+<section>
+<h2 class="gold"><span class="icon">🔄</span>Обновление до новой версии</h2>
+<p>NV-UV portable: достаточно скопировать новый EXE поверх старого. Настройки сохраняются (<code>%LocalAppData%\NV-UV\</code>).</p>
+<div class="step"><div class="step-num">1</div><div class="step-content"><strong>Закройте NV-UV</strong></div></div>
+<div class="step"><div class="step-num">2</div><div class="step-content"><strong>Распакуйте новый ZIP</strong> (в ту же или новую папку)</div></div>
+<div class="step"><div class="step-num">3</div><div class="step-content"><strong>Запустите NV-UV.exe</strong>, готово!</div></div>
+<div class="info">Если после обновления что-то выглядит неправильно: нажмите <strong>🔄 Recalibrate</strong> на toolbar.</div>
+</section>
+<section>
+<h2 class="orange"><span class="icon">🚀</span>Быстрый старт</h2>
+<div class="step"><div class="step-num">1</div><div class="step-content"><strong>Выберите preset:</strong> 🍃 Eco · ⚡ Balanced (рекомендуется) · 🚀 Perf · 🔥 Max</div></div>
+<div class="step"><div class="step-num">2</div><div class="step-content"><strong>Apply UV:</strong> выберите AB slot (1–5), затем ⚡ Apply UV.</div></div>
+<div class="step"><div class="step-num">3</div><div class="step-content"><strong>Test:</strong> запустите игру, следите за напряжением и температурами. Стабильно = готово!</div></div>
+<div class="warn">Начинайте с <strong>Balanced</strong>! Eco может быть слишком агрессивным для некоторых GPU.</div>
+<div class="warn" style="margin-top:0.6em;"><strong>⚠ Нижний порог напряжения Blackwell (RTX 50):</strong> примерно на 875 mV и ниже драйвер Blackwell не удерживает V-Lock — он снова бустится к более высокой точке напряжения, поэтому undervolt не закрепляется как задано (lock на 845 mV в итоге работает выше, чем вы выбрали). Для стабильного lock на Blackwell выбирайте выше 875 mV. При этом значении и ниже NV-UV показывает подсказку прямо во вкладке V-Lock. Это поведение драйвера, инструмент не может его обойти.</div>
+</section>
+<section>
+<h2 class="purple"><span class="icon">🔬</span>OCS → UV Import</h2>
+<p>Встроенный OC Scanner в Afterburner проверяет, насколько дополнительную частоту ваша GPU выдерживает на каждом напряжении. Сам по себе результат очень консервативен. NV-UV берёт эти данные конкретного чипа и объединяет их с проверенным preset Balanced как базой. Результат — UV-кривая под ваш silicon.</p>
+<div class="step"><div class="step-num">1</div><div class="step-content"><strong>Запустите AB OC Scanner</strong>, сохраните результат в profile slot (1–5).</div></div>
+<div class="step"><div class="step-num">2</div><div class="step-content"><strong>Нажмите OCS → UV</strong>, выберите профиль с результатом scanner.</div></div>
+<div class="step"><div class="step-num">3</div><div class="step-content"><strong>Apply:</strong> V-Lock (лучшая одиночная точка) или Multi-Point (полная кривая).</div></div>
+<p>Правый клик открывает варианты: V-Lock / Multi-Point / Verify with Scanner.</p>
+<div class="info">Данные OCS хранятся постоянно и сохраняются после Recalibrate, сбросов AB и переустановок.</div>
+</section>
+<section>
+<h2 class="purple"><span class="icon">⚡</span>Voltage Step Scanner</h2>
+<p>Scanner тестирует <strong>одну точку напряжения</strong> и находит максимальную стабильную частоту. Это удобно для проверки UV-настройки или поиска sweet spot конкретной GPU.</p>
+<div class="step"><div class="step-num">1</div><div class="step-content"><strong>Open Scanner</strong> (кнопка ⚡ в главном окне или Mini View)</div></div>
+<div class="step"><div class="step-num">2</div><div class="step-content"><strong>Settings:</strong> Voltage, render resolution (1440p для 5070/5080, 4K для 5090), test duration (2–5 мин)</div></div>
+<div class="step"><div class="step-num">3</div><div class="step-content"><strong>Start test.</strong> Scanner начинает с высокой частоты и идёт вниз, пока не найдёт стабильную частоту.</div></div>
+<div class="step"><div class="step-num">4</div><div class="step-content"><strong>Apply result</strong> в slot 1–5 напрямую или через правый клик в history.</div></div>
+<h3>🎯 Stage 2 — Optimize Point <span style="color:var(--gold);">(Новое в Cantor)</span></h3>
+<p>Stage 1 находит <strong>самую высокую стабильную частоту при заданном напряжении</strong>. Stage 2 работает наоборот: начиная со стабильной точки, NV-UV ищет <strong>минимальное напряжение, при котором эта частота всё ещё удерживается</strong>. Так можно выжать ещё 10–30 mV без потери частоты.</p>
+<p><strong>Двухшаговый workflow:</strong></p>
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<strong>Run Stage 1:</strong> выберите напряжение (например, 910 mV), запустите scanner и дождитесь стабильной точки. Результат автоматически попадёт в history.
+      </div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<strong>Start Stage 2:</strong> правый клик по стабильной записи в history → <strong>🎯 Optimize Point</strong>. NV-UV тестирует ту же частоту, снижая напряжение шагами по 5 mV до сбоя, затем оставляет последнее стабильное значение.
+      </div>
+</div>
+<p>Пример: Stage 1 находит стабильную точку <code>2992 MHz @ 910 mV</code>. Затем Stage 2 пробует <code>2992 MHz @ 905 / 900 / 895 / 890 mV</code>, пока GPU не даст сбой. Если 895 mV было последней стабильной точкой, вы получаете ту же производительность при напряжении на 15 mV ниже — меньше ватт, меньше нагрев, та же частота.</p>
+<div class="info">
+<strong>Когда Stage 2 имеет смысл?</strong> Когда вы хотите получить максимум именно из своей GPU. Stage 1 — хорошая отправная точка, Stage 2 — тонкая доводка. В зависимости от test duration Stage 2 занимает ещё 5–15 минут.
+    </div>
+<h3>🎯 Expandable Optimize History <span style="color:var(--gold);">(Новое в Cantor)</span></h3>
+<p>Раньше NV-UV сохранял только одну точку, выбранную вами в диалоге optimize result; все остальные измеренные voltage probes удалялись после закрытия диалога. Это особенно мешало, когда слишком агрессивный undervolting приводил драйвер к сбою render-thread, а окно выбора переставало отвечать: все измерения терялись, Stage 2 приходилось начинать заново.</p>
+<p>Начиная с v0.126, NV-UV записывает полный optimize run в history <strong>до</strong> показа окна выбора. После этого в history появляется новая запись с маркером 🎯, где все probes из прогона сохранены как раскрываемые sub-entries:</p>
+<div class="step">
+<div class="step-num">▶</div>
+<div class="step-content">
+<strong>Collapsed</strong> (по умолчанию): одна компактная строка-заголовок на каждый optimize run, например <code>🎯 from 925 mV · 11 probes · clean</code> или после сбоя <code>🎯 from 985 mV · 9 probes · TDR @ 935 mV</code>. Нажмите заголовок, чтобы раскрыть.
+      </div>
+</div>
+<div class="step">
+<div class="step-num">▼</div>
+<div class="step-content">
+<strong>Expanded</strong>: каждый измеренный probe прогона показывается как вложенная запись, с напряжением, median clock под нагрузкой и отметкой ✓ на том probe, который вы изначально выбрали. Каждый sub-entry можно использовать отдельно: правый клик → apply to slot, verify или re-optimize. Конечная точка TDR, если она есть, отображается строкой 💥 в конце и носит только информационный характер.
+      </div>
+</div>
+<p><strong>Почему это важно:</strong> если после окна выбора вы понимаете, что выбранная точка слишком агрессивна, не нужно заново запускать поиск — просто раскройте группу и выберите один из более консервативных probes (например, на 5 или 10 mV выше). А если driver crash убьёт NV-UV посреди прогона, вся группа со всеми probes всё равно останется после перезапуска.</p>
+<h3>🔍 Verify Point</h3>
+<p>Правый клик по записи history → <strong>Verify</strong> запускает расширенный stress test с этой точной парой frequency/voltage. Используйте это, чтобы дополнительно проверить результат Stage 1 или Stage 2 более длинным прогоном (например, 10 минут вместо 3), прежде чем записывать его в slot.</p>
+<h3>🧪 VRAM-only Test</h3>
+<p>В окне scanner: кнопка <strong>🧪 VRAM-only Test</strong>. Она фиксирует core на stock и тестирует только заданный VRAM offset. Полезно, когда нужно изолировать источник сбоя: VRAM OC или core UV. Сначала зафиксируйте core на проверенном значении, затем отдельно разгоняйте VRAM.</p>
+<h3>Новое в Cantor</h3>
+<table>
+<tr><td><strong>🛡️ Ambiguous-Name Guard (v0.96 hf2)</strong></td><td>Исправляет ложные срабатывания из-за общих имён процессов вроде <code>ai.exe</code>, <code>engine.exe</code> или <code>cs2.exe</code>. Если фоновый daemon имеет то же имя, что и игра, раньше NV-UV мог ошибочно переключиться на игровой профиль. Теперь для ambiguous names Pilot дополнительно проверяет, есть ли у процесса видимое главное окно или находится ли он на переднем плане. Реальные игры по-прежнему определяются сразу, daemon-процессы отфильтровываются. Сейчас в базе 55 записей помечены как ambiguous.</td></tr>
+<tr><td><strong>🔄 Game DB Auto-Update (v0.96)</strong></td><td>В Game Browser появилась новая кнопка "🔄 Updates". Нажмите её, чтобы загрузить свежую game database с GitHub. В том же popup можно включить автоматическую проверку при каждом запуске. Обновления приходят из центрального репозитория nv-uv-docs; ваши собственные игры и overrides не затрагиваются.</td></tr>
+<tr><td><strong>💡 Hover Tooltips (v0.96)</strong></td><td>В Game Browser dropdown tiers теперь при наведении показывают конкретные значения каждого профиля, например "Performance · 975 mV / 3000 MHz · PL 100%". Это также работает для dropdown фильтра сверху.</td></tr>
+<tr><td><strong>✨ MFG Tier (v0.95 hf3)</strong></td><td>Отдельный tier для игр с Multi Frame Generation, для всех карт RTX 50-series. Полный power limit при напряжении Eco и слегка сниженной частоте. Назначается для каждой игры через game database.</td></tr>
+<tr><td><strong>NVAPI Direct Mode</strong></td><td>Теперь scanner записывает frequency/voltage напрямую через драйвер, а не через профили AB: около 50 ms вместо примерно 2 s на точку. Сканирование становится существенно быстрее.</td></tr>
+<tr><td><strong>VRAM OC from Phase 1</strong></td><td>Если в scanner задан VRAM offset, теперь он активен уже во время frequency search, а не только на этапе verification. Оценка стабильности становится намного реалистичнее.</td></tr>
+<tr><td><strong>Stage 2 Optimize Point</strong></td><td>Поиск минимального стабильного напряжения для фиксированной частоты; см. выше.</td></tr>
+<tr><td><strong>V-Step Compensation</strong></td><td>Отдельный checkbox в scanner. Автоматически компенсирует V-Droop под нагрузкой. См. раздел "Optional Features".</td></tr>
+</table>
+<h3>Уже было в Antares</h3>
+<table>
+<tr><td><strong>FMA Math-Error Detection</strong></td><td>Compute shader обнаруживает ошибки вычислений GPU в фоне</td></tr>
+<tr><td><strong>WHEA Pre-Crash</strong></td><td>События аппаратных ошибок Windows помогают определить нестабильность до жёсткого сбоя</td></tr>
+<tr><td><strong>Plateau Detection</strong></td><td>Автоматически останавливает scanner, когда GPU уже не может буститься выше на заданном напряжении</td></tr>
+<tr><td><strong>Offset Cap</strong></td><td>Start offset ограничен +1000 MHz (или +1200 с Boost Override)</td></tr>
+<tr><td><strong>Warmup once per session</strong></td><td>Прогрев выполняется только на первом шаге; последующие шаги стартуют сразу</td></tr>
+<tr><td><strong>Power Limit Slider</strong></td><td>Полный диапазон PL в scanner: от минимума GPU (~60%) до максимума</td></tr>
+<tr><td><strong>Skip Warmup</strong></td><td>Optional, для систем с водяным охлаждением, где температура GPU уже стабильна</td></tr>
+</table>
+<div class="info">Совет: после результата scanner включите <strong>Game Replay</strong> и играйте. Если в реальной игре случится сбой, Game Replay автоматически снизит частоту ещё немного.</div>
+</section>
+<section>
+<h2 class="purple"><span class="icon">🎮</span>Game Replay</h2>
+<p>Просто играйте — Game Replay сделает остальное. При UV crash частота автоматически снижается.</p>
+<h3>Learning Loop</h3>
+<p>Game Replay теперь запоминает корректировки после сбоев отдельно для каждой игры. При следующем запуске той же игры UV-Pilot автоматически применит сниженную частоту. Игра падает один раз — в следующий раз сразу загружается безопасный профиль.</p>
+<h3>Per-Profile History</h3>
+<p>Истории сбоев теперь отслеживаются по комбинации <strong>game + profile</strong>. Раньше, например, сбой Performance-tier в игре мог переноситься и на Custom profile, назначенный позднее. Начиная с v0.94, у каждого profile (Eco / Balanced / Performance / Max / Custom XYZ) своя чистая история. Custom profile больше не наследует сбои от presets.</p>
+<div class="info">При первом запуске v0.94 существующий <code>nv-uv_game_replay_adjustments.json</code> определяется как старый формат и один раз очищается (warning в log: "Old adjustment format detected — discarded"). После этого history перестраивается по профилям. Ручных действий не требуется.</div>
+<p style="font-size:0.9em;color:var(--text-dim);">Manual applies (клик по slot-button без UV-Pilot) по-прежнему не сохраняются: при crash live downstep применяется, но JSON-запись не создаётся, потому что без контекста Pilot её нельзя однозначно привязать к профилю.</p>
+<h3>Два режима сбоя</h3>
+<table>
+<tr><th>Тип</th><th>Что происходит</th></tr>
+<tr><td><strong>Soft Crash (TDR)</strong></td><td>Драйвер восстанавливается, cooldown 15 s, downstep записывается live, можно продолжать играть</td></tr>
+<tr><td><strong>Hard Crash (Page Fault)</strong></td><td>Downstep сохраняется и автоматически применяется при следующем запуске NV-UV</td></tr>
+</table>
+<h3>Settings</h3>
+<p>Переключатель 🎮 Replay на toolbar, правый клик — settings. Strategy: снижать частоту (default), повышать напряжение или делать оба действия. Step sizes и safety limits настраиваются.</p>
+<div class="info">Game Replay работает независимо от UV-Pilot. Просто включите 🎮 Replay — он работает с любым активным UV profile.</div>
+</section>
+<section>
+<h2 class="orange"><span class="icon">🔥</span>3D Stress Test Engine</h2>
+<p>Встроенный DX12 + DXR stress test, имитирующий реалистичную игровую нагрузку. Engine постоянно переключается между idle и full load (heartbeat pattern), создавая transients, которые вызывают нестабильность UV.</p>
+<h3>Render Resolution</h3>
+<table>
+<tr><th>Resolution</th><th>Рекомендуется для</th></tr>
+<tr><td><strong>1440p</strong></td><td><span class="gpu-badge gpu-5080">5080</span> <span class="gpu-badge gpu-5070ti">5070 Ti</span> <span class="gpu-badge gpu-5070">5070</span></td></tr>
+<tr><td><strong>4K Supersampled</strong></td><td><span class="gpu-badge gpu-5090">5090</span></td></tr>
+</table>
+<div class="info">GPU чаще всего нестабильны при нагрузке 40–60% (самые высокие boost clocks), а не при постоянных 100%. Именно в эту зону попадают hammer frames stress engine.</div>
+</section>
+<section>
+<h2 class="gold"><span class="icon">✈️</span>UV-Pilot</h2>
+<p>UV-Pilot определяет запущенные игры и автоматически переключается на соответствующий UV profile.</p>
+<h3>Tier System</h3>
+<table>
+<tr><th>Tier</th><th>Описание</th></tr>
+<tr><td><strong>🔥 Max</strong></td><td>Максимальная производительность, Cyberpunk 2077, Alan Wake 2</td></tr>
+<tr><td><strong>🚀 Performance</strong></td><td>Сильный preset, Elden Ring, Hogwarts Legacy</td></tr>
+<tr><td><strong>⚡ Balanced</strong></td><td>Стандарт, CS2, Valorant, большинство игр</td></tr>
+<tr><td><strong>🌿 Eco</strong></td><td>Эффективный режим, старые/лёгкие игры</td></tr>
+<tr><td><strong>✨ MFG</strong></td><td>Для игр с Multi Frame Generation, только RTX 50-series. Назначается через game database.</td></tr>
+</table>
+<p style="font-size:0.9em;color:var(--text-dim);">Tier MFG использует напряжение Eco с полным power limit и слегка сниженной частотой. Его нельзя выбрать напрямую кнопками tier в главном окне; он назначается для каждой игры в game database. Рекомендуется при 3x или 4x MFG, где экономия при высоком FPS максимальна.</p>
+<h3>Custom Profiles</h3>
+<p>Правый клик по слоту: "Add to UV-Pilot" создаёт custom profile. Его можно назначать играм в game database.</p>
+<h3>Game Database</h3>
+<p>Правый клик по UV-Pilot → 🎮 Game Database. 632 игры + benchmarks, tier assignments можно менять, custom games можно добавлять.</p>
+<h3>Benchmarks (3DMark и др.)</h3>
+<p>3DMark распознаётся, но UV tier ему не назначен — ваш active profile остаётся как есть. Это позволяет запускать benchmark с выбранным вами UV без переключения профилей Pilot. При желании через Game Browser можно назначить custom profile.</p>
+<h3>Auto-Mini on Gaming</h3>
+<p>Правый клик по UV-Pilot → "📐 Mini View on Gaming". При обнаружении игры автоматически переключает в Mini View, снижая GPU overhead от главного окна WPF. По умолчанию отключено.</p>
+<h3>Foreground Priority</h3>
+<p>Начиная с v0.94, UV-Pilot отдаёт приоритет процессу окна, которое сейчас в фокусе. Это решает ситуацию, когда одновременно запущены две или более записи из game database, обычно browser + game.</p>
+<p><strong>Раньше:</strong> открыт Chrome (Eco tier), вы запускаете игру → Chrome-Eco profile остаётся активным, пока Chrome полностью не закрыт.<br/>
+<strong>Теперь:</strong> как только игровое окно получает фокус, Pilot определяет переключение и применяет соответствующий game profile. Обратное переключение работает так же — Alt-Tab в Chrome переключает на Eco, Alt-Tab обратно в игру — на Performance.</p>
+<div class="info">Fallback: если foreground process не является записью DB (Explorer, Desktop и т.п.), Pilot сохраняет текущий lock. Поэтому Alt-Tab на рабочий стол не сбрасывает gaming lock.</div>
+</section>
+<section>
+<h2 class="gold"><span class="icon">⚓</span>Anchor Profile</h2>
+<p>Anchor profile — это ваш "home slot". Он определяет, какой UV profile NV-UV должен автоматически загружать в двух ситуациях: при запуске программы и после завершения игры.</p>
+<h3>Настройка</h3>
+<p>Правый клик по слоту с сохранённым UV profile → <strong>⚓ Set as Anchor</strong>. Слот получит маркер ⚓ и будет подсвечен в slot overview.</p>
+<h3>Поведение подробно</h3>
+<table>
+<tr><th>Ситуация</th><th>Что происходит</th></tr>
+<tr><td><strong>Запуск программы</strong></td><td>NV-UV обнаруживает anchor profile и автоматически загружает его при старте. Работает и без UV-Pilot, удобно для setups с Windows autostart.</td></tr>
+<tr><td><strong>После завершения игр</strong></td><td>UV-Pilot определяет выход из игры и восстанавливает anchor profile вместо возврата к предыдущему слоту. Требуется активный UV-Pilot.</td></tr>
+</table>
+<h3>Практический пример</h3>
+<p>Ваш daily UV находится в Slot 1 (например, 2902 MHz @ 950 mV), и вы назначаете его как Anchor. При загрузке Windows NV-UV запускается через autostart, AB стартует, и Slot 1 сразу активен — клики не нужны. Когда вы запускаете игру, которую UV-Pilot связывает с tier "Max", Pilot кратковременно переключается на Slot 4. После завершения игры он возвращается в Slot 1 (Anchor), а не к предыдущему состоянию.</p>
+<div class="info">Совет: Stock anchor тоже работает. Если назначить пустой slot как anchor, NV-UV загрузит stock values при старте. Anchor — явная "home"-директива, а не подсказка "только для UV".</div>
+</section>
+<section>
+<h2 class="cyan"><span class="icon">🔧</span>Дополнительные функции</h2>
+<h3>🧊 Idle Optimization</h3>
+<p>Устанавливает все точки напряжения ниже 850 mV на stock frequency. Экономит питание на рабочем столе/в idle.</p>
+<h3>🔧 V-Step Fix</h3>
+<p>Компенсирует Blackwell-ошибку point-before-flatten. Под нагрузкой GPU использует точку напряжения перед lock (~на 10 mV меньше). V-Step Fix компенсирует это автоматически.</p>
+<p><em>Применяется к:</em> Quick-Lock в главном окне (режим V-Lock). Доступен как checkbox рядом со slider напряжения.</p>
+<h3>📐 V-Step Compensation <span style="color:var(--gold);">(Новое в Cantor)</span></h3>
+<p>В окне scanner есть собственный checkbox <strong>V-Step Compensation</strong>. Он делает не то же самое, что описанный выше V-Step Fix, поэтому ниже прямое сравнение:</p>
+<table>
+<tr>
+<th>Функция</th>
+<th>Где</th>
+<th>Что делает</th>
+</tr>
+<tr>
+<td><strong>🔧 V-Step Fix</strong></td>
+<td>Главное окно<br/>(при применении V-Lock)</td>
+<td>Сдвигает lock point вверх на один VF step, чтобы под нагрузкой GPU не проваливался в точку <em>перед</em> ней.</td>
+</tr>
+<tr>
+<td><strong>📐 V-Step Compensation</strong></td>
+<td>Окно scanner<br/>(во время scan)</td>
+<td>Постоянно измеряет разницу между запрошенным напряжением и напряжением, фактически доходящим до чипа (V-Droop), и корректирует следующие test steps.</td>
+</tr>
+</table>
+<p><strong>Когда это стоит включать?</strong> Когда вам нужны точные напряжения в scanner. Пример: вы запрашиваете 910 mV, но MAHM сообщает 905 mV — дельта 5 mV добавляется внутри, чтобы следующие test steps реально попадали в 910 mV на чипе, а не только в 905. Это делает scan results намного более воспроизводимыми, особенно при использовании Stage 2 (Optimize Point), где важен каждый millivolt.</p>
+<p>Полностью автоматическая функция, работает тихо в фоне. В log будут строки вроде <code>[VDroop] adapted: req 910 mV → MAHM 905 mV (Δ+5) → comp 5 mV</code>. Включена по умолчанию.</p>
+<h3>🔋 Power Limit</h3>
+<p>Slider ограничивает максимальное энергопотребление. Eco presets задают сниженный PL, MFG / Performance / Max — 100%.</p>
+<h3>💾 VRAM Offset</h3>
+<p>Offset частоты памяти. Default: 0 MHz. GDDR7 редко получает заметную пользу от memory OC.</p>
+<h3>🔓 Override Safe Limit</h3>
+<p>Убирает safety margin 50 MHz ниже stock maximum. Только для опытных пользователей.</p>
+<h3>🖥 UI Scaling</h3>
+<p>Кнопка % в footer. Шаги: от 100% до 300%. Все окна масштабируются вместе.</p>
+</section>
+<section>
+<h2 class="cyan"><span class="icon">🖥</span>Smart Hz</h2>
+<p>Автоматически переключает рабочий стол на низкую частоту обновления, когда игра не запущена, и возвращает native rate при запуске игры. Экономит примерно 10–25 W в idle. Toggle находится на toolbar.</p>
+<p><strong>Выбор idle rate (новое):</strong> правый клик по кнопке Smart Hz позволяет выбрать одну из частот обновления, которые реально поддерживает монитор (например, 60 / 120 / 144 Hz). Выбор частоты сразу активирует Smart Hz, поэтому отдельно включать toggle не нужно. Выбранная частота сохраняется между перезапусками.</p>
+<div class="warn">Может вызывать проблемы в multi-monitor setups. Если сомневаетесь — оставьте выключенным. Для определения игр требуется UV-Pilot.</div>
+</section>
+<section>
+<h2 class="cyan"><span class="icon">⚡</span>UV⚡Try (Community UV Database)</h2>
+<p>UV⚡Try открывает browsable database community undervolt values для вашей GPU, сгруппированную по Eco, Balanced и UV+OC. Каждая entry показывает voltage, clock, power limit, VRAM offset, board, confidence label и source link. Список заранее выбирает обнаруженную карту.</p>
+<p>Открывается кнопкой <strong>UV⚡Try</strong> рядом с presets (Eco / Bal / Perf / Max). Чтобы применить значение, нажмите правой кнопкой по entry и выберите profile slot (1–5), как в scanner history.</p>
+<p><strong>Rating (Phase 1):</strong> колонка со звёздами — ваша личная пометка (только локально): оцените, какие значения сработали у вас. Community ratings и загрузка собственных настроек появятся в следующем build.</p>
+<div class="warn">Community values — только отправная точка. Каждая карта отличается (silicon lottery), поэтому всегда проверяйте значение на собственной карте, прежде чем на него полагаться.</div>
+</section>
+<section>
+<h2 class="cyan"><span class="icon">🌍</span>Global Override &amp; No Override</h2>
+<p>В Game Library можно задать <strong>Global Override</strong> (dropdown на toolbar): он принудительно назначает всем запущенным играм выбранный tier (Eco / Bal / Perf / Max), перекрывая индивидуальные назначения. Удобно, если вы используете только UV-Pilot и хотите один tier везде.</p>
+<p><strong>No Override</strong> исключает отдельную игру из global override — тогда она определяется обычным способом (собственный tier, tier из database или stock). Задаётся либо через per-game override dropdown ("⊘ No Override"), либо правым кликом по строке игры. Полезно для записей вроде browser, которые вы не хотите трогать через UV-Pilot.</p>
+</section>
+<section>
+<h2 class="cyan"><span class="icon">📐</span>Mini View</h2>
+<p>Компактный вид без кривой. 📐 Mini на toolbar, ↩ Full — возврат. Всегда поверх окон. Доступны все функции: Slots, Presets, V-Lock, PL, VRAM, Scanner, OCS → UV.</p>
+<div class="info"><strong>Performance tip:</strong> главное окно использует WPF rendering, который может измеримо снижать GPU performance в benchmarks. Во время игр или benchmark лучше использовать Mini View либо свернуть NV-UV в tray. Mini View имеет значительно меньший rendering overhead.</div>
+<h3>Auto-Mini on Gaming</h3>
+<p>Правый клик по UV-Pilot → "📐 Mini View on Gaming" включает автоматическое переключение в Mini View при обнаружении игры. После выхода из игры возвращает full view. По умолчанию отключено.</p>
+</section>
+<section>
+<h2 class="cyan"><span class="icon">📊</span>Справочник пресетов</h2>
+<h3><span class="gpu-badge gpu-5090">RTX 5090</span></h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>910 mV</td><td>2430 MHz</td><td>85%</td></tr>
+<tr><td>⚡ Balanced</td><td>935 mV</td><td>2887 MHz</td><td>90%</td></tr>
+<tr><td>🚀 Performance</td><td>1025 mV</td><td>3105 MHz</td><td>100%</td></tr>
+</table>
+<h3><span class="gpu-badge gpu-5080">RTX 5080</span></h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>850 mV</td><td>2650 MHz</td><td>88%</td></tr>
+<tr><td>⚡ Balanced</td><td>900 mV</td><td>2750 MHz</td><td>90%</td></tr>
+<tr><td>🚀 Performance</td><td>925 mV</td><td>2980 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>975 mV</td><td>3150 MHz</td><td>100%</td></tr>
+</table>
+<h3><span class="gpu-badge gpu-5070ti">RTX 5070 Ti</span></h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>850 mV</td><td>2500 MHz</td><td>80%</td></tr>
+<tr><td>⚡ Balanced</td><td>900 mV</td><td>2800 MHz</td><td>90%</td></tr>
+<tr><td>🚀 Performance</td><td>935 mV</td><td>2955 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>950 mV</td><td>3000 MHz</td><td>100%</td></tr>
+</table>
+<h3><span class="gpu-badge gpu-5070">RTX 5070</span></h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>850 mV</td><td>2600 MHz</td><td>80%</td></tr>
+<tr><td>⚡ Balanced</td><td>900 mV</td><td>2750 MHz</td><td>90%</td></tr>
+<tr><td>🚀 Performance</td><td>940 mV</td><td>3000 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>975 mV</td><td>3150 MHz</td><td>100%</td></tr>
+</table>
+<h3>RTX 5060 Ti / RTX 5060 <span style="color:var(--gold);">(experimental)</span></h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>800 mV</td><td>2500 MHz</td><td>80%</td></tr>
+<tr><td>⚡ Balanced</td><td>875 mV</td><td>2700 MHz</td><td>90%</td></tr>
+<tr><td>🚀 Performance</td><td>925 mV</td><td>2900 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>975 mV</td><td>3000 MHz</td><td>100%</td></tr>
+</table>
+<p style="font-size:0.9em;color:var(--text-dim);">Примечание: 5060 (non-Ti) использует эту таблицу как fallback. Так как это меньший GB206 cut с более низким TBP, карта сама ограничивает себя через power limit, и значения остаются безопасными.</p>
+<div class="info" style="margin-top:1em;"><strong>🧪 Статус Ada (v0.95):</strong> Ada write path (byte-exact VF-curve encoding) проверен на KFA2 RTX 4070 Ti (чип AD104) и полностью работает в цепочке Apply / Scanner / Game Replay / UV-Pilot. Значения presets ниже основаны на community data. Тестеры Ada для AD102 (4090) и AD103 (4080) приветствуются на PCGH subforum и Discord.</div>
+<h3>RTX 4090</h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>875 mV</td><td>2400 MHz</td><td>100%</td></tr>
+<tr><td>⚡ Balanced</td><td>900 mV</td><td>2550 MHz</td><td>100%</td></tr>
+<tr><td>🚀 Performance</td><td>925 mV</td><td>2670 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>950 mV</td><td>2745 MHz</td><td>100%</td></tr>
+</table>
+<h3>RTX 4080 / 4080 Super</h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>875 mV</td><td>2400 MHz</td><td>100%</td></tr>
+<tr><td>⚡ Balanced</td><td>900 mV</td><td>2520 MHz</td><td>100%</td></tr>
+<tr><td>🚀 Performance</td><td>925 mV</td><td>2640 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>950 mV</td><td>2700 MHz</td><td>100%</td></tr>
+</table>
+<h3>RTX 4070 Ti / 4070 Ti Super</h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>925 mV</td><td>2550 MHz</td><td>100%</td></tr>
+<tr><td>⚡ Balanced</td><td>940 mV</td><td>2640 MHz</td><td>100%</td></tr>
+<tr><td>🚀 Performance</td><td>950 mV</td><td>4070 Ti Super: 2730 MHz<br/>4070 Ti: 2685 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>975 mV</td><td>2820 MHz</td><td>100%</td></tr>
+</table>
+<p style="font-size:0.9em;color:var(--text-dim);">Значение Performance для 4070 Ti было откалибровано с 2730 до 2685 MHz. 4070 Ti (полный кристалл AD104, обычно хуже binning) требует примерно на 30 MHz больше запаса на том же напряжении, чем 4070 Ti Super (AD103 cut, лучший отбор чипов). Остальные presets (Eco / Balanced / Max) одинаковы для обеих карт.</p>
+<h3>RTX 4070 / 4070 Super</h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>900 mV</td><td>2400 MHz</td><td>100%</td></tr>
+<tr><td>⚡ Balanced</td><td>925 mV</td><td>2550 MHz</td><td>100%</td></tr>
+<tr><td>🚀 Performance</td><td>940 mV</td><td>2670 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>975 mV</td><td>2790 MHz</td><td>100%</td></tr>
+</table>
+<h3>RTX 4060 Ti <span style="color:var(--gold);">(experimental)</span></h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>900 mV</td><td>2400 MHz</td><td>100%</td></tr>
+<tr><td>⚡ Balanced</td><td>925 mV</td><td>2550 MHz</td><td>100%</td></tr>
+<tr><td>🚀 Performance</td><td>950 mV</td><td>2650 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>975 mV</td><td>2750 MHz</td><td>100%</td></tr>
+</table>
+<h3>RTX 4060 <span style="color:var(--gold);">(experimental)</span></h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>875 mV</td><td>2300 MHz</td><td>100%</td></tr>
+<tr><td>⚡ Balanced</td><td>900 mV</td><td>2450 MHz</td><td>100%</td></tr>
+<tr><td>🚀 Performance</td><td>925 mV</td><td>2600 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>950 mV</td><td>2730 MHz</td><td>100%</td></tr>
+</table>
+<p style="font-size:0.9em; opacity:0.8;">Примечание по RTX 4060: чип AD107 необычно слабо масштабируется от дополнительного напряжения. Больше mV почти не даёт больше MHz, поэтому значения tiers расположены ближе друг к другу, чем на более крупных чипах Ada.</p>
+<div class="warn"><strong>Что означает "experimental" для RTX 5060 и RTX 4060?</strong> Эти карты поддерживаются кодом NV-UV, но preset values ещё не проверены на реальном железе через tester programme. Они основаны на AI-DeepSearch research по community data (Reddit, Hardwareluxx, Igor's Lab, OCN). Начинайте тест с Balanced и сообщайте результаты на PCGH forum или Discord, чтобы значения можно было уточнить.</div>
+<div class="info" style="margin-top:1em;"><strong>🧪 Статус Ampere (v0.98):</strong> интеграция Ampere пока проверена на одной карте — RTX 3090 (GA102). Все остальные модели Ampere не тестировались. Значения presets ниже основаны на community research, а не на аппаратном подтверждении, поэтому все RTX 30, кроме 3090, считайте experimental. В частности, Voltage Step Scanner пока может работать некорректно, особенно на младших чипах. Тестеры Ampere приветствуются на PCGH subforum и Discord. При сообщении о проблеме приложите log (кнопка Export внизу справа).</div>
+<h3>RTX 3090 <span style="color:var(--cyan);">(reference card, integration verified)</span></h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>800 mV</td><td>1700 MHz</td><td>80%</td></tr>
+<tr><td>⚡ Balanced</td><td>875 mV</td><td>1830 MHz</td><td>90%</td></tr>
+<tr><td>🚀 Performance</td><td>900 mV</td><td>1900 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>950 mV</td><td>1965 MHz</td><td>100%</td></tr>
+</table>
+<h3>RTX 3090 Ti <span style="color:var(--gold);">(experimental)</span></h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>825 mV</td><td>1700 MHz</td><td>80%</td></tr>
+<tr><td>⚡ Balanced</td><td>875 mV</td><td>1830 MHz</td><td>90%</td></tr>
+<tr><td>🚀 Performance</td><td>925 mV</td><td>1950 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>975 mV</td><td>2025 MHz</td><td>100%</td></tr>
+</table>
+<h3>RTX 3080 Ti <span style="color:var(--gold);">(experimental)</span></h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>800 mV</td><td>1710 MHz</td><td>80%</td></tr>
+<tr><td>⚡ Balanced</td><td>875 mV</td><td>1870 MHz</td><td>90%</td></tr>
+<tr><td>🚀 Performance</td><td>900 mV</td><td>1920 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>950 mV</td><td>1980 MHz</td><td>100%</td></tr>
+</table>
+<h3>RTX 3080 12GB <span style="color:var(--gold);">(experimental)</span></h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>800 mV</td><td>1700 MHz</td><td>80%</td></tr>
+<tr><td>⚡ Balanced</td><td>875 mV</td><td>1860 MHz</td><td>90%</td></tr>
+<tr><td>🚀 Performance</td><td>900 mV</td><td>1920 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>950 mV</td><td>2000 MHz</td><td>100%</td></tr>
+</table>
+<h3>RTX 3080 10GB <span style="color:var(--gold);">(experimental)</span></h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>800 mV</td><td>1750 MHz</td><td>80%</td></tr>
+<tr><td>⚡ Balanced</td><td>875 mV</td><td>1890 MHz</td><td>90%</td></tr>
+<tr><td>🚀 Performance</td><td>900 mV</td><td>1950 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>950 mV</td><td>2010 MHz</td><td>100%</td></tr>
+</table>
+<h3>RTX 3070 Ti <span style="color:var(--gold);">(experimental)</span></h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>825 mV</td><td>1770 MHz</td><td>80%</td></tr>
+<tr><td>⚡ Balanced</td><td>875 mV</td><td>1905 MHz</td><td>90%</td></tr>
+<tr><td>🚀 Performance</td><td>900 mV</td><td>1950 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>950 mV</td><td>1995 MHz</td><td>100%</td></tr>
+</table>
+<h3>RTX 3070 <span style="color:var(--gold);">(experimental)</span></h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>775 mV</td><td>1700 MHz</td><td>80%</td></tr>
+<tr><td>⚡ Balanced</td><td>875 mV</td><td>1900 MHz</td><td>90%</td></tr>
+<tr><td>🚀 Performance</td><td>925 mV</td><td>1950 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>950 mV</td><td>2010 MHz</td><td>100%</td></tr>
+</table>
+<h3>RTX 3060 Ti <span style="color:var(--gold);">(experimental)</span></h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>800 mV</td><td>1750 MHz</td><td>80%</td></tr>
+<tr><td>⚡ Balanced</td><td>875 mV</td><td>1875 MHz</td><td>90%</td></tr>
+<tr><td>🚀 Performance</td><td>925 mV</td><td>1935 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>975 mV</td><td>1980 MHz</td><td>100%</td></tr>
+</table>
+<h3>RTX 3060 <span style="color:var(--gold);">(experimental)</span></h3>
+<table>
+<tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
+<tr><td>🍃 Eco</td><td>800 mV</td><td>1560 MHz</td><td>80%</td></tr>
+<tr><td>⚡ Balanced</td><td>850 mV</td><td>1680 MHz</td><td>90%</td></tr>
+<tr><td>🚀 Performance</td><td>900 mV</td><td>1800 MHz</td><td>100%</td></tr>
+<tr><td>🔥 Max</td><td>950 mV</td><td>1850 MHz</td><td>100%</td></tr>
+</table>
+<div class="info">Preset values основаны на опыте сообщества. Не каждая GPU выдержит каждый preset: silicon lottery. Если сомневаетесь, начинайте с Balanced.</div>
+</section>
+<section>
+<h2 class="gold"><span class="icon">❓</span>FAQ</h2>
+<h3>Заменяет ли NV-UV Afterburner?</h3>
+<p>Нет. NV-UV использует Afterburner как backend. AB должен быть установлен. Для OC, OSD и расширенного редактирования кривой AB остаётся основным инструментом.</p>
+<h3>Безопасен ли undervolting?</h3>
+<p>Напряжения не повышаются, а только снижаются. Всё можно сбросить через кнопку Stock или Recalibrate. Однако автор не несёт ответственности за любой ущерб, который может прямо или косвенно возникнуть из-за undervolting.</p>
+<h3>Почему NV-UV не показывает напряжение? (0 mV / no reading)</h3>
+<div class="warn" style="border-left-width:5px;">
+      Это <strong>самая частая</strong> проблема при настройке. Причина: voltage options не включены в Afterburner. NV-UV читает напряжение через shared memory Afterburner (MAHM), и без правильных настроек AB MAHM просто ничего не возвращает.
+    </div>
+<p><strong>Быстрая проверка:</strong> посмотрите на главное окно Afterburner. Поле "VOLT" тоже показывает <code>0 mV</code>? Значит, сам AB тоже не читает напряжение — проблема в AB, а не в NV-UV. Исправление:</p>
+<ol>
+<li>AB → Settings (⚙) → вкладка <strong>General</strong> → <code>Unlock Voltage Control</code> ✓ и <code>Unlock Voltage Monitoring</code> ✓</li>
+<li>AB → Settings (⚙) → вкладка <strong>Monitoring</strong> → прокрутите вниз и включите <code>GPU voltage</code> ✓</li>
+<li>Нажмите OK (не Cancel) и <strong>полностью перезапустите Afterburner</strong></li>
+<li>Главное окно AB теперь должно показывать реальное значение в "VOLT" (например, <code>905 mV</code>). Только после этого NV-UV тоже сможет видеть напряжение.</li>
+</ol>
+<p>Подробное пошаговое описание со всеми рекомендуемыми флажками: см. выше <strong>Installation → Steps 1 + 2</strong>.</p>
+<p><strong>Примечание для Reference-Design RTX 5090:</strong> на некоторых картах Afterburner иногда сам сбрасывает флажки <code>Unlock</code>. Если показания напряжения через некоторое время исчезают, просто повторите шаги 1+2.</p>
+<h3>Почему напряжение под нагрузкой ниже моей цели V-Lock?</h3>
+<p>Это нормальное поведение GPU boost. NV-UV задаёт V-Lock, например на 950 mV, но GPU бустится только до того напряжения, которое нужно с учётом температуры и power limits. При UV profile (кривая выровнена на lock point) нет смысла буститься выше. Это не bug.</p>
+<h3>Почему scanner останавливается ниже моего stock maximum?</h3>
+<p>Возможны две причины:<br/>
+    1. <strong>Safe Limit:</strong> по умолчанию scanner останавливается на 50 MHz ниже stock max. Включите "Override Safe Limit", чтобы убрать это ограничение.<br/>
+    2. <strong>Driver Limit:</strong> NVIDIA ограничивает frequency offset значением +1000 MHz на каждую точку напряжения. Решение: тестируйте на более низком напряжении, где остаётся больше headroom.</p>
+<h3>Scanner продолжает повышать шаги, но частота GPU не растёт</h3>
+<p>Исправлено в Antares. Plateau detection автоматически останавливает scanner, когда GPU уже не может буститься выше. Если у вас более старая версия — обновитесь до Antares.</p>
+<h3>Игра падает после UV, что делать?</h3>
+<p>Это нормально: не каждая GPU выдерживает каждый preset. Попробуйте следующий более высокий preset или используйте scanner для индивидуальной оптимизации. С Game Replay можно просто продолжать играть: частота снижается автоматически — в идеале прямо во время игры или после сбоя при следующем запуске.</p>
+<h3>Разница между V-Lock и Multi-Point?</h3>
+<p><strong>V-Lock</strong> фиксирует GPU в одной точке напряжения/частоты. Простой, надёжный и рекомендуемый метод.<br/>
+<strong>Multi-Point</strong> задаёт несколько точек на кривой (например, из OCS Import). Сложнее, но потенциально эффективнее по всему диапазону напряжений.</p>
+<h3>Почему EXE около 200 MB?</h3>
+<p>Self-contained .NET 9 runtime. Установка не нужна, просто запускаете EXE.</p>
+<h3>Поддержка Windows 10?</h3>
+<p>Не планируется. Для DXR stress testing требуется Windows 11.</p>
+<h3>Поддержка RTX 40 series?</h3>
+<p><strong>Полностью поддерживается.</strong> Начиная с "Ada improved" (v0.94), активен native Ada write path. Byte-exact curve encoder проверен на KFA2 RTX 4070 Ti (AD104) и работает по всей цепочке — Apply, Scanner, Game Replay и UV-Pilot. Preset values (цели frequency/voltage) основаны на community data; особенно нужны тестеры Ada с RTX 4090 (AD102) и RTX 4080 / 4080 Super (AD103), чтобы уточнить per-chip constants — пишите на PCGH forum или Discord. RTX 4060 Ti (AD106) и RTX 4060 (AD107) также поддерживаются с experimental preset values из AI-DeepSearch research; тестеры с этими картами тоже приветствуются.</p>
+<h3>Почему Boost Override / V-Step Fix / Idle Optimization отсутствуют на картах Ada?</h3>
+<p>Это компенсации, специфичные для Blackwell:</p>
+<ul>
+<li><strong>Boost Override (+1200 MHz вместо +1000 MHz)</strong> применяется только к Blackwell XOC cards (Lightning / Matrix / HOF).</li>
+<li><strong>V-Step Fix</strong> компенсирует point-before-flatten bug в кривой Blackwell.</li>
+<li><strong>Idle Optimization</strong> опирается на Blackwell fantasy-frequency encoding.</li>
+</ul>
+<p>Ada использует полностью отдельный UV path (native 4-zone curve), которому не нужны эти три компенсации. Поэтому checkboxes автоматически скрываются на картах Ada и в главном, и в mini view.</p>
+<h3>Почему NV-UV снижает benchmark points?</h3>
+<p>Главное окно WPF использует ресурсы GPU для rendering и DWM compositing. В 3DMark это может стоить около 200–500 points. Решение: используйте Mini View, сверните NV-UV в tray или включите Auto-Mini on Gaming (правый клик по UV-Pilot). Ваш UV profile остаётся активным в AB даже когда NV-UV свёрнут или закрыт.</p>
+<h3>Antivirus flags NV-UV</h3>
+<p>False positive. Self-contained .NET SingleFile EXE иногда помечаются антивирусами. NV-UV безопасен, можно добавить исключение.</p>
+<h3>Где хранятся мои настройки?</h3>
+<p><code>%LocalAppData%\NV-UV\</code> содержит: UV profiles, slot names, Game Replay adjustments, scanner history, OCS data, stock curve, CCB cache, logs.</p>
+<h3>Как экспортировать log files?</h3>
+<p>Через кнопку <strong>Log Export</strong> под log panel. Log file экспортируется и может быть напрямую отправлен Christian.</p>
+<h3>Помогите, мои profiles исчезли!</h3>
+<p>Всегда вручную делайте backup профилей перед экспериментами. Если profiles потеряны: проверьте папку NV-UV в <code>%LocalAppData%\NV-UV\</code>, там хранятся saved data, OCS curves и scanner history.</p>
+<h3>Мой ПК плохо загружается после нестабильного UV!</h3>
+<div class="warn"><strong>Важный совет при экспериментах с UV:</strong> в Afterburner в <code>Settings → General</code> отключите <code>Start with Windows</code>. Это не даст нестабильному профилю автоматически загрузиться при старте, если UV-настройка валит драйвер во время запуска. Включайте AB autostart обратно только после того, как UV-настройка подтверждена стабильной в играх.</div>
+</section>
+<section>
+<h2 class="red"><span class="icon">🛠</span>Устранение неполадок</h2>
+<h3>NV-UV запускается, но не показывает GPU</h3>
+<p>Установлен последний драйвер NVIDIA? Запускайте NV-UV после полной загрузки рабочего стола Windows.</p>
+<h3>Нет соединения MAHM (нет показаний напряжения)</h3>
+<p>AB + RTSS должны быть запущены. Включите voltage monitoring в AB (см. FAQ выше). Перезапустите AB.</p>
+<h3>Показания напряжения скачут или выглядят некорректно</h3>
+<p>В AB: <strong>Settings → Monitoring → Active hardware monitoring graphs</strong>, отключите plug-ins <code>GPU.dll</code> и <code>HwInfo.dll</code>. Они параллельно обращаются к тем же GPU sensors, которые NV-UV использует через MAHM, что вызывает конфликтующие sensor reads. В итоге MAHM лишь эпизодически возвращает валидные значения (напряжение скачет, показывает 0 или нереалистичные числа).</p>
+<div class="info">Спасибо Martin с PCGH forum за эту находку.</div>
+<h3>Apply ничего не делает / напряжение не меняется</h3>
+<p>Включите <code>Unlock Voltage Control</code> в AB. Нет stock curve? Нажмите 🔄 Recalibrate.</p>
+<h3>Игра падает после UV</h3>
+<p>Попробуйте более высокий preset или используйте scanner. Game Replay снижает частоту автоматически.</p>
+</section>
+<section>
+<h2 class="orange"><span class="icon">💬</span>Обратная связь</h2>
+<p>Пожалуйста, отправляйте feedback прямо в <strong>Feedback thread on the PCGH forum</strong> или Christian в Discord, screenshot + text.</p>
+<div class="info">Log file: <code>%LocalAppData%\NV-UV\nv-uv.log</code>, прикладывайте его к bug reports. Экспортируется через кнопку <strong>Log Export</strong> под log panel.</div>
+<div class="info">
+<strong>PCGH Forum:</strong><br/>
+      Deutsch: <a href="https://extreme.pcgameshardware.de/threads/support-faq-bugs.673164/" style="color:var(--cyan)">Support / FAQ / Bugs</a><br/>
+      English: <a href="https://extreme.pcgameshardware.de/threads/nv-uv-open-alpha-english-thread.673165/" style="color:var(--cyan)">NV-UV Open Alpha English Thread</a>
+</div>
+</section>
+<div class="led-bar gold"></div>
+<div class="footer">
+    NV-UV · Build 22 · Cantor · Open Alpha · только invited testers<br/>
+    Не распространять · GPU undervolting на ваш собственный риск<br/><br/>
+<span style="color:var(--dim)">NV-UV бесплатен. Если он вам нравится:</span> <a href="https://paypal.me/christianpapaioannou" style="color:var(--cyan)">PayPal</a>
+</div>
+</div>
+<h2 id="third-party">🔖 Сторонние компоненты</h2>
+<p>NV-UV использует <strong>NvApiNative.dll</strong>, native NVAPI bridge, созданный на основе open-source проекта <strong>Green Curve</strong> от <strong>aufkrawall</strong>. Green Curve показал, как обращаться к VF-кривой на Blackwell GPU напрямую через NVAPI entry points. NV-UV применяет этот подход для Scanner Direct Mode и Point Optimization.</p>
+<p>Репозиторий проекта: <a href="https://github.com/aufkrawall/green-curve">https://github.com/aufkrawall/green-curve</a></p>
+<p>Официальный текст лицензии MIT приведён ниже без перевода:</p>
+<pre style="background:#1a1a1a;color:#ddd;padding:16px;border-radius:6px;font-size:12px;line-height:1.5;white-space:pre-wrap;overflow-x:auto;">MIT License
+
+Copyright (c) 2026 aufkrawall
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+<p>Большое спасибо aufkrawall за Green Curve и за то, что проект доступен под открытой лицензией.</p>
+</body>
+</html>
