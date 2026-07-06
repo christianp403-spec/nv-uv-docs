@@ -493,7 +493,7 @@
 
     <div class="info">
       <strong>🔄 Recalibrate (Toolbar):</strong><br>
-      Full reset: backs up AB profiles automatically, deletes only GPU-specific profiles and NV-UV cache, restarts. Overlay settings, fan curves and other AB settings are preserved.
+      Full reset: backs up AB profiles automatically, deletes only GPU-specific profiles and NV-UV cache, restarts. Overlay settings, fan curves and other AB settings are preserved. <strong>NEW in v0.99:</strong> right-click the button to open the folder with the automatic AB profile backups.
     </div>
   </section>
 
@@ -669,7 +669,7 @@
       <tr><td><strong>Hard Crash (Page Fault)</strong></td><td>Downstep saved, automatically applied on next NV-UV start</td></tr>
     </table>
     <h3>Settings</h3>
-    <p>🎮 Replay toggle in toolbar, right-click for settings. Strategy: lower frequency (default), raise voltage, or both. Step sizes and safety limits configurable.</p>
+    <p>🎮 Replay toggle in toolbar, right-click for settings. Strategy: lower frequency (default), raise voltage, or both. Step sizes and safety limits configurable, the frequency step now goes down to 15 MHz (hardware-native V/F granularity) as of v0.99.</p>
     <div class="info">Game Replay works independently from UV-Pilot. Just enable 🎮 Replay, works with any active UV profile.</div>
   </section>
 
@@ -801,12 +801,19 @@
     <h2 class="cyan"><span class="icon">⚡</span>UV⚡Try (Community UV Database)</h2>
     <p>UV⚡Try opens a browsable database of community undervolt values for your GPU, grouped into Eco, Balanced and UV+OC. Each entry shows voltage, clock, power limit, VRAM offset, board, a confidence label and the source link. The list pre-selects your detected card.</p>
     <p>Open it via the <strong>UV⚡Try</strong> button next to the presets (Eco / Bal / Perf / Max). To apply a value, right-click an entry and pick a profile slot (1-5), exactly like the scanner history.</p>
-    <p><strong>Rating (Phase 1):</strong> the star column is your personal note (local only) - rate which values worked for you. Community ratings and uploading your own settings are coming in the next build.</p>
+    <p><strong>Rating &amp; community votes (NEW in v0.99):</strong> A star click does both: it stores your personal note locally and counts as an anonymous community vote at the same time. The new <strong>Community</strong> column shows the average of all votes with the count in brackets, e.g. "★ 4.2 (17)", updated twice a day. Clicking the same star again (0 stars) also deletes your vote on the server.</p>
+    <p><strong>Sharing your own settings (NEW in v0.99):</strong> Right-click a filled profile slot → <strong>Share to Community DB</strong>. The values are taken from the slot as-is (a profile you actually run), only board variant and a short note are optional free text. After a short review your preset shows up for everyone in UV⚡Try, labeled "user-submitted". See the Community Features &amp; Data section for details on what is transmitted.</p>
     <div class="warn">Community values are a starting point only. Every card is different (silicon lottery) - always verify a value on your own card before relying on it.</div>
   </section>
 
   <!-- ═══ GLOBAL / NO OVERRIDE ═══ -->
   <section>
+    <h2 class="cyan"><span class="icon">🔒</span>Community Features &amp; Data</h2>
+    <p>NV-UV has <strong>no accounts, no telemetry and no automatic "phoning home"</strong>. Data is only ever transmitted when you actively use one of the two community features:</p>
+    <p><strong>Star rating in UV⚡Try:</strong> Clicking a star stores your rating locally and additionally sends an anonymous community vote. Only these values are transmitted: the preset ID, your star value and a random client ID (a locally generated random GUID with no hardware or personal reference whatsoever). Clicking the same star again (0 stars) also deletes your vote on the server.</p>
+    <p><strong>Submitting settings (right-click on a profile slot):</strong> The transmission contains the UV values from the slot (frequency, voltage, power limit and VRAM offset if set), the detected GPU model, optionally your board variant and short note, plus the same random client ID. <strong>Important:</strong> After approval these details become publicly visible in the community database on GitHub. Do not put personal information into the note.</p>
+    <p><strong>Technical:</strong> As with any internet service, the server (a Cloudflare Worker) sees your IP address. It is processed exclusively as a daily re-salted hash for abuse limiting and is <strong>never stored in plaintext</strong>. Displaying community ratings, refreshing the database and the update check on startup (a once-a-day GitHub download that checks whether a new NV-UV version has been released) are pure downloads from GitHub, nothing is sent. The random client ID lives in <code>%LocalAppData%\NV-UV\nv-uv_client_id.txt</code> and can be deleted at any time (a new one is created on your next vote).</p>
+
     <h2 class="cyan"><span class="icon">🌍</span>Global Override &amp; No Override</h2>
     <p>In the Game Library you can set a <strong>Global Override</strong> (toolbar dropdown): it forces every running game to the chosen tier (Eco / Bal / Perf / Max), overriding their individual assignments. Handy if you only use UV-Pilot and just want one tier everywhere.</p>
     <p><strong>No Override</strong> exempts a single game from the global override - it then resolves normally (its own tier, the database tier, or stock). Set it either from the per-game override dropdown ("⊘ No Override") or by right-clicking the game row. Useful for entries like a browser that you do not want UV-Pilot to touch.</p>
@@ -1073,7 +1080,7 @@
     <strong>Multi-Point</strong> sets multiple points on the curve (e.g. from OCS Import). More complex but potentially more efficient across the voltage range.</p>
 
     <h3>Why ~200 MB EXE?</h3>
-    <p>Self-contained .NET 9 runtime. No installation needed, just run the EXE.</p>
+    <p>Self-contained .NET 10 runtime. No installation needed, just run the EXE.</p>
 
     <h3>Windows 10 support?</h3>
     <p>Not planned. DXR stress testing requires Windows 11.</p>
