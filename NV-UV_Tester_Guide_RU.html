@@ -446,7 +446,7 @@
     </div>
 <div class="info">
 <strong>🔄 Recalibrate (Toolbar):</strong><br/>
-      Полный reset: автоматически создаёт backup профилей AB, удаляет только GPU-specific profiles и cache NV-UV, затем перезапускается. Overlay settings, fan curves и другие настройки AB сохраняются.
+      Полный reset: автоматически создаёт backup профилей AB, удаляет только GPU-specific profiles и cache NV-UV, затем перезапускается. Overlay settings, fan curves и другие настройки AB сохраняются. <strong>НОВОЕ в v0.99:</strong> правый клик по кнопке открывает папку с автоматическими backup профилей AB.
     </div>
 </section>
 <section>
@@ -559,7 +559,7 @@
 <tr><td><strong>Hard Crash (Page Fault)</strong></td><td>Downstep сохраняется и автоматически применяется при следующем запуске NV-UV</td></tr>
 </table>
 <h3>Settings</h3>
-<p>Переключатель 🎮 Replay на toolbar, правый клик — settings. Strategy: снижать частоту (default), повышать напряжение или делать оба действия. Step sizes и safety limits настраиваются.</p>
+<p>Переключатель 🎮 Replay на toolbar, правый клик — settings. Strategy: снижать частоту (default), повышать напряжение или делать оба действия. Step sizes и safety limits настраиваются, с v0.99 frequency step можно уменьшить до 15 MHz (аппаратно-нативный шаг V/F-таблицы).</p>
 <div class="info">Game Replay работает независимо от UV-Pilot. Просто включите 🎮 Replay — он работает с любым активным UV profile.</div>
 </section>
 <section>
@@ -662,10 +662,17 @@
 <h2 class="cyan"><span class="icon">⚡</span>UV⚡Try (Community UV Database)</h2>
 <p>UV⚡Try открывает browsable database community undervolt values для вашей GPU, сгруппированную по Eco, Balanced и UV+OC. Каждая entry показывает voltage, clock, power limit, VRAM offset, board, confidence label и source link. Список заранее выбирает обнаруженную карту.</p>
 <p>Открывается кнопкой <strong>UV⚡Try</strong> рядом с presets (Eco / Bal / Perf / Max). Чтобы применить значение, нажмите правой кнопкой по entry и выберите profile slot (1–5), как в scanner history.</p>
-<p><strong>Rating (Phase 1):</strong> колонка со звёздами — ваша личная пометка (только локально): оцените, какие значения сработали у вас. Community ratings и загрузка собственных настроек появятся в следующем build.</p>
+<p><strong>Rating и community-votes (НОВОЕ в v0.99):</strong> Клик по звезде делает и то и другое: сохраняет вашу личную пометку локально и одновременно считается анонимным community-vote. Новая колонка <strong>Community</strong> показывает средний балл всех голосов с количеством в скобках, например "★ 4.2 (17)", и обновляется два раза в день. Повторный клик по той же звезде (0 звёзд) удаляет ваш голос и на сервере.</p>
+<p><strong>Отправка собственных настроек (НОВОЕ в v0.99):</strong> Правый клик по занятому profile slot → <strong>Share to Community DB</strong>. Значения берутся из слота как есть (то есть реально проверенный профиль), опциональны только вариант платы и короткая заметка. После короткой проверки ваш preset появляется у всех в UV⚡Try с пометкой "user-submitted". Подробнее о передаваемых данных — в разделе Community-функции и данные.</p>
 <div class="warn">Community values — только отправная точка. Каждая карта отличается (silicon lottery), поэтому всегда проверяйте значение на собственной карте, прежде чем на него полагаться.</div>
 </section>
 <section>
+<h2 class="cyan"><span class="icon">🔒</span>Community-функции и данные</h2>
+<p>В NV-UV <strong>нет аккаунтов, нет телеметрии и никакой автоматической отправки данных</strong>. Данные передаются только тогда, когда вы сами используете одну из двух community-функций:</p>
+<p><strong>Оценка звёздами в UV⚡Try:</strong> При клике по звезде оценка сохраняется локально и дополнительно отправляется анонимный community-vote. Передаются только: preset ID, ваша оценка и случайный client ID (случайный GUID, создаваемый локально, без какой-либо привязки к железу или личности). Повторный клик по той же звезде (0 звёзд) удаляет ваш голос и на сервере.</p>
+<p><strong>Отправка настроек (правый клик по слоту профиля):</strong> Передаются UV-значения из слота (частота, напряжение, при наличии power limit и VRAM offset), определённая модель GPU, опционально вариант платы и короткая заметка, а также тот же случайный client ID. <strong>Важно:</strong> После одобрения эти данные становятся публично видимыми в community-базе на GitHub. Не пишите личную информацию в заметку.</p>
+<p><strong>Техническое:</strong> Как и любой интернет-сервис, сервер (Cloudflare Worker) видит ваш IP-адрес. Он обрабатывается исключительно как ежедневно пересаливаемый хеш для защиты от злоупотреблений и <strong>никогда не сохраняется в открытом виде</strong>. Отображение community-оценок, обновление базы и проверка обновлений при запуске (раз в день загружается с GitHub информация о том, вышла ли новая версия NV-UV) — это обычная загрузка с GitHub, при этом ничего не отправляется. Случайный client ID лежит в <code>%LocalAppData%\NV-UV\nv-uv_client_id.txt</code> и может быть удалён в любой момент (при следующем голосе создаётся новый).</p>
+
 <h2 class="cyan"><span class="icon">🌍</span>Global Override &amp; No Override</h2>
 <p>В Game Library можно задать <strong>Global Override</strong> (dropdown на toolbar): он принудительно назначает всем запущенным играм выбранный tier (Eco / Bal / Perf / Max), перекрывая индивидуальные назначения. Удобно, если вы используете только UV-Pilot и хотите один tier везде.</p>
 <p><strong>No Override</strong> исключает отдельную игру из global override — тогда она определяется обычным способом (собственный tier, tier из database или stock). Задаётся либо через per-game override dropdown ("⊘ No Override"), либо правым кликом по строке игры. Полезно для записей вроде browser, которые вы не хотите трогать через UV-Pilot.</p>
@@ -879,7 +886,7 @@
 <p><strong>V-Lock</strong> фиксирует GPU в одной точке напряжения/частоты. Простой, надёжный и рекомендуемый метод.<br/>
 <strong>Multi-Point</strong> задаёт несколько точек на кривой (например, из OCS Import). Сложнее, но потенциально эффективнее по всему диапазону напряжений.</p>
 <h3>Почему EXE около 200 MB?</h3>
-<p>Self-contained .NET 9 runtime. Установка не нужна, просто запускаете EXE.</p>
+<p>Self-contained .NET 10 runtime. Установка не нужна, просто запускаете EXE.</p>
 <h3>Поддержка Windows 10?</h3>
 <p>Не планируется. Для DXR stress testing требуется Windows 11.</p>
 <h3>Поддержка RTX 40 series?</h3>
@@ -932,7 +939,8 @@
 <div class="led-bar gold"></div>
 <div class="footer">
     NV-UV · Build 22 · Cantor · Open Alpha · только invited testers<br/>
-    Не распространять · GPU undervolting на ваш собственный риск<br/><br/>
+    Не распространять · GPU undervolting на ваш собственный риск<br/>
+    Русский перевод: <b>S1lenix</b> (community) · Соответствует EN-версии v0.99 · Обновлено: 05.07.2026<br/><br/>
 <span style="color:var(--dim)">NV-UV бесплатен. Если он вам нравится:</span> <a href="https://paypal.me/christianpapaioannou" style="color:var(--cyan)">PayPal</a>
 </div>
 </div>
@@ -962,5 +970,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</pre>
 <p>Большое спасибо aufkrawall за Green Curve и за то, что проект доступен под открытой лицензией.</p>
+<p>Русский перевод этого руководства: S1lenix. Спасибо за вклад в сообщество NV-UV!</p>
 </body>
 </html>
