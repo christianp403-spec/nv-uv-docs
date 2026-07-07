@@ -3481,6 +3481,23 @@
               },
               "date_found": "2024-06",
               "notes": "~65C, ~55% fan, negligible perf change"
+            },
+            {
+              "preset_id": "ada-4060-1859a3ff2311",
+              "board": "rtx4060m 140w oem:clevo",
+              "freq_mhz": 2250,
+              "voltage_mv": 850,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-07",
+              "notes": "super stable and cool,at least for me/ Mod note: laptop GPU, not officially supported by NV-UV, no guarantee, give it a try."
             }
           ]
         }
