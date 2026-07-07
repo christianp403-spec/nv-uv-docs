@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-06-21",
+  "updated": "2026-07-07",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -399,6 +399,57 @@
               },
               "date_found": "2025-04",
               "notes": "Curve flattened to 2902MHz from 950mV, ~102W avg reduction; within 1-3fps of OC mode"
+            },
+            {
+              "preset_id": "bw-5090-9c80cae12504",
+              "board": "MSI Gaming X Trio",
+              "freq_mhz": 2835,
+              "voltage_mv": 925,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1250,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-06",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5090-fae26904b28e",
+              "board": "ZOTAC GAMING GeForce RTX 5090 AMP Extreme INFINITY",
+              "freq_mhz": 2887,
+              "voltage_mv": 935,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-06",
+              "notes": "My daily profile: hundreds of hours of gaming, running rock solid on the quiet BIOS."
+            },
+            {
+              "preset_id": "bw-5090-c23bf7e413c0",
+              "board": "ZOTAC GAMING GeForce RTX 5090 AMP Extreme INFINITY",
+              "freq_mhz": 3135,
+              "voltage_mv": 1025,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-06",
+              "notes": "OC/UV profile: runs above 3 GHz and works great on the normal BIOS. The quiet BIOS is possible too, but the fans spin up past 1400 RPM, so it's not exactly silent anymore."
             }
           ]
         },
@@ -642,6 +693,40 @@
               },
               "date_found": "2025-03",
               "notes": "Set value but only runs 2450MHz under load; poor sample / early driver bug"
+            },
+            {
+              "preset_id": "bw-5080-e1d036904bf2",
+              "board": "Gigabyte Aorus Master",
+              "freq_mhz": 3165,
+              "voltage_mv": 985,
+              "power_limit_pct": 125,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-06",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-3daacf0e6e0a",
+              "board": null,
+              "freq_mhz": 3172,
+              "voltage_mv": 1010,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-06",
+              "notes": ""
             }
           ]
         },
@@ -1009,6 +1094,57 @@
               },
               "date_found": "2026-05",
               "notes": "Guide alt target for cards near ASUS Prime 2557MHz default mode (NVIDIA ref boost 2512MHz)"
+            },
+            {
+              "preset_id": "bw-5070-c22a4b5e349d",
+              "board": null,
+              "freq_mhz": 3000,
+              "voltage_mv": 910,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-06",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-f198557608b8",
+              "board": null,
+              "freq_mhz": 2992,
+              "voltage_mv": 910,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-06",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-4f3bccce3f52",
+              "board": null,
+              "freq_mhz": 3142,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-06",
+              "notes": ""
             }
           ]
         },
@@ -2205,6 +2341,40 @@
               },
               "date_found": "2024-01",
               "notes": "Curve-build guide: 990mV point = 2835MHz, called 4080 sweet spot"
+            },
+            {
+              "preset_id": "ada-4080-super-8e8bd74e293e",
+              "board": null,
+              "freq_mhz": 2640,
+              "voltage_mv": 925,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1250,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-06",
+              "notes": "Slightly stronger than stock with less wattage/heat. Stress tested, heartbeat tested and real-world tested running for ~2 months now."
+            },
+            {
+              "preset_id": "ada-4080-super-fcca6efb20a2",
+              "board": "MSI Suprim X",
+              "freq_mhz": 2782,
+              "voltage_mv": 1000,
+              "power_limit_pct": 115,
+              "vram_offset_mhz": 1300,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-06",
+              "notes": "UV/OC - stable @4k/RT Pragmata/Forza Horizon 6. ~290W (368W PL for stable clocks under load)"
             }
           ]
         },
@@ -3233,6 +3403,23 @@
               },
               "date_found": "2023-07",
               "notes": "Suggested starting point: 2805MHz at 0.94V then step down 20mV"
+            },
+            {
+              "preset_id": "ada-4070-0235cabcce5c",
+              "board": "ASUS Dual (non-OC)",
+              "freq_mhz": 2685,
+              "voltage_mv": 1010,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 750,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-06",
+              "notes": "Can't get lower with stock clock values"
             }
           ]
         },
