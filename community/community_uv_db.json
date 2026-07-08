@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-07",
+  "updated": "2026-07-08",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -727,6 +727,23 @@
               },
               "date_found": "2026-07-06",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-3e072ae202d0",
+              "board": null,
+              "freq_mhz": 2902,
+              "voltage_mv": 910,
+              "power_limit_pct": 90,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-08",
+              "notes": "90% pl, poe2 , steel nomad 20 loop"
             }
           ]
         },
@@ -1145,6 +1162,23 @@
               },
               "date_found": "2026-07-06",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-097fae74cc2b",
+              "board": "Palit 5070 Infinity 3",
+              "freq_mhz": 2940,
+              "voltage_mv": 890,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-08",
+              "notes": "70-71 Celsius. 4K Forza 5 Ultra 75 FPS"
             }
           ]
         },
