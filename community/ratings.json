@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-07",
+  "updated": "2026-07-08",
   "ratings": {
     "ada-4070-ti-a6d2b8f97ec6": {
       "avg": 5,
@@ -15,6 +15,10 @@
       "votes": 1
     },
     "amp-3070-ti-6635884925e2": {
+      "avg": 5,
+      "votes": 1
+    },
+    "amp-3090-e68735dfe12a": {
       "avg": 5,
       "votes": 1
     },
