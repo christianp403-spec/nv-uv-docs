@@ -282,57 +282,6 @@
               "notes": "Fallback if 2750@900 unstable"
             },
             {
-              "preset_id": "bw-5090-dfcbbb1a30fc",
-              "board": null,
-              "freq_mhz": 2750,
-              "voltage_mv": 900,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "HardForum",
-                "url": "https://hardforum.com/threads/rtx-5090-undervolting-uv.2043276/post-1046182309"
-              },
-              "date_found": "2025-09",
-              "notes": "~400W max, conservative curve"
-            },
-            {
-              "preset_id": "bw-5090-508d18fceb3d",
-              "board": null,
-              "freq_mhz": 2850,
-              "voltage_mv": 950,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "HardForum",
-                "url": "https://hardforum.com/threads/rtx-5090-undervolting-uv.2043276/post-1046182309"
-              },
-              "date_found": "2025-09",
-              "notes": "Fallback for 2900@950"
-            },
-            {
-              "preset_id": "bw-5090-3e7671795e28",
-              "board": null,
-              "freq_mhz": 2900,
-              "voltage_mv": 950,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "HardForum",
-                "url": "https://hardforum.com/threads/rtx-5090-undervolting-uv.2043276/post-1046182309"
-              },
-              "date_found": "2025-09",
-              "notes": "~450W, match/beat stock 3-5%"
-            },
-            {
               "preset_id": "bw-5090-4aec99b0a82f",
               "board": null,
               "freq_mhz": 2950,
@@ -348,23 +297,6 @@
               },
               "date_found": "2025-09",
               "notes": "Fallback for 3000@975"
-            },
-            {
-              "preset_id": "bw-5090-e50e6b59454f",
-              "board": "Gainward",
-              "freq_mhz": 3165,
-              "voltage_mv": 975,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "HardForum",
-                "url": "https://hardforum.com/threads/rtx-5090-undervolting-uv.2043276/post-1046182309"
-              },
-              "date_found": "2025-09",
-              "notes": "Max power leaderboard, hits 600W, beat stock 9-11%"
             },
             {
               "preset_id": "bw-5090-66e4e9690767",
@@ -644,40 +576,6 @@
               "notes": "Steel Nomad >90fps just under power limit"
             },
             {
-              "preset_id": "bw-5080-c0f43626206f",
-              "board": null,
-              "freq_mhz": 2790,
-              "voltage_mv": 875,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "ComputerBase",
-                "url": "https://www.computerbase.de/forum/threads/blackwell-5070-5080-5090-overclocking-undervolting-sammelthread.2228911/page-2"
-              },
-              "date_found": "2025-02",
-              "notes": "Stability questioned by others"
-            },
-            {
-              "preset_id": "bw-5080-46fefcbe843e",
-              "board": "Gigabyte Waterforce",
-              "freq_mhz": 3100,
-              "voltage_mv": 900,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "ComputerBase",
-                "url": "https://www.computerbase.de/forum/threads/blackwell-5070-5080-5090-overclocking-undervolting-sammelthread.2228911/page-8"
-              },
-              "date_found": "2025-06",
-              "notes": "Claimed golden sample, doubted by others"
-            },
-            {
               "preset_id": "bw-5080-1a137fd6b2c0",
               "board": "Founders Edition",
               "freq_mhz": 2723,
@@ -727,23 +625,6 @@
               },
               "date_found": "2026-07-06",
               "notes": ""
-            },
-            {
-              "preset_id": "bw-5080-3e072ae202d0",
-              "board": null,
-              "freq_mhz": 2902,
-              "voltage_mv": 910,
-              "power_limit_pct": 90,
-              "vram_offset_mhz": 2000,
-              "confidence": "user-submitted",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "NV-UV App",
-                "url": ""
-              },
-              "date_found": "2026-07-08",
-              "notes": "90% pl, poe2 , steel nomad 20 loop"
             }
           ]
         },
@@ -1162,23 +1043,6 @@
               },
               "date_found": "2026-07-06",
               "notes": ""
-            },
-            {
-              "preset_id": "bw-5070-097fae74cc2b",
-              "board": "Palit 5070 Infinity 3",
-              "freq_mhz": 2940,
-              "voltage_mv": 890,
-              "power_limit_pct": null,
-              "vram_offset_mhz": 3000,
-              "confidence": "user-submitted",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "NV-UV App",
-                "url": ""
-              },
-              "date_found": "2026-07-08",
-              "notes": "70-71 Celsius. 4K Forza 5 Ultra 75 FPS"
             }
           ]
         },
@@ -1777,312 +1641,6 @@
               "notes": "User notes volts a bit high, needs tuning"
             },
             {
-              "preset_id": "ada-4090-4b9ab14a0f72",
-              "board": "Gainward Phantom GS",
-              "freq_mhz": 2505,
-              "voltage_mv": 875,
-              "power_limit_pct": null,
-              "vram_offset_mhz": 1000,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected list"
-            },
-            {
-              "preset_id": "ada-4090-061010622535",
-              "board": "ASUS TUF OC",
-              "freq_mhz": 2520,
-              "voltage_mv": 875,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected list; same card also 2610@900"
-            },
-            {
-              "preset_id": "ada-4090-d557ec6302b2",
-              "board": "Gigabyte 4090 OC",
-              "freq_mhz": 2580,
-              "voltage_mv": 875,
-              "power_limit_pct": null,
-              "vram_offset_mhz": 1000,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected list"
-            },
-            {
-              "preset_id": "ada-4090-76484230709e",
-              "board": "Gainward Phantom",
-              "freq_mhz": 2580,
-              "voltage_mv": 875,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected list"
-            },
-            {
-              "preset_id": "ada-4090-4f02574a4e44",
-              "board": "Founders Edition",
-              "freq_mhz": 2580,
-              "voltage_mv": 875,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected list"
-            },
-            {
-              "preset_id": "ada-4090-24f1b4b05d95",
-              "board": "MSI Gaming Trio",
-              "freq_mhz": 2580,
-              "voltage_mv": 875,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected list"
-            },
-            {
-              "preset_id": "ada-4090-9a7f556ad096",
-              "board": "KFA2 SG",
-              "freq_mhz": 2610,
-              "voltage_mv": 875,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected 875mV list, ~310W max; date/URL need operator check"
-            },
-            {
-              "preset_id": "ada-4090-35dda5fc2b0b",
-              "board": "MSI Suprim X",
-              "freq_mhz": 2610,
-              "voltage_mv": 875,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected list"
-            },
-            {
-              "preset_id": "ada-4090-a11b6e9539d3",
-              "board": "Inno3D iCHILL X3",
-              "freq_mhz": 2610,
-              "voltage_mv": 875,
-              "power_limit_pct": null,
-              "vram_offset_mhz": 1000,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected list"
-            },
-            {
-              "preset_id": "ada-4090-fb24dbfec075",
-              "board": "ASUS TUF OC",
-              "freq_mhz": 2610,
-              "voltage_mv": 900,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected list"
-            },
-            {
-              "preset_id": "ada-4090-8fde10ffbd81",
-              "board": "Founders Edition",
-              "freq_mhz": 2650,
-              "voltage_mv": 900,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected list"
-            },
-            {
-              "preset_id": "ada-4090-3f15d60df88b",
-              "board": "Gigabyte Gaming OC Rev1.0",
-              "freq_mhz": 2700,
-              "voltage_mv": 950,
-              "power_limit_pct": null,
-              "vram_offset_mhz": 1200,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected list"
-            },
-            {
-              "preset_id": "ada-4090-dbd011aa3e0b",
-              "board": null,
-              "freq_mhz": 2730,
-              "voltage_mv": 950,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Near-silent (also reported on ComputerBase)"
-            },
-            {
-              "preset_id": "ada-4090-b819c8f7d04e",
-              "board": "Founders Edition",
-              "freq_mhz": 2760,
-              "voltage_mv": 950,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected list"
-            },
-            {
-              "preset_id": "ada-4090-3b9a42b1a477",
-              "board": "Inno3D iChill X3",
-              "freq_mhz": 2775,
-              "voltage_mv": 950,
-              "power_limit_pct": null,
-              "vram_offset_mhz": 1500,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected list"
-            },
-            {
-              "preset_id": "ada-4090-7dde997b666c",
-              "board": "ASUS TUF OC",
-              "freq_mhz": 2820,
-              "voltage_mv": 950,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected list"
-            },
-            {
-              "preset_id": "ada-4090-0438fbc457a9",
-              "board": "MSI Suprim X",
-              "freq_mhz": 2805,
-              "voltage_mv": 975,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected >875mV list"
-            },
-            {
-              "preset_id": "ada-4090-c83127777ebf",
-              "board": "MSI Suprim X Liquid",
-              "freq_mhz": 2850,
-              "voltage_mv": 975,
-              "power_limit_pct": null,
-              "vram_offset_mhz": 1000,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2023-01",
-              "notes": "Community-collected list"
-            },
-            {
               "preset_id": "ada-4090-255ece9efcd2",
               "board": null,
               "freq_mhz": 2900,
@@ -2273,57 +1831,6 @@
               },
               "date_found": "2024-02",
               "notes": "350W max-OC profile, OCCT-tested"
-            },
-            {
-              "preset_id": "ada-4080-super-1442127d5d38",
-              "board": "Gigabyte Aorus OC",
-              "freq_mhz": 2655,
-              "voltage_mv": 925,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2024-08",
-              "notes": "From HWLuxx UV collection summary list (first post)"
-            },
-            {
-              "preset_id": "ada-4080-super-40bbc4e16ecf",
-              "board": "MSI Suprim X",
-              "freq_mhz": 2640,
-              "voltage_mv": 935,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2024-08",
-              "notes": "From HWLuxx UV collection list"
-            },
-            {
-              "preset_id": "ada-4080-super-701290f1dbb3",
-              "board": "Founders Edition",
-              "freq_mhz": 2760,
-              "voltage_mv": 1000,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2024-08",
-              "notes": "From HWLuxx UV collection list"
             },
             {
               "preset_id": "ada-4080-super-18155dfdbf59",
@@ -2618,23 +2125,6 @@
               },
               "date_found": "2023-05",
               "notes": "Curve flat after, uses less power than RTX 3080. Stock AD103-300 ref 2205 base/2505 boost, 320W"
-            },
-            {
-              "preset_id": "ada-4080-1ca82b540a9d",
-              "board": null,
-              "freq_mhz": 2700,
-              "voltage_mv": 940,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/"
-              },
-              "date_found": "2024-08",
-              "notes": "From HWLuxx UV collection list"
             }
           ]
         },
@@ -3036,91 +2526,6 @@
               },
               "date_found": "2023-06",
               "notes": "OC+UV; Cyberpunk 3440x1440 DLSS-Q RT Ultra FG 97.87fps; 61-64C; ~100W saved"
-            },
-            {
-              "preset_id": "ada-4070-ti-a8fb51845b6b",
-              "board": "Inno3D X3",
-              "freq_mhz": 2535,
-              "voltage_mv": 890,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "ComputerBase",
-                "url": "https://www.computerbase.de/forum/threads/lovelace-4070-4080-4090-varianten-overclocking-undervolting-sammelthread.2107768/page-30"
-              },
-              "date_found": "2023-02",
-              "notes": "Very economical; below 0.885V card downclocks to ~645MHz"
-            },
-            {
-              "preset_id": "ada-4070-ti-3bf869642ebb",
-              "board": null,
-              "freq_mhz": 2655,
-              "voltage_mv": 910,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "guru3D",
-                "url": "https://forums.guru3d.com/threads/rtx-4070-ti-owners-thread.446306/page-6"
-              },
-              "date_found": "2023-08",
-              "notes": "Memory untouched; cites der8auer minimal gain"
-            },
-            {
-              "preset_id": "ada-4070-ti-1ee40f66508c",
-              "board": "MSI Trio Gaming",
-              "freq_mhz": 2745,
-              "voltage_mv": 950,
-              "power_limit_pct": null,
-              "vram_offset_mhz": 900,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "guru3D",
-                "url": "https://forums.guru3d.com/threads/rtx-4070-ti-owners-thread.446306/page-6"
-              },
-              "date_found": "2023-07",
-              "notes": "Mem +900 (11400) Micron; +925 unstable"
-            },
-            {
-              "preset_id": "ada-4070-ti-3a5c4b0b17e1",
-              "board": "ASUS TUF OC",
-              "freq_mhz": 2790,
-              "voltage_mv": 975,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Hardwareluxx",
-                "url": "https://www.hardwareluxx.de/community/threads/nvidia-rtx4000-undervolting-sammler.1325830/page-9"
-              },
-              "date_found": "2023-01",
-              "notes": "Stable per user"
-            },
-            {
-              "preset_id": "ada-4070-ti-e395928724f4",
-              "board": "Inno3D X3",
-              "freq_mhz": 2835,
-              "voltage_mv": 1000,
-              "power_limit_pct": null,
-              "vram_offset_mhz": 1500,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "ComputerBase",
-                "url": "https://www.computerbase.de/forum/threads/lovelace-4070-4080-4090-varianten-overclocking-undervolting-sammelthread.2107768/page-14"
-              },
-              "date_found": "2023-01",
-              "notes": "~180W; user signature daily setting"
             }
           ]
         },
@@ -3515,23 +2920,6 @@
               },
               "date_found": "2024-06",
               "notes": "~65C, ~55% fan, negligible perf change"
-            },
-            {
-              "preset_id": "ada-4060-1859a3ff2311",
-              "board": "rtx4060m 140w oem:clevo",
-              "freq_mhz": 2250,
-              "voltage_mv": 850,
-              "power_limit_pct": null,
-              "vram_offset_mhz": 1000,
-              "confidence": "user-submitted",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "NV-UV App",
-                "url": ""
-              },
-              "date_found": "2026-07-07",
-              "notes": "super stable and cool,at least for me/ Mod note: laptop GPU, not officially supported by NV-UV, no guarantee, give it a try."
             }
           ]
         }
@@ -3833,40 +3221,6 @@
               },
               "date_found": "2020-12",
               "notes": "Control 365W with 108% PL"
-            },
-            {
-              "preset_id": "amp-3090-634660978b85",
-              "board": "Gigabyte Eagle OC",
-              "freq_mhz": 1700,
-              "voltage_mv": 737,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "ComputerBase",
-                "url": "https://www.computerbase.de/forum/threads/ampere-3070-3080-3090-varianten-overclocking-undervolting-sammelthread.1974056/"
-              },
-              "date_found": "2020-11",
-              "notes": "~150-220W, ~10-15% less perf"
-            },
-            {
-              "preset_id": "amp-3090-78ef8bff725f",
-              "board": "Strix OC",
-              "freq_mhz": 1860,
-              "voltage_mv": 825,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Tom's Hardware Forum",
-                "url": "https://forums.tomshardware.com/threads/rtx-3090-strix-oc-temperatures-undervolting-results.3720103/"
-              },
-              "date_found": "2021-06",
-              "notes": "No issues so far"
             }
           ]
         },
@@ -4462,74 +3816,6 @@
               "notes": "Port Royal lap, 68C, drops to 2044"
             },
             {
-              "preset_id": "amp-3080-db174fa1cf50",
-              "board": "Aorus Master",
-              "freq_mhz": 1850,
-              "voltage_mv": 825,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Whirlpool",
-                "url": "https://forums.whirlpool.net.au/thread/90yz8vq3"
-              },
-              "date_found": "2020-11",
-              "notes": "Better temps"
-            },
-            {
-              "preset_id": "amp-3080-847aa845984d",
-              "board": null,
-              "freq_mhz": 1860,
-              "voltage_mv": 825,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Whirlpool",
-                "url": "https://forums.whirlpool.net.au/thread/90yz8vq3"
-              },
-              "date_found": "2020-11",
-              "notes": "825mV reported as sweet spot to stay under 70C"
-            },
-            {
-              "preset_id": "amp-3080-e5d40deeffc8",
-              "board": "Founders Edition",
-              "freq_mhz": 1890,
-              "voltage_mv": 843,
-              "power_limit_pct": null,
-              "vram_offset_mhz": 950,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Overclockers UK",
-                "url": "https://forums.overclockers.co.uk/threads/3080-undervolting.18936805/"
-              },
-              "date_found": "2020-12",
-              "notes": "-300 core offset, +950 mem"
-            },
-            {
-              "preset_id": "amp-3080-2506f0c00b6b",
-              "board": "ASUS Dual OC",
-              "freq_mhz": 1920,
-              "voltage_mv": 950,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "ComputerBase",
-                "url": "https://www.computerbase.de/forum/threads/ampere-3070-3080-3090-varianten-overclocking-undervolting-sammelthread.1974056/"
-              },
-              "date_found": "2020-11",
-              "notes": "~70C, quiet bios"
-            },
-            {
               "preset_id": "amp-3080-fd71211eb31a",
               "board": "Founders Edition",
               "freq_mhz": 1850,
@@ -4934,23 +4220,6 @@
               },
               "date_found": "2021-03",
               "notes": "Same test suite, 8000MHz VRAM"
-            },
-            {
-              "preset_id": "amp-3060-ti-5e702df63c10",
-              "board": null,
-              "freq_mhz": 1900,
-              "voltage_mv": 900,
-              "power_limit_pct": null,
-              "vram_offset_mhz": null,
-              "confidence": "claimed",
-              "report_count": 1,
-              "verified": false,
-              "source": {
-                "site": "Overclockers UK",
-                "url": "https://forums.overclockers.co.uk/threads/zotac-rtx-3060ti-twin-edge-undervolting.18935368/"
-              },
-              "date_found": "2021-12",
-              "notes": "General advice: 900mV+1900 usually golden, step down if crashes"
             }
           ]
         },
