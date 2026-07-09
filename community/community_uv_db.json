@@ -2232,6 +2232,23 @@
               },
               "date_found": "2024-02",
               "notes": "Card won't go below 0.925V (firmware floor)"
+            },
+            {
+              "preset_id": "ada-4070-ti-super-660180c0da9f",
+              "board": "HP OEM",
+              "freq_mhz": 2857,
+              "voltage_mv": 1035,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-09",
+              "notes": ""
             }
           ]
         },
