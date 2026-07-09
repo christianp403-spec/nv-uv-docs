@@ -12,7 +12,7 @@ Clicking a star stores your rating locally and additionally sends an anonymous c
 
 The client ID is a random GUID generated locally on first use. It contains no hardware information, no serial numbers and no personal reference of any kind. It exists only so that one installation counts as one vote per preset (re-rating replaces your previous vote). It is stored in `%LocalAppData%\NV-UV\nv-uv_client_id.txt` and can be deleted at any time; a new one is created on your next vote. Clicking the same star again (0 stars) deletes your vote on the server as well.
 
-Aggregated ratings (average and vote count per preset, nothing else) are published twice a day to this repository as `community/ratings.json`.
+Aggregated ratings (average and vote count per preset, nothing else) are published several times a day to this repository as `community/ratings.json`.
 
 ## Preset submissions (right-click on a profile slot)
 
