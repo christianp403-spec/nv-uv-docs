@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-08",
+  "updated": "2026-07-09",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -1167,6 +1167,23 @@
               },
               "date_found": "2025-06",
               "notes": "MSI's own 5060 Ti at 122% PL boosted to 2820MHz/1.075V, 181W (OC baseline; ref TGP 180W)"
+            },
+            {
+              "preset_id": "bw-5060-ti-4934be43b218",
+              "board": "VENTUS 2X OC PLUS 16GB",
+              "freq_mhz": 3097,
+              "voltage_mv": 970,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-08",
+              "notes": "maybe unstable but runs for me"
             }
           ]
         }
