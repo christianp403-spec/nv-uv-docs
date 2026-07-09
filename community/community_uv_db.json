@@ -382,6 +382,23 @@
               },
               "date_found": "2026-07-06",
               "notes": "OC/UV profile: runs above 3 GHz and works great on the normal BIOS. The quiet BIOS is possible too, but the fans spin up past 1400 RPM, so it's not exactly silent anymore."
+            },
+            {
+              "preset_id": "bw-5090-b9ff9812a544",
+              "board": "FE",
+              "freq_mhz": 2872,
+              "voltage_mv": 910,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-09",
+              "notes": ""
             }
           ]
         },
@@ -2249,6 +2266,23 @@
               },
               "date_found": "2026-07-09",
               "notes": ""
+            },
+            {
+              "preset_id": "ada-4070-ti-super-b020d8d9d952",
+              "board": "HP",
+              "freq_mhz": 2820,
+              "voltage_mv": 1010,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-09",
+              "notes": "This is 990mv-2820 PNY, but for me it's stable on 1010mv."
             }
           ]
         },
