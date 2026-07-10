@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-09",
+  "updated": "2026-07-10",
   "ratings": {
     "ada-4070-ti-a6d2b8f97ec6": {
       "avg": 5,
@@ -16,6 +16,10 @@
     },
     "ada-4070-ti-super-bf82bfa592ac": {
       "avg": 1,
+      "votes": 1
+    },
+    "ada-4080-super-fcca6efb20a2": {
+      "avg": 5,
       "votes": 1
     },
     "amp-3070-ac4e111489af": {
@@ -41,6 +45,10 @@
     "bw-5070-c22a4b5e349d": {
       "avg": 5,
       "votes": 2
+    },
+    "bw-5070-ti-538c133f65ec": {
+      "avg": 5,
+      "votes": 1
     },
     "bw-5070-ti-8278b3c61fef": {
       "avg": 5,
