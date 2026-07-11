@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-09",
+  "updated": "2026-07-11",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -641,6 +641,23 @@
                 "url": ""
               },
               "date_found": "2026-07-06",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-21b9eb381c58",
+              "board": "Asus Astral 5080",
+              "freq_mhz": 3202,
+              "voltage_mv": 1025,
+              "power_limit_pct": 112,
+              "vram_offset_mhz": 2650,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-10",
               "notes": ""
             }
           ]
