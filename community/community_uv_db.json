@@ -659,6 +659,23 @@
               },
               "date_found": "2026-07-10",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-15dfbe9e24ab",
+              "board": "Gigabyte Gaming OC 16G",
+              "freq_mhz": 2797,
+              "voltage_mv": 910,
+              "power_limit_pct": 90,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-11",
+              "notes": ""
             }
           ]
         },
@@ -919,6 +936,23 @@
               },
               "date_found": "2025-02",
               "notes": "2685MHz@860mV ~210W set via curve"
+            },
+            {
+              "preset_id": "bw-5070-ti-82c93d4b84f4",
+              "board": "Palit GeForce RTX 5070 Ti GamingPro",
+              "freq_mhz": 3030,
+              "voltage_mv": 935,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-11",
+              "notes": "Time Spy - 27450"
             }
           ]
         },
