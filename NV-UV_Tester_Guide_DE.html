@@ -373,13 +373,13 @@
       <tr><td>🎯 <strong>Optimize Point</strong> <span style="color:var(--gold);">NEU</span></td><td>Stage 2 — niedrigste Voltage zu einer festen Frequenz finden, Feinabstimmung nach Stage 1</td></tr>
       <tr><td>📐 <strong>V-Step Compensation</strong> <span style="color:var(--gold);">NEU</span></td><td>Scanner kompensiert V-Droop automatisch für präzisere Tests</td></tr>
       <tr><td>🖥 <strong>Smart Hz</strong></td><td>Niedrige Desktop-Rate, native Hz beim Spielen. Rechtsklick zur Wahl der Idle-Rate. Spart ~10-25W Idle.</td></tr>
-      <tr><td>🌍 <strong>DE/EN</strong></td><td>Komplette Oberfläche Deutsch/Englisch, Live-Toggle im Footer</td></tr>
+      <tr><td>🌍 <strong>DE/EN/RU/ES</strong></td><td>Komplette Oberfläche Deutsch/Englisch/Russisch/Spanisch, Live-Toggle im Footer (Zyklus DE → EN → RU → ES). <strong>NEU in v0.99.1:</strong> Russisch und Spanisch (komplett lokalisierte Oberfläche inkl. Feature-Namen)</td></tr>
       <tr><td>🔥 <strong>3D Stress Test</strong></td><td>DX12 + DXR Render-Engine (headless) mit Heartbeat-Lastmuster</td></tr>
       <tr><td>⚓ <strong>Anker-Profil</strong></td><td>Rechtsklick auf Slot — wird beim Programmstart geladen, nach Spielende durch UV-Pilot wiederhergestellt</td></tr>
       <tr><td>🧊 <strong>Idle-Optimierung</strong></td><td>Unter 850 mV = Stock, spart Strom bei Desktop/Idle</td></tr>
       <tr><td>🔧 <strong>V-Step Fix</strong></td><td>Kompensiert den Blackwell point-before-flatten Bug</td></tr>
       <tr><td>📐 <strong>Mini View</strong></td><td>Kompakte Ansicht, perfekt neben AB's Curve Editor</td></tr>
-      <tr><td>🎨 <strong>4 Skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity</td></tr>
+      <tr><td>🎨 <strong>5 Skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity + Summer26 <span style="color:var(--gold);">NEU in v0.99.1</span></td></tr>
       <tr><td>⏻ <strong>System Tray</strong></td><td>Läuft im Hintergrund. Autostart kommt sobald die EXE signiert ist.</td></tr>
     </table>
   </section>
@@ -389,18 +389,13 @@
     <h2 class="gold"><span class="icon">📋</span>Voraussetzungen</h2>
     <table>
       <tr><th>Was</th><th>Details</th></tr>
-      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, oder 5060 Ti / 5060 (experimentell)<br>Ada-Karten (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) ebenfalls unterstützt<br>RTX 4060 Ti / 4060 (experimentell)<br>RTX 30-Serie (Ampere) <span style="color:var(--gold);">NEU in v0.98</span>, nur auf RTX 3090 verifiziert, alle anderen Ampere-Modelle experimentell</td></tr>
+      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, oder 5060 Ti / 5060 (experimentell)<br>Ada-Karten (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) ebenfalls unterstützt<br>RTX 4060 Ti / 4060 (experimentell)<br>RTX 30-Serie (Ampere) <span style="color:var(--gold);">NEU in v0.98</span></td></tr>
       <tr><td><strong>Treiber</strong></td><td>Aktueller NVIDIA-Treiber</td></tr>
       <tr><td><strong>MSI Afterburner</strong></td><td>Version 4.6.6+ mit RTSS</td></tr>
       <tr><td><strong>Windows</strong></td><td>Windows 11 (64-bit)</td></tr>
     </table>
     <div class="warn">NV-UV benötigt MSI Afterburner im Hintergrund. Ohne AB kann NV-UV keine Spannungen ändern!</div>
-    <div class="info"><strong>Ampere (RTX 30) ist neu und noch nicht fertig.</strong> Die Integration ist bisher nur auf einer einzigen Karte verifiziert (RTX 3090). Alle anderen Ampere-Modelle sind ungetestet. Vor allem der Voltage Step Scanner verhält sich evtl. noch nicht korrekt, besonders auf kleineren Karten. Testen ist ausdrücklich erwünscht, aber um Probleme zu fixen brauche ich ein Log (Export-Button unten rechts). Zwei Dinge laufen auf Ampere anders:
-      <ul>
-        <li><strong>Live View</strong>: Ampere rastet den angeforderten Takt im Treiber auf ein festes Plateau ein. NV-UV spiegelt diesen echten, vom Treiber gerasteten Takt in die Anzeige, damit der angezeigte Wert dem entspricht, was die GPU wirklich fährt. Der von dir gewählte Zielwert bleibt der, der geschrieben wird.</li>
-        <li><strong>Temp-Limit</strong>: ein Temperatur-Limit-Slider ist nur auf Ampere verfügbar (Ada und Blackwell graut Afterburner ihn aus). Wenn aktiviert, wird er beim Übernehmen ins AB-Profil geschrieben, unabhängig vom Power-Limit.</li>
-      </ul>
-    </div>
+    <div class="info" style="margin-top:1em;"><strong>Ampere-Hinweis:</strong> Die Ampere-Unterstützung wurde auf einer RTX 3090 (GA102) hardware-verifiziert. Die Preset-Werte unten basieren auf Community-Recherche. Feedback von Ampere-Nutzern ist im PCGH-Subforum und auf Discord sehr willkommen. Bitte bei Problemen ein Log mitschicken (Export-Button unten rechts).</div>
   </section>
 
   <!-- ═══ INSTALLATION ═══ -->
@@ -823,7 +818,7 @@
     <p>Entfernt den 50 MHz Sicherheitsabstand vor dem Stock-Maximum. Nur für erfahrene User.</p>
 
     <h3>🖥 UI-Skalierung</h3>
-    <p>% Button im Footer (neben DE/EN). Stufen: 100% → 110% → 125% → 150% → 200% → 250% → 300%. Alle Fenster skalieren mit.</p>
+    <p>% Button im Footer (neben dem Sprach-Button). Stufen: 100% → 110% → 125% → 150% → 200% → 250% → 300%. Alle Fenster skalieren mit.</p>
   </section>
 
   <!-- ═══ SMART HZ ═══ -->
@@ -898,9 +893,10 @@
       <tr><th>Preset</th><th>Spannung</th><th>Frequenz</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>850 mV</td><td>2500 MHz</td><td>80%</td></tr>
       <tr><td>⚡ Balanced</td><td>900 mV</td><td>2800 MHz</td><td>90%</td></tr>
-      <tr><td>🚀 Performance</td><td>935 mV</td><td>2955 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>2932 MHz</td><td>100%</td></tr>
       <tr><td>🔥 Max</td><td>950 mV</td><td>3000 MHz</td><td>100%</td></tr>
     </table>
+    <p style="font-size:0.9em;color:var(--text-dim);">Das Performance-Preset der 5070 Ti ist das validierte Tagesprofil des Entwicklers (900 mV / 2932 MHz) und setzt zusätzlich +3000 MHz VRAM-Offset.</p>
 
     <h3><span class="gpu-badge gpu-5070">RTX 5070</span></h3>
     <table>

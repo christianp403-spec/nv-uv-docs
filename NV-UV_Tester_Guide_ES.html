@@ -379,7 +379,7 @@
       <tr><td>🧊 <strong>Optimización en Reposo</strong></td><td>Voltajes bajos = stock, ahorra energía en el escritorio/reposo</td></tr>
       <tr><td>🔧 <strong>Corrección V-Step</strong></td><td>Compensa el bug point-before-flatten de Blackwell</td></tr>
       <tr><td>📐 <strong>Vista Mini</strong></td><td>Vista compacta, perfecta junto al editor de curvas de AB</td></tr>
-      <tr><td>🎨 <strong>4 skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity</td></tr>
+      <tr><td>🎨 <strong>5 skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity + Summer26 <span style="color:var(--gold);">NUEVO en v0.99.1</span></td></tr>
       <tr><td>⏻ <strong>Bandeja del sistema</strong></td><td>Funciona en segundo plano. El inicio automático se añadirá cuando el EXE esté firmado.</td></tr>
     </table>
   </section>
@@ -389,18 +389,13 @@
     <h2 class="gold"><span class="icon">📋</span>Requisitos</h2>
     <table>
       <tr><th>Qué</th><th>Detalles</th></tr>
-      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, o 5060 Ti / 5060 (experimental)<br>Las tarjetas Ada (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) también están soportadas<br>RTX 4060 Ti / 4060 (experimental)<br>Serie RTX 30 (Ampere) <span style="color:var(--gold);">NUEVO en v0.98</span>, verificado solo en la RTX 3090, el resto de modelos Ampere son experimentales</td></tr>
+      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, o 5060 Ti / 5060 (experimental)<br>Las tarjetas Ada (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) también están soportadas<br>RTX 4060 Ti / 4060 (experimental)<br>Serie RTX 30 (Ampere) <span style="color:var(--gold);">NUEVO en v0.98</span></td></tr>
       <tr><td><strong>Driver</strong></td><td>Driver NVIDIA más reciente</td></tr>
       <tr><td><strong>MSI Afterburner</strong></td><td>Versión 4.6.6+ con RTSS</td></tr>
       <tr><td><strong>Windows</strong></td><td>Windows 11 (64 bits)</td></tr>
     </table>
     <div class="warn">NV-UV requiere que MSI Afterburner esté ejecutándose en segundo plano. ¡Sin AB, NV-UV no puede cambiar voltajes!</div>
-    <div class="info"><strong>Ampere (RTX 30) es nuevo y está sin terminar.</strong> La integración se ha verificado hasta ahora en una sola tarjeta (RTX 3090). Todos los demás modelos Ampere están sin testear. El Escáner de Pasos de Voltaje en particular puede no comportarse correctamente, sobre todo en las tarjetas más pequeñas. El testeo es muy bienvenido, pero para arreglar cualquier problema necesito un log (botón Exportar, abajo a la derecha). Dos cosas funcionan distinto en Ampere:
-      <ul>
-        <li><strong>Vista en vivo</strong>: Ampere ajusta la frecuencia que pides a una meseta fija en el driver. NV-UV refleja en pantalla esa frecuencia real ajustada por el driver, de modo que el valor que ves coincide con lo que la GPU realmente ejecuta. Tu valor objetivo elegido sigue siendo el que se escribe.</li>
-        <li><strong>Límite de Temp.</strong>: el deslizador de límite de temperatura solo está disponible en Ampere (Ada y Blackwell lo tienen deshabilitado en Afterburner). Si se activa, se escribe en el perfil AB al aplicar, independientemente del límite de potencia.</li>
-      </ul>
-    </div>
+    <div class="info" style="margin-top:1em;"><strong>Nota sobre Ampere:</strong> El soporte de Ampere se ha verificado en hardware en una RTX 3090 (GA102). Los valores de preset de abajo se basan en investigación de la comunidad. Los comentarios de usuarios de Ampere son muy bienvenidos en el subforo de PCGH y en Discord. Por favor, adjunta un log (botón Exportar, abajo a la derecha) al informar de un problema.</div>
   </section>
 
   <!-- ═══ INSTALLATION ═══ -->
