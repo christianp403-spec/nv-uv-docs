@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-11",
+  "updated": "2026-07-12",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -953,6 +953,23 @@
               },
               "date_found": "2026-07-11",
               "notes": "Time Spy - 27450"
+            },
+            {
+              "preset_id": "bw-5070-ti-252f48ec15bb",
+              "board": "ASUS TUF Gaming 5070 Ti OC",
+              "freq_mhz": 2947,
+              "voltage_mv": 925,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-11",
+              "notes": "Legacy NV-UV Performance Profile"
             }
           ]
         },
