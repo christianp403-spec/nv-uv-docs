@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NV-UV · Guía del Usuario · Build 22 · Cantor</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
+
+  :root {
+    --bg: #0a0a09;
+    --bg-card: #111110;
+    --bg-card-hover: #1a1a18;
+    --border: #333330;
+    --border-dim: #222220;
+    --orange: #E86820;
+    --orange-dim: #D05818;
+    --orange-glow: rgba(232,104,32,0.15);
+    --gold: #CCB420;
+    --gold-dim: #998810;
+    --gold-glow: rgba(204,180,32,0.12);
+    --cyan: #00AACC;
+    --green: #4CAF50;
+    --red: #CC4444;
+    --purple: #8B5CF6;
+    --purple-dim: #6D28D9;
+    --platinum: #C0C0C0;
+    --white: #E8E8E0;
+    --dim: #888880;
+    --dimmer: #666660;
+    --mono: 'JetBrains Mono', 'Consolas', monospace;
+    --display: 'Orbitron', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      linear-gradient(90deg, transparent 49.5%, var(--border-dim) 49.5%, var(--border-dim) 50.5%, transparent 50.5%),
+      linear-gradient(0deg, transparent 49.5%, var(--border-dim) 49.5%, var(--border-dim) 50.5%, transparent 50.5%);
+    background-size: 80px 80px;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .led-bar {
+    height: 4px;
+    border-radius: 2px;
+    margin: 0 40px;
+  }
+  .led-bar.orange { background: var(--orange-dim); box-shadow: 0 0 12px var(--orange-glow); }
+  .led-bar.gold { background: var(--gold-dim); box-shadow: 0 0 12px var(--gold-glow); }
+
+  .header {
+    text-align: center;
+    padding: 48px 0 32px;
+  }
+  .header h1 {
+    font-family: var(--display);
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 4px;
+  }
+  .header h1 .nv { color: var(--orange); }
+  .header h1 .sep { color: var(--dimmer); margin: 0 2px; }
+  .header h1 .uv { color: var(--gold); }
+  .header .subtitle {
+    font-size: 13px;
+    color: var(--dim);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .header .build {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 4px 16px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 11px;
+    color: var(--cyan);
+    letter-spacing: 1px;
+  }
+
+  section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin: 20px 0;
+  }
+  section:hover { border-color: #444440; }
+
+  .new-badge {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 3px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: rgba(139,92,246,0.2);
+    color: var(--purple);
+    border: 1px solid var(--purple-dim);
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+
+  h2 {
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2 .icon { margin-right: 8px; }
+  h2.orange { color: var(--orange); border-color: var(--orange-dim); }
+  h2.gold { color: var(--gold); border-color: var(--gold-dim); }
+  h2.cyan { color: var(--cyan); border-color: #006680; }
+  h2.green { color: var(--green); border-color: #2E7D32; }
+  h2.red { color: var(--red); border-color: #882222; }
+  h2.purple { color: var(--purple); border-color: var(--purple-dim); }
+
+  h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--orange);
+    margin: 16px 0 8px;
+    letter-spacing: 1px;
+  }
+
+  p { margin: 8px 0; color: var(--white); }
+  p.dim { color: var(--dim); font-size: 13px; }
+
+  .step {
+    display: flex;
+    gap: 16px;
+    margin: 12px 0;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 6px;
+    border-left: 3px solid var(--border);
+  }
+  .step:hover { border-left-color: var(--orange-dim); background: rgba(255,255,255,0.03); }
+  .step-num {
+    font-family: var(--display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--orange);
+    min-width: 32px;
+    text-align: center;
+  }
+  .step-content { flex: 1; }
+  .step-content strong { color: var(--gold); }
+
+  code {
+    background: rgba(255,255,255,0.06);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: var(--cyan);
+  }
+  pre {
+    background: #0d0d0c;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 10px 0;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 14px;
+    margin: 4px 0;
+    border-radius: 6px;
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+  .checklist li:hover { background: rgba(255,255,255,0.03); }
+  .checklist li input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg);
+    cursor: pointer;
+    margin-top: 1px;
+    position: relative;
+  }
+  .checklist li input[type="checkbox"]:checked {
+    background: var(--orange-dim);
+    border-color: var(--orange);
+  }
+  .checklist li input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: -1px; left: 3px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+  }
+  .checklist li label { cursor: pointer; flex: 1; }
+  .checklist li .hint {
+    display: block;
+    font-size: 12px;
+    color: var(--dim);
+    margin-top: 2px;
+  }
+
+  .warn {
+    background: rgba(232,104,32,0.08);
+    border: 1px solid var(--orange-dim);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  .warn::before { content: '⚠ '; color: var(--orange); font-weight: bold; }
+
+  .info {
+    background: rgba(0,170,204,0.06);
+    border: 1px solid #006680;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  .info::before { content: 'ℹ '; color: var(--cyan); font-weight: bold; }
+
+  .new-info {
+    background: rgba(139,92,246,0.06);
+    border: 1px solid var(--purple-dim);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  .new-info::before { content: '🤖 '; font-weight: bold; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  th {
+    text-align: left;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.04);
+    border-bottom: 1px solid var(--border);
+    color: var(--dim);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border-dim);
+  }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .gpu-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .gpu-5090 { background: rgba(232,104,32,0.2); color: var(--orange); border: 1px solid var(--orange-dim); }
+  .gpu-5080 { background: rgba(204,180,32,0.15); color: var(--gold); border: 1px solid var(--gold-dim); }
+  .gpu-5070ti { background: rgba(0,170,204,0.15); color: var(--cyan); border: 1px solid #006680; }
+  .gpu-5070 { background: rgba(76,175,80,0.15); color: var(--green); border: 1px solid #2E7D32; }
+
+  .footer {
+    text-align: center;
+    padding: 32px 0 16px;
+    font-size: 11px;
+    color: var(--dimmer);
+    letter-spacing: 1px;
+  }
+
+  @media print {
+    body { background: #fff; color: #222; }
+    body::before { display: none; }
+    section { border: 1px solid #ccc; }
+    .checklist li input[type="checkbox"] { border-color: #999; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="led-bar orange"></div>
+
+  <div class="header">
+    <h1><span class="nv">NV</span><span class="sep">—</span><span class="uv">UV</span></h1>
+    <div class="subtitle">GPU Undervolt · Guía del Usuario</div>
+    <div class="build">Build 22 · Cantor · Open Alpha · Mayo 2026</div>
+  </div>
+
+  <div class="led-bar gold"></div>
+
+  <!-- ═══ FOREWORD ═══ -->
+  <section>
+    <h2 class="orange"><span class="icon">📝</span>Prólogo</h2>
+
+    <p>Antes de empezar, unas palabras que son importantes para mí.</p>
+
+    <p><strong>MSI Afterburner es y seguirá siendo la mejor herramienta para GPUs Nvidia del mercado.</strong> Lo que Alexey "Unwinder" Nicolaychuk ha logrado a lo largo de los años es sencillamente extraordinario. Afterburner es el estándar de oro para el tuning de GPU, OSD, control de ventiladores y edición avanzada de curvas. NV-UV no quiere reemplazar a Afterburner. Ni hoy ni mañana. NV-UV es una <strong>herramienta complementaria</strong>: simplifica los primeros pasos del undervolting en Blackwell y automatiza cosas como el cambio de presets, la recuperación tras fallos y la optimización basada en escáner. Pero para la edición fina de curvas, el overclocking, el OSD y todo lo que va más allá del undervolting, Afterburner sigue siendo la herramienta de referencia. Una vez que hayas encontrado tu ajuste UV estable con NV-UV, puedes cerrar NV-UV y dejar que AB tome el relevo: el perfil queda en AB y funciona con normalidad desde ahí.</p>
+
+
+
+    <p>NV-UV empezó como un pequeño proyecto paralelo, para mi propia RTX 5090 y para amigos a los que quería iniciar en el undervolting. Que se haya convertido en algo que tanta gente realmente quiere usar, sinceramente nunca lo esperé. Estoy abrumado por todo el interés.</p>
+
+    <p>Un agradecimiento especial a <strong>mi comunidad de Discord de NV-UV</strong>: testers que pasaron horas llevando el escáner al límite, testers que me ayudaron a pulir la interfaz, y todos aquellos cuyo feedback fue mejorando NV-UV pieza a pieza. También a mis amigos y familia, que soportaron que estuviera bastante ausente estas últimas semanas. Y un agradecimiento muy especial a la prensa técnica, sobre todo a <strong>Raphael</strong> (PCGH), que descubrió la herramienta y la dio a conocer a un público más amplio, y a <strong>Andreas</strong> (Hardwareluxx), que analizó NV-UV en detalle. Gracias también a <strong>PCGH Hardware</strong> por darle a NV-UV un hogar en su foro. Esto es exactamente de lo que va la comunidad del PC desde hace años: trastear, testear, jugar y pasarlo bien. Gracias de todo corazón. ❤️</p>
+
+    <p class="dim">— Christian</p>
+  </section>
+
+  <!-- ═══ WHAT IS NV-UV ═══ -->
+  <section>
+    <h2 class="orange"><span class="icon">⚡</span>¿Qué es NV-UV?</h2>
+    <p>NV-UV es una herramienta de undervolting para GPUs NVIDIA modernas: <strong>serie RTX 50</strong> (Blackwell), <strong>serie RTX 40</strong> (Ada) y, nuevo en v0.98, <strong>serie RTX 30</strong> (Ampere). Simplifica el proceso de undervolting, que normalmente exige editar a mano el editor de curvas de MSI Afterburner.</p>
+    <p>NV-UV usa Afterburner como backend, así que necesitas <strong>MSI Afterburner + RTSS</strong> instalados.</p>
+
+    <h3>Funciones</h3>
+    <table>
+      <tr><td>🎚️ <strong>Voltage Lock</strong></td><td>Un clic y la GPU funciona en un punto exacto de voltaje/frecuencia</td></tr>
+      <tr><td>📊 <strong>4 niveles de preset</strong></td><td>Eco · Balanced · Performance · Max, valores validados por la comunidad para cada GPU</td></tr>
+      <tr><td>🔍 <strong>Descubrimiento de la curva stock</strong></td><td>Lee automáticamente desde AB la curva VF real de tu GPU concreta</td></tr>
+      <tr><td>🔬 <strong>OCS → UV</strong></td><td>Importa los resultados del OC Scanner de AB y construye una curva UV específica para tu chip</td></tr>
+      <tr><td>🎮 <strong>Repetición de Juego</strong></td><td>Bajada automática de paso tras un fallo, con bucle de aprendizaje por juego</td></tr>
+      <tr><td>✈️ <strong>UV-Piloto</strong></td><td>Detecta juegos automáticamente y cambia al preset óptimo</td></tr>
+      <tr><td>⚡ <strong>UV⚡Prueba</strong> <span style="color:var(--gold);">NUEVO</span></td><td>Explora valores UV de la comunidad para tu tarjeta y aplícalos a un slot</td></tr>
+      <tr><td>🌍 <strong>Anulación global / Sin anulación</strong> <span style="color:var(--gold);">NUEVO</span></td><td>Un nivel para todos los juegos, o excluir juegos concretos</td></tr>
+      <tr><td>⚡ <strong>Escáner de Pasos de Voltaje</strong></td><td>Stage 1 (frecuencia estable más alta) + Stage 2 (voltaje estable más bajo), motor de estrés DX12/DXR</td></tr>
+      <tr><td>🎯 <strong>Optimizar punto</strong> <span style="color:var(--gold);">NUEVO</span></td><td>Stage 2 — encuentra el voltaje más bajo para una frecuencia fija, el ajuste fino tras el Stage 1</td></tr>
+      <tr><td>📐 <strong>Compensación V-Step</strong> <span style="color:var(--gold);">NUEVO</span></td><td>El escáner compensa automáticamente el V-Droop para tests más precisos</td></tr>
+      <tr><td>🖥 <strong>Smart Hz</strong></td><td>Tasa de refresco baja en el escritorio, Hz nativos al jugar. Clic derecho para elegir la tasa en reposo. Ahorra ~10-25W en reposo.</td></tr>
+      <tr><td>🌍 <strong>DE/EN/RU/ES</strong></td><td>UI completa en alemán/inglés/ruso/español, cambio en vivo en el pie de ventana (ciclo DE → EN → RU → ES). <strong>NUEVO en v0.99.1:</strong> ruso y español (UI totalmente localizada, incluidos los nombres de las funciones)</td></tr>
+      <tr><td>🔥 <strong>Test de estrés 3D</strong></td><td>Motor de render DX12 + DXR (headless) con patrones de carga de tipo pulso</td></tr>
+      <tr><td>⚓ <strong>Perfil ancla</strong></td><td>Clic derecho en un slot — se carga al iniciar, UV-Piloto lo restaura al terminar el juego</td></tr>
+      <tr><td>🧊 <strong>Optimización en Reposo</strong></td><td>Voltajes bajos = stock, ahorra energía en el escritorio/reposo</td></tr>
+      <tr><td>🔧 <strong>Corrección V-Step</strong></td><td>Compensa el bug point-before-flatten de Blackwell</td></tr>
+      <tr><td>📐 <strong>Vista Mini</strong></td><td>Vista compacta, perfecta junto al editor de curvas de AB</td></tr>
+      <tr><td>🎨 <strong>4 skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity</td></tr>
+      <tr><td>⏻ <strong>Bandeja del sistema</strong></td><td>Funciona en segundo plano. El inicio automático se añadirá cuando el EXE esté firmado.</td></tr>
+    </table>
+  </section>
+
+  <!-- ═══ REQUIREMENTS ═══ -->
+  <section>
+    <h2 class="gold"><span class="icon">📋</span>Requisitos</h2>
+    <table>
+      <tr><th>Qué</th><th>Detalles</th></tr>
+      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, o 5060 Ti / 5060 (experimental)<br>Las tarjetas Ada (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) también están soportadas<br>RTX 4060 Ti / 4060 (experimental)<br>Serie RTX 30 (Ampere) <span style="color:var(--gold);">NUEVO en v0.98</span>, verificado solo en la RTX 3090, el resto de modelos Ampere son experimentales</td></tr>
+      <tr><td><strong>Driver</strong></td><td>Driver NVIDIA más reciente</td></tr>
+      <tr><td><strong>MSI Afterburner</strong></td><td>Versión 4.6.6+ con RTSS</td></tr>
+      <tr><td><strong>Windows</strong></td><td>Windows 11 (64 bits)</td></tr>
+    </table>
+    <div class="warn">NV-UV requiere que MSI Afterburner esté ejecutándose en segundo plano. ¡Sin AB, NV-UV no puede cambiar voltajes!</div>
+    <div class="info"><strong>Ampere (RTX 30) es nuevo y está sin terminar.</strong> La integración se ha verificado hasta ahora en una sola tarjeta (RTX 3090). Todos los demás modelos Ampere están sin testear. El Escáner de Pasos de Voltaje en particular puede no comportarse correctamente, sobre todo en las tarjetas más pequeñas. El testeo es muy bienvenido, pero para arreglar cualquier problema necesito un log (botón Exportar, abajo a la derecha). Dos cosas funcionan distinto en Ampere:
+      <ul>
+        <li><strong>Vista en vivo</strong>: Ampere ajusta la frecuencia que pides a una meseta fija en el driver. NV-UV refleja en pantalla esa frecuencia real ajustada por el driver, de modo que el valor que ves coincide con lo que la GPU realmente ejecuta. Tu valor objetivo elegido sigue siendo el que se escribe.</li>
+        <li><strong>Límite de Temp.</strong>: el deslizador de límite de temperatura solo está disponible en Ampere (Ada y Blackwell lo tienen deshabilitado en Afterburner). Si se activa, se escribe en el perfil AB al aplicar, independientemente del límite de potencia.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══ INSTALLATION ═══ -->
+  <section>
+    <h2 class="cyan"><span class="icon">🔧</span>Instalación</h2>
+
+    <div class="warn" style="border-left-width:6px; padding:18px 20px; margin:20px 0; font-size:1.05em;">
+      <strong>IMPORTANTE, no te lo saltes:</strong> Para que NV-UV pueda leer y escribir el
+      voltaje de la GPU, hay que activar varias opciones en Afterburner. Sin estos
+      ajustes NV-UV muestra <code>0 mV</code>, el V-Lock no se aplica correctamente
+      y el escáner devuelve resultados erróneos. Los pasos 1 y 2 de abajo son
+      <strong>obligatorios</strong>, no opcionales.
+    </div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Preparar Afterburner, pestaña General</strong><br>
+        Ajustes de AB (⚙), pestaña <strong>General</strong>:<br>
+        Selecciona tu GPU NVIDIA en <em>Master graphics processor selection</em><br><br>
+        Activa estas casillas:<br>
+        ✓ <code>Enable hardware control and monitoring</code><br>
+        ✓ <code>Enable low-level IO driver</code><br>
+        ✓ <code>Enable low-level hardware access interface</code> → <strong>user mode</strong><br>
+        ✓ <strong><code>Unlock voltage control</code> → standard MSI</strong> &nbsp;⬅ crítico<br>
+        ✓ <strong><code>Unlock voltage monitoring</code></strong> &nbsp;⬅ crítico<br><br>
+        Haz clic en <strong>OK</strong> (¡no en Cancelar!) y <strong>reinicia Afterburner</strong>.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Preparar Afterburner, pestaña Monitoring</strong><br>
+        Ajustes (⚙), pestaña <strong>Monitoring</strong>. Baja por la larga lista de
+        sensores y activa:<br><br>
+        ✓ <strong><code>GPU voltage</code></strong> &nbsp;⬅ sin esto no hay V-Lock<br>
+        ✓ <code>GPU power</code><br><br>
+        Haz clic en <strong>OK</strong> y <strong>reinicia Afterburner</strong>.<br><br>
+        <em>Comprobación:</em> en la ventana principal de AB, el campo "VOLT" debería mostrar ahora un
+        voltaje real (p. ej. <code>905 mV</code>) en lugar de <code>0 mV</code>. Si
+        sigue mostrando 0, AB no aceptó el cambio — vuelve al paso 1 y asegúrate
+        de que ambas opciones <code>Unlock</code> están realmente activadas.
+      </div>
+    </div>
+
+    <div class="info">
+      <strong>Nota para la RTX 5090 de diseño de referencia:</strong> En algunas tarjetas de referencia
+      Afterburner reinicia por sí solo las casillas <code>Unlock</code> de vez en cuando.
+      Si la lectura de voltaje cae de repente a 0 mV al cabo de un tiempo, simplemente repite
+      los pasos 1+2. Estamos trabajando en una corrección automática para esto.
+    </div>
+
+    <div class="warn">
+      <strong>Desactiva "Start with Windows" en Afterburner mientras experimentas con UV.</strong><br>
+      Mientras sigas ajustando tu undervolt, AB <em>no</em> debería
+      iniciarse automáticamente con Windows. Motivo: si hay un perfil inestable activo, AB
+      aplicará el perfil UV defectuoso justo después del arranque, antes de que puedas abrir NV-UV
+      para revertirlo. Eso puede provocar bucles de arranque o reinicios del driver antes del login.<br><br>
+      En Afterburner: Ajustes (⚙) → pestaña General → <strong>desmarca</strong>
+      <code>Start with Windows</code>. Vuelve a activarlo solo cuando tu perfil UV esté
+      confirmado como estable y quieras que se aplique de forma permanente.
+    </div>
+
+    <div class="warn">
+      <strong>Desactiva el bloqueo de perfiles de AB (icono de candado 🔒).</strong><br>
+      Si has bloqueado un slot de perfil en Afterburner con el icono de candado 🔒, NV-UV
+      <strong>no puede escribir</strong> en ese slot. Aplicar UV y el escáner fallarán
+      en silencio o se quedarán colgados. El icono de candado junto al slot de perfil (1–5) debe estar
+      <strong>abierto</strong> mientras uses NV-UV.
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Extraer + ejecutar NV-UV</strong><br>
+        Descomprime en cualquier carpeta, p. ej. <code>C:\NV-UV\</code>, doble clic en <code>NV-UV.exe</code> (no requiere admin).
+      </div>
+    </div>
+
+    <div class="info">
+      <strong>🔗 Primer inicio, asistente de conexión:</strong><br>
+      NV-UV necesita la curva VF real de tu GPU. En el primer inicio:<br>
+      1. Abre Afterburner, todos los deslizadores por defecto (sin OC/UV)<br>
+      2. Haz clic en 💾 Guardar en Afterburner<br>
+      3. Elige un slot de perfil (1-5)<br>
+      4. NV-UV detecta la curva automáticamente<br><br>
+      Configuración única. NV-UV guarda la curva localmente.
+    </div>
+
+    <div class="info">
+      <strong>🔄 Recalibrar (barra de herramientas):</strong><br>
+      Reinicio completo: hace backup de los perfiles AB automáticamente, elimina solo los perfiles específicos de la GPU y la caché de NV-UV, y reinicia. Los ajustes del overlay, curvas de ventiladores y demás ajustes de AB se conservan. <strong>NUEVO en v0.99:</strong> clic derecho en el botón para abrir la carpeta con los backups automáticos de perfiles AB.
+    </div>
+  </section>
+
+  <!-- ═══ UPDATE ═══ -->
+  <section>
+    <h2 class="gold"><span class="icon">🔄</span>Actualizar a una versión nueva</h2>
+    <p>NV-UV es portable, simplemente copia el nuevo EXE sobre el antiguo. Los ajustes se conservan (<code>%LocalAppData%\NV-UV\</code>).</p>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Cierra NV-UV</strong></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Extrae el nuevo ZIP</strong> (misma carpeta u otra nueva)</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Ejecuta NV-UV.exe</strong>, ¡listo!</div></div>
+    <div class="info">Si algo se ve raro tras una actualización: haz clic en <strong>🔄 Recalibrar</strong> en la barra de herramientas.</div>
+  </section>
+
+  <!-- ═══ QUICKSTART ═══ -->
+  <section>
+    <h2 class="orange"><span class="icon">🚀</span>Inicio rápido</h2>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Elige un preset:</strong> 🍃 Eco · ⚡ Balanced (recomendado) · 🚀 Perf · 🔥 Max</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Aplicar UV:</strong> Selecciona un slot de AB (1-5), luego ⚡ Aplicar UV.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Prueba:</strong> Lanza un juego, vigila voltaje + temperaturas. ¿Estable? ¡Listo!</div></div>
+    <div class="warn">¡Empieza con <strong>Balanced</strong>! Eco puede ser demasiado agresivo para algunas GPUs.</div>
+    <div class="warn" style="margin-top:0.6em;"><strong>⚠ Suelo de voltaje de Blackwell (RTX 50):</strong> A partir de aproximadamente 875 mV hacia abajo, el driver de Blackwell no mantiene el V-Lock: vuelve a subir a un punto de voltaje mayor, con lo que el undervolt no queda fijado como se configuró (un lock a 845 mV acaba funcionando más alto de lo elegido). Para un lock estable en Blackwell, elige más de 875 mV. NV-UV muestra un aviso en línea en la pestaña V-Lock en este valor y por debajo. Es comportamiento del driver, no algo que la herramienta pueda anular.</div>
+  </section>
+
+  <!-- ═══ OCS → UV ═══ -->
+  <section>
+    <h2 class="purple"><span class="icon">🔬</span>Importación OCS → UV</h2>
+    <p>El OC Scanner integrado de Afterburner testea cuánta frecuencia extra soporta tu GPU en cada voltaje. El resultado por sí solo es muy conservador. NV-UV toma esos datos específicos de tu chip y los combina con el preset Balanced probado como base. Resultado: una curva UV basada en tu silicio.</p>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Ejecuta el OC Scanner de AB</strong> y guarda el resultado en un slot de perfil (1-5).</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Haz clic en OCS → UV</strong> y selecciona el perfil con el resultado del escáner.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Aplica:</strong> V-Lock (mejor punto único) o curva multipunto (curva completa).</div></div>
+    <p>Clic derecho para opciones: V-Lock / Multipunto / Verificar con el Escáner.</p>
+    <div class="info">Los datos OCS se guardan de forma permanente y sobreviven a Recalibrar, reinicios de AB y reinstalaciones.</div>
+  </section>
+
+  <!-- ═══ SCANNER ═══ -->
+  <section>
+    <h2 class="purple"><span class="icon">⚡</span>Escáner de Pasos de Voltaje</h2>
+    <p>El escáner testea un <strong>único punto de voltaje</strong> y encuentra la frecuencia estable máxima. Ideal para validar un ajuste UV o encontrar el punto óptimo de tu GPU.</p>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Abre el escáner</strong> (botón ⚡ en la ventana principal o en la Vista Mini)</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Ajustes:</strong> voltaje, resolución de render (1440p para 5070/5080, 4K para 5090), duración del test (2-5 min)</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Inicia el test.</strong> El escáner empieza alto y va bajando hasta encontrar la frecuencia estable.</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content"><strong>Aplica el resultado</strong> a un slot 1-5, directamente o con clic derecho en el historial.</div></div>
+
+    <h3>🎯 Stage 2 — Optimizar punto <span style="color:var(--gold);">(nuevo en Cantor)</span></h3>
+
+    <p>El Stage 1 encuentra la <strong>frecuencia estable más alta a un voltaje dado</strong>.
+    El Stage 2 lo invierte: partiendo de un punto estable, NV-UV busca el
+    <strong>voltaje más bajo al que esa frecuencia todavía se mantiene</strong>. Así se
+    exprime otros 10–30 mV sin perder frecuencia.</p>
+
+    <p><strong>Flujo de trabajo en dos pasos:</strong></p>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Ejecuta el Stage 1:</strong> elige un voltaje (p. ej. 910 mV), inicia el escáner
+        y espera a un punto estable. El resultado entra automáticamente en el historial.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Inicia el Stage 2:</strong> clic derecho en la entrada estable del historial →
+        <strong>🎯 Optimizar punto</strong>. NV-UV testea la misma frecuencia bajando
+        el voltaje (de 5 en 5 mV) hasta que falla, y conserva el último
+        valor estable.
+      </div>
+    </div>
+
+    <p>Ejemplo: el Stage 1 encuentra <code>2992 MHz @ 910 mV</code> como estable. El Stage 2
+    prueba entonces <code>2992 MHz @ 905 / 900 / 895 / 890 mV</code> hasta que la GPU falla.
+    Si 895 mV fue el último punto estable, ahora tienes el mismo rendimiento con 15 mV
+    menos de voltaje — menos vatios, menos calor, frecuencia idéntica.</p>
+
+    <div class="info">
+      <strong>¿Cuándo merece la pena el Stage 2?</strong> Siempre que quieras sacar el máximo
+      absoluto de tu GPU concreta. El Stage 1 es un gran punto de partida, el Stage 2 es el
+      ajuste fino. El Stage 2 tarda otros 5–15 minutos según la duración de test
+      elegida.
+    </div>
+
+    <h3>🎯 Historial de optimización expandible <span style="color:var(--gold);">(nuevo en Cantor)</span></h3>
+
+    <p>Hasta hace poco, NV-UV solo guardaba el único punto que elegías en el
+    diálogo de resultados de la optimización — todas las demás mediciones de voltaje se descartaban
+    al cerrarse el diálogo. Eso dolía especialmente cuando un undervolting demasiado agresivo
+    llevaba al driver a un fallo del hilo de render y el diálogo de selección
+    dejaba de responder: todas las mediciones perdidas, Stage 2 desde cero.</p>
+
+    <p>A partir de la v0.126, NV-UV escribe la ronda de optimización completa en el historial
+    <strong>antes</strong> de mostrar el diálogo de selección. Verás entonces una nueva entrada en el
+    historial con un marcador 🎯, que contiene todas las mediciones de la ronda como sub-entradas
+    expandibles:</p>
+
+    <div class="step">
+      <div class="step-num">▶</div>
+      <div class="step-content">
+        <strong>Contraído</strong> (por defecto): una fila de cabecera compacta por ronda de
+        optimización, p. ej. <code>🎯 desde 925 mV · 11 mediciones · limpio</code> o tras un fallo
+        <code>🎯 desde 985 mV · 9 mediciones · TDR @ 935 mV</code>. Haz clic en la cabecera
+        para expandir.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">▼</div>
+      <div class="step-content">
+        <strong>Expandido</strong>: cada medición de la ronda aparece como una sub-entrada
+        indentada, con voltaje, frecuencia mediana bajo carga y una marca ✓ en
+        la medición que elegiste originalmente. Cada sub-entrada se puede usar individualmente:
+        clic derecho → aplicar a slot, verificar o re-optimizar. El punto final TDR (si
+        existe) aparece como una fila 💥 al final y es solo informativo.
+      </div>
+    </div>
+
+    <p><strong>Por qué importa:</strong> si después del diálogo de selección te das cuenta de que tu
+    punto elegido era demasiado agresivo, no tienes que repetir la búsqueda — simplemente
+    expande el grupo y elige una de las mediciones más conservadoras (p. ej. 5 o 10 mV
+    más arriba). Y si un fallo del driver mata a NV-UV en mitad de una ronda, el grupo
+    entero con todas las mediciones sigue ahí tras el reinicio.</p>
+
+    <h3>🔍 Verificar punto</h3>
+    <p>Clic derecho en una entrada del historial → <strong>Verificar</strong> ejecuta un
+    test de estrés extendido con esa pareja exacta de frecuencia/voltaje. Úsalo para revalidar un
+    resultado del Stage 1 o Stage 2 con una pasada más larga (p. ej. 10 minutos en vez de 3)
+    antes de fijarlo en un slot.</p>
+
+    <h3>🧪 Test solo VRAM</h3>
+    <p>En la ventana del escáner: botón <strong>🧪 Test solo VRAM</strong>. Bloquea el
+    núcleo en stock y testea únicamente el offset de VRAM que hayas configurado. Útil cuando quieres
+    aislar si un fallo viene del OC de la VRAM o del UV del núcleo: bloquea primero el núcleo en un
+    valor verificado y luego empuja la VRAM por separado.</p>
+
+    <h3>Nuevo en Cantor</h3>
+    <table>
+      <tr><td><strong>🛡️ Guardia de nombres ambiguos (v0.96 hf2)</strong></td><td>Corrige falsos positivos causados por nombres de proceso genéricos como <code>ai.exe</code>, <code>engine.exe</code> o <code>cs2.exe</code>. Cuando un daemon en segundo plano comparte nombre con un juego, NV-UV cambiaba antes por error al perfil del juego. Ahora, para nombres ambiguos, el piloto comprueba además que el proceso tenga una ventana principal visible o esté en primer plano. Los juegos reales se siguen detectando al instante, los daemons quedan filtrados. La base de datos marca actualmente 55 entradas como ambiguas.</td></tr>
+      <tr><td><strong>🔄 Auto-actualización de la BD de juegos (v0.96)</strong></td><td>El navegador de juegos tiene ahora un nuevo botón "🔄 Actualizaciones". Haz clic para descargar la última base de datos de juegos desde GitHub. Opcionalmente, activa la comprobación automática en cada inicio en el mismo popup. Las actualizaciones vienen del repositorio central nv-uv-docs; tus propios juegos y anulaciones no se tocan.</td></tr>
+      <tr><td><strong>💡 Tooltips al pasar el ratón (v0.96)</strong></td><td>En el navegador de juegos, los desplegables de nivel muestran ahora al pasar el ratón los valores concretos de cada perfil (p. ej. "Performance · 975 mV / 3000 MHz · PL 100%"). También funciona para el desplegable de filtro de arriba.</td></tr>
+      <tr><td><strong>✨ Nivel MFG (v0.95 hf3)</strong></td><td>Nivel dedicado para títulos con Multi Frame Generation, todas las tarjetas de la serie RTX 50. Límite de potencia completo con voltaje Eco y frecuencia ligeramente reducida. Se asigna por juego en la base de datos de juegos.</td></tr>
+      <tr><td><strong>Modo directo NVAPI</strong></td><td>El escáner escribe ahora frecuencia/voltaje directamente a través del driver en lugar de vía perfiles AB, ~50 ms en lugar de ~2 s por punto. Escaneos drásticamente más rápidos.</td></tr>
+      <tr><td><strong>VRAM OC desde la fase 1</strong></td><td>Si configuras un offset de VRAM en el escáner, ahora está activo durante la búsqueda de frecuencia, no solo durante la verificación. Los veredictos de estabilidad son mucho más realistas.</td></tr>
+      <tr><td><strong>Stage 2 Optimizar punto</strong></td><td>Encuentra el voltaje estable más bajo para una frecuencia fija, ver arriba.</td></tr>
+      <tr><td><strong>Compensación V-Step</strong></td><td>Casilla dedicada en el escáner. Compensa automáticamente el V-Droop bajo carga. Ver la sección "Funciones opcionales".</td></tr>
+    </table>
+
+    <h3>Ya presente desde Antares</h3>
+    <table>
+      <tr><td><strong>Detección de errores matemáticos FMA</strong></td><td>Un compute shader detecta errores de cálculo de la GPU en segundo plano</td></tr>
+      <tr><td><strong>WHEA pre-fallo</strong></td><td>Los eventos de error de hardware de Windows detectan la inestabilidad antes de un fallo duro</td></tr>
+      <tr><td><strong>Detección de meseta</strong></td><td>Se detiene automáticamente cuando la GPU no puede hacer más boost a un voltaje dado</td></tr>
+      <tr><td><strong>Tope de offset</strong></td><td>Offset inicial limitado a +1000 MHz (o +1200 con Anulación de Boost)</td></tr>
+      <tr><td><strong>Calentamiento una vez por sesión</strong></td><td>Solo el primer paso calienta, los siguientes empiezan de inmediato</td></tr>
+      <tr><td><strong>Deslizador de límite de potencia</strong></td><td>Rango completo de PL en el escáner, desde el mínimo de la GPU (~60%) hasta el máximo</td></tr>
+      <tr><td><strong>Omitir calentamiento</strong></td><td>Opcional, para equipos con refrigeración líquida donde la temperatura de la GPU ya es estable</td></tr>
+    </table>
+    <div class="info">Consejo: tras el resultado del escáner, activa <strong>Repetición de Juego</strong> y juega. Si falla en un juego real, Repetición de Juego baja automáticamente la frecuencia un poco más.</div>
+  </section>
+
+  <!-- ═══ GAME REPLAY ═══ -->
+  <section>
+    <h2 class="purple"><span class="icon">🎮</span>Repetición de Juego</h2>
+    <p>Tú solo juega, Repetición de Juego se encarga del resto. Tras un fallo por UV, la frecuencia se baja automáticamente.</p>
+    <h3>Bucle de aprendizaje</h3>
+    <p>Repetición de Juego recuerda ahora los ajustes por fallo de cada juego. En el siguiente inicio del mismo juego, UV-Piloto aplica automáticamente la frecuencia reducida. Un juego falla una vez, la próxima vez se carga directamente el perfil seguro.</p>
+
+    <h3>Historial por perfil</h3>
+    <p>Los historiales de fallos se registran ahora por combinación de <strong>juego + perfil</strong>. Antes, por ejemplo, un fallo en nivel Performance de un juego se arrastraba también a un perfil personalizado asignado más tarde. Desde la v0.94, cada perfil (Eco / Balanced / Performance / Max / personalizado XYZ) tiene su propio historial limpio. Un perfil personalizado ya no hereda fallos de los presets.</p>
+    <div class="info">En el primer inicio de la v0.94, el <code>nv-uv_game_replay_adjustments.json</code> existente se detecta como formato antiguo y se vacía una única vez (advertencia en el log: "Old adjustment format detected — discarded"). Después el historial se reconstruye por perfil. No se requiere ninguna acción manual.</div>
+    <p style="font-size:0.9em;color:var(--text-dim);">Las aplicaciones manuales (clic en botón de slot sin UV-Piloto) siguen sin persistir: tras un fallo se aplica la bajada de paso en vivo, pero no se escribe ninguna entrada JSON porque sin el contexto del Piloto no se puede vincular unívocamente a un perfil.</p>
+
+    <h3>Dos modos de fallo</h3>
+    <table>
+      <tr><th>Tipo</th><th>Qué ocurre</th></tr>
+      <tr><td><strong>Fallo suave (TDR)</strong></td><td>El driver se recupera, pausa de 15 s, bajada de paso escrita en vivo, sigues jugando</td></tr>
+      <tr><td><strong>Fallo duro (Page Fault)</strong></td><td>Bajada de paso guardada, se aplica automáticamente en el siguiente inicio de NV-UV</td></tr>
+    </table>
+    <h3>Ajustes</h3>
+    <p>Interruptor 🎮 Replay en la barra de herramientas, clic derecho para los ajustes. Estrategia: bajar frecuencia (por defecto), subir voltaje, o ambas. Tamaños de paso y límites de seguridad configurables; el paso de frecuencia baja ahora hasta 15 MHz (granularidad V/F nativa del hardware) desde la v0.99.</p>
+    <div class="info">Repetición de Juego funciona independientemente de UV-Piloto. Simplemente activa 🎮 Replay, funciona con cualquier perfil UV activo.</div>
+  </section>
+
+  <!-- ═══ STRESS ENGINE ═══ -->
+  <section>
+    <h2 class="orange"><span class="icon">🔥</span>Motor de test de estrés 3D</h2>
+    <p>Test de estrés DX12 + DXR integrado que simula carga de juego realista. El motor alterna constantemente entre reposo y carga completa (patrón de pulso), generando los transitorios que causan la inestabilidad del UV.</p>
+    <h3>Resolución de render</h3>
+    <table>
+      <tr><th>Resolución</th><th>Recomendada para</th></tr>
+      <tr><td><strong>1440p</strong></td><td><span class="gpu-badge gpu-5080">5080</span> <span class="gpu-badge gpu-5070ti">5070 Ti</span> <span class="gpu-badge gpu-5070">5070</span></td></tr>
+      <tr><td><strong>4K Supersampled</strong></td><td><span class="gpu-badge gpu-5090">5090</span></td></tr>
+    </table>
+    <div class="info">Las GPUs son más inestables al 40-60% de carga (frecuencias de boost más altas), no al 100% sostenido. Ahí es exactamente donde golpean los frames martillo del motor de estrés.</div>
+  </section>
+
+  <!-- ═══ UV-PILOT ═══ -->
+  <section>
+    <h2 class="gold"><span class="icon">✈️</span>UV-Piloto</h2>
+    <p>UV-Piloto detecta juegos en ejecución y cambia automáticamente al perfil UV correspondiente.</p>
+    <h3>Sistema de niveles</h3>
+    <table>
+      <tr><th>Nivel</th><th>Descripción</th></tr>
+      <tr><td><strong>🔥 Max</strong></td><td>Rendimiento máximo, Cyberpunk 2077, Alan Wake 2</td></tr>
+      <tr><td><strong>🚀 Performance</strong></td><td>Fuerte, Elden Ring, Hogwarts Legacy</td></tr>
+      <tr><td><strong>⚡ Balanced</strong></td><td>Estándar, CS2, Valorant, la mayoría de juegos</td></tr>
+      <tr><td><strong>🌿 Eco</strong></td><td>Eficiente, juegos antiguos/ligeros</td></tr>
+      <tr><td><strong>✨ MFG</strong></td><td>Para títulos con Multi Frame Generation, solo serie RTX 50. Asignable mediante la base de datos de juegos.</td></tr>
+    </table>
+    <p style="font-size:0.9em;color:var(--text-dim);">El nivel MFG usa el voltaje Eco con límite de potencia completo y una frecuencia ligeramente reducida. No se puede seleccionar directamente con los botones de nivel de la ventana principal: se asigna por juego en la base de datos de juegos. Recomendado con MFG 3x o 4x, donde el ahorro a altas tasas de frames es mayor.</p>
+    <h3>Perfiles personalizados</h3>
+    <p>Clic derecho en un slot: "Añadir a UV-Piloto" crea un perfil personalizado. Asignable por juego en la base de datos de juegos.</p>
+    <h3>Base de datos de juegos</h3>
+    <p>Clic derecho en UV-Piloto → 🎮 Base de datos de juegos. 632 juegos + benchmarks, asignaciones de nivel ajustables, juegos propios añadibles.</p>
+    <h3>Benchmarks (3DMark, etc.)</h3>
+    <p>3DMark se reconoce, pero no se le asigna ningún nivel UV — tu perfil activo se queda como está. Así puedes hacer benchmarks con el UV que hayas elegido sin que el Piloto cambie de perfil. Opcionalmente se puede asignar un perfil personalizado mediante el navegador de juegos.</p>
+    <h3>Auto-Mini al jugar</h3>
+    <p>Clic derecho en UV-Piloto → "📐 Vista Mini al jugar". Cambia automáticamente a la Vista Mini al detectar un juego, ahorrando la sobrecarga de GPU de la ventana principal WPF. Desactivado por defecto.</p>
+
+    <h3>Prioridad de primer plano</h3>
+    <p>A partir de la v0.94, UV-Piloto prioriza el proceso de la ventana enfocada actualmente. Esto resuelve el caso de dos o más entradas de la base de datos de juegos ejecutándose a la vez, típicamente navegador + juego.</p>
+    <p><strong>Antes:</strong> Chrome estaba abierto (nivel Eco), lanzabas un juego → el perfil Chrome-Eco seguía activo hasta cerrar Chrome del todo.<br>
+    <strong>Ahora:</strong> En cuanto la ventana del juego recibe el foco, el Piloto detecta el cambio y aplica el perfil del juego correspondiente. La vuelta funciona igual — Alt-Tab a Chrome cambia a Eco, Alt-Tab al juego vuelve a Performance.</p>
+    <div class="info">Respaldo: si el proceso en primer plano no es una entrada de la BD (Explorador, escritorio, etc.), el Piloto mantiene el lock actual. Un Alt-Tab al escritorio, por tanto, no mata un lock de juego.</div>
+  </section>
+
+  <!-- ═══ ANCHOR PROFILE ═══ -->
+  <section>
+    <h2 class="gold"><span class="icon">⚓</span>Perfil ancla</h2>
+    <p>El perfil ancla es tu "slot base". Define qué perfil UV debe cargar NV-UV automáticamente en dos situaciones: al iniciar el programa y al terminar un juego.</p>
+
+    <h3>Cómo se configura</h3>
+    <p>Clic derecho en un slot con un perfil UV guardado → <strong>⚓ Fijar como ancla</strong>. El slot recibirá el marcador ⚓ y quedará resaltado en la vista de slots.</p>
+
+    <h3>Comportamiento en detalle</h3>
+    <table>
+      <tr><th>Situación</th><th>Qué ocurre</th></tr>
+      <tr><td><strong>Inicio del programa</strong></td><td>NV-UV detecta el perfil ancla y lo carga automáticamente al arrancar. Funciona también sin UV-Piloto, ideal para configuraciones con inicio automático de Windows.</td></tr>
+      <tr><td><strong>Al terminar un juego</strong></td><td>UV-Piloto detecta la salida del juego y restaura el perfil ancla, en lugar de volver al slot anterior. Requiere que UV-Piloto esté activo.</td></tr>
+    </table>
+
+    <h3>Ejemplo práctico</h3>
+    <p>Guardas tu UV diario en el Slot 1 (p. ej. 2902 MHz @ 950 mV) y lo fijas como ancla. Al arrancar Windows, NV-UV se lanza por inicio automático, AB arranca, y el Slot 1 queda activo de inmediato, sin clics. Cuando lanzas un juego que UV-Piloto asigna al nivel "Max", el Piloto cambia brevemente al Slot 4. Al terminar el juego, vuelve al Slot 1 (ancla), no al estado anterior.</p>
+
+    <div class="info">Consejo: un ancla en stock también funciona. Si fijas un slot vacío como ancla, NV-UV cargará valores stock al arrancar. El ancla es una directiva explícita de "base", no una indicación de "solo UV".</div>
+  </section>
+
+  <!-- ═══ OPTIONS ═══ -->
+  <section>
+    <h2 class="cyan"><span class="icon">🔧</span>Funciones opcionales</h2>
+    <h3>🧊 Optimización en Reposo</h3>
+    <p>Pone todos los puntos de voltaje por debajo de 850 mV en frecuencia stock. Ahorra energía en el escritorio/reposo.</p>
+    <h3>🔧 Corrección V-Step</h3>
+    <p>Compensa el bug point-before-flatten de Blackwell. Bajo carga, la GPU usa el punto de voltaje anterior al lock (~10 mV menos). La Corrección V-Step lo compensa automáticamente.</p>
+    <p><em>Se aplica a:</em> Bloqueo Rápido en la ventana principal (modo V-Lock). Disponible como casilla junto al deslizador de voltaje.</p>
+
+    <h3>📐 Compensación V-Step <span style="color:var(--gold);">(nuevo en Cantor)</span></h3>
+    <p>La ventana del escáner tiene su propia casilla de <strong>Compensación V-Step</strong>.
+    Hace algo distinto de la Corrección V-Step de arriba, así que aquí va una comparación clara:</p>
+
+    <table>
+      <tr>
+        <th>Función</th>
+        <th>Dónde</th>
+        <th>Qué hace</th>
+      </tr>
+      <tr>
+        <td><strong>🔧 Corrección V-Step</strong></td>
+        <td>Ventana principal<br>(al aplicar un V-Lock)</td>
+        <td>Desplaza el punto de lock un paso VF hacia arriba para que la GPU no caiga bajo carga en el punto <em>anterior</em>.</td>
+      </tr>
+      <tr>
+        <td><strong>📐 Compensación V-Step</strong></td>
+        <td>Ventana del escáner<br>(durante un escaneo)</td>
+        <td>Mide continuamente la diferencia entre el voltaje solicitado y el que realmente llega al chip (V-Droop) y corrige en consecuencia los pasos de test siguientes.</td>
+      </tr>
+    </table>
+
+    <p><strong>¿Cuándo debería activarla?</strong> Cuando quieras voltajes precisos en
+    el escáner. Ejemplo: pides 910 mV pero MAHM informa 905 mV — el delta de 5 mV
+    se suma internamente, de modo que los siguientes pasos de test alcanzan realmente 910 mV en el
+    chip, no solo 905. Esto hace los resultados de escaneo mucho más reproducibles, sobre todo
+    si usas el Stage 2 (Optimizar punto), donde cada milivoltio cuenta.</p>
+
+    <p>Totalmente automática, funciona en silencio en segundo plano. En el log verás líneas
+    como <code>[VDroop] adapted: req 910 mV → MAHM 905 mV (Δ+5) → comp 5 mV</code>.
+    Activada por defecto.</p>
+
+    <h3>🔋 Límite de potencia</h3>
+    <p>El deslizador limita el consumo máximo. Los presets Eco ponen el PL reducido; MFG / Performance / Max al 100%.</p>
+    <h3>💾 Offset de VRAM</h3>
+    <p>Offset de frecuencia de memoria. Por defecto: 0 MHz. GDDR7 rara vez se beneficia del OC de memoria.</p>
+    <h3>🔓 Anular límite seguro</h3>
+    <p>Elimina el margen de seguridad de 50 MHz bajo el máximo stock. Solo para usuarios avanzados.</p>
+    <h3>🖥 Escalado de UI</h3>
+    <p>Botón % en el pie de ventana. Pasos: de 100% a 300%. Todas las ventanas escalan a la vez.</p>
+  </section>
+
+  <!-- ═══ SMART HZ ═══ -->
+  <section>
+    <h2 class="cyan"><span class="icon">🖥</span>Smart Hz</h2>
+    <p>Cambia automáticamente el escritorio a una tasa de refresco baja cuando no hay ningún juego en marcha, y de vuelta a la tasa nativa cuando arranca un juego. Ahorra aproximadamente 10-25W en reposo. El interruptor está en la barra de herramientas.</p>
+    <p><strong>Elegir la tasa en reposo (nuevo):</strong> clic derecho en el botón Smart Hz para elegir entre las tasas de refresco que tu monitor realmente soporta (por ejemplo 60 / 120 / 144 Hz). Elegir una tasa también activa Smart Hz de inmediato, así que no hace falta activarlo por separado. La tasa elegida se recuerda entre reinicios.</p>
+    <div class="warn">Puede causar problemas con configuraciones multimonitor. En caso de duda, déjalo desactivado. Requiere UV-Piloto para la detección de juegos.</div>
+  </section>
+
+  <!-- ═══ UV-TRY ═══ -->
+  <section>
+    <h2 class="cyan"><span class="icon">⚡</span>UV⚡Prueba (base de datos UV de la comunidad)</h2>
+    <p>UV⚡Prueba abre una base de datos navegable de valores de undervolt de la comunidad para tu GPU, agrupados en Eco, Balanced y UV+OC. Cada entrada muestra voltaje, frecuencia, límite de potencia, offset de VRAM, placa, una etiqueta de confianza y el enlace a la fuente. La lista preselecciona tu tarjeta detectada.</p>
+    <p>Ábrela con el botón <strong>UV⚡Prueba</strong> junto a los presets (Eco / Bal / Rend / Máx). Para aplicar un valor, clic derecho en una entrada y elige un slot de perfil (1-5), exactamente igual que en el historial del escáner.</p>
+    <p><strong>Valoración y votos de la comunidad (NUEVO en v0.99):</strong> Un clic en una estrella hace las dos cosas: guarda tu nota personal localmente y cuenta a la vez como voto anónimo de la comunidad. La nueva columna <strong>Comunidad</strong> muestra la media de todos los votos con el número entre paréntesis, p. ej. "★ 4.2 (17)", actualizada dos veces al día. Hacer clic de nuevo en la misma estrella (0 estrellas) también borra tu voto en el servidor.</p>
+    <p><strong>Compartir tus propios ajustes (NUEVO en v0.99):</strong> Clic derecho en un slot de perfil con datos → <strong>Enviar a la BD de la comunidad</strong>. Los valores se toman del slot tal cual (un perfil que realmente usas); solo la variante de placa y una nota breve son texto libre opcional. Tras una breve revisión, tu preset aparece para todos en UV⚡Prueba, etiquetado como "user-submitted". Ver la sección de funciones comunitarias y datos para los detalles de lo que se transmite.</p>
+    <div class="warn">Los valores de la comunidad son solo un punto de partida. Cada tarjeta es distinta (lotería del silicio) - verifica siempre un valor en tu propia tarjeta antes de confiar en él.</div>
+  </section>
+
+  <!-- ═══ GLOBAL / NO OVERRIDE ═══ -->
+  <section>
+    <h2 class="cyan"><span class="icon">🔒</span>Funciones comunitarias y datos</h2>
+    <p>NV-UV <strong>no tiene cuentas, ni telemetría, ni ningún "phoning home" automático</strong>. Solo se transmiten datos cuando usas activamente una de las dos funciones comunitarias:</p>
+    <p><strong>Valoración con estrellas en UV⚡Prueba:</strong> Hacer clic en una estrella guarda tu valoración localmente y envía además un voto anónimo de la comunidad. Solo se transmiten estos valores: el ID del preset, tu número de estrellas y un ID de cliente aleatorio (un GUID aleatorio generado localmente sin ninguna referencia a hardware ni datos personales). Hacer clic de nuevo en la misma estrella (0 estrellas) también borra tu voto en el servidor.</p>
+    <p><strong>Enviar ajustes (clic derecho en un slot de perfil):</strong> La transmisión contiene los valores UV del slot (frecuencia, voltaje, límite de potencia y offset de VRAM si está configurado), el modelo de GPU detectado, opcionalmente tu variante de placa y una nota breve, más el mismo ID de cliente aleatorio. <strong>Importante:</strong> Tras la aprobación, estos detalles pasan a ser públicamente visibles en la base de datos de la comunidad en GitHub. No pongas información personal en la nota.</p>
+    <p><strong>Técnico:</strong> Como con cualquier servicio de internet, el servidor (un Cloudflare Worker) ve tu dirección IP. Se procesa exclusivamente como un hash con sal renovada a diario para limitar abusos y <strong>nunca se almacena en texto plano</strong>. Mostrar las valoraciones de la comunidad, refrescar la base de datos y la comprobación de actualizaciones al inicio (una descarga diaria desde GitHub que comprueba si ha salido una nueva versión de NV-UV) son descargas puras desde GitHub, no se envía nada. El ID de cliente aleatorio vive en <code>%LocalAppData%\NV-UV\nv-uv_client_id.txt</code> y puede borrarse en cualquier momento (se crea uno nuevo en tu siguiente voto).</p>
+
+    <h2 class="cyan"><span class="icon">🌍</span>Anulación global y Sin anulación</h2>
+    <p>En la biblioteca de juegos puedes fijar una <strong>anulación global</strong> (desplegable en la barra de herramientas): fuerza a todos los juegos en ejecución al nivel elegido (Eco / Bal / Perf / Max), sobrescribiendo sus asignaciones individuales. Práctico si solo usas UV-Piloto y simplemente quieres un único nivel en todas partes.</p>
+    <p><strong>Sin anulación</strong> excluye un juego concreto de la anulación global - ese juego se resuelve entonces con normalidad (su propio nivel, el nivel de la base de datos, o stock). Se configura desde el desplegable de anulación por juego ("⊘ Sin anulación") o con clic derecho en la fila del juego. Útil para entradas como un navegador que no quieres que UV-Piloto toque.</p>
+  </section>
+
+  <!-- ═══ MINI VIEW ═══ -->
+  <section>
+    <h2 class="cyan"><span class="icon">📐</span>Vista Mini</h2>
+    <p>Vista compacta sin curva. 📐 Mini en la barra de herramientas, ↩ Completa para volver. Siempre visible. Todas las funciones disponibles: slots, presets, V-Lock, PL, VRAM, escáner, OCS → UV.</p>
+    <div class="info"><strong>Consejo de rendimiento:</strong> La ventana principal usa renderizado WPF, que puede costar rendimiento de GPU medible en benchmarks. Al jugar o hacer benchmarks, usa la Vista Mini o minimiza NV-UV a la bandeja. La Vista Mini tiene una sobrecarga de renderizado mucho menor.</div>
+    <h3>Auto-Mini al jugar</h3>
+    <p>Clic derecho en UV-Piloto → "📐 Vista Mini al jugar" activa el cambio automático a la Vista Mini cuando se detecta un juego. Vuelve a la vista completa cuando el juego termina. Desactivado por defecto.</p>
+  </section>
+
+<!-- ═══ PRESET REFERENCE ═══ -->
+  <section>
+    <h2 class="cyan"><span class="icon">📊</span>Referencia de presets</h2>
+
+    <h3><span class="gpu-badge gpu-5090">RTX 5090</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>910 mV</td><td>2430 MHz</td><td>85%</td></tr>
+      <tr><td>⚡ Balanced</td><td>935 mV</td><td>2887 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>1025 mV</td><td>3105 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3><span class="gpu-badge gpu-5080">RTX 5080</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>850 mV</td><td>2650 MHz</td><td>88%</td></tr>
+      <tr><td>⚡ Balanced</td><td>900 mV</td><td>2750 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>2980 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>3150 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3><span class="gpu-badge gpu-5070ti">RTX 5070 Ti</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>850 mV</td><td>2500 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>900 mV</td><td>2800 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>2932 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>3000 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="font-size:0.9em;color:var(--text-dim);">El preset Performance de la 5070 Ti es el perfil diario validado del desarrollador (900 mV / 2932 MHz) y aplica además un offset de VRAM de +3000 MHz.</p>
+
+    <h3><span class="gpu-badge gpu-5070">RTX 5070</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>850 mV</td><td>2600 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>900 mV</td><td>2750 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>940 mV</td><td>3000 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>3150 MHz</td><td>100%</td></tr>
+    </table>
+    <h3>RTX 5060 Ti / RTX 5060 <span style="color:var(--gold);">(experimental)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>2500 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>2700 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>2900 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>3000 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="font-size:0.9em;color:var(--text-dim);">Nota: La 5060 (no Ti) usa esta tabla como respaldo. Al ser un recorte GB206 más pequeño con menor TBP, se limita a sí misma mediante el límite de potencia y los valores se mantienen seguros.</p>
+
+    <div class="info" style="margin-top:1em;"><strong>🧪 Estado de Ada (v0.95):</strong> La ruta de escritura de Ada (codificación de curva VF con exactitud de bytes) se ha verificado en una KFA2 RTX 4070 Ti (chip AD104) y funciona de extremo a extremo en Aplicar / Escáner / Repetición de Juego / UV-Piloto. Los valores de preset de abajo se basan en la comunidad. Testers de Ada para AD102 (4090) y AD103 (4080) son bienvenidos en el subforo de PCGH y en Discord.</div>
+
+    <h3>RTX 4090</h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>875 mV</td><td>2400 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>900 mV</td><td>2550 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>2670 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2745 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 4080 / 4080 Super</h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>875 mV</td><td>2400 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>900 mV</td><td>2520 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>2640 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2700 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 4070 Ti / 4070 Ti Super</h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>925 mV</td><td>2550 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>940 mV</td><td>2640 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>950 mV</td><td>4070 Ti Super: 2730 MHz<br>4070 Ti: 2685 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>2820 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="font-size:0.9em;color:var(--text-dim);">El valor Performance de la 4070 Ti se recalibró de 2730 a 2685 MHz. La 4070 Ti (die AD104 completo, típicamente peor binning) necesita unos 30 MHz menos de margen al mismo voltaje que la 4070 Ti Super (recorte AD103, mejor selección de chips). Los demás presets (Eco / Balanced / Max) son idénticos en ambas tarjetas.</p>
+
+    <h3>RTX 4070 / 4070 Super</h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>900 mV</td><td>2400 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>925 mV</td><td>2550 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>940 mV</td><td>2670 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>2790 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 4060 Ti <span style="color:var(--gold);">(experimental)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>900 mV</td><td>2400 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>925 mV</td><td>2550 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>950 mV</td><td>2650 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>2750 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 4060 <span style="color:var(--gold);">(experimental)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>875 mV</td><td>2300 MHz</td><td>100%</td></tr>
+      <tr><td>⚡ Balanced</td><td>900 mV</td><td>2450 MHz</td><td>100%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>2600 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2730 MHz</td><td>100%</td></tr>
+    </table>
+    <p style="font-size:0.9em; opacity:0.8;">Nota sobre la RTX 4060: el chip AD107 escala inusualmente poco con voltaje adicional. Más mV apenas dan más MHz, así que los valores de los niveles quedan más juntos que en los chips Ada más grandes.</p>
+
+    <div class="warn"><strong>¿Qué significa "experimental" para las tarjetas RTX 5060 y RTX 4060?</strong> Estas tarjetas están soportadas por el código de NV-UV, pero los valores de preset aún no se han verificado en hardware real a través de nuestro programa de testers. Se basan en investigación AI-DeepSearch a partir de datos de la comunidad (Reddit, Hardwareluxx, Igor's Lab, OCN). Por favor, testea usando Balanced como punto de partida y comparte tus resultados en el foro de PCGH o en Discord para poder afinar los valores.</div>
+
+    <div class="info" style="margin-top:1em;"><strong>🧪 Estado de Ampere (v0.98):</strong> La integración de Ampere se ha verificado hasta ahora en una sola tarjeta, una RTX 3090 (GA102). Todos los demás modelos Ampere están sin testear. Los valores de preset de abajo son investigación basada en la comunidad, no confirmados en hardware, así que trata todas las tarjetas RTX 30 excepto la 3090 como experimentales. El Escáner de Pasos de Voltaje en particular puede no comportarse correctamente todavía, sobre todo en los chips más pequeños. Los testers de Ampere son muy bienvenidos en el subforo de PCGH y en Discord. Por favor, adjunta un log (botón Exportar, abajo a la derecha) al informar de un problema.</div>
+
+    <h3>RTX 3090 <span style="color:var(--cyan);">(tarjeta de referencia, integración verificada)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1700 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1830 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1900 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>1965 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 3090 Ti <span style="color:var(--gold);">(experimental)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>825 mV</td><td>1700 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1830 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>1950 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>2025 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 3080 Ti <span style="color:var(--gold);">(experimental)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1710 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1870 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1920 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>1980 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 3080 12GB <span style="color:var(--gold);">(experimental)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1700 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1860 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1920 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2000 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 3080 10GB <span style="color:var(--gold);">(experimental)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1750 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1890 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1950 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2010 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 3070 Ti <span style="color:var(--gold);">(experimental)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>825 mV</td><td>1770 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1905 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1950 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>1995 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 3070 <span style="color:var(--gold);">(experimental)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>775 mV</td><td>1700 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1900 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>1950 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>2010 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 3060 Ti <span style="color:var(--gold);">(experimental)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1750 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>875 mV</td><td>1875 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>925 mV</td><td>1935 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>975 mV</td><td>1980 MHz</td><td>100%</td></tr>
+    </table>
+
+    <h3>RTX 3060 <span style="color:var(--gold);">(experimental)</span></h3>
+    <table>
+      <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
+      <tr><td>🍃 Eco</td><td>800 mV</td><td>1560 MHz</td><td>80%</td></tr>
+      <tr><td>⚡ Balanced</td><td>850 mV</td><td>1680 MHz</td><td>90%</td></tr>
+      <tr><td>🚀 Performance</td><td>900 mV</td><td>1800 MHz</td><td>100%</td></tr>
+      <tr><td>🔥 Max</td><td>950 mV</td><td>1850 MHz</td><td>100%</td></tr>
+    </table>
+
+    <div class="info">Los valores de preset se basan en la experiencia de la comunidad. No toda GPU soporta todo preset, lotería del silicio. En caso de duda, empieza con Balanced.</div>
+  </section>
+
+  
+  <!-- ═══ FAQ ═══ -->
+  <section>
+    <h2 class="gold"><span class="icon">❓</span>Preguntas frecuentes</h2>
+
+    <h3>¿NV-UV reemplaza a Afterburner?</h3>
+    <p>No. NV-UV usa Afterburner como backend. AB debe estar instalado. Para OC, OSD y edición avanzada de curvas, AB sigue siendo la herramienta de referencia.</p>
+
+    <h3>¿Es seguro el undervolting?</h3>
+    <p>No se sube ningún voltaje, solo se baja. Todo es reversible con el botón Stock o con Recalibrar. Aun así, no asumo ninguna responsabilidad por daños que puedan producirse directa o indirectamente por el undervolting.</p>
+
+    <h3>¿Por qué NV-UV no muestra voltaje? (0 mV / sin lectura)</h3>
+    <div class="warn" style="border-left-width:5px;">
+      Este es el tropiezo <strong>más común</strong>. Causa: las opciones de voltaje
+      no están activadas en Afterburner. NV-UV lee el voltaje a través de la
+      memoria compartida de Afterburner (MAHM), y sin los ajustes correctos de AB, MAHM
+      simplemente no devuelve nada.
+    </div>
+    <p><strong>Comprobación rápida:</strong> mira la ventana principal de Afterburner. ¿El
+    campo "VOLT" también muestra <code>0 mV</code>? Entonces AB tampoco está leyendo el voltaje
+    — el problema está en AB, no en NV-UV. Solución:</p>
+    <ol>
+      <li>AB → Ajustes (⚙) → pestaña <strong>General</strong> →
+        <code>Unlock Voltage Control</code> ✓ y <code>Unlock Voltage Monitoring</code> ✓
+      </li>
+      <li>AB → Ajustes (⚙) → pestaña <strong>Monitoring</strong> → baja por la lista y
+        activa <code>GPU voltage</code> ✓
+      </li>
+      <li>Haz clic en OK (no en Cancelar) y <strong>reinicia Afterburner por completo</strong></li>
+      <li>La ventana principal de AB debería mostrar ahora un valor real bajo "VOLT"
+        (p. ej. <code>905 mV</code>). Solo entonces NV-UV podrá ver el voltaje también.
+      </li>
+    </ol>
+    <p>Guía detallada con todas las casillas recomendadas: ver
+    <strong>Instalación → Pasos 1 + 2</strong> más arriba.</p>
+    <p><strong>Nota para la RTX 5090 de diseño de referencia:</strong> en algunas tarjetas,
+    Afterburner reinicia por sí solo las casillas <code>Unlock</code> de vez en cuando.
+    Si la lectura de voltaje desaparece al cabo de un tiempo, simplemente repite los pasos 1+2.</p>
+
+    <h3>El voltaje bajo carga es menor que mi objetivo de V-Lock, ¿por qué?</h3>
+    <p>Comportamiento de boost normal de la GPU. NV-UV fija un V-Lock a p. ej. 950 mV, pero la GPU solo hace boost hasta el voltaje que necesita térmica y energéticamente. Con un perfil UV (curva aplanada en el punto de lock), no hay incentivo para subir más. No es un bug.</p>
+
+    <h3>El escáner se detiene por debajo de mi máximo stock, ¿por qué?</h3>
+    <p>Dos posibles razones:<br>
+    1. <strong>Límite seguro:</strong> El escáner se detiene por defecto 50 MHz por debajo del máximo stock. Activa "Anular límite seguro" para eliminarlo.<br>
+    2. <strong>Límite del driver:</strong> NVIDIA limita el offset de frecuencia a +1000 MHz por punto de voltaje. Solución: testea a un voltaje más bajo donde haya más margen.</p>
+
+    <h3>El escáner sube y sube pero la frecuencia de la GPU no aumenta</h3>
+    <p>¡Corregido en Antares! La detección de meseta detiene automáticamente el escáner cuando la GPU no puede hacer más boost. Si estás en una versión anterior: actualiza a Antares.</p>
+
+    <h3>Un juego falla tras el UV, ¿qué hago?</h3>
+    <p>¡Es normal! No toda GPU soporta todo preset. Prueba el siguiente preset más alto, o usa el escáner para una optimización individual. Con Repetición de Juego: sigue jugando sin más, la frecuencia se baja automáticamente, idealmente aún dentro del juego o, tras el fallo, en el siguiente inicio.</p>
+
+    <h3>¿Diferencia entre V-Lock y multipunto?</h3>
+    <p><strong>V-Lock</strong> fija la GPU en un único punto de voltaje/frecuencia. Simple, fiable, el método recomendado.<br>
+    <strong>Multipunto</strong> fija varios puntos en la curva (p. ej. desde la importación OCS). Más complejo pero potencialmente más eficiente en todo el rango de voltaje.</p>
+
+    <h3>¿Por qué un EXE de ~200 MB?</h3>
+    <p>Runtime .NET 10 autocontenido. No requiere instalación, solo ejecutar el EXE.</p>
+
+    <h3>¿Soporte para Windows 10?</h3>
+    <p>No está previsto. El test de estrés DXR requiere Windows 11.</p>
+
+    <h3>¿Soporte para la serie RTX 40?</h3>
+    <p><strong>Totalmente soportada.</strong> Desde "Ada improved" (v0.94) está activa la ruta de escritura nativa de Ada. El codificador de curvas con exactitud de bytes se ha verificado en una KFA2 RTX 4070 Ti (AD104) y funciona de extremo a extremo — Aplicar, Escáner, Repetición de Juego y UV-Piloto funcionan todos. Los valores de preset (objetivos de frecuencia/voltaje) se basan en la comunidad; testers de Ada con RTX 4090 (AD102) y RTX 4080 / 4080 Super (AD103) son especialmente bienvenidos para afinar las constantes por chip — escribid en el foro de PCGH o en Discord. La RTX 4060 Ti (AD106) y la RTX 4060 (AD107) también están soportadas con valores de preset experimentales de investigación AI-DeepSearch; testers con estas tarjetas también son bienvenidos.</p>
+
+    <h3>¿Por qué faltan Anulación de Boost / Corrección V-Step / Optimización en Reposo en las tarjetas Ada?</h3>
+    <p>Son compensaciones específicas de Blackwell:</p>
+    <ul>
+      <li><strong>Anulación de Boost (+1200 MHz en lugar de +1000 MHz)</strong> solo aplica a tarjetas XOC de Blackwell (Lightning / Matrix / HOF).</li>
+      <li><strong>Corrección V-Step</strong> compensa el bug point-before-flatten de la curva de Blackwell.</li>
+      <li><strong>Optimización en Reposo</strong> se apoya en la codificación de frecuencias fantasía de Blackwell.</li>
+    </ul>
+    <p>Ada usa una ruta UV completamente separada (curva nativa de 4 zonas) que no necesita ninguna de estas tres compensaciones. Por eso las casillas se ocultan automáticamente en tarjetas Ada, tanto en la vista principal como en la mini.</p>
+
+    <h3>NV-UV cuesta puntos de benchmark, ¿por qué?</h3>
+    <p>La ventana principal WPF usa recursos de GPU para el renderizado y la composición DWM. En 3DMark esto puede costar ~200-500 puntos. Solución: usa la Vista Mini, minimiza NV-UV a la bandeja, o activa Auto-Mini al jugar (clic derecho en UV-Piloto). Tu perfil UV sigue activo en AB incluso con NV-UV minimizado o cerrado.</p>
+
+    <h3>El antivirus marca NV-UV</h3>
+    <p>Falso positivo. Los EXE .NET SingleFile autocontenidos a veces se marcan. NV-UV es seguro, puedes añadir una excepción.</p>
+
+    <h3>¿Dónde se guardan mis ajustes?</h3>
+    <p><code>%LocalAppData%\NV-UV\</code> contiene: perfiles UV, nombres de slot, ajustes de Repetición de Juego, historial del escáner, datos OCS, curva stock, caché CCB, logs.</p>
+    <h3>¿Cómo exporto los archivos de log?</h3>
+    <p>Con el botón <strong>Exportar log</strong> bajo el panel de log. El archivo de log se exporta y puede enviarse directamente a Christian.</p>
+
+    <h3>¡Ayuda, mis perfiles han desaparecido!</h3>
+    <p>Haz siempre una copia de seguridad manual de tus perfiles antes de experimentar. Si se pierden perfiles: revisa la carpeta de NV-UV en <code>%LocalAppData%\NV-UV\</code>, ahí se guardan los datos, las curvas OCS y el historial del escáner.</p>
+
+    <h3>¡Mi PC no arranca bien tras un UV inestable!</h3>
+    <div class="warn"><strong>Consejo importante al experimentar con UV:</strong> En Afterburner, en <code>Settings → General</code>, desactiva <code>Start with Windows</code>. Esto evita que un perfil inestable se cargue automáticamente al arrancar, por si un ajuste UV tumba el driver durante el inicio. Vuelve a activar el inicio automático de AB solo cuando tu ajuste UV se haya verificado estable en juegos.</div>
+
+  </section>
+
+  <!-- ═══ TROUBLESHOOTING ═══ -->
+  <section>
+    <h2 class="red"><span class="icon">🛠</span>Solución de problemas</h2>
+    <h3>NV-UV arranca pero no muestra ninguna GPU</h3>
+    <p>¿Driver NVIDIA más reciente instalado? Inicia NV-UV después de que el escritorio de Windows haya cargado.</p>
+    <h3>Sin conexión MAHM (sin lectura de voltaje)</h3>
+    <p>AB + RTSS deben estar en ejecución. Activa el monitoreo de voltaje en AB (ver FAQ arriba). Reinicia AB.</p>
+    <h3>La lectura de voltaje salta o muestra valores inválidos</h3>
+    <p>En AB, en <strong>Settings → Monitoring → Active hardware monitoring graphs</strong>, desactiva los plugins <code>GPU.dll</code> y <code>HwInfo.dll</code>. Acceden en paralelo a los mismos sensores de GPU que NV-UV usa vía MAHM, lo que provoca lecturas de sensor en conflicto. MAHM solo devuelve entonces valores válidos de forma esporádica (el voltaje salta, muestra 0 o cifras irreales).</p>
+    <div class="info">Gracias a Martin del foro de PCGH por este hallazgo.</div>
+    <h3>Aplicar no hace nada / voltaje sin cambios</h3>
+    <p>Activa <code>Unlock Voltage Control</code> en AB. ¿Falta la curva stock? Haz clic en 🔄 Recalibrar.</p>
+    <h3>Un juego falla tras el UV</h3>
+    <p>Prueba un preset más alto, o usa el escáner. Repetición de Juego baja la frecuencia automáticamente.</p>
+  </section>
+
+
+  <!-- ═══ FEEDBACK ═══ -->
+  <section>
+    <h2 class="orange"><span class="icon">💬</span>Feedback</h2>
+    <p>Por favor, publica tu feedback directamente en el <strong>hilo de feedback del foro de PCGH</strong> o envíaselo a <strong>Christian</strong> por Discord, captura + texto.</p>
+    <div class="info">Archivo de log: <code>%LocalAppData%\NV-UV\nv-uv.log</code>, ¡inclúyelo con los informes de bugs! Exportable con el botón <strong>Exportar log</strong> bajo el panel de log.</div>
+    <div class="info">
+      <strong>Foro de PCGH:</strong><br>
+      Deutsch: <a href="https://extreme.pcgameshardware.de/threads/support-faq-bugs.673164/" style="color:var(--cyan)">Support / FAQ / Bugs</a><br>
+      English: <a href="https://extreme.pcgameshardware.de/threads/nv-uv-open-alpha-english-thread.673165/" style="color:var(--cyan)">NV-UV Open Alpha English Thread</a>
+    </div>
+  </section>
+
+  <div class="led-bar gold"></div>
+
+  <div class="footer">
+    NV-UV · Build 22 · Cantor · Open Alpha · Solo testers invitados<br>
+    Por favor, no lo redistribuyas · Undervolting de GPU bajo tu propia responsabilidad<br><br>
+    <span style="color:var(--dim)">NV-UV es gratuito. Si te gusta:</span> <a href="https://paypal.me/christianpapaioannou" style="color:var(--cyan)">PayPal</a>
+  </div>
+
+</div>
+
+
+  <h2 id="third-party">🔖 Componentes de terceros</h2>
+  <p>NV-UV usa <strong>NvApiNative.dll</strong>, un puente NVAPI nativo derivado del proyecto de código abierto <strong>Green Curve</strong> de <strong>aufkrawall</strong>. Green Curve demostró cómo acceder a la curva VF en GPUs Blackwell directamente mediante puntos de entrada NVAPI. NV-UV aplica este enfoque para el modo directo del escáner y la optimización de puntos.</p>
+  <p>Repositorio del proyecto: <a href="https://github.com/aufkrawall/green-curve">https://github.com/aufkrawall/green-curve</a></p>
+  <p>El texto completo de la licencia MIT se reproduce a continuación:</p>
+  <pre style="background:#1a1a1a;color:#ddd;padding:16px;border-radius:6px;font-size:12px;line-height:1.5;white-space:pre-wrap;overflow-x:auto;">MIT License
+
+Copyright (c) 2026 aufkrawall
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+  <p>Muchas gracias a aufkrawall por Green Curve y por poner el proyecto a disposición bajo una licencia abierta.</p>
+
+</body>
+
+</html>
