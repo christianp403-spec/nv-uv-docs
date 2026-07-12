@@ -1,6 +1,6 @@
 # NV-UV Documentation
 
-Public documentation site for **NV-UV**, a GPU undervolting companion tool for NVIDIA RTX 50-series (Blackwell), RTX 40-series and RTX 30-series
+Public documentation site for **NV-UV**, a GPU undervolting companion tool for NVIDIA RTX 50-series (Blackwell), RTX 40-series and RTX 30-series.
 
 👉 **https://christianp403-spec.github.io/nv-uv-docs/**
 
