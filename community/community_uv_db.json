@@ -676,6 +676,23 @@
               },
               "date_found": "2026-07-11",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-ef6d4f0f6e81",
+              "board": "MSI  VANGUARD SOC",
+              "freq_mhz": 3015,
+              "voltage_mv": 935,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-12",
+              "notes": "UV+OC"
             }
           ]
         },
