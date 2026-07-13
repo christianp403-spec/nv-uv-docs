@@ -710,6 +710,40 @@
               },
               "date_found": "2026-07-12",
               "notes": "UV+OC"
+            },
+            {
+              "preset_id": "bw-5080-6229deff198e",
+              "board": "GigaByte 5080 AORUS Master",
+              "freq_mhz": 3142,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-13",
+              "notes": "+2000 memory-daily"
+            },
+            {
+              "preset_id": "bw-5080-e5d73e715dde",
+              "board": "Palit GameRock",
+              "freq_mhz": 3082,
+              "voltage_mv": 950,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-13",
+              "notes": ""
             }
           ]
         },
@@ -1004,6 +1038,23 @@
               },
               "date_found": "2026-07-11",
               "notes": "Legacy NV-UV Performance Profile"
+            },
+            {
+              "preset_id": "bw-5070-ti-f339b3fe0155",
+              "board": "Gainward Phoenix-S",
+              "freq_mhz": 2872,
+              "voltage_mv": 875,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-13",
+              "notes": ""
             }
           ]
         },
