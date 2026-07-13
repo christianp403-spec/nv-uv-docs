@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-12",
+  "updated": "2026-07-13",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -399,6 +399,23 @@
               },
               "date_found": "2026-07-09",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5090-e65fd3dbacea",
+              "board": "Palit GameRock OC",
+              "freq_mhz": 2992,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-13",
+              "notes": "fully stable for 9month. can NOT go higher Mhz at 975mv. VRAM OC over 2000Mhz --> not stable and doesnt make sence in perf perspective"
             }
           ]
         },
@@ -3034,6 +3051,40 @@
               },
               "date_found": "2026-02",
               "notes": "Guide starting point 950-1000mV; +500 mem suggested"
+            },
+            {
+              "preset_id": "ada-4060-ti-d2c54c155651",
+              "board": null,
+              "freq_mhz": 2745,
+              "voltage_mv": 960,
+              "power_limit_pct": 119,
+              "vram_offset_mhz": 1650,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-13",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4060-ti-02cd8ddae77e",
+              "board": null,
+              "freq_mhz": 2947,
+              "voltage_mv": 1025,
+              "power_limit_pct": 119,
+              "vram_offset_mhz": 1650,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-13",
+              "notes": ""
             }
           ]
         },
