@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-13",
+  "updated": "2026-07-14",
   "ratings": {
     "ada-4070-super-fd78d2eff112": {
       "avg": 1,
@@ -49,6 +49,10 @@
     "amp-3090-e68735dfe12a": {
       "avg": 5,
       "votes": 3
+    },
+    "bw-5060-ti-4934be43b218": {
+      "avg": 1,
+      "votes": 1
     },
     "bw-5060-ti-fa37b6d50f79": {
       "avg": 5,
