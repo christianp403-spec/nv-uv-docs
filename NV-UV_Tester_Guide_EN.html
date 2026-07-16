@@ -331,7 +331,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="sep">—</span><span class="uv">UV</span></h1>
     <div class="subtitle">GPU Undervolt · User Guide</div>
-    <div class="build">Build 22 · Cantor · Open Alpha · May 2026</div>
+    <div class="build">Build 22 · Cantor · Open Alpha · July 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -365,7 +365,8 @@
       <tr><td>📊 <strong>4 Preset Levels</strong></td><td>Eco · Balanced · Performance · Max, community-validated values per GPU</td></tr>
       <tr><td>🔍 <strong>Stock Curve Discovery</strong></td><td>Automatically reads the real VF curve of your specific GPU from AB</td></tr>
       <tr><td>🔬 <strong>OCS → UV</strong></td><td>Import AB OC Scanner results, build chip-specific UV curve</td></tr>
-      <tr><td>🎮 <strong>Game Replay</strong></td><td>Automatic step-down on crash, with per-game learning loop</td></tr>
+      <tr><td>🎮 <strong>Game Replay</strong></td><td>Automatic step-down on crash, per-game learning loop and a dedicated Replay Adjustments overview</td></tr>
+      <tr><td>🌡️ <strong>Blackwell Hotspot</strong> <span style="color:var(--gold);">NEW in v0.99.2</span></td><td>Experimental hotspot temperature for supported RTX 50 Series GPUs with automatic MSI Afterburner plugin setup</td></tr>
       <tr><td>✈️ <strong>UV-Pilot</strong></td><td>Detects games automatically, switches to the optimal preset</td></tr>
       <tr><td>⚡ <strong>UV⚡Try</strong> <span style="color:var(--gold);">NEW</span></td><td>Browse community UV values for your card and apply them to a slot</td></tr>
       <tr><td>🌍 <strong>Global / No Override</strong> <span style="color:var(--gold);">NEW</span></td><td>One tier for all games, or exempt single games from it</td></tr>
@@ -379,9 +380,26 @@
       <tr><td>🧊 <strong>Idle Optimization</strong></td><td>Low voltages = stock, saves power at desktop/idle</td></tr>
       <tr><td>🔧 <strong>V-Step Fix</strong></td><td>Compensates for the Blackwell point-before-flatten bug</td></tr>
       <tr><td>📐 <strong>Mini View</strong></td><td>Compact view, perfect alongside AB's curve editor</td></tr>
-      <tr><td>🎨 <strong>5 Skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity + Summer26 <span style="color:var(--gold);">NEW in v0.99.1</span></td></tr>
+      <tr><td>🎨 <strong>5 Skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity + Summer26. <strong>Improved in v0.99.2:</strong> brighter lime V/F curve for better Summer26 readability</td></tr>
       <tr><td>⏻ <strong>System Tray</strong></td><td>Runs in background. Autostart will be added once the EXE is signed.</td></tr>
     </table>
+  </section>
+
+  <!-- ═══ NEW IN v0.99.2 ═══ -->
+  <section>
+    <h2 class="orange"><span class="icon">🆕</span>New in v0.99.2</h2>
+
+    <h3>🎨 Summer26 Special Skin</h3>
+    <p>The green V/F curve segment now uses a brighter lime color. This provides much better contrast against the green lawn in the Summer26 background.</p>
+
+    <h3>🎮 Wider Game Browser</h3>
+    <p>The Game Browser now provides more room for the search field, game list and additional information. Its default width increased from 920 to 1040 pixels and its minimum width from 820 to 940 pixels. Window height is unchanged.</p>
+
+    <h3>🔁 Replay Adjustments</h3>
+    <p>The Game Browser now includes a dedicated tab for every value Game Replay has automatically corrected after detected game or driver crashes. Individual entries or the complete adjustment history can be reset directly.</p>
+
+    <h3>🌡️ Experimental Blackwell Hotspot Temperature</h3>
+    <p>Supported NVIDIA GeForce RTX 50 Series GPUs can now display an experimental hotspot temperature. NV-UV automatically installs and configures the required MSI Afterburner monitoring plugin.</p>
   </section>
 
   <!-- ═══ REQUIREMENTS ═══ -->
@@ -490,6 +508,21 @@
       <strong>🔄 Recalibrate (Toolbar):</strong><br>
       Full reset: backs up AB profiles automatically, deletes only GPU-specific profiles and NV-UV cache, restarts. Overlay settings, fan curves and other AB settings are preserved. <strong>NEW in v0.99:</strong> right-click the button to open the folder with the automatic AB profile backups.
     </div>
+  </section>
+
+  <!-- ═══ BLACKWELL HOTSPOT ═══ -->
+  <section>
+    <h2 class="orange"><span class="icon">🌡️</span>Experimental Blackwell Hotspot Temperature</h2>
+
+    <p>A dedicated hotspot toggle is available on supported NVIDIA GeForce RTX 50 Series GPUs. After explicit confirmation, NV-UV installs the required monitoring plugin in MSI Afterburner and automatically adjusts the required configuration files.</p>
+
+    <h3>Display</h3>
+    <p>After a successful sensor check, the hotspot temperature appears in the regular NV-UV telemetry area. Hotspot sensors already exposed by MSI Afterburner on older GPU generations can also appear there; automatic plugin installation itself is limited to supported Blackwell GPUs.</p>
+
+    <div class="warn"><strong>Experimental reading:</strong> The displayed value is not officially confirmed. It must not be used as the basis for warranty or RMA cases, or for changes and modifications to the graphics card. A hotspot temperature higher than the other temperature readings is not by itself an indication of a defect or reduced graphics card functionality.</div>
+
+    <h3>Disabling</h3>
+    <p>When the feature is disabled, NV-UV performs a rollback and removes the plugin automatically.</p>
   </section>
 
   <!-- ═══ UPDATE ═══ -->
@@ -657,6 +690,10 @@
     <div class="info">On the first start of v0.94 the existing <code>nv-uv_game_replay_adjustments.json</code> is detected as the old format and cleared once (log warning: "Old adjustment format detected — discarded"). After that the history rebuilds per profile. No manual action needed.</div>
     <p style="font-size:0.9em;color:var(--text-dim);">Manual applies (slot-button click without UV-Pilot) still don't persist: on a crash the live downstep applies, but no JSON entry is written because without Pilot context it can't be uniquely tied to a profile.</p>
 
+    <h3>Replay Adjustments Overview <span style="color:var(--gold);">(New in v0.99.2)</span></h3>
+    <p>The Game Browser now includes a separate <strong>Replay Adjustments</strong> tab. It shows the game and process, tier or custom profile, original and adjusted values, the number of detected crashes and the time of the most recent crash.</p>
+    <p>Individual adjustments can be reset directly from the list. <strong>Reset All</strong> clears the complete Game Replay adjustment history after confirmation. The overview can also be opened directly by right-clicking the Game Replay toggle in the main window or MiniWindow.</p>
+
     <h3>Two Crash Modes</h3>
     <table>
       <tr><th>Type</th><th>What happens</th></tr>
@@ -699,6 +736,7 @@
     <p>Right-click a slot: "Add to UV-Pilot" creates a custom profile. Assignable per game in the game database.</p>
     <h3>Game Database</h3>
     <p>Right-click UV-Pilot → 🎮 Game Database. 632 games + benchmarks, tier assignments adjustable, custom games addable.</p>
+    <p><strong>New in v0.99.2:</strong> The Game Browser is wider and now includes a separate <strong>Replay Adjustments</strong> tab for values automatically corrected by Game Replay.</p>
     <h3>Benchmarks (3DMark etc.)</h3>
     <p>3DMark is recognized but no UV tier is assigned — your active profile stays as-is. This lets you benchmark with your chosen UV without the Pilot switching profiles. A custom profile can optionally be assigned via the Game Browser.</p>
     <h3>Auto-Mini on Gaming</h3>

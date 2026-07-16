@@ -331,7 +331,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="sep">—</span><span class="uv">UV</span></h1>
     <div class="subtitle">GPU Undervolt · Guía del Usuario</div>
-    <div class="build">Build 22 · Cantor · Open Alpha · Mayo 2026</div>
+    <div class="build">Build 22 · Cantor · Open Alpha · Julio 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -365,7 +365,8 @@
       <tr><td>📊 <strong>4 niveles de preset</strong></td><td>Eco · Balanced · Performance · Max, valores validados por la comunidad para cada GPU</td></tr>
       <tr><td>🔍 <strong>Descubrimiento de la curva stock</strong></td><td>Lee automáticamente desde AB la curva VF real de tu GPU concreta</td></tr>
       <tr><td>🔬 <strong>OCS → UV</strong></td><td>Importa los resultados del OC Scanner de AB y construye una curva UV específica para tu chip</td></tr>
-      <tr><td>🎮 <strong>Repetición de Juego</strong></td><td>Bajada automática de paso tras un fallo, con bucle de aprendizaje por juego</td></tr>
+      <tr><td>🎮 <strong>Repetición de Juego</strong></td><td>Bajada automática tras un fallo, aprendizaje por juego y vista dedicada de Ajustes de Replay</td></tr>
+      <tr><td>🌡️ <strong>Hotspot Blackwell</strong> <span style="color:var(--gold);">NUEVO en v0.99.2</span></td><td>Temperatura hotspot experimental para GPUs RTX 50 compatibles con configuración automática del plugin de MSI Afterburner</td></tr>
       <tr><td>✈️ <strong>UV-Piloto</strong></td><td>Detecta juegos automáticamente y cambia al preset óptimo</td></tr>
       <tr><td>⚡ <strong>UV⚡Prueba</strong> <span style="color:var(--gold);">NUEVO</span></td><td>Explora valores UV de la comunidad para tu tarjeta y aplícalos a un slot</td></tr>
       <tr><td>🌍 <strong>Anulación global / Sin anulación</strong> <span style="color:var(--gold);">NUEVO</span></td><td>Un nivel para todos los juegos, o excluir juegos concretos</td></tr>
@@ -379,9 +380,26 @@
       <tr><td>🧊 <strong>Optimización en Reposo</strong></td><td>Voltajes bajos = stock, ahorra energía en el escritorio/reposo</td></tr>
       <tr><td>🔧 <strong>Corrección V-Step</strong></td><td>Compensa el bug point-before-flatten de Blackwell</td></tr>
       <tr><td>📐 <strong>Vista Mini</strong></td><td>Vista compacta, perfecta junto al editor de curvas de AB</td></tr>
-      <tr><td>🎨 <strong>5 skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity + Summer26 <span style="color:var(--gold);">NUEVO en v0.99.1</span></td></tr>
+      <tr><td>🎨 <strong>5 skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity + Summer26. <strong>Mejorado en v0.99.2:</strong> curva V/F lime más clara para una mejor lectura en Summer26</td></tr>
       <tr><td>⏻ <strong>Bandeja del sistema</strong></td><td>Funciona en segundo plano. El inicio automático se añadirá cuando el EXE esté firmado.</td></tr>
     </table>
+  </section>
+
+  <!-- ═══ NUEVO EN v0.99.2 ═══ -->
+  <section>
+    <h2 class="orange"><span class="icon">🆕</span>Nuevo en v0.99.2</h2>
+
+    <h3>🎨 Skin especial Summer26</h3>
+    <p>El segmento verde de la curva V/F usa ahora un lime más claro. Así se distingue mucho mejor sobre el césped verde del fondo Summer26.</p>
+
+    <h3>🎮 Navegador de juegos más ancho</h3>
+    <p>El navegador de juegos ofrece más espacio para el campo de búsqueda, la lista de juegos y la información adicional. El ancho predeterminado aumentó de 920 a 1040 píxeles y el ancho mínimo de 820 a 940 píxeles. La altura no cambia.</p>
+
+    <h3>🔁 Ajustes de Replay</h3>
+    <p>El navegador de juegos incluye ahora una pestaña propia para todos los valores que Repetición de Juego ha corregido automáticamente tras detectar fallos del juego o del driver. Se pueden restablecer entradas individuales o todo el historial.</p>
+
+    <h3>🌡️ Temperatura hotspot experimental de Blackwell</h3>
+    <p>Las GPUs NVIDIA GeForce RTX 50 compatibles pueden mostrar ahora una temperatura hotspot experimental. NV-UV instala y configura automáticamente el plugin de monitorización necesario para MSI Afterburner.</p>
   </section>
 
   <!-- ═══ REQUIREMENTS ═══ -->
@@ -490,6 +508,21 @@
       <strong>🔄 Recalibrar (barra de herramientas):</strong><br>
       Reinicio completo: hace backup de los perfiles AB automáticamente, elimina solo los perfiles específicos de la GPU y la caché de NV-UV, y reinicia. Los ajustes del overlay, curvas de ventiladores y demás ajustes de AB se conservan. <strong>NUEVO en v0.99:</strong> clic derecho en el botón para abrir la carpeta con los backups automáticos de perfiles AB.
     </div>
+  </section>
+
+  <!-- ═══ BLACKWELL HOTSPOT ═══ -->
+  <section>
+    <h2 class="orange"><span class="icon">🌡️</span>Temperatura hotspot experimental de Blackwell</h2>
+
+    <p>En las GPUs NVIDIA GeForce RTX 50 compatibles aparece un interruptor específico para Hotspot. Tras una confirmación explícita, NV-UV instala el plugin de monitorización necesario en MSI Afterburner y ajusta automáticamente los archivos de configuración requeridos.</p>
+
+    <h3>Visualización</h3>
+    <p>Después de superar la comprobación del sensor, la temperatura hotspot aparece en el área de telemetría normal de NV-UV. Los sensores hotspot que MSI Afterburner ya exponga en generaciones anteriores también pueden aparecer allí; la instalación automática del plugin está limitada a GPUs Blackwell compatibles.</p>
+
+    <div class="warn"><strong>Lectura experimental:</strong> El valor mostrado no está confirmado oficialmente. No debe utilizarse como base para casos de garantía o RMA, ni para cambios o modificaciones de la tarjeta gráfica. Una temperatura hotspot superior a las demás temperaturas no indica por sí sola un defecto o una reducción de la funcionalidad de la tarjeta.</div>
+
+    <h3>Desactivación</h3>
+    <p>Al desactivar la función, NV-UV realiza un rollback y elimina automáticamente el plugin.</p>
   </section>
 
   <!-- ═══ UPDATE ═══ -->
@@ -657,6 +690,10 @@
     <div class="info">En el primer inicio de la v0.94, el <code>nv-uv_game_replay_adjustments.json</code> existente se detecta como formato antiguo y se vacía una única vez (advertencia en el log: "Old adjustment format detected — discarded"). Después el historial se reconstruye por perfil. No se requiere ninguna acción manual.</div>
     <p style="font-size:0.9em;color:var(--text-dim);">Las aplicaciones manuales (clic en botón de slot sin UV-Piloto) siguen sin persistir: tras un fallo se aplica la bajada de paso en vivo, pero no se escribe ninguna entrada JSON porque sin el contexto del Piloto no se puede vincular unívocamente a un perfil.</p>
 
+    <h3>Vista de Ajustes de Replay <span style="color:var(--gold);">(nuevo en v0.99.2)</span></h3>
+    <p>El navegador de juegos incluye ahora una pestaña separada llamada <strong>Ajustes de Replay</strong>. Muestra el juego y el proceso, el nivel o perfil personalizado, los valores original y ajustado, el número de fallos detectados y la hora del último fallo.</p>
+    <p>Los ajustes individuales se pueden restablecer directamente desde la lista. <strong>Restablecer todo</strong> borra todo el historial de ajustes de Repetición de Juego tras una confirmación. La vista también se abre directamente haciendo clic derecho en el interruptor de Repetición de Juego de la ventana principal o MiniWindow.</p>
+
     <h3>Dos modos de fallo</h3>
     <table>
       <tr><th>Tipo</th><th>Qué ocurre</th></tr>
@@ -699,6 +736,7 @@
     <p>Clic derecho en un slot: "Añadir a UV-Piloto" crea un perfil personalizado. Asignable por juego en la base de datos de juegos.</p>
     <h3>Base de datos de juegos</h3>
     <p>Clic derecho en UV-Piloto → 🎮 Base de datos de juegos. 632 juegos + benchmarks, asignaciones de nivel ajustables, juegos propios añadibles.</p>
+    <p><strong>Nuevo en v0.99.2:</strong> El navegador de juegos es más ancho e incluye una pestaña separada de <strong>Ajustes de Replay</strong> para los valores corregidos automáticamente por Repetición de Juego.</p>
     <h3>Benchmarks (3DMark, etc.)</h3>
     <p>3DMark se reconoce, pero no se le asigna ningún nivel UV — tu perfil activo se queda como está. Así puedes hacer benchmarks con el UV que hayas elegido sin que el Piloto cambie de perfil. Opcionalmente se puede asignar un perfil personalizado mediante el navegador de juegos.</p>
     <h3>Auto-Mini al jugar</h3>
