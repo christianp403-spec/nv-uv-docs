@@ -1089,6 +1089,23 @@
               },
               "date_found": "2026-07-15",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-9518c65a319e",
+              "board": null,
+              "freq_mhz": 2895,
+              "voltage_mv": 885,
+              "power_limit_pct": 110,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-16",
+              "notes": ""
             }
           ]
         },
@@ -1246,6 +1263,40 @@
                 "url": ""
               },
               "date_found": "2026-07-06",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-b8753ff8a9d8",
+              "board": null,
+              "freq_mhz": 3007,
+              "voltage_mv": 950,
+              "power_limit_pct": 120,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-16",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-c2e2285a7418",
+              "board": null,
+              "freq_mhz": 2940,
+              "voltage_mv": 890,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-16",
               "notes": ""
             }
           ]
