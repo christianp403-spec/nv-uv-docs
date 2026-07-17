@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-16",
+  "updated": "2026-07-17",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -1297,6 +1297,23 @@
                 "url": ""
               },
               "date_found": "2026-07-16",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-460b6677c38e",
+              "board": "GigaByte 5070 sff",
+              "freq_mhz": 3007,
+              "voltage_mv": 910,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-17",
               "notes": ""
             }
           ]
@@ -2832,6 +2849,23 @@
               },
               "date_found": "2023-06",
               "notes": "OC+UV; Cyberpunk 3440x1440 DLSS-Q RT Ultra FG 97.87fps; 61-64C; ~100W saved"
+            },
+            {
+              "preset_id": "ada-4070-ti-95f45970845a",
+              "board": null,
+              "freq_mhz": 2550,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-17",
+              "notes": ""
             }
           ]
         },
