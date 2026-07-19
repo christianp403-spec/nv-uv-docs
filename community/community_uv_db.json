@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-17",
+  "updated": "2026-07-19",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -1106,6 +1106,23 @@
               },
               "date_found": "2026-07-16",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-a02002d681ef",
+              "board": "Palit GeForce RTX 5070 Ti GamingPro",
+              "freq_mhz": 3052,
+              "voltage_mv": 935,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-18",
+              "notes": "Stable 2k gaming"
             }
           ]
         },
@@ -3109,6 +3126,23 @@
               },
               "date_found": "2024-02",
               "notes": "1V + 2850MHz"
+            },
+            {
+              "preset_id": "ada-4070-super-62ce9b19021f",
+              "board": "ASUS Dual",
+              "freq_mhz": 2550,
+              "voltage_mv": 925,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-18",
+              "notes": ""
             }
           ]
         },
@@ -3254,6 +3288,57 @@
                 "url": ""
               },
               "date_found": "2026-07-13",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4060-ti-da28f762c681",
+              "board": "MSI GeForce RTX 4060 Ti GAMING X 16G",
+              "freq_mhz": 2880,
+              "voltage_mv": 1075,
+              "power_limit_pct": 90,
+              "vram_offset_mhz": 200,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-18",
+              "notes": "2x 120 mm Fans"
+            },
+            {
+              "preset_id": "ada-4060-ti-9284e6758e65",
+              "board": null,
+              "freq_mhz": 2820,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-18",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4060-ti-df8bc907a181",
+              "board": null,
+              "freq_mhz": 2940,
+              "voltage_mv": 1050,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-18",
               "notes": ""
             }
           ]
@@ -3595,6 +3680,23 @@
               },
               "date_found": "2020-12",
               "notes": "Control 365W with 108% PL"
+            },
+            {
+              "preset_id": "amp-3090-b4edbd8c14c1",
+              "board": "Asus Rog Strix OC",
+              "freq_mhz": 1875,
+              "voltage_mv": 819,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-18",
+              "notes": ""
             }
           ]
         },
@@ -4436,6 +4538,57 @@
               },
               "date_found": "2021-01",
               "notes": "Reddit-derived guide: -250 core, drag 850mV to 1900"
+            },
+            {
+              "preset_id": "amp-3070-5a263f7e2939",
+              "board": null,
+              "freq_mhz": 1980,
+              "voltage_mv": 931,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-19",
+              "notes": ""
+            },
+            {
+              "preset_id": "amp-3070-16c9cafbfbdb",
+              "board": null,
+              "freq_mhz": 1905,
+              "voltage_mv": 931,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-19",
+              "notes": ""
+            },
+            {
+              "preset_id": "amp-3070-1a0869a4b8e8",
+              "board": null,
+              "freq_mhz": 1695,
+              "voltage_mv": 800,
+              "power_limit_pct": 80,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-19",
+              "notes": ""
             }
           ]
         },
