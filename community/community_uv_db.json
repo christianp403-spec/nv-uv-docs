@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-19",
+  "updated": "2026-07-20",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -1473,6 +1473,23 @@
               },
               "date_found": "2026-07-08",
               "notes": "maybe unstable but runs for me"
+            },
+            {
+              "preset_id": "bw-5060-ti-0d8f9e2b0c24",
+              "board": "KFA2 GeForce RTX 5060 Ti CORE OC 2FAN LED Black",
+              "freq_mhz": 2572,
+              "voltage_mv": 850,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-20",
+              "notes": "ECO mode"
             }
           ]
         }
@@ -1962,6 +1979,23 @@
               },
               "date_found": "2023-09",
               "notes": "Moderator recommendation"
+            },
+            {
+              "preset_id": "ada-4090-cd22eaedca4f",
+              "board": "GigaByte RTX 4090",
+              "freq_mhz": 2715,
+              "voltage_mv": 960,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-20",
+              "notes": ""
             }
           ]
         },
@@ -3233,6 +3267,23 @@
               },
               "date_found": "2026-07-06",
               "notes": "Can't get lower with stock clock values"
+            },
+            {
+              "preset_id": "ada-4070-a2b99961c3a3",
+              "board": "Zotac 4070 RTX (240 mm)",
+              "freq_mhz": 2505,
+              "voltage_mv": 915,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-20",
+              "notes": ""
             }
           ]
         },
@@ -4747,6 +4798,23 @@
               },
               "date_found": "2021-03",
               "notes": "Same test suite, 8000MHz VRAM"
+            },
+            {
+              "preset_id": "amp-3060-ti-35ad8bb0f226",
+              "board": "Palit Dual OC",
+              "freq_mhz": 1935,
+              "voltage_mv": 900,
+              "power_limit_pct": 105,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-20",
+              "notes": ""
             }
           ]
         },
