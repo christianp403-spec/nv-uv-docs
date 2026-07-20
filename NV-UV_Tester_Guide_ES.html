@@ -381,8 +381,28 @@
       <tr><td>🔧 <strong>Corrección V-Step</strong></td><td>Compensa el bug point-before-flatten de Blackwell</td></tr>
       <tr><td>📐 <strong>Vista Mini</strong></td><td>Vista compacta, perfecta junto al editor de curvas de AB</td></tr>
       <tr><td>🎨 <strong>5 skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity + Summer26. <strong>Mejorado en v0.99.2:</strong> curva V/F lime más clara para una mejor lectura en Summer26</td></tr>
-      <tr><td>⏻ <strong>Bandeja del sistema</strong></td><td>Funciona en segundo plano. El inicio automático se añadirá cuando el EXE esté firmado.</td></tr>
+      <tr><td>⏻ <strong>Bandeja del sistema e inicio automático</strong></td><td>Funciona en segundo plano. El inicio automático de Windows usa un Scheduled Task validado e inicia NV-UV minimizado.</td></tr>
     </table>
+  </section>
+
+  <!-- ═══ NUEVO EN v0.99.3 ═══ -->
+  <section>
+    <h2 class="orange"><span class="icon">🆕</span>Nuevo en v0.99.3</h2>
+
+    <h3>🌡️ Visualización del hotspot mejorada</h3>
+    <p>La temperatura hotspot experimental de Blackwell ahora también aparece en la Vista Mini. El hotspot conserva un decimal, mientras que la temperatura normal de la GPU vuelve a mostrarse en grados enteros. El borde de configuración refleja ahora con mayor fiabilidad el estado real de activación.</p>
+
+    <h3>🎮 Editar y eliminar juegos añadidos por el usuario</h3>
+    <p>Los juegos añadidos manualmente ahora se pueden editar y eliminar de forma visible. El nombre, el proceso y el nivel base se conservan correctamente al restablecer una asignación. El diálogo de añadir/editar también se adapta mejor al escalado de Windows y al espacio vertical limitado.</p>
+
+    <h3>🧾 Actividad y Diagnóstico</h3>
+    <p>El área de registro se divide ahora en una vista localizada de <strong>Actividad</strong> para eventos claros y una vista técnica completa de <strong>Diagnóstico</strong>. La exportación crea un único ZIP con el registro de actividad, el registro de diagnóstico, el diagnóstico anterior opcional y la información del sistema, incluido el driver de NVIDIA y el estado del inicio automático.</p>
+
+    <h3>⏻ Inicio automático de Windows más fiable</h3>
+    <p>NV-UV valida ahora la ruta, los argumentos, el estado, el trigger de inicio de sesión, los privilegios máximos y el retraso del Scheduled Task, y repara configuraciones obsoletas. Mientras Afterburner arranca, NV-UV también espera a que MAHM se inicialice en lugar de mostrar inmediatamente un estado transitorio como error rojo.</p>
+
+    <h3>🟢 Ampere con soporte normal</h3>
+    <p>La serie RTX 30 forma parte de la gama de GPUs con soporte normal. Los presets siguen siendo puntos de partida conservadores basados en la comunidad y deben validarse con el escáner, Repetición de Juego y juegos reales, igual que cualquier otro perfil.</p>
   </section>
 
   <!-- ═══ NUEVO EN v0.99.2 ═══ -->
@@ -970,7 +990,7 @@
 
     <div class="warn"><strong>¿Qué significa "experimental" para las tarjetas RTX 5060 y RTX 4060?</strong> Estas tarjetas están soportadas por el código de NV-UV, pero los valores de preset aún no se han verificado en hardware real a través de nuestro programa de testers. Se basan en investigación AI-DeepSearch a partir de datos de la comunidad (Reddit, Hardwareluxx, Igor's Lab, OCN). Por favor, testea usando Balanced como punto de partida y comparte tus resultados en el foro de PCGH o en Discord para poder afinar los valores.</div>
 
-    <div class="info" style="margin-top:1em;"><strong>🧪 Estado de Ampere (v0.98):</strong> La integración de Ampere se ha verificado hasta ahora en una sola tarjeta, una RTX 3090 (GA102). Todos los demás modelos Ampere están sin testear. Los valores de preset de abajo son investigación basada en la comunidad, no confirmados en hardware, así que trata todas las tarjetas RTX 30 excepto la 3090 como experimentales. El Escáner de Pasos de Voltaje en particular puede no comportarse correctamente todavía, sobre todo en los chips más pequeños. Los testers de Ampere son muy bienvenidos en el subforo de PCGH y en Discord. Por favor, adjunta un log (botón Exportar, abajo a la derecha) al informar de un problema.</div>
+    <div class="info" style="margin-top:1em;"><strong>🟢 Estado de Ampere desde v0.99.3:</strong> La serie RTX 30 forma parte de la gama de GPUs con soporte normal. Los valores de preset son puntos de partida conservadores basados en la comunidad y pueden variar según el diseño de la tarjeta, la refrigeración y la calidad del silicio. Empieza con Balanced si tienes dudas y valida el resultado con el escáner, Repetición de Juego y juegos reales. Adjunta el ZIP de diagnóstico al informar de un problema.</div>
 
     <h3>RTX 3090 <span style="color:var(--cyan);">(tarjeta de referencia, integración verificada)</span></h3>
     <table>
@@ -981,7 +1001,7 @@
       <tr><td>🔥 Max</td><td>950 mV</td><td>1965 MHz</td><td>100%</td></tr>
     </table>
 
-    <h3>RTX 3090 Ti <span style="color:var(--gold);">(experimental)</span></h3>
+    <h3>RTX 3090 Ti</h3>
     <table>
       <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>825 mV</td><td>1700 MHz</td><td>80%</td></tr>
@@ -990,7 +1010,7 @@
       <tr><td>🔥 Max</td><td>975 mV</td><td>2025 MHz</td><td>100%</td></tr>
     </table>
 
-    <h3>RTX 3080 Ti <span style="color:var(--gold);">(experimental)</span></h3>
+    <h3>RTX 3080 Ti</h3>
     <table>
       <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>800 mV</td><td>1710 MHz</td><td>80%</td></tr>
@@ -999,7 +1019,7 @@
       <tr><td>🔥 Max</td><td>950 mV</td><td>1980 MHz</td><td>100%</td></tr>
     </table>
 
-    <h3>RTX 3080 12GB <span style="color:var(--gold);">(experimental)</span></h3>
+    <h3>RTX 3080 12GB</h3>
     <table>
       <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>800 mV</td><td>1700 MHz</td><td>80%</td></tr>
@@ -1008,7 +1028,7 @@
       <tr><td>🔥 Max</td><td>950 mV</td><td>2000 MHz</td><td>100%</td></tr>
     </table>
 
-    <h3>RTX 3080 10GB <span style="color:var(--gold);">(experimental)</span></h3>
+    <h3>RTX 3080 10GB</h3>
     <table>
       <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>800 mV</td><td>1750 MHz</td><td>80%</td></tr>
@@ -1017,7 +1037,7 @@
       <tr><td>🔥 Max</td><td>950 mV</td><td>2010 MHz</td><td>100%</td></tr>
     </table>
 
-    <h3>RTX 3070 Ti <span style="color:var(--gold);">(experimental)</span></h3>
+    <h3>RTX 3070 Ti</h3>
     <table>
       <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>825 mV</td><td>1770 MHz</td><td>80%</td></tr>
@@ -1026,7 +1046,7 @@
       <tr><td>🔥 Max</td><td>950 mV</td><td>1995 MHz</td><td>100%</td></tr>
     </table>
 
-    <h3>RTX 3070 <span style="color:var(--gold);">(experimental)</span></h3>
+    <h3>RTX 3070</h3>
     <table>
       <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>775 mV</td><td>1700 MHz</td><td>80%</td></tr>
@@ -1035,7 +1055,7 @@
       <tr><td>🔥 Max</td><td>950 mV</td><td>2010 MHz</td><td>100%</td></tr>
     </table>
 
-    <h3>RTX 3060 Ti <span style="color:var(--gold);">(experimental)</span></h3>
+    <h3>RTX 3060 Ti</h3>
     <table>
       <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>800 mV</td><td>1750 MHz</td><td>80%</td></tr>
@@ -1044,7 +1064,7 @@
       <tr><td>🔥 Max</td><td>975 mV</td><td>1980 MHz</td><td>100%</td></tr>
     </table>
 
-    <h3>RTX 3060 <span style="color:var(--gold);">(experimental)</span></h3>
+    <h3>RTX 3060</h3>
     <table>
       <tr><th>Preset</th><th>Voltaje</th><th>Frecuencia</th><th>PL</th></tr>
       <tr><td>🍃 Eco</td><td>800 mV</td><td>1560 MHz</td><td>80%</td></tr>
