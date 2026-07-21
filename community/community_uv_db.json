@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-20",
+  "updated": "2026-07-21",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -744,6 +744,40 @@
               },
               "date_found": "2026-07-13",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-cd70707a01cb",
+              "board": "Gigabyte Gaming OC 16G",
+              "freq_mhz": 2857,
+              "voltage_mv": 875,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-21",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-4f7d809c6a71",
+              "board": "Gigabyte Gaming OC 16G",
+              "freq_mhz": 2797,
+              "voltage_mv": 885,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-21",
+              "notes": "880-885 mV/2767 Mhz solid stable"
             }
           ]
         },
@@ -1123,6 +1157,23 @@
               },
               "date_found": "2026-07-18",
               "notes": "Stable 2k gaming"
+            },
+            {
+              "preset_id": "bw-5070-ti-4603c6f35e05",
+              "board": "Gainward GeForce RTX 5070 Ti Phoenix-S",
+              "freq_mhz": 3225,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-21",
+              "notes": ""
             }
           ]
         },
