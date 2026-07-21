@@ -392,11 +392,14 @@
     <h3>🌡️ Visualización del hotspot mejorada</h3>
     <p>La temperatura hotspot experimental de Blackwell ahora también aparece en la Vista Mini. El hotspot conserva un decimal, mientras que la temperatura normal de la GPU vuelve a mostrarse en grados enteros. El borde de configuración refleja ahora con mayor fiabilidad el estado real de activación.</p>
 
+    <h3>🛡️ Recuperación del hotspot y recalibración protegida</h3>
+    <p>Las instalaciones de hotspot existentes se migran automáticamente al almacenamiento de recuperación duradero en <code>%ProgramData%\NV-UV\BlackwellHotspot\</code>. Recalibrar detecta un hotspot activo, lo elimina mediante el rollback controlado y reinicia NV-UV primero. La calibración real solo comienza al pulsar Recalibrar de nuevo; después se puede reinstalar el hotspot para el nuevo perfil de Afterburner.</p>
+
     <h3>🎮 Editar y eliminar juegos añadidos por el usuario</h3>
     <p>Los juegos añadidos manualmente ahora se pueden editar y eliminar de forma visible. El nombre, el proceso y el nivel base se conservan correctamente al restablecer una asignación. El diálogo de añadir/editar también se adapta mejor al escalado de Windows y al espacio vertical limitado.</p>
 
     <h3>🧾 Actividad y Diagnóstico</h3>
-    <p>El área de registro se divide ahora en una vista localizada de <strong>Actividad</strong> para eventos claros y una vista técnica completa de <strong>Diagnóstico</strong>. La exportación crea un único ZIP con el registro de actividad, el registro de diagnóstico, el diagnóstico anterior opcional y la información del sistema, incluido el driver de NVIDIA y el estado del inicio automático.</p>
+    <p>El área de registro se divide ahora en una vista localizada de <strong>Actividad</strong> para eventos claros y una vista técnica completa de <strong>Diagnóstico</strong>. La exportación crea un único ZIP con los registros de actividad actual y anterior, los registros de diagnóstico actual y anterior, y la información del sistema, incluido el driver de NVIDIA, el estado del inicio automático y el ciclo de vida del hotspot.</p>
 
     <h3>⏻ Inicio automático de Windows más fiable</h3>
     <p>NV-UV valida ahora la ruta, los argumentos, el estado, el trigger de inicio de sesión, los privilegios máximos y el retraso del Scheduled Task, y repara configuraciones obsoletas. Mientras Afterburner arranca, NV-UV también espera a que MAHM se inicialice en lugar de mostrar inmediatamente un estado transitorio como error rojo.</p>
@@ -526,7 +529,7 @@
 
     <div class="info">
       <strong>🔄 Recalibrar (barra de herramientas):</strong><br>
-      Reinicio completo: hace backup de los perfiles AB automáticamente, elimina solo los perfiles específicos de la GPU y la caché de NV-UV, y reinicia. Los ajustes del overlay, curvas de ventiladores y demás ajustes de AB se conservan. <strong>NUEVO en v0.99:</strong> clic derecho en el botón para abrir la carpeta con los backups automáticos de perfiles AB.
+      Reinicio completo: hace backup de los perfiles AB automáticamente, elimina solo los perfiles específicos de la GPU y la caché de NV-UV, y reinicia. Los ajustes del overlay, curvas de ventiladores y demás ajustes de AB se conservan. <strong>Con el hotspot de Blackwell activo:</strong> el primer clic elimina el fix mediante el rollback controlado y reinicia NV-UV; solo el segundo clic inicia la calibración real. Después de una calibración correcta, el hotspot puede instalarse de nuevo para el nuevo perfil. Haz clic derecho en el botón para abrir la carpeta de backups automáticos de perfiles AB.
     </div>
   </section>
 
@@ -541,6 +544,14 @@
 
     <div class="warn"><strong>Lectura experimental:</strong> El valor mostrado no está confirmado oficialmente. No debe utilizarse como base para casos de garantía o RMA, ni para cambios o modificaciones de la tarjeta gráfica. Una temperatura hotspot superior a las demás temperaturas no indica por sí sola un defecto o una reducción de la funcionalidad de la tarjeta.</div>
 
+    <h3>Datos de recuperación duraderos</h3>
+    <p>El manifiesto, los backups, el estado de la transacción y las identidades detectadas de GPU/perfil se guardan en <code>%ProgramData%\NV-UV\BlackwellHotspot\</code>. Las instalaciones activas creadas por versiones anteriores de NV-UV se migran automáticamente desde <code>%LocalAppData%\NV-UV\hotspot\</code> en el primer inicio. Así se conserva la información necesaria para un rollback seguro aunque se elimine la carpeta normal de datos de usuario de NV-UV.</p>
+
+    <h3>Recalibrar y crear perfiles</h3>
+    <p>Un hotspot activo puede interferir con la recreación del perfil de hardware de MSI Afterburner. Por eso Recalibrar no comienza inmediatamente mientras el hotspot está activo: NV-UV exige primero una eliminación controlada, reinicia y solo inicia la calibración real después de pulsar Recalibrar por segunda vez. Al finalizar, NV-UV ofrece instalar de nuevo el hotspot para el perfil nuevo.</p>
+    <div class="info"><strong>Cambio de GPU o VBIOS:</strong> Después de un cambio, Afterburner puede crear un perfil con una identidad SUBSYS diferente. NV-UV registra esta identidad y no vuelve a crear un perfil antiguo eliminado a partir de un backup del hotspot.</div>
+    <div class="warn"><strong>Instalación huérfana:</strong> Si se detectan restos del hotspot pero faltan el manifiesto o los backups originales, NV-UV no puede adivinar con seguridad los valores anteriores de Afterburner. Recalibrar se bloquea y se recomienda una reinstalación limpia de MSI Afterburner.</div>
+
     <h3>Desactivación</h3>
     <p>Al desactivar la función, NV-UV realiza un rollback y elimina automáticamente el plugin.</p>
   </section>
@@ -552,7 +563,7 @@
     <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Cierra NV-UV</strong></div></div>
     <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Extrae el nuevo ZIP</strong> (misma carpeta u otra nueva)</div></div>
     <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Ejecuta NV-UV.exe</strong>, ¡listo!</div></div>
-    <div class="info">Si algo se ve raro tras una actualización: haz clic en <strong>🔄 Recalibrar</strong> en la barra de herramientas.</div>
+    <div class="info">Si algo se ve raro tras una actualización, exporta primero un ZIP de diagnóstico. Después puedes usar <strong>🔄 Recalibrar</strong>; con el hotspot de Blackwell activo, NV-UV elimina primero el fix mediante el rollback controlado e inicia la calibración solo después del reinicio.</div>
   </section>
 
   <!-- ═══ QUICKSTART ═══ -->
@@ -1158,9 +1169,10 @@
     <p>Falso positivo. Los EXE .NET SingleFile autocontenidos a veces se marcan. NV-UV es seguro, puedes añadir una excepción.</p>
 
     <h3>¿Dónde se guardan mis ajustes?</h3>
-    <p><code>%LocalAppData%\NV-UV\</code> contiene: perfiles UV, nombres de slot, ajustes de Repetición de Juego, historial del escáner, datos OCS, curva stock, caché CCB, logs.</p>
+    <p><code>%LocalAppData%\NV-UV\</code> contiene perfiles UV, nombres de slot, ajustes de Repetición de Juego, historial del escáner, datos OCS, curva stock, caché CCB y logs.</p>
+    <p>Los datos de recuperación duraderos del hotspot experimental de Blackwell se guardan por separado en <code>%ProgramData%\NV-UV\BlackwellHotspot\</code>. No elimines manualmente esta carpeta mientras el hotspot esté activo.</p>
     <h3>¿Cómo exporto los archivos de log?</h3>
-    <p>Con el botón <strong>Exportar log</strong> bajo el panel de log. El archivo de log se exporta y puede enviarse directamente a Christian.</p>
+    <p>Usa el botón <strong>Exportar log</strong> bajo el panel de log. NV-UV crea un ZIP de diagnóstico con <code>activity.log</code>, <code>activity-previous.log</code>, <code>diagnostic.log</code>, <code>diagnostic-previous.log</code> y <code>system-info.txt</code>. El ZIP puede enviarse directamente a Christian.</p>
 
     <h3>¡Ayuda, mis perfiles han desaparecido!</h3>
     <p>Haz siempre una copia de seguridad manual de tus perfiles antes de experimentar. Si se pierden perfiles: revisa la carpeta de NV-UV en <code>%LocalAppData%\NV-UV\</code>, ahí se guardan los datos, las curvas OCS y el historial del escáner.</p>
@@ -1181,7 +1193,7 @@
     <p>En AB, en <strong>Settings → Monitoring → Active hardware monitoring graphs</strong>, desactiva los plugins <code>GPU.dll</code> y <code>HwInfo.dll</code>. Acceden en paralelo a los mismos sensores de GPU que NV-UV usa vía MAHM, lo que provoca lecturas de sensor en conflicto. MAHM solo devuelve entonces valores válidos de forma esporádica (el voltaje salta, muestra 0 o cifras irreales).</p>
     <div class="info">Gracias a Martin del foro de PCGH por este hallazgo.</div>
     <h3>Aplicar no hace nada / voltaje sin cambios</h3>
-    <p>Activa <code>Unlock Voltage Control</code> en AB. ¿Falta la curva stock? Haz clic en 🔄 Recalibrar.</p>
+    <p>Activa <code>Unlock Voltage Control</code> en AB. ¿Falta la curva stock? Haz clic en 🔄 Recalibrar. Si el hotspot de Blackwell está activo, el fix se elimina mediante el rollback controlado antes de comenzar la calibración real.</p>
     <h3>Un juego falla tras el UV</h3>
     <p>Prueba un preset más alto, o usa el escáner. Repetición de Juego baja la frecuencia automáticamente.</p>
   </section>

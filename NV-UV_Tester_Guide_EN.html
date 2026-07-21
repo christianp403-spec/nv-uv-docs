@@ -392,11 +392,14 @@
     <h3>🌡️ Refined hotspot display</h3>
     <p>The experimental Blackwell hotspot temperature is now also available in Mini View. Hotspot keeps one decimal place, while the regular GPU temperature is again shown in whole degrees. The setup border now reflects the actual activation state more reliably.</p>
 
+    <h3>🛡️ Hotspot recovery and protected recalibration</h3>
+    <p>Existing hotspot installations are migrated automatically to durable recovery storage under <code>%ProgramData%\NV-UV\BlackwellHotspot\</code>. Recalibrate detects an active hotspot fix, removes it through the controlled rollback and restarts NV-UV first. The actual calibration begins only after Recalibrate is clicked again; hotspot can then be installed for the newly created Afterburner profile.</p>
+
     <h3>🎮 Edit and delete user-added games</h3>
     <p>Manually added games can now be visibly edited and deleted. Name, process and base tier remain stored correctly when a tier assignment is reset. The add/edit dialog also handles Windows display scaling and limited vertical space more reliably.</p>
 
     <h3>🧾 Activity and Diagnostics</h3>
-    <p>The log area is now separated into a localized <strong>Activity</strong> view for clear user-facing events and a complete technical <strong>Diagnostics</strong> view. Export creates one ZIP containing the activity log, diagnostic log, optional previous diagnostic log and system information including the NVIDIA driver and autostart state.</p>
+    <p>The log area is now separated into a localized <strong>Activity</strong> view for clear user-facing events and a complete technical <strong>Diagnostics</strong> view. Export creates one ZIP containing current and previous activity logs, current and previous diagnostic logs, and system information including the NVIDIA driver, autostart state and hotspot lifecycle.</p>
 
     <h3>⏻ More reliable Windows autostart</h3>
     <p>NV-UV now validates the Scheduled Task target, arguments, enabled state, logon trigger, highest privileges and startup delay, and repairs stale configurations. While Afterburner starts, NV-UV also gives MAHM time to initialize instead of immediately presenting a transient startup state as a red error.</p>
@@ -526,7 +529,7 @@
 
     <div class="info">
       <strong>🔄 Recalibrate (Toolbar):</strong><br>
-      Full reset: backs up AB profiles automatically, deletes only GPU-specific profiles and NV-UV cache, restarts. Overlay settings, fan curves and other AB settings are preserved. <strong>NEW in v0.99:</strong> right-click the button to open the folder with the automatic AB profile backups.
+      Full reset: backs up AB profiles automatically, deletes only GPU-specific profiles and NV-UV cache, and restarts. Overlay settings, fan curves and other AB settings are preserved. <strong>With Blackwell hotspot active:</strong> the first click removes the hotspot fix through the controlled rollback and restarts NV-UV; only the second click starts the actual calibration. After successful calibration, hotspot can be installed for the new profile. Right-click the button to open the folder containing the automatic AB profile backups.
     </div>
   </section>
 
@@ -541,6 +544,14 @@
 
     <div class="warn"><strong>Experimental reading:</strong> The displayed value is not officially confirmed. It must not be used as the basis for warranty or RMA cases, or for changes and modifications to the graphics card. A hotspot temperature higher than the other temperature readings is not by itself an indication of a defect or reduced graphics card functionality.</div>
 
+    <h3>Durable recovery data</h3>
+    <p>The manifest, backups, transaction state and detected GPU/profile identities are stored under <code>%ProgramData%\NV-UV\BlackwellHotspot\</code>. Active installations created by older NV-UV versions are migrated automatically from <code>%LocalAppData%\NV-UV\hotspot\</code> on first start. This keeps the information required for a safe rollback even if the normal NV-UV user-data folder is deleted.</p>
+
+    <h3>Recalibrate and profile creation</h3>
+    <p>An active hotspot fix can interfere with MSI Afterburner hardware-profile recreation. Recalibrate therefore does not start immediately while hotspot is active: NV-UV first requires a controlled removal, restarts, and starts the actual calibration only after Recalibrate is clicked a second time. After calibration completes, NV-UV offers to install hotspot again for the new profile.</p>
+    <div class="info"><strong>GPU or VBIOS change:</strong> After a change, Afterburner may create a profile with a different subsystem identity. NV-UV records this identity and does not recreate a deleted old hardware profile from a hotspot backup.</div>
+    <div class="warn"><strong>Orphaned installation:</strong> If hotspot traces are detected but the manifest or original backups are missing, NV-UV cannot safely guess the previous Afterburner values. Recalibrate is blocked and a clean MSI Afterburner reinstall is recommended.</div>
+
     <h3>Disabling</h3>
     <p>When the feature is disabled, NV-UV performs a rollback and removes the plugin automatically.</p>
   </section>
@@ -552,7 +563,7 @@
     <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Close NV-UV</strong></div></div>
     <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Extract new ZIP</strong> (same or new folder)</div></div>
     <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Run NV-UV.exe</strong>, done!</div></div>
-    <div class="info">If something looks off after an update: click <strong>🔄 Recalibrate</strong> in the toolbar.</div>
+    <div class="info">If something looks wrong after an update, export a diagnostics ZIP first. You can then use <strong>🔄 Recalibrate</strong>; with Blackwell hotspot active, NV-UV removes the fix through the controlled rollback and starts calibration only after the restart.</div>
   </section>
 
   <!-- ═══ QUICKSTART ═══ -->
@@ -1158,9 +1169,10 @@
     <p>False positive. Self-contained .NET SingleFile EXEs are sometimes flagged. NV-UV is safe, you can add an exception.</p>
 
     <h3>Where are my settings stored?</h3>
-    <p><code>%LocalAppData%\NV-UV\</code> contains: UV profiles, slot names, Game Replay adjustments, scanner history, OCS data, stock curve, CCB cache, logs.</p>
+    <p><code>%LocalAppData%\NV-UV\</code> contains UV profiles, slot names, Game Replay adjustments, scanner history, OCS data, the stock curve, CCB cache and logs.</p>
+    <p>Durable recovery data for the experimental Blackwell hotspot fix is stored separately under <code>%ProgramData%\NV-UV\BlackwellHotspot\</code>. Do not delete this folder manually while hotspot is active.</p>
     <h3>How do I export log files?</h3>
-    <p>Via the <strong>Log Export</strong> button below the log panel. The log file is exported and can be sent directly to Christian.</p>
+    <p>Use the <strong>Log Export</strong> button below the log panel. NV-UV creates a diagnostics ZIP containing <code>activity.log</code>, <code>activity-previous.log</code>, <code>diagnostic.log</code>, <code>diagnostic-previous.log</code> and <code>system-info.txt</code>. The ZIP can be sent directly to Christian.</p>
 
     <h3>Help, my profiles are gone!</h3>
     <p>Always back up your profiles manually before experimenting. If profiles are lost: check the NV-UV folder at <code>%LocalAppData%\NV-UV\</code>, that's where saved data, OCS curves and scanner history are stored.</p>
@@ -1181,7 +1193,7 @@
     <p>In AB under <strong>Settings → Monitoring → Active hardware monitoring graphs</strong>, disable the plug-ins <code>GPU.dll</code> and <code>HwInfo.dll</code>. These access the same GPU sensors in parallel that NV-UV uses via MAHM, which causes conflicting sensor reads. MAHM then only returns valid values sporadically (voltage jumps, shows 0 or unrealistic numbers).</p>
     <div class="info">Thanks to Martin from the PCGH forum for this finding.</div>
     <h3>Apply does nothing / voltage unchanged</h3>
-    <p>Enable <code>Unlock Voltage Control</code> in AB. Missing stock curve? Click 🔄 Recalibrate.</p>
+    <p>Enable <code>Unlock Voltage Control</code> in AB. Missing stock curve? Click 🔄 Recalibrate. If Blackwell hotspot is active, the fix is removed through the controlled rollback before the actual calibration begins.</p>
     <h3>Game crashes after UV</h3>
     <p>Try a higher preset, or use the scanner. Game Replay lowers frequency automatically.</p>
   </section>
