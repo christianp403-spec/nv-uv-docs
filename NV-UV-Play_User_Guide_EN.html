@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NV⚡UV Play · User Guide · v0.1.9.2-alpha</title>
+<title>NV⚡UV Play · User Guide · v0.1.9.5-alpha</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
 
@@ -275,7 +275,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="bolt">⚡</span><span class="uv">UV</span><span class="play">Play</span></h1>
     <div class="subtitle">Simple game undervolting · User guide</div>
-    <div class="build">v0.1.9.2-alpha · Open Alpha · June 2026</div>
+    <div class="build">v0.1.9.5-alpha · Open Alpha · July 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -309,7 +309,7 @@
   <section id="what">
     <h2 class="green"><span class="icon">⚡</span>What is NV⚡UV Play?</h2>
     <p>NV⚡UV Play is a lightweight undervolting tool for NVIDIA GeForce GPUs. The idea: pick a tier, hit Start, play. The tool watches for your games, applies your chosen voltage/frequency lock when a game launches, and resets to stock when you quit.</p>
-    <p>Pre-tuned community tiers cover the common cases. A custom profile slot per tier lets you dial things in further if you want to go beyond the defaults.</p>
+    <p>Pre-tuned community tiers cover the common cases. A reusable Custom Profile Library lets you create named profiles, share them between games and edit them in one place.</p>
     <p>Play is the standalone sibling of <strong>NV-UV</strong>, the full-featured undervolting and stress-testing toolkit. Where NV-UV is the workbench, Play is the light switch. They share the same VF-curve math but Play has no scanner, no stress test, no MSI Afterburner dependency. It just talks directly to the NVIDIA driver through a native bridge.</p>
   </section>
 
@@ -391,7 +391,7 @@
       </tr>
     </table>
 
-    <p>Pick the tier per game in the Game Library, or set a global default that applies to everything not specifically assigned.</p>
+    <p>Pick a profile per game in the Game Library, or set a Global Override that applies to every running game except entries marked No Override.</p>
 
     <div class="note"><strong>Every silicon sample is different.</strong> The bundled tiers are community-validated starting points, not guaranteed-stable settings for your exact card. If Max crashes, drop to Performance. If Performance crashes, drop to Balanced. The Stabilizer (see below) automates this when it happens during a game.</div>
   </section>
@@ -623,11 +623,12 @@
   <!-- ═══ GAME LIBRARY ═══ -->
   <section id="game-library">
     <h2 class="cyan"><span class="icon">🎮</span>Game library</h2>
-    <p>Open the Game Library from the main window. Three things live here:</p>
+    <p>Open the Game Library from the main window. Its two tabs cover four things:</p>
     <ul>
-      <li><strong>Game list</strong>: every game Play knows about. Each row shows the bundled default tier and your override (if any).</li>
+      <li><strong>Games</strong>: every game Play knows about. Each row shows the bundled default tier and your override (if any).</li>
       <li><strong>Tier defaults editor</strong>: globally re-tune what Eco / Balanced / Performance / Max mean on your card. Affects all games that use the default.</li>
       <li><strong>Per-game overrides</strong>: per-game tier choice or custom profile.</li>
+      <li><strong>Stabilizer Adjustments</strong>: a separate list of every learned crash correction, with individual and full reset controls.</li>
     </ul>
 
     <h3>Adding a game manually</h3>
@@ -637,13 +638,14 @@
       <li><strong>Type the process name</strong>: for games that are running or that you remember from earlier</li>
     </ul>
     <p>Pick the initial tier from the RadioButtons. <strong>MFG</strong> is only shown on Blackwell GPUs — on Ada/Ampere/Turing you'll see Eco / Balanced / Performance / Max only.</p>
-    <p>To remove a game you added yourself, <strong>right-click its row and choose "Remove from Library"</strong>. Bundled database entries can't be removed this way (right-clicking only offers it for your own additions); reset their override instead.</p>
+    <p>To edit a game you added yourself, click the <strong>✎</strong> button on its row or right-click it and choose <strong>Edit Game...</strong>. You can correct the display name, executable and tier. A reusable Custom-profile assignment follows the game entry, and Play moves that game's Stabilizer history if the executable changes.</p>
+    <p>To remove a game you added yourself, click the red <strong>✕</strong> button on its row. You can also right-click the row and choose <strong>Remove from Library</strong>. Play asks for confirmation and clears the game assignment plus its per-game Stabilizer history. Reusable Custom profiles remain available for other games. Bundled database entries cannot be removed; reset their override instead.</p>
 
-    <h3>Per-game tier override</h3>
-    <p>Each row has a tier dropdown. Set it to Eco / Balanced / Performance / Max / Custom or "off". Default is unset (uses the bundled default if any, otherwise no lock).</p>
+    <h3>Per-game profile selection</h3>
+    <p>Each row has a profile dropdown. Choose a built-in tier, select any named profile from the Custom Profile Library, or use <strong>+ Create Custom Profile...</strong>. The gear button on a row edits the assigned Custom profile directly. Changes to a shared profile apply to every game using it, while Stabilizer learning remains separate per game.</p>
 
     <h3>Global override · one profile for everything</h3>
-    <p>In <strong>Edit Tiers &amp; Override</strong> you can set a global profile. When it's active, it applies to <strong>every</strong> running game — including games you gave their own tier. A global profile is the master switch: turn it on and everything runs on that tier, regardless of per-game settings.</p>
+    <p>In <strong>Edit Tiers &amp; Override</strong> you can set a built-in tier or any reusable Custom profile as the global profile. When active, it applies to <strong>every</strong> running game, including games with their own assignment. A global profile is the master switch; games marked No Override are excluded.</p>
 
     <h3>"No Override" · keep a game out of the global profile</h3>
     <p>Sometimes you want one game left alone while a global profile is active — a browser you added to the library, or a title that doesn't react well to undervolting. <strong>Right-click the row and tick "Ignore global profile (No Override)".</strong></p>
@@ -659,45 +661,49 @@
 
   <!-- ═══ CUSTOM PROFILES ═══ -->
   <section id="custom">
-    <h2 class="purple"><span class="icon">🛠</span>Custom profiles</h2>
-    <p>Each tier has one custom-profile slot. Use this if the bundled tier defaults don't quite fit your card or your needs.</p>
+    <h2 class="purple"><span class="icon">🛠</span>Custom Profile Library</h2>
+    <p>Custom profiles are reusable named configurations. Create one profile once, then assign it to one game, several games or the Global Override. The profile keeps a stable internal ID, so renaming it does not break assignments or Stabilizer history.</p>
 
-    <h3>Creating one</h3>
+    <h3>Creating and assigning a profile</h3>
     <ol>
-      <li>In the Game Library, pick the row for the game</li>
-      <li>Change its tier dropdown to <strong>Custom</strong></li>
-      <li>The Custom Tier Editor opens, pre-filled with your current tier's default values</li>
-      <li><strong>Give it a name</strong> — e.g. "KCD-stable", "MyAggressive", "EvenMore". The name is what surfaces throughout the UI</li>
-      <li>Adjust voltage / target MHz / power limit / VRAM offset as you want</li>
-      <li>Save</li>
+      <li>Open the Game Library.</li>
+      <li>Open a game's profile dropdown and choose <strong>+ Create Custom Profile...</strong>, or click <strong>Profiles...</strong> in the toolbar.</li>
+      <li>Give the profile a clear name, for example "900 mV Daily" or "Silent".</li>
+      <li>Adjust voltage, target MHz, power limit and VRAM offset.</li>
+      <li>Save. When created from a game row, the new profile is assigned to that game immediately.</li>
     </ol>
+    <p>Every saved profile appears in every game's dropdown and in the Global Override dropdown. This makes a proven profile available without recreating the same values per game.</p>
 
-    <h3>Where the name shows up</h3>
-    <p>Once saved, the profile name appears so you always know which configuration is active:</p>
+    <h3>Editing and managing profiles</h3>
     <ul>
-      <li><strong>Tier dropdown</strong> · <code>✎ KCD-stable</code> instead of the generic <code>✎ Custom...</code></li>
-      <li><strong>Override label</strong> · <code>Override: Custom "KCD-stable" (default Performance)</code></li>
-      <li><strong>Stabilizer line</strong> (if there's crash history) · <code>🎮 KCD-stable · 3050 MHz @ 950 mV · Crash #1</code></li>
-      <li><strong>Global override dropdown</strong> (in Edit Tiers &amp; Override) · <code>Custom · KCD-stable</code> instead of <code>Custom · your own values</code></li>
+      <li><strong>Row gear button</strong>: edits the Custom profile currently assigned to that game.</li>
+      <li><strong>Profiles...</strong>: opens the central library where you can create, edit, copy or delete profiles.</li>
+      <li><strong>Edit</strong>: keeps the same stable ID. Name and values update everywhere the profile is assigned.</li>
+      <li><strong>Copy</strong>: creates an independent profile for a slightly different setup.</li>
+      <li><strong>Delete</strong>: warns about affected games and the Global Override, clears those assignments and removes the matching per-game Stabilizer buckets.</li>
     </ul>
-    <p>Hovering the dropdown shows the same V/F/PL summary you get for built-in tiers: <code>KCD-stable · 950 mV / 3100 MHz · PL 100%</code>. If a VRAM offset is set, it appears too.</p>
+    <div class="tip"><strong>Shared base profile, separate learning.</strong> If Cyberpunk 2077 and Alan Wake 2 both use "900 mV Daily", each game still keeps its own Stabilizer adjustment. A crash in one game never downsteps the other.</div>
 
     <h3>What you can adjust</h3>
     <table>
       <tr><th>Field</th><th>Range</th><th>Notes</th></tr>
-      <tr><td><strong>Voltage</strong></td><td>700 – 1100 mV</td><td>The lock point. Lower = more efficient, harder to keep target clock</td></tr>
-      <tr><td><strong>Target frequency</strong></td><td>500 – 3500 MHz</td><td>What you want the GPU to run at under load</td></tr>
-      <tr><td><strong>Power limit</strong></td><td>60 – 100 %</td><td>Hard cap on watts. Available only with Expert Overrides on</td></tr>
-      <tr><td><strong>VRAM offset</strong></td><td>0 – 3000 MHz</td><td>Memory clock above stock. Overclocking, Expert Overrides only</td></tr>
+      <tr><td><strong>Voltage</strong></td><td>700 - 1100 mV</td><td>The lock point. Lower is more efficient but harder to keep stable at a given clock.</td></tr>
+      <tr><td><strong>Target frequency</strong></td><td>1800 - 3300 MHz</td><td>The requested GPU clock under load.</td></tr>
+      <tr><td><strong>Power limit</strong></td><td>GPU-reported range</td><td>Hard cap on watts. The editor uses the current card's NVML limits, with 60 - 100% as fallback.</td></tr>
+      <tr><td><strong>VRAM offset</strong></td><td>-500 - 3000 MHz</td><td>Memory clock offset from stock. Positive values overclock; negative values underclock.</td></tr>
     </table>
-    <p>Per-tier customs make sense if you want, say, Performance with 25 MHz less clock to stay stable, while still having the regular Balanced for browsing and lighter games.</p>
+
+    <h3>Stabilizer behavior after profile edits</h3>
+    <p>Stabilizer data is stored by <strong>game + profile ID</strong>. Renaming a profile keeps the history. If you later make the base profile more conservative, a stored adjustment will never raise its frequency or lower its voltage above the newly edited base values.</p>
 
     <h3>Export and Import</h3>
-    <p>The Game Library has <strong>Export</strong> and <strong>Import</strong> buttons in the toolbar. Use them to back up your custom profiles before a reinstall, or to share a working config with a friend.</p>
+    <p>The Game Library has <strong>Export</strong> and <strong>Import</strong> buttons for the reusable profile library.</p>
     <ul>
-      <li><strong>Export</strong> writes a JSON file with all your authored custom profiles (the per-game tuning). Tier overrides for built-in tiers are <em>not</em> included — they're reproducible from a clean install. Default filename includes today's date.</li>
-      <li><strong>Import</strong> reads a JSON file produced by Export. If any imported profiles would replace existing local ones, a dialog asks: overwrite, keep local (skip duplicates), or cancel. After import, the Game Library refreshes automatically.</li>
+      <li><strong>Export</strong> writes the profile definitions and stable IDs to a JSON bundle. Game assignments and Stabilizer history are not included.</li>
+      <li><strong>Import</strong> adds profiles to the library. Matching IDs can be updated or skipped; name collisions are renamed automatically.</li>
+      <li>Older exe-keyed Play profile exports are accepted and imported as reusable, unassigned profiles with new stable IDs.</li>
     </ul>
+    <div class="note"><strong>Automatic migration.</strong> On first start, Play converts existing per-game Custom profiles and the old Global Custom slot into separate reusable library profiles. Active assignments and per-game Stabilizer history are carried over. Profiles that were saved but no longer selected are preserved in the library without reactivating them.</div>
   </section>
 
   <!-- ═══ ADVANCED OPTIONS ═══ -->
@@ -787,8 +793,9 @@
         <em>Per-tier semantics:</em> the Stabilizer keeps separate crash history per (game, tier) pair. If you crashed on Custom "Aggressive" and switch the override to Performance, the orange line disappears (Performance has no crash history). Switching back to Custom makes it reappear. A crash under a global profile and a crash under a per-game override of the <em>same</em> tier now share one history, so a tier you've already stabilized stays stabilized whether it ran globally or per-game.</li>
     </ul>
 
-    <h3>Resetting an adjustment manually</h3>
-    <p>If you want to retry the original profile (e.g. after a driver update fixed the instability), right-click the game row in the Game Library and choose <strong>Reset Stabilizer adjustment</strong>. The orange line disappears and the next launch uses the unmodified tier values for the currently displayed tier. Crash history for other tiers on the same game remains intact — if you crashed on Custom and switched to Performance, then reset Performance, your Custom history is still there if you switch back.</p>
+    <h3>Reviewing and resetting adjustments</h3>
+    <p>Open the Game Library and switch to the <strong>Stabilizer Adjustments</strong> tab to see every learned correction separately. Each row shows the game and process, tier or Custom profile, original values, adjusted values, crash count and last crash time.</p>
+    <p>Use <strong>Reset</strong> on one row to clear only that game/profile correction, or <strong>Reset all</strong> to clear the full adjustment history. You can still right-click a game on the Games tab and choose <strong>Reset Stabilizer adjustment</strong>; that shortcut clears the adjustment for the tier currently shown on that row. Other tier histories for the same game remain intact.</p>
 
     <h3>Strategies</h3>
     <table>
@@ -806,7 +813,7 @@
       <li>Per-game persistence: Cyberpunk's bumpy ride does not penalize Doom Eternal</li>
     </ul>
 
-    <p>Configure via right-click on the Stabilizer toggle in the main window: Strategy, step sizes, floors. Default behaviour works well for most users.</p>
+    <p>Configure via right-click on the Stabilizer toggle in the main window: Strategy, step sizes, floors. Default behaviour works well for most users. The frequency step now goes down to 15 MHz (hardware-native V/F granularity).</p>
   </section>
 
   <!-- ═══ SMART HZ ═══ -->
@@ -853,7 +860,7 @@
     <p>The bundled list of games would go stale within weeks without updates. Play keeps the database fresh via this GitHub repo: <a href="https://github.com/christianp403-spec/nv-uv-play" style="color: var(--green);">github.com/christianp403-spec/nv-uv-play</a></p>
     <p>On startup Play checks if the repo has a newer <code>GameDatabase.json</code> and pulls it down if so. New games and refined defaults arrive automatically, no Play update needed.</p>
 
-    <div class="note"><strong>Coming soon:</strong> the auto-update infrastructure is wired up and live in this build, but the remote starter database is still being populated. Until then, "Check now" will return "no newer version available". The 631 bundled games carry you through until the public DB gets its first refresh.</div>
+    <div class="note"><strong>Live:</strong> the public database is populated and served from the repo. The startup check pulls new games, refined tier defaults and fixes automatically; "Check now" forces an immediate refresh.</div>
 
     <h3>Controlling it</h3>
     <p>Open the Game Library → header strip on top:</p>
@@ -870,7 +877,10 @@
     </ul>
     <p>You can also add games locally inside Play via Add Game → Browse for .exe. Your local additions live in <code>%LocalAppData%\NV-UV-Play\game_overrides.json</code> and survive every database update.</p>
 
-    <div class="tip"><strong>Privacy.</strong> The update check is the only network call Play ever makes. No telemetry, no analytics, no usage statistics. The HTTP request goes to GitHub's raw-content CDN and that's it.</div>
+    <h3>App updates</h3>
+    <p>Play itself also tells you when a new release is out: once per day it downloads a small version file and, if a newer version is published, shows a green 🔔 notice in the footer of the main window. Clicking it opens the release page in your browser. That is all it does: Play never downloads or installs anything by itself, there is no self-update.</p>
+
+    <div class="tip"><strong>Privacy.</strong> The library update and the once-daily version check are the only network calls Play ever makes. Both are read-only downloads from GitHub's raw-content CDN. No telemetry, no analytics, no usage statistics.</div>
   </section>
 
   <!-- ═══ TROUBLESHOOTING ═══ -->
@@ -890,13 +900,13 @@
     <p>NVAPI quantization. The driver snaps frequencies to its internal grid. Affects every undervolt tool, not just Play. Within normal noise for boost-algorithm behaviour.</p>
 
     <h3>Game crashes when Play applies the lock</h3>
-    <p>The tier is too aggressive for your silicon. Stabilizer will auto-adjust on the next launch and you'll see two confirmations: a toast notification 20 seconds after the crash, and an orange line under the game in the Game Library showing the new adjusted values. If you want to skip the auto-adjust dance, drop to a lower tier manually in the Game Library. To clear an existing adjustment (e.g. after a driver update fixed the stability), right-click the game row and pick "Reset Stabilizer adjustment".</p>
+    <p>The tier is too aggressive for your silicon. Stabilizer will auto-adjust on the next launch and you'll see two confirmations: a toast notification 20 seconds after the crash, and an orange line under the game in the Game Library showing the new adjusted values. If you want to skip the auto-adjust dance, drop to a lower tier manually in the Game Library. To inspect or clear existing corrections, open Game Library &gt; <strong>Stabilizer Adjustments</strong>. The Games-tab right-click shortcut still resets the currently displayed tier.</p>
 
     <h3>Play doesn't apply when I launch a game</h3>
     <p>Things to check:</p>
     <ul>
       <li>Is the <strong>Activate</strong> toggle on in the main window?</li>
-      <li>Is the game in the Game Library and does it have a tier assigned? (Or is there a global default?)</li>
+      <li>Is the game in the Game Library and does it have a profile assigned, a curated database tier, or an active Global Override?</li>
       <li>Does the game have <strong>"Ignore global profile (No Override)"</strong> ticked, with no tier of its own? Then it's deliberately left at stock — that's expected. Untick it or give it a tier if you want a lock.</li>
       <li>Is the game's process name the one Play expects? Some games launch via a launcher process first, then spawn a different process for the actual game. Use the Alias-Switch feature: Play follows multi-process games like UE5 titles automatically.</li>
     </ul>
@@ -907,9 +917,13 @@
     <h3>Play uses too much memory</h3>
     <p>Play sits at ~50 MB resident memory at idle, ~80 MB while a game is running. If you see more, that's likely the WPF renderer; restart Play and it should return to normal.</p>
 
+    <h3>Native bridge verification</h3>
+    <p>Before Play enables voltage and frequency writes, it verifies that the bundled native bridge is the expected x64 build and exposes the complete ABI contract. If the bridge is missing, stale or replaced, low-level writes remain disabled and the reason is recorded in the log.</p>
+
     <h3>Logs</h3>
     <p>Active log: <code>%LocalAppData%\NV-UV-Play\logs\current.log</code><br>
     Previous session: <code>%LocalAppData%\NV-UV-Play\logs\previous.log</code></p>
+    <p>Normal release logs include requested profile values, apply results and useful error codes. Low-level curve indices, batch construction details and native implementation strings are omitted unless an internal diagnostics session was explicitly enabled for support testing.</p>
     <p>For bug reports, use the built-in <strong>Settings → Export Log</strong> button. It bundles both logs plus a <code>system_info.txt</code> (GPU model, BIOS, driver version, OS version) into a single ZIP ready to attach to a GitHub Issue.</p>
   </section>
 
@@ -978,7 +992,7 @@ SOFTWARE.</pre>
 
   <div class="footer">
     <p><a href="https://github.com/christianp403-spec/nv-uv-play">github.com/christianp403-spec/nv-uv-play</a></p>
-    <p style="margin-top: 8px;">NV⚡UV Play · v0.1.9.2-alpha · Open Alpha · June 2026</p>
+    <p style="margin-top: 8px;">NV⚡UV Play · v0.1.9.5-alpha · Open Alpha · July 2026</p>
     <p style="margin-top: 4px;">© 2026 Christian Papaioannou. NV⚡UV and the lightning bolt are trademarks of the author.</p>
   </div>
 
