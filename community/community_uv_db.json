@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-21",
+  "updated": "2026-07-23",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -416,6 +416,23 @@
               },
               "date_found": "2026-07-13",
               "notes": "fully stable for 9month. can NOT go higher Mhz at 975mv. VRAM OC over 2000Mhz --> not stable and doesnt make sence in perf perspective"
+            },
+            {
+              "preset_id": "bw-5090-3b28b31c01d7",
+              "board": "Asus TUF Gaming RTX 5090",
+              "freq_mhz": 2902,
+              "voltage_mv": 910,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-23",
+              "notes": ""
             }
           ]
         },
@@ -1383,6 +1400,23 @@
               },
               "date_found": "2026-07-17",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-b5a8f82c2ed9",
+              "board": null,
+              "freq_mhz": 2115,
+              "voltage_mv": 800,
+              "power_limit_pct": 70,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-23",
+              "notes": "When you're playing runescape tier games for less heat & power consumption"
             }
           ]
         },
