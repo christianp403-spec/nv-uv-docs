@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-25",
+  "updated": "2026-07-28",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -795,6 +795,23 @@
               },
               "date_found": "2026-07-21",
               "notes": "880-885 mV/2767 Mhz solid stable"
+            },
+            {
+              "preset_id": "bw-5080-e82458dab83d",
+              "board": "Palit Gaming Pro",
+              "freq_mhz": 3127,
+              "voltage_mv": 990,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-27",
+              "notes": "Максимальная производительность со стабильностью -->\r\nMaximum productivity and stability."
             }
           ]
         },
