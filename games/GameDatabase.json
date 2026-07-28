@@ -1,8 +1,8 @@
 {
-  "version": "2.13",
+  "version": "2.14",
   "source": "nvidia-drs-profiles + dlss-all-versions",
-  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup + Jul 2026: removed generic BugSplat crash-reporter alias (bssndrpt64.exe) from Company of Heroes 3 (false UV-Pilot detection after crashes)",
-  "generated": "2026-07-07",
+  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup + Jul 2026: removed generic BugSplat crash-reporter alias (bssndrpt64.exe) from Company of Heroes 3 (false UV-Pilot detection after crashes) + Game Ready additions Jul 2026: Halo: Campaign Evolved, Gears of War: E-Day, Mistfall Hunter + Freelancer (HD) and The Witcher (2007)",
+  "generated": "2026-07-28",
   "games": [
     {
       "name": "007 First Light",
@@ -5473,6 +5473,70 @@
       "confidence": "community",
       "source": "steam-library",
       "note": "Steam: 1666Amsterdam Demo/Amsterdam/Binaries/Win64"
+    },
+    {
+      "name": "Halo: Campaign Evolved",
+      "process": "halocampaignevolved.exe",
+      "tier": "Performance",
+      "scaling": "gpu-heavy",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "DLSS Super Resolution + Frame Generation; RTX 3080 Ti recommended, conservative Performance default",
+      "aliases": [
+        "halocampaignevolved-win64-test.exe",
+        "halocampaignevolved-wingdk-test.exe"
+      ]
+    },
+    {
+      "name": "Gears of War: E-Day",
+      "process": "goweday.exe",
+      "tier": "Performance",
+      "scaling": "ue5",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Unreal Engine 5 with Lumen, Nanite and ray-traced shadows; Performance default",
+      "aliases": [
+        "goweday-steam.exe",
+        "fairlightconcept.exe",
+        "fairlightconceptsteam.exe",
+        "fairlightconceptsteam-win64-shipping.exe",
+        "fairlightconceptsteam-win64-shipping_protected.exe",
+        "fairlightconcept-wingdk-shipping.exe",
+        "fairlightconcept-wingdk-shipping_protected.exe",
+        "fairlightconceptsteam-win64-test.exe",
+        "fairlightconcept-wingdk-test.exe"
+      ]
+    },
+    {
+      "name": "Mistfall Hunter",
+      "process": "mistfallhunter.exe",
+      "tier": "Balanced",
+      "scaling": "gpu-heavy",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "DLSS, Multi Frame Generation and ray-traced reflections/shadows; RTX 2070 recommended",
+      "aliases": [
+        "mistfallhunter-win64-shipping.exe",
+        "mistfallhunter-wingdk-shipping.exe"
+      ]
+    },
+    {
+      "name": "Freelancer (HD)",
+      "process": "lancer.exe",
+      "tier": "Eco",
+      "scaling": "light",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Freelancer HD Edition; classic Direct3D workload"
+    },
+    {
+      "name": "The Witcher (2007)",
+      "process": "witcher.exe",
+      "tier": "Eco",
+      "scaling": "light",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Original 2007 game; djinni!.exe intentionally excluded because it is the editor"
     }
   ]
 }
