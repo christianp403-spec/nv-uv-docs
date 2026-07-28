@@ -1434,6 +1434,23 @@
               },
               "date_found": "2026-07-23",
               "notes": "When you're playing runescape tier games for less heat & power consumption"
+            },
+            {
+              "preset_id": "bw-5070-ee2439eaa084",
+              "board": "PNY",
+              "freq_mhz": 3247,
+              "voltage_mv": 1025,
+              "power_limit_pct": 110,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-28",
+              "notes": ""
             }
           ]
         },
