@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-28",
+  "updated": "2026-07-29",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -432,6 +432,23 @@
                 "url": ""
               },
               "date_found": "2026-07-23",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5090-2ae1f4aeb01c",
+              "board": null,
+              "freq_mhz": 2797,
+              "voltage_mv": 915,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-07-29",
               "notes": ""
             }
           ]
