@@ -1,0 +1,5 @@
+LIBRARY "BlackwellHotspot"
+EXPORTS
+    GetSourcesNum
+    GetSourceDesc
+    GetSourceData

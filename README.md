@@ -19,3 +19,14 @@ The HTML files in this repo are the rendered tester guides. To update:
 3. Hard-reload in your browser (Ctrl+F5) to bypass cache
 
 The `.nojekyll` file disables GitHub's Jekyll build — files are served as plain HTML.
+
+## Experimental Blackwell hotspot plug-in
+
+The repository also hosts a small, read-only MSI Afterburner monitoring plug-in
+that exposes GPU hotspot temperature and hotspot delta on supported NVIDIA
+Blackwell GPUs.
+
+[Download, installation instructions and source code](blackwell-hotspot/)
+
+The current beta has been tested on an RTX 5090. It does not expose GDDR7
+memory temperatures.
