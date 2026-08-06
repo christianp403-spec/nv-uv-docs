@@ -1310,6 +1310,23 @@
               },
               "date_found": "2026-07-30",
               "notes": "/w ryzen 7 7700"
+            },
+            {
+              "preset_id": "bw-5070-ti-5570c7babba5",
+              "board": null,
+              "freq_mhz": 3007,
+              "voltage_mv": 950,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-06",
+              "notes": ""
             }
           ]
         },
