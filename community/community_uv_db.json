@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-08-05",
+  "updated": "2026-08-06",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -880,6 +880,23 @@
               },
               "date_found": "2026-08-04",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-a6a895440024",
+              "board": "Ventus flashed with Palit gamerock",
+              "freq_mhz": 2917,
+              "voltage_mv": 915,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 2200,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-05",
+              "notes": "Validated at 3017 MHz, crashed in game x3 (30 MHz steps) down to 2917 where it's now stable."
             }
           ]
         },
