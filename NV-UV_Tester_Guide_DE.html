@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
@@ -331,7 +331,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="sep">—</span><span class="uv">UV</span></h1>
     <div class="subtitle">GPU Undervolt · User Guide</div>
-    <div class="build">Build 22 · Cantor · Open Alpha · Juli 2026</div>
+    <div class="build">Build 22 · Cantor · Open Alpha · August 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -365,7 +365,7 @@
       <tr><td>📊 <strong>4 Preset-Stufen</strong></td><td>Eco · Balanced · Performance · Max, Community-validierte Werte pro GPU</td></tr>
       <tr><td>🔍 <strong>Stock Curve Discovery</strong></td><td>Liest automatisch die echte VF-Kurve deiner spezifischen GPU aus AB</td></tr>
       <tr><td>🔬 <strong>OCS → UV</strong></td><td>AB OC Scanner Ergebnis importieren, chipspezifische UV-Kurve bauen</td></tr>
-      <tr><td>🎮 <strong>Game Replay</strong></td><td>Automatischer Step-Down bei Crash, Lernschleife pro Spiel und eigener Replay-Adjustments-Übersicht</td></tr>
+      <tr><td>🎮 <strong>Game Replay</strong></td><td>Automatische Absenkung bei einem Absturz, Lernschleife pro Spiel und eigene Übersicht der Replay-Anpassungen</td></tr>
       <tr><td>🌡️ <strong>Blackwell Hotspot</strong> <span style="color:var(--gold);">NEU in v0.99.2</span></td><td>Experimentelle Hotspot-Temperatur für unterstützte RTX-50-GPUs mit automatischer MSI-Afterburner-Plugin-Einrichtung</td></tr>
       <tr><td>✈️ <strong>UV-Pilot</strong></td><td>Erkennt Spiele automatisch, wechselt zum optimalen Preset</td></tr>
       <tr><td>⚡ <strong>UV⚡Try</strong> <span style="color:var(--gold);">NEU</span></td><td>Community-UV-Werte für deine Karte durchstöbern und auf einen Slot anwenden</td></tr>
@@ -383,6 +383,41 @@
       <tr><td>🎨 <strong>5 Skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity + Summer26. <strong>Verbessert in v0.99.2:</strong> helleres Lime für bessere Lesbarkeit der V/F-Kurve im Summer26-Skin</td></tr>
       <tr><td>⏻ <strong>System Tray und Autostart</strong></td><td>Läuft im Hintergrund. Der Windows-Autostart verwendet einen geprüften Scheduled Task und startet NV-UV minimiert.</td></tr>
     </table>
+  </section>
+
+  <!-- ═══ NEU IN v0.99.4 ═══ -->
+  <section>
+    <h2 class="orange"><span class="icon">🆕</span>Neu in v0.99.4</h2>
+
+    <h3>🧙 MSI-Afterburner-Einrichtungsassistent</h3>
+    <p>Die Zeiten, in denen MSI Afterburner vollständig von Hand für NV-UV vorbereitet werden musste, sollten damit vorbei sein. Der neue Assistent findet Afterburner und seine Konfiguration auch bei benutzerdefinierten Installationspfaden, prüft die Seiten <em>Allgemein</em> und <em>Überwachung</em> zunächst nur lesend und zeigt exakt, welche Punkte fehlen. Unterstützt werden die real validierten Builds 4.6.6.16757, 4.6.7 Beta 2 (16935), Beta 3 (17352) und Beta 4 (17439), lokalisierte Sensornamen sowie iGPU-/Multi-GPU-Systeme.</p>
+    <p><strong>Automatisch einrichten</strong> ändert ausschließlich die zuvor angezeigte Liste, sichert beide Afterburner-Konfigurationen, verwendet den echten Übernehmen-Button und prüft anschließend Oberfläche, GPU-Zuordnung und Live-Telemetrie erneut. Wird Afterburner aktualisiert oder zurückgesetzt, erkennt NV-UV die fehlenden Einstellungen und bietet eine kontrollierte Reparatur an.</p>
+
+    <h3>🌡️ Nativer GPUProbe-Hotspot mit Afterburner Beta 4</h3>
+    <p>Mit MSI Afterburner 4.6.7 Beta 4 Build 17439 kann NV-UV erstmals Afterburners nativen GPUProbe-Pfad verwenden. NV-UV aktiviert die registrierten GPU- und VRAM-Quellen, startet Afterburner kontrolliert neu und akzeptiert den Sensor erst nach fünf plausiblen Live-Messungen. Ein zuvor von NV-UV verwaltetes Legacy-Plugin wird erst nach einem erfolgreichen Vorabtest entfernt; schlägt die Prüfung fehl, stellt NV-UV den vorherigen Zustand automatisch wieder her.</p>
+    <div class="info"><strong>Kompatibilität:</strong> Beta 2 und Beta 3 verwenden weiterhin den bewährten NV-UV-Legacy-Hotspot-Pfad. Beta 4 verwendet bevorzugt den nativen GPUProbe-Pfad. Deaktivieren entfernt ausschließlich von NV-UV verwaltete Hotspot-Änderungen.</div>
+
+    <h3>📊 Erweiterte und aufklappbare Telemetrie</h3>
+    <p>Zusammen mit Beta 4 wurde die Telemetrie deutlich erweitert. Die kompakte Ansicht zeigt die wichtigsten Werte auf einen Blick; zusätzliche Details lassen sich bei Bedarf aufklappen. Dazu gehören GPU- und VRAM-Takt, Hotspot und Temperaturdifferenz, der heißeste verfügbare VRAM-Kanal, die einzelnen VRAM-ICs beziehungsweise Module samt Temperaturspreizung sowie mehrere Lüfterkanäle mit Drehzahlwerten.</p>
+
+    <h3>🎯 Kurvenpunkt → Quick-Lock</h3>
+    <p>Ein Klick auf einen Punkt der V/F-Kurve übernimmt dessen Spannung und Takt direkt in Quick-Lock. Modus, Spannungsregler, Referenzwert, Ziel und abgeleiteter Offset werden dabei gemeinsam aktualisiert. Die Auswahl allein schreibt noch nichts auf die GPU; erst <strong>UV anwenden</strong> übernimmt die Änderung.</p>
+
+    <h3>🧭 GPU-agnostische Zuordnung und iGPU-Wechsel</h3>
+    <p>NV-UV bindet die Zielkarte nicht mehr starr an „GPU1“ oder „GPU2“. Entscheidend ist die eindeutig erkannte NVIDIA-Blackwell-GPU — sie darf in Afterburner ebenso als GPU3, GPU4 oder höher erscheinen. Wird eine Intel-/AMD-iGPU aktiviert oder deaktiviert und verschiebt dadurch die Nummerierung, kann der Assistent Afterburners primäre GPU und die passende Spannungsquelle kontrolliert auf die richtige Karte umstellen.</p>
+
+    <h3>🛡️ GPU-, VBIOS- und Crossflash-Schutz</h3>
+    <p>Hotspot-Zustände sind an GPU, SUBSYS, VBIOS und Afterburner-Build gebunden. Ein GPU- oder VBIOS-Wechsel pausiert Presets, Slots, Game Library, UV-Pilot, Replay und automatische Profilstarts, bis die richtige Identität wieder aktiv oder kontrolliert neu kalibriert ist. Reale RTX-5090-Dual-BIOS-/Crossflash-Roundtrips, der Wechsel auf eine RTX 5070 Ti und unterschiedliche iGPU-Zustände wurden geprüft.</p>
+
+    <h3>🔁 Replay-Historie und Hard-Crash-Recovery</h3>
+    <p>Replay-Anpassungen zeigt jetzt auch Korrekturen ohne aktiven UV-Pilot oder erkanntes Spiel. Manuelle und unbekannte Fälle bleiben reine Historie und werden niemals blind wiederverwendet. Nach einem Hard Crash bleibt genau ein Downstep ausstehend; weitere Korrekturen sind gesperrt, bis der Wert nach einem Neustart erfolgreich geschrieben wurde.</p>
+
+    <h3>🎮 Game Pass und Microsoft Store</h3>
+    <p>Ein laufender Spielprozess kann ohne Zugriff auf den geschützten Installationsordner übernommen werden. Die Liste bevorzugt den Prozess mit sichtbarem Spielfenster. Sobald UV-Pilot ihn erkennt, kann auch Smart Hz vom Desktop- in den Gaming-Modus wechseln. Gemeinsam genutzte Hosts und dauerhaft laufende Xbox-/Gaming-Dienste werden zentral abgewiesen.</p>
+
+    <h3>🔥 Afterburners neue V/F Hit Map</h3>
+    <p>Ein Beta-4-Feature, das ich persönlich besonders gelungen finde, ist MSI Afterburners neue <strong>V/F Hit Map</strong> von Unwinder. Sie zeigt im Kurveneditor, welche Bereiche der V/F-Kurve die GPU tatsächlich verwendet hat und wie häufig die einzelnen Punkte getroffen wurden. Wer seine GPU-Kurve gerne fein abstimmt, sollte das unbedingt selbst ausprobieren: Kurveneditor öffnen und <strong>M</strong> drücken. Allein dieses Feature ist bereits ein sehr guter Grund, Beta 4 anzuschauen.</p>
+    <p>Ein großes Dankeschön an Alexey „Unwinder“ Nicolaychuk für GPUProbe, die neue Hit Map und seine kontinuierliche Arbeit an MSI Afterburner. <a href="https://forums.guru3d.com/threads/msi-afterburner-v4-6-7-beta-1-is-approaching.458132/post-6453140" target="_blank" rel="noopener">Beta 4 und vollständige Hinweise im Guru3D-Forum</a>.</p>
   </section>
 
   <!-- ═══ NEU IN v0.99.3 ═══ -->
@@ -418,7 +453,7 @@
     <h3>🎮 Breiterer Spielebrowser</h3>
     <p>Der Spielebrowser bietet mehr Platz für Suchfeld, Spieleliste und Zusatzinformationen. Die Standardbreite wurde von 920 auf 1040 Pixel und die Mindestbreite von 820 auf 940 Pixel erhöht. Die Fensterhöhe bleibt unverändert.</p>
 
-    <h3>🔁 Replay Adjustments</h3>
+    <h3>🔁 Replay-Anpassungen</h3>
     <p>Der Spielebrowser enthält jetzt einen eigenen Reiter für alle Werte, die Game Replay nach erkannten Spiel- oder Treiberabstürzen automatisch angepasst hat. Einzelne Einträge oder die komplette Historie können direkt zurückgesetzt werden.</p>
 
     <h3>🌡️ Experimentelle Blackwell-Hotspot-Temperatur</h3>
@@ -432,7 +467,7 @@
       <tr><th>Was</th><th>Details</th></tr>
       <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, oder 5060 Ti / 5060 (experimentell)<br>Ada-Karten (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) ebenfalls unterstützt<br>RTX 4060 Ti / 4060 (experimentell)<br>RTX 30-Serie (Ampere) <span style="color:var(--gold);">NEU in v0.98</span></td></tr>
       <tr><td><strong>Treiber</strong></td><td>Aktueller NVIDIA-Treiber</td></tr>
-      <tr><td><strong>MSI Afterburner</strong></td><td>Version 4.6.6+ mit RTSS</td></tr>
+      <tr><td><strong>MSI Afterburner</strong></td><td>Mit RTSS. Die automatische Einrichtung ist für die exakten Builds 4.6.6.16757, 4.6.7 Beta 2 (16935) und Beta 3 (17352) live validiert. Andere Versionen oder abweichende SHA-256-Hashes werden sicher abgewiesen.</td></tr>
       <tr><td><strong>Windows</strong></td><td>Windows 11 (64-bit)</td></tr>
     </table>
     <div class="warn">NV-UV benötigt MSI Afterburner im Hintergrund. Ohne AB kann NV-UV keine Spannungen ändern!</div>
@@ -456,6 +491,20 @@
       richtig und der Scanner liefert falsche Ergebnisse. Die Schritte 1 und 2 unten
       sind <strong>Pflicht</strong>, kein Optional.
     </div>
+    <div class="info">
+      <strong>Neu in v0.99.4:</strong> Ein Klick auf <strong>MSI Afterburner Setup</strong>
+      prüft General und Monitoring zuerst live und nur lesend in einem isolierten Worker.
+      Der erste sichtbare Assistent enthält dadurch sofort die verbindliche vollständige Liste.
+      Für eine manuelle Anpassung kann der Nutzer dort gezielt <strong>Allgemein öffnen</strong>
+      oder <strong>Überwachung öffnen</strong> wählen; NV-UV bleibt dabei aktiv.
+      <strong>Automatisch einrichten</strong> bestätigt genau die sichtbare Liste. Danach erstellt
+      der erhöhte Controller eine Sicherung und startet einen isolierten UI-Worker, der ausschließlich
+      die bestätigten Optionen direkt in der validierten Afterburner-Oberfläche setzt und sie über
+      den echten <strong>Übernehmen</strong>-Button speichert.
+      Erst anschließend werden Afterburner und NV-UV neu gestartet. Die Abschlussprüfung liest
+      General und Monitoring erneut live und kontrolliert zusätzlich MAHM. Eine abweichende
+      primäre GPU muss aus Sicherheitsgründen weiterhin manuell gewählt werden.
+    </div>
 
     <div class="step">
       <div class="step-num">1</div>
@@ -469,7 +518,8 @@
         ✓ <code>Enable low-level hardware access interface</code> → <strong>user mode</strong><br>
         ✓ <code>Restore settings after suspended mode</code><br>
         ✓ <strong><code>Unlock voltage control</code> → standard MSI</strong> &nbsp;⬅ kritisch<br>
-        ✓ <strong><code>Unlock voltage monitoring</code></strong> &nbsp;⬅ kritisch<br><br>
+        ✓ <strong><code>Unlock voltage monitoring</code></strong> &nbsp;⬅ kritisch<br>
+        ☐ <strong><code>Force constant voltage</code> muss deaktiviert sein</strong><br><br>
         Auf <strong>OK</strong> klicken (nicht Abbrechen!) und <strong>Afterburner neustarten</strong>.
       </div>
     </div>
@@ -494,8 +544,8 @@
       <strong>Hinweis zu Reference-Design RTX 5090:</strong> Bei einigen
       Reference-Design-Karten setzt Afterburner die <code>Unlock</code>-Haken
       gelegentlich von selbst zurück. Falls die Spannungsanzeige plötzlich auf 0 mV
-      fällt, einfach Schritt 1+2 nochmal durchgehen. Wir arbeiten an einer
-      automatischen Lösung dafür.
+      fällt, prüft der neue v0.99.4-Assistent die sicher erkannten Unlock- und
+      Monitoring-Werte und bietet ihre automatische Reparatur an.
     </div>
 
     <div class="warn">
@@ -556,6 +606,9 @@
     <h3>Dauerhafte Recovery-Daten</h3>
     <p>Manifest, Backups, Transaktionsstatus und erkannte GPU-/Profilidentitäten werden unter <code>%ProgramData%\NV-UV\BlackwellHotspot\</code> gespeichert. Bereits aktive Installationen aus älteren NV-UV-Versionen werden beim ersten Start automatisch aus <code>%LocalAppData%\NV-UV\hotspot\</code> migriert. Dadurch bleiben die Daten für einen sicheren Rollback erhalten, auch wenn der normale NV-UV-Benutzerordner gelöscht wird.</p>
 
+    <h3>Nach einem MSI-Afterburner-Update</h3>
+    <p>Nichts vorab bereinigen und den Ordner unter <code>%ProgramData%</code> nicht löschen. Wenn ein unterstütztes Afterburner-Update Teile der verwalteten Hotspot-Einrichtung zurückgesetzt hat, bietet NV-UV eine sichere Reparatur an. Nach Bestätigung entfernt es die alte Transaktion kontrolliert, verwendet die aktuellen Afterburner-Dateien als neue Rollback-Basis, richtet Hotspot vollständig neu ein, startet Afterburner neu und verlangt fünf plausible Sensormessungen.</p>
+
     <h3>Recalibrate und Profilerstellung</h3>
     <p>Ein aktiver Hotspot-Fix kann die Neuerstellung eines MSI-Afterburner-Hardwareprofils stören. Deshalb startet Recalibrate bei aktivem Hotspot nicht sofort: NV-UV verlangt zuerst die kontrollierte Deaktivierung, startet anschließend neu und führt die eigentliche Kalibrierung erst nach einem zweiten Recalibrate-Klick aus. Nach erfolgreicher Kalibrierung wird die erneute Hotspot-Einrichtung angeboten.</p>
     <div class="info"><strong>GPU- oder VBIOS-Wechsel:</strong> Nach einem Wechsel kann Afterburner ein neues Profil mit anderer SUBSYS-Identität anlegen. NV-UV zeichnet diese Identität auf und verwendet kein gelöschtes altes Profil aus einem Hotspot-Backup erneut.</div>
@@ -583,6 +636,7 @@
     <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Testen:</strong> Spiel starten, Spannung + Temperatur beobachten. Stabil = fertig!</div></div>
     <div class="warn">Fang mit <strong>Balanced</strong> an! Eco kann bei manchen GPUs zu aggressiv sein.</div>
     <div class="warn" style="margin-top:0.6em;"><strong>⚠ Blackwell-Spannungsfloor (RTX 50):</strong> Bei rund 875 mV und darunter hält der Blackwell-Treiber den V-Lock nicht - er boostet auf einen höheren Spannungspunkt zurück, der Undervolt greift dann nicht wie eingestellt (ein Lock bei 845 mV landet höher als gewählt). Für einen stabilen Lock auf Blackwell über 875 mV wählen. NV-UV zeigt bei diesem Wert und darunter einen Hinweis direkt im V-Lock-Tab. Das ist Treiberverhalten, das NV-UV nicht überschreiben kann.</div>
+    <div class="info"><strong>Kurvenpunkt als Startwert:</strong> Klicke im Diagramm auf einen Punkt, um dessen angezeigte MHz- und mV-Werte in den gerade aktiven V-Lock- oder Direktmodus zu laden. Es wird nichts automatisch angewendet; passe den Wert bei Bedarf weiter an und klicke danach auf <strong>UV anwenden</strong>. Für Punkte unter 850 mV zuerst den Direktmodus wählen.</div>
   </section>
 
   <!-- ═══ OCS → UV ═══ -->
@@ -738,18 +792,18 @@
     <p>Einfach spielen, Game Replay erledigt den Rest. Bei einem UV-Crash wird die Frequenz automatisch gesenkt.</p>
 
     <h3>Lernschleife (Neu in Antares)</h3>
-    <p>Game Replay merkt sich jetzt pro Spiel die Crash-Adjustments. Beim nächsten Start desselben Spiels wendet der UV-Pilot automatisch die reduzierte Frequenz an. Ein Spiel crasht einmal, beim nächsten Mal wird direkt das sichere Profil geladen.</p>
+    <p>Game Replay merkt sich jetzt pro Spiel die Absturz-Anpassungen. Beim nächsten Start desselben Spiels wendet der UV-Pilot automatisch die reduzierte Frequenz an. Ein Spiel stürzt einmal ab, beim nächsten Mal wird direkt das sichere Profil geladen.</p>
 
     <h3>Pro Profil eigene Historie <span style="color:var(--gold);">(Neu in v0.94)</span></h3>
-    <p>Crash-Historien werden ab v0.94 pro Kombination <strong>Spiel + Profil</strong> geführt. Vorher zog z.B. ein Performance-Crash für ein Spiel auch auf ein später zugewiesenes Custom-Profil durch. Seit v0.94 hat jedes Profil (Eco / Balanced / Performance / Max / Custom XYZ) seine eigene saubere Historie. Ein Custom-Profil erbt nicht mehr die Crashes der Presets.</p>
-    <div class="info">Beim ersten Start von v0.94 wird die bestehende <code>nv-uv_game_replay_adjustments.json</code> als altes Format erkannt und einmalig geleert (Log-Warnung: „Altes Adjustment-Format erkannt — verworfen"). Danach baut sich die Historie pro Profil neu auf. Kein manueller Eingriff nötig.</div>
-    <p style="font-size:0.9em;color:var(--text-dim);">Manuelle Applies (Slot-Button-Klick ohne UV-Pilot) persistieren weiterhin nicht: Bei einem Crash greift der Live-Downstep, aber es wird kein JSON-Eintrag geschrieben, weil ohne Pilot-Kontext nicht eindeutig einem Profil zugeordnet werden kann.</p>
+    <p>Absturzhistorien werden ab v0.94 pro Kombination <strong>Spiel + Profil</strong> geführt. Vorher zog z.B. ein Performance-Absturz für ein Spiel auch auf ein später zugewiesenes Custom-Profil durch. Seit v0.94 hat jedes Profil (Eco / Balanced / Performance / Max / Custom XYZ) seine eigene saubere Historie. Ein Custom-Profil erbt nicht mehr die Abstürze der Presets.</p>
+    <div class="info">Beim ersten Start von v0.94 wird die bestehende <code>nv-uv_game_replay_adjustments.json</code> als altes Format erkannt und einmalig geleert (Log-Warnung: „Altes Replay-Anpassungsformat erkannt — verworfen"). Danach baut sich die Historie pro Profil neu auf. Kein manueller Eingriff nötig.</div>
+    <p style="font-size:0.9em;color:var(--text-dim);">Manuelle Anwendungen und Abstürze ohne eindeutigen UV-Pilot-Kontext werden als <strong>reine Replay-Historie</strong> gespeichert. Die Liste zeigt Slot, ursprünglichen und korrigierten Wert, Ereignistyp, Zeitpunkt und gegebenenfalls einen ausstehenden Neustart. Solche Einträge werden niemals automatisch auf ein Spiel oder Profil angewendet.</p>
 
     <h3>Zwei Crash-Modi</h3>
     <table>
       <tr><th>Typ</th><th>Was passiert</th></tr>
       <tr><td><strong>Soft Crash (TDR)</strong></td><td>Treiber recovered, 15s Cooldown, Downstep wird live geschrieben, weiter spielen</td></tr>
-      <tr><td><strong>Hard Crash (Page Fault)</strong></td><td>Downstep wird gespeichert, beim nächsten NV-UV Start automatisch angewendet</td></tr>
+      <tr><td><strong>Hard Crash (Page Fault)</strong></td><td>Der erste Downstep wird gespeichert und beim nächsten NV-UV-Start angewendet. Bis die Anwendung erfolgreich war, blockiert Game Replay weitere Downsteps, damit der alte aktive Takt nicht mehrfach abgesenkt wird.</td></tr>
     </table>
 
     <h3>Dockbar</h3>
@@ -765,7 +819,7 @@
   <section>
     <h2 class="orange"><span class="icon">🔥</span>3D Stress Test Engine</h2>
 
-    <p>NV-UV hat einen eigenen DX12 + DXR Stress Test der reale Gaming-Last simuliert. Die Engine wechselt ständig zwischen Idle und Volllast (Heartbeat-Pattern), genau wie echtes Gaming. Dabei entstehen die Lastwechsel die beim Undervolting Crashes verursachen.</p>
+    <p>NV-UV hat einen eigenen DX12 + DXR Stress Test der reale Gaming-Last simuliert. Die Engine wechselt ständig zwischen Idle und Volllast (Heartbeat-Pattern), genau wie echtes Gaming. Dabei entstehen die Lastwechsel, die beim Undervolting Abstürze verursachen.</p>
 
     <h3>Render-Auflösung</h3>
     <table>
@@ -794,8 +848,9 @@
     <h3>Custom-Profile</h3>
     <p>Neu: Eigene UV-Profile pro Spiel möglich. Rechtsklick auf einen Slot: "Zu UV-Pilot hinzufügen", erstellt ein Custom-Profil. In der Spiele-Datenbank zuweisbar.</p>
     <h3>Spiele-Datenbank</h3>
-    <p>Rechtsklick auf UV-Pilot → 🎮 Spiele-Datenbank öffnet den Game Browser mit 632 Spielen + Benchmarks. Tier-Zuordnungen anpassbar, eigene Spiele hinzufügbar.</p>
-    <p><strong>Neu in v0.99.2:</strong> Der Spielebrowser ist breiter und enthält neben der Spieleliste den zusätzlichen Reiter <strong>Replay Adjustments</strong> für die von Game Replay automatisch korrigierten Werte.</p>
+    <p>Rechtsklick auf UV-Pilot → 🎮 Spiele-Datenbank öffnet den Game Browser mit 646 Spielen + Benchmarks. Tier-Zuordnungen anpassbar, eigene Spiele hinzufügbar.</p>
+    <p><strong>Game Pass / Microsoft Store:</strong> Spiel zuerst starten, dann im Dialog „Spiel hinzufügen“ auf <strong>🎮</strong> klicken und möglichst den Prozess mit dem sichtbaren Spielfenster auswählen. NV-UV übernimmt ausschließlich den Prozessnamen und öffnet weder <code>WindowsApps</code> noch den geschützten EXE-Pfad. Erkennt UV-Pilot diesen Prozess, kann Smart Hz korrekt in den Gaming-Modus wechseln. Gemeinsame Hosts, Xbox-/Game-Bar-Komponenten und dauerhaft laufende Dienste wie <code>ApplicationFrameHost.exe</code>, <code>GamingServices.exe</code>, <code>GamingServicesNet.exe</code> und <code>GameInputSvc.exe</code> werden aus der Liste entfernt und auch bei manueller Eingabe sowie in der späteren UV-Pilot-Erkennung abgewiesen. App-IDs werden in dieser Version nicht unterstützt; erscheint kein eigener Spielprozess, kann der Titel nicht sicher erkannt werden.</p>
+    <p><strong>Neu in v0.99.2:</strong> Der Spielebrowser ist breiter und enthält neben der Spieleliste den zusätzlichen Reiter <strong>Replay-Anpassungen</strong> für die von Game Replay automatisch korrigierten Werte.</p>
     <h3>Benchmarks (3DMark etc.)</h3>
     <p>3DMark wird erkannt, aber kein UV-Tier zugeordnet — das aktive Profil bleibt bestehen. So könnt ihr mit eurem gewählten UV benchen ohne dass der Pilot umschaltet. Über den Game Browser kann optional ein Custom Profile zugewiesen werden.</p>
     <h3>Auto-Mini beim Gaming</h3>
@@ -897,16 +952,16 @@
       <tr><td><strong>Spiel beendet</strong></td><td>Zurück auf die gewählte Idle-Rate</td></tr>
       <tr><td><strong>NV-UV beendet</strong></td><td>Native Rate wiederhergestellt</td></tr>
     </table>
-    <div class="warn">Bei Multi-Monitor-Setups kann es zu Problemen kommen. Im Zweifelsfall deaktiviert lassen. Benötigt UV-Pilot für die Spielerkennung.</div>
+    <div class="warn">Bei Multi-Monitor-Setups kann es zu Problemen kommen. Im Zweifelsfall deaktiviert lassen. Benötigt UV-Pilot für die Spielerkennung. Game-Pass-/Store-Titel müssen deshalb über den laufenden Spielprozess hinzugefügt werden, damit Smart Hz in den Gaming-Modus wechseln kann.</div>
   </section>
 
   <!-- ═══ UV-TRY ═══ -->
   <section>
     <h2 class="cyan"><span class="icon">⚡</span>UV⚡Try (Community-UV-Datenbank)</h2>
-    <p>UV⚡Try öffnet eine durchsuchbare Datenbank mit Community-Undervolt-Werten für deine GPU, gruppiert in Eco, Balanced und UV+OC. Jeder Eintrag zeigt Spannung, Takt, Power Limit, VRAM-Offset, Board, ein Vertrauens-Label und den Quellen-Link. Die Liste wählt deine erkannte Karte vor.</p>
+    <p>UV⚡Try öffnet eine durchsuchbare Datenbank mit Community-Undervolt-Werten für deine GPU, gruppiert in Eco, Balanced und UV+OC. Jeder Eintrag zeigt Spannung, Takt, Power Limit, VRAM-Offset, Grafikkarten-Variante, ein Vertrauens-Label und den Quellen-Link. Die Liste wählt deine erkannte Karte vor.</p>
     <p>Geöffnet wird sie über den <strong>UV⚡Try</strong>-Button neben den Presets (Eco / Bal / Perf / Max). Zum Übernehmen einen Eintrag rechtsklicken und einen Profil-Slot (1-5) wählen, genau wie in der Scanner-Historie.</p>
     <p><strong>Bewertung &amp; Community-Votes (NEU in v0.99):</strong> Ein Sterne-Klick macht beides: Er speichert deine persönliche Notiz lokal und zählt gleichzeitig als anonymer Community-Vote. Die neue Spalte <strong>Community</strong> zeigt den Durchschnitt aller Votes mit Anzahl in Klammern, z.B. "★ 4.2 (17)", und aktualisiert sich zweimal täglich. Erneuter Klick auf denselben Stern (0 Sterne) löscht deinen Vote auch serverseitig.</p>
-    <p><strong>Eigene Settings teilen (NEU in v0.99):</strong> Rechtsklick auf einen belegten Profil-Slot → <strong>An Community-DB senden</strong>. Die Werte kommen unverändert aus dem Slot (also ein real erprobtes Profil), nur Board-Variante und Kurznotiz sind optionale Freitexte. Nach kurzer Prüfung erscheint dein Preset für alle in UV⚡Try, gekennzeichnet als "user-submitted". Details zu den übertragenen Daten stehen im Abschnitt Community-Features &amp; Daten.</p>
+    <p><strong>Eigene Settings teilen (NEU in v0.99):</strong> Rechtsklick auf einen belegten Profil-Slot → <strong>An Community-DB senden</strong>. Die Werte kommen unverändert aus dem Slot (also ein real erprobtes Profil), nur Grafikkarten-Variante und Kurznotiz sind optionale Freitexte. Nach kurzer Prüfung erscheint dein Preset für alle in UV⚡Try, gekennzeichnet als "user-submitted". Details zu den übertragenen Daten stehen im Abschnitt Community-Features &amp; Daten.</p>
     <div class="warn">Community-Werte sind nur ein Startpunkt. Jede Karte ist anders (Silizium-Lotterie) - verifiziere einen Wert immer auf deiner eigenen Karte, bevor du dich darauf verlässt.</div>
   </section>
 
@@ -915,7 +970,7 @@
     <h2 class="cyan"><span class="icon">🔒</span>Community-Features &amp; Daten</h2>
     <p>NV-UV hat <strong>keine Accounts, keine Telemetrie und kein automatisches "Nach-Hause-Telefonieren"</strong>. Daten fließen ausschließlich dann, wenn du aktiv eines der beiden Community-Features benutzt:</p>
     <p><strong>Sterne-Bewertung in UV⚡Try:</strong> Beim Klick auf einen Stern wird neben der lokalen Speicherung ein anonymer Community-Vote gesendet. Übertragen werden nur: die Preset-ID, dein Sternwert und eine zufällige Client-ID (eine lokal erzeugte Zufalls-GUID ohne jeden Hardware- oder Personenbezug). Klickst du denselben Stern erneut (0 Sterne), wird dein Vote auch serverseitig gelöscht.</p>
-    <p><strong>Settings einreichen (Rechtsklick auf einen Profil-Slot):</strong> Übertragen werden die UV-Werte aus dem Slot (Frequenz, Spannung, ggf. Power Limit und VRAM-Offset), das erkannte GPU-Modell, optional deine Board-Variante und Kurznotiz sowie dieselbe zufällige Client-ID. <strong>Wichtig:</strong> Nach der Freigabe erscheinen diese Angaben öffentlich in der Community-Datenbank auf GitHub. Schreibe daher keine persönlichen Informationen in die Notiz.</p>
+    <p><strong>Settings einreichen (Rechtsklick auf einen Profil-Slot):</strong> Übertragen werden die UV-Werte aus dem Slot (Frequenz, Spannung, ggf. Power Limit und VRAM-Offset), das erkannte GPU-Modell, optional deine Grafikkarten-Variante und Kurznotiz sowie dieselbe zufällige Client-ID. <strong>Wichtig:</strong> Nach der Freigabe erscheinen diese Angaben öffentlich in der Community-Datenbank auf GitHub. Schreibe daher keine persönlichen Informationen in die Notiz.</p>
     <p><strong>Technisches:</strong> Wie bei jedem Internetdienst sieht der Server (Cloudflare Worker) deine IP-Adresse. Sie wird ausschließlich als täglich neu gesalzener Hash für das Missbrauchs-Limit verarbeitet und <strong>nie im Klartext gespeichert</strong>. Die Anzeige der Community-Bewertungen, der Datenbank-Abgleich und der Update-Check beim Start (prüft einmal täglich per GitHub-Download, ob eine neue NV-UV-Version erschienen ist) sind reine Downloads von GitHub, dabei wird nichts gesendet. Die zufällige Client-ID liegt in <code>%LocalAppData%\NV-UV\nv-uv_client_id.txt</code> und kann jederzeit gelöscht werden (beim nächsten Vote wird eine neue erzeugt).</p>
 
     <h2 class="cyan"><span class="icon">🌍</span>Globaler Override &amp; Kein Override</h2>
@@ -1158,7 +1213,8 @@
     Spannung — das Problem ist in AB, nicht in NV-UV. Lösung:</p>
     <ol>
       <li>AB → Einstellungen (⚙) → <strong>General</strong> Tab →
-        <code>Unlock Voltage Control</code> ✓ und <code>Unlock Voltage Monitoring</code> ✓
+        <code>Unlock Voltage Control</code> ✓ und <code>Unlock Voltage Monitoring</code> ✓;
+        <code>Force Constant Voltage</code> muss deaktiviert sein
       </li>
       <li>AB → Einstellungen (⚙) → <strong>Monitoring</strong> Tab → in der Liste
         <code>GPU voltage</code> ✓ anhaken
@@ -1224,7 +1280,7 @@
     <p>Bekanntes Verhalten. NV-UV interagiert mit AB's Profilsystem, dabei kann sich der Curve Editor minimieren. Einfach wieder öffnen.</p>
 
     <h3>Wo liegen meine Einstellungen?</h3>
-    <p><code>%LocalAppData%\NV-UV\</code> enthält: UV-Profile, Slot-Namen, Game Replay Adjustments, Scanner-Historie, OCS-Daten, Stock-Kurve, CCB-Cache und Logs.</p>
+    <p><code>%LocalAppData%\NV-UV\</code> enthält: UV-Profile, Slot-Namen, Game-Replay-Anpassungen, Scanner-Historie, OCS-Daten, Stock-Kurve, CCB-Cache und Logs.</p>
     <p>Die dauerhaften Recovery-Daten des experimentellen Blackwell-Hotspot-Fixes liegen getrennt unter <code>%ProgramData%\NV-UV\BlackwellHotspot\</code>. Diesen Ordner nicht manuell löschen, solange Hotspot aktiv ist.</p>
     <h3>Wie exportiere ich Log-Dateien?</h3>
     <p>Über den <strong>Log Export</strong> Button unter dem Log-Panel. NV-UV erstellt ein Diagnose-ZIP mit <code>activity.log</code>, <code>activity-previous.log</code>, <code>diagnostic.log</code>, <code>diagnostic-previous.log</code> und <code>system-info.txt</code>. Dieses ZIP kann direkt an Christian geschickt werden.</p>

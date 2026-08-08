@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="ru">
 <head>
@@ -329,7 +329,7 @@
 <div class="header">
 <h1><span class="nv">NV</span><span class="sep">—</span><span class="uv">UV</span></h1>
 <div class="subtitle">GPU Undervolt · Руководство пользователя</div>
-<div class="build">Build 22 · Cantor · Open Alpha · Июль 2026</div>
+<div class="build">Build 22 · Cantor · Open Alpha · Август 2026</div>
 </div>
 <div class="led-bar gold"></div>
 <section>
@@ -350,7 +350,7 @@
 <tr><td>📊 <strong>4 Preset Levels</strong></td><td>Eco · Balanced · Performance · Max, значения для каждой модели GPU проверены сообществом</td></tr>
 <tr><td>🔍 <strong>Обнаружение стоковой кривой</strong></td><td>Автоматически считывает реальную VF-кривую конкретно вашей видеокарты из AB</td></tr>
 <tr><td>🔬 <strong>OCS → UV</strong></td><td>Импорт результатов AB OC Scanner и построение UV-кривой под конкретный чип</td></tr>
-<tr><td>🎮 <strong>Игровой Реплей</strong></td><td>Автоматическое снижение шага при сбое, обучение для каждой игры и отдельный обзор Replay Adjustments</td></tr>
+<tr><td>🎮 <strong>Game Replay</strong></td><td>Автоматическое снижение шага при сбое, обучение для каждой игры и отдельный обзор корректировок Replay</td></tr>
 <tr><td>🌡️ <strong>Blackwell Hotspot</strong> <span style="color:var(--gold);">НОВОЕ в v0.99.2</span></td><td>Экспериментальная hotspot-температура для поддерживаемых RTX 50 с автоматической настройкой плагина MSI Afterburner</td></tr>
 <tr><td>✈️ <strong>UV-Пилот</strong></td><td>Автоматически определяет игры и переключается на оптимальный preset</td></tr>
 <tr><td>⚡ <strong>UV⚡Проба</strong> <span style="color:var(--gold);">НОВОЕ</span></td><td>Просмотр community UV-значений для вашей карты и применение их в слот</td></tr>
@@ -370,6 +370,30 @@
 </table>
 </section>
 <section>
+<h2 class="orange"><span class="icon">🆕</span>Новое в v0.99.4</h2>
+<h3>🧙 Мастер настройки MSI Afterburner</h3>
+<p>Времена, когда MSI Afterburner приходилось полностью готовить для NV-UV вручную, должны остаться позади. Новый мастер находит Afterburner и его конфигурацию даже в пользовательских путях установки, сначала проверяет страницы <em>General</em> и <em>Monitoring</em> только для чтения и точно показывает недостающие пункты. Поддерживаются проверенные на реальном оборудовании сборки 4.6.6.16757, 4.6.7 Beta 2 (16935), Beta 3 (17352) и Beta 4 (17439), локализованные имена датчиков и системы с iGPU/multi-GPU.</p>
+<p><strong>Автоматическая настройка</strong> изменяет только заранее показанный список, сохраняет обе конфигурации Afterburner, использует настоящую кнопку Apply, а затем повторно проверяет интерфейс, сопоставление GPU и live-телеметрию. Если обновление или сброс Afterburner удалит необходимые настройки, NV-UV обнаружит это и предложит контролируемое восстановление.</p>
+<h3>🌡️ Нативный hotspot GPUProbe с Afterburner Beta 4</h3>
+<p>С MSI Afterburner 4.6.7 Beta 4 Build 17439 NV-UV впервые может использовать нативный путь GPUProbe от Afterburner. NV-UV включает зарегистрированные источники GPU и VRAM, контролируемо перезапускает Afterburner и принимает датчик только после пяти правдоподобных live-измерений. Ранее управляемый NV-UV legacy-плагин удаляется только после успешной предварительной проверки; при ошибке NV-UV автоматически восстанавливает предыдущее состояние.</p>
+<div class="info"><strong>Совместимость:</strong> Beta 2 и Beta 3 продолжают использовать проверенный legacy-путь hotspot от NV-UV. Beta 4 предпочитает нативный путь GPUProbe. При отключении hotspot удаляются только изменения, которыми управлял NV-UV.</div>
+<h3>📊 Расширенная и раскрываемая телеметрия</h3>
+<p>Вместе с Beta 4 телеметрия была значительно расширена. Компактный вид показывает самые важные значения, а дополнительные данные можно раскрыть при необходимости. Доступны частоты GPU и VRAM, hotspot и разница температур, самый горячий канал VRAM, температуры отдельных микросхем/модулей VRAM и их разброс, а также несколько каналов вентиляторов со значениями RPM.</p>
+<h3>🎯 Точка кривой → Quick-Lock</h3>
+<p>Щелчок по точке V/F-кривой переносит её напряжение и частоту прямо в Quick-Lock. Режим, ползунок напряжения, опорное значение, цель и вычисленное смещение обновляются вместе. Сам выбор точки ничего не записывает в GPU; изменение применяется только кнопкой <strong>Применить UV</strong>.</p>
+<h3>🧭 Независимое от номера GPU сопоставление и смена iGPU</h3>
+<p>NV-UV больше не привязывает целевую карту жёстко к «GPU1» или «GPU2». Важна однозначно распознанная NVIDIA Blackwell GPU — в Afterburner она может отображаться как GPU3, GPU4 или выше. Если включение или отключение Intel/AMD iGPU изменит нумерацию, мастер может безопасно вернуть основную GPU Afterburner и соответствующий источник напряжения на правильную карту.</p>
+<h3>🛡️ Защита GPU, VBIOS и crossflash</h3>
+<p>Состояния hotspot привязаны к GPU, SUBSYS, VBIOS и сборке Afterburner. Смена GPU или VBIOS приостанавливает presets, slots, Game Library, UV-Пилот, Replay и автоматический запуск профилей до возврата правильной идентичности или завершения контролируемой рекалибровки. Проверены реальные round trip dual-BIOS/crossflash на RTX 5090, замена на RTX 5070 Ti и различные состояния iGPU.</p>
+<h3>🔁 История Replay и восстановление после жёсткого сбоя</h3>
+<p>Корректировки Replay теперь показывают коррекции без активного UV-Пилота или распознанной игры. Ручные и неизвестные случаи остаются только информационной историей и никогда не применяются повторно вслепую. После жёсткого сбоя ожидает ровно один downstep; дальнейшие коррекции блокируются до успешной записи значения после перезапуска.</p>
+<h3>🎮 Game Pass и Microsoft Store</h3>
+<p>Запущенный игровой процесс можно выбрать без доступа к защищённой папке установки. В списке приоритет имеет процесс с видимым окном игры. После распознавания UV-Пилотом Smart Hz также может переключиться из режима Desktop в Gaming. Общие хосты и постоянно работающие службы Xbox/Gaming централизованно отклоняются.</p>
+<h3>🔥 Новая V/F Hit Map в Afterburner</h3>
+<p>Одна из функций Beta 4, которая мне особенно нравится, — новая <strong>V/F Hit Map</strong> в MSI Afterburner, созданная Unwinder. Она показывает, какие участки V/F-кривой GPU действительно использовала и как часто достигалась каждая точка. Тем, кто любит тонко настраивать кривые GPU, стоит попробовать её самостоятельно: откройте редактор кривой Afterburner и нажмите <strong>M</strong>. Уже одна эта функция — отличная причина познакомиться с Beta 4.</p>
+<p>Большое спасибо Alexey «Unwinder» Nicolaychuk за GPUProbe, новую Hit Map и его постоянную работу над MSI Afterburner. <a href="https://forums.guru3d.com/threads/msi-afterburner-v4-6-7-beta-1-is-approaching.458132/post-6453140" target="_blank" rel="noopener">Загрузка Beta 4 и полные примечания на форуме Guru3D</a>.</p>
+</section>
+<section>
 <h2 class="orange"><span class="icon">🆕</span>Новое в v0.99.3</h2>
 <h3>🌡️ Улучшенное отображение hotspot</h3>
 <p>Экспериментальная температура Blackwell hotspot теперь отображается и в Мини-виде. Hotspot сохраняет один знак после запятой, а обычная температура GPU снова показывается целыми градусами. Рамка настройки теперь точнее отражает фактическое состояние функции.</p>
@@ -382,7 +406,7 @@
 <h3>⏻ Более надёжный autostart Windows</h3>
 <p>NV-UV теперь проверяет путь, аргументы, состояние, logon trigger, максимальные права и задержку запуска Scheduled Task и исправляет устаревшие конфигурации. Во время запуска Afterburner NV-UV также даёт MAHM время на инициализацию, а не показывает временное состояние как красную ошибку.</p>
 <h3>🟢 Обычная поддержка Ampere</h3>
-<p>RTX 30 Series входит в обычный список поддерживаемых GPU. Presets остаются консервативными community-based стартовыми значениями и должны проверяться scanner, Игровым Реплеем и реальными играми, как и любой другой профиль.</p>
+<p>RTX 30 Series входит в обычный список поддерживаемых GPU. Presets остаются консервативными community-based стартовыми значениями и должны проверяться scanner, Game Replay и реальными играми, как и любой другой профиль.</p>
 </section>
 <section>
 <h2 class="orange"><span class="icon">🆕</span>Новое в v0.99.2</h2>
@@ -390,8 +414,8 @@
 <p>Зелёный сегмент кривой V/F теперь использует более яркий lime-цвет. Благодаря этому кривая заметно лучше выделяется на фоне зелёной лужайки Summer26.</p>
 <h3>🎮 Более широкий Game Browser</h3>
 <p>Game Browser теперь даёт больше места строке поиска, списку игр и дополнительной информации. Стандартная ширина увеличена с 920 до 1040 пикселей, минимальная — с 820 до 940 пикселей. Высота окна не изменилась.</p>
-<h3>🔁 Replay Adjustments</h3>
-<p>В Game Browser появилась отдельная вкладка со всеми значениями, которые Игровой Реплей автоматически скорректировал после обнаруженных сбоев игры или драйвера. Можно сбросить отдельные записи или всю историю корректировок.</p>
+<h3>🔁 Корректировки Replay</h3>
+<p>В Game Browser появилась отдельная вкладка со всеми значениями, которые Game Replay автоматически скорректировал после обнаруженных сбоев игры или драйвера. Можно сбросить отдельные записи или всю историю корректировок.</p>
 <h3>🌡️ Экспериментальная hotspot-температура Blackwell</h3>
 <p>Поддерживаемые GPU NVIDIA GeForce RTX 50 теперь могут показывать экспериментальную hotspot-температуру. NV-UV автоматически устанавливает и настраивает необходимый monitoring-плагин MSI Afterburner.</p>
 </section>
@@ -401,7 +425,7 @@
 <tr><th>Что</th><th>Подробности</th></tr>
 <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070 или 5060 Ti / 5060 (experimental)<br/>Карты Ada (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) также поддерживаются<br/>RTX 4060 Ti / 4060 (experimental)<br/>RTX 30 Series (Ampere) <span style="color:var(--gold);">НОВОЕ в v0.98</span></td></tr>
 <tr><td><strong>Драйвер</strong></td><td>Последний драйвер NVIDIA</td></tr>
-<tr><td><strong>MSI Afterburner</strong></td><td>Версия 4.6.6+ с RTSS</td></tr>
+<tr><td><strong>MSI Afterburner</strong></td><td>С RTSS. Автоматическая настройка проверена в реальной работе с точными сборками 4.6.6.16757, 4.6.7 Beta 2 (16935) и Beta 3 (17352). Другие версии или несовпадающие SHA-256 хэши безопасно отклоняются.</td></tr>
 <tr><td><strong>Windows</strong></td><td>Windows 11 (64-bit)</td></tr>
 </table>
 <div class="warn">NV-UV требует, чтобы MSI Afterburner работал в фоне. Без AB NV-UV не сможет менять напряжения!</div>
@@ -412,6 +436,20 @@
 <div class="warn" style="border-left-width:6px; padding:18px 20px; margin:20px 0; font-size:1.05em;">
 <strong>ВАЖНО, не пропускайте:</strong> чтобы NV-UV мог читать и записывать напряжение GPU, в Afterburner нужно включить несколько параметров. Без этих настроек NV-UV показывает <code>0 mV</code>, V-Лок применяется некорректно, а scanner выдаёт неправильные результаты. Шаги 1 и 2 ниже <strong>обязательные</strong>, а не optional.
     </div>
+<div class="info">
+<strong>Новое в v0.99.4:</strong> нажатие <strong>MSI Afterburner Setup</strong>
+сначала проверяет General и Monitoring в реальном времени и только для чтения в
+изолированном worker-процессе. Поэтому первый видимый мастер сразу содержит полный
+обязательный список изменений. Для ручной настройки можно выбрать
+<strong>Открыть General</strong> или <strong>Открыть Monitoring</strong>; NV-UV при этом
+остаётся запущенным. <strong>Автоматическая настройка</strong> подтверждает именно
+видимый список. Затем повышенный controller создаёт резервную копию и запускает
+изолированный UI worker, который меняет только подтверждённые параметры в проверенном
+интерфейсе Afterburner и сохраняет их настоящей кнопкой <strong>Apply</strong>. Лишь
+после этого перезапускаются Afterburner и NV-UV. Финальная проверка снова читает General
+и Monitoring в изолированном worker-процессе и дополнительно проверяет MAHM. Если
+основной GPU не совпадает, его по-прежнему нужно выбрать вручную из соображений безопасности.
+</div>
 <div class="step">
 <div class="step-num">1</div>
 <div class="step-content">
@@ -423,7 +461,8 @@
         ✓ <code>Enable low-level IO driver</code><br/>
         ✓ <code>Enable low-level hardware access interface</code> → <strong>user mode</strong><br/>
         ✓ <strong><code>Unlock voltage control</code> → standard MSI</strong>  ⬅ критично<br/>
-        ✓ <strong><code>Unlock voltage monitoring</code></strong>  ⬅ критично<br/><br/>
+        ✓ <strong><code>Unlock voltage monitoring</code></strong>  ⬅ критично<br/>
+        ☐ <strong><code>Force constant voltage</code> должен быть отключён</strong><br/><br/>
         Нажмите <strong>OK</strong> (не Cancel!) и <strong>перезапустите Afterburner</strong>.
       </div>
 </div>
@@ -439,7 +478,7 @@
       </div>
 </div>
 <div class="info">
-<strong>Примечание для Reference-Design RTX 5090:</strong> на некоторых reference-картах Afterburner иногда сам сбрасывает флажки <code>Unlock</code>. Если через некоторое время показания напряжения внезапно падают до 0 mV, просто повторите шаги 1+2. Для этого готовится автоматическое исправление.
+<strong>Примечание для Reference-Design RTX 5090:</strong> на некоторых reference-картах Afterburner иногда сам сбрасывает флажки <code>Unlock</code>. Если напряжение внезапно падает до 0 mV, новый мастер v0.99.4 проверяет надёжно определённые параметры unlock/monitoring и предлагает автоматически восстановить их.
     </div>
 <div class="warn">
 <strong>Отключите "Start with Windows" в Afterburner на время экспериментов с UV.</strong><br/>
@@ -479,6 +518,8 @@
 <div class="warn"><strong>Экспериментальное показание:</strong> Отображаемое значение официально не подтверждено. Его нельзя использовать как основание для гарантийных или RMA-обращений, а также для изменений или модификаций видеокарты. Более высокая hotspot-температура по сравнению с другими показаниями сама по себе не означает дефект или ограничение функциональности видеокарты.</div>
 <h3>Постоянные данные восстановления</h3>
 <p>Manifest, backups, состояние transaction и обнаруженные идентификаторы GPU/profile хранятся в <code>%ProgramData%\NV-UV\BlackwellHotspot\</code>. Активные установки, созданные старыми версиями NV-UV, при первом запуске автоматически переносятся из <code>%LocalAppData%\NV-UV\hotspot\</code>. Поэтому данные для безопасного rollback сохраняются, даже если обычная папка пользовательских данных NV-UV удалена.</p>
+<h3>После обновления MSI Afterburner</h3>
+<p>Ничего не очищайте заранее и не удаляйте папку в <code>%ProgramData%</code>. Если поддерживаемое обновление Afterburner сбросило часть управляемой настройки hotspot, NV-UV предлагает безопасное восстановление. После подтверждения старая transaction удаляется контролируемо, текущие файлы Afterburner становятся новой основой rollback, hotspot полностью устанавливается заново, Afterburner перезапускается и проверяются пять правдоподобных показаний датчика.</p>
 <h3>Рекалибровка и создание профиля</h3>
 <p>Активный hotspot fix может мешать MSI Afterburner заново создать hardware profile. Поэтому Рекалибровка не запускается сразу при активном hotspot: NV-UV сначала требует контролируемое удаление, перезапускается и начинает настоящую калибровку только после второго нажатия Рекалибровка. После завершения предлагается снова установить hotspot для нового профиля.</p>
 <div class="info"><strong>Смена GPU или VBIOS:</strong> После смены Afterburner может создать профиль с другим SUBSYS. NV-UV записывает эту идентичность и не восстанавливает удалённый старый hardware profile из hotspot backup.</div>
@@ -501,6 +542,7 @@
 <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Test:</strong> запустите игру, следите за напряжением и температурами. Стабильно = готово!</div></div>
 <div class="warn">Начинайте с <strong>Balanced</strong>! Eco может быть слишком агрессивным для некоторых GPU.</div>
 <div class="warn" style="margin-top:0.6em;"><strong>⚠ Нижний порог напряжения Blackwell (RTX 50):</strong> примерно на 875 mV и ниже драйвер Blackwell не удерживает V-Лок — он снова бустится к более высокой точке напряжения, поэтому undervolt не закрепляется как задано (lock на 845 mV в итоге работает выше, чем вы выбрали). Для стабильного lock на Blackwell выбирайте выше 875 mV. При этом значении и ниже NV-UV показывает подсказку прямо во вкладке V-Лок. Это поведение драйвера, инструмент не может его обойти.</div>
+<div class="info"><strong>Точка кривой как стартовое значение:</strong> нажмите точку на графике, чтобы загрузить показанные значения МГц и мВ в активный режим V-Lock или Direct. Ничего не применяется автоматически: при необходимости скорректируйте значения, затем нажмите <strong>Применить UV</strong>. Для точек ниже 850 mV сначала выберите режим Direct.</div>
 </section>
 <section>
 <h2 class="purple"><span class="icon">🔬</span>OCS → UV Import</h2>
@@ -578,29 +620,29 @@
 <tr><td><strong>Power Limit Slider</strong></td><td>Полный диапазон PL в scanner: от минимума GPU (~60%) до максимума</td></tr>
 <tr><td><strong>Skip Warmup</strong></td><td>Optional, для систем с водяным охлаждением, где температура GPU уже стабильна</td></tr>
 </table>
-<div class="info">Совет: после результата scanner включите <strong>Игровой Реплей</strong> и играйте. Если в реальной игре случится сбой, Игровой Реплей автоматически снизит частоту ещё немного.</div>
+<div class="info">Совет: после результата scanner включите <strong>Game Replay</strong> и играйте. Если в реальной игре случится сбой, Game Replay автоматически снизит частоту ещё немного.</div>
 </section>
 <section>
-<h2 class="purple"><span class="icon">🎮</span>Игровой Реплей</h2>
-<p>Просто играйте — Игровой Реплей сделает остальное. При UV crash частота автоматически снижается.</p>
+<h2 class="purple"><span class="icon">🎮</span>Game Replay</h2>
+<p>Просто играйте — Game Replay сделает остальное. При UV crash частота автоматически снижается.</p>
 <h3>Learning Loop</h3>
-<p>Игровой Реплей теперь запоминает корректировки после сбоев отдельно для каждой игры. При следующем запуске той же игры UV-Пилот автоматически применит сниженную частоту. Игра падает один раз — в следующий раз сразу загружается безопасный профиль.</p>
+<p>Game Replay теперь запоминает корректировки после сбоев отдельно для каждой игры. При следующем запуске той же игры UV-Пилот автоматически применит сниженную частоту. Игра падает один раз — в следующий раз сразу загружается безопасный профиль.</p>
 <h3>Per-Profile History</h3>
 <p>Истории сбоев теперь отслеживаются по комбинации <strong>game + profile</strong>. Раньше, например, сбой Performance-tier в игре мог переноситься и на Custom profile, назначенный позднее. Начиная с v0.94, у каждого profile (Eco / Balanced / Performance / Max / Custom XYZ) своя чистая история. Custom profile больше не наследует сбои от presets.</p>
 <div class="info">При первом запуске v0.94 существующий <code>nv-uv_game_replay_adjustments.json</code> определяется как старый формат и один раз очищается (warning в log: "Old adjustment format detected — discarded"). После этого history перестраивается по профилям. Ручных действий не требуется.</div>
-<p style="font-size:0.9em;color:var(--text-dim);">Manual applies (клик по slot-button без UV-Пилота) по-прежнему не сохраняются: при crash live downstep применяется, но JSON-запись не создаётся, потому что без контекста Pilot её нельзя однозначно привязать к профилю.</p>
-<h3>Обзор Replay Adjustments <span style="color:var(--gold);">(Новое в v0.99.2)</span></h3>
-<p>В Game Browser появилась отдельная вкладка <strong>Replay Adjustments</strong>. Она показывает игру и процесс, tier или custom profile, исходное и скорректированное значения, количество обнаруженных сбоев и время последнего сбоя.</p>
-<p>Отдельные корректировки можно сбросить прямо в списке. Кнопка <strong>Reset All</strong> после подтверждения очищает всю историю корректировок Игрового Реплея. Обзор также открывается напрямую правым кликом по переключателю Game Replay в главном окне или MiniWindow.</p>
+<p style="font-size:0.9em;color:var(--text-dim);">Ручные применения и сбои без однозначного контекста UV-Пилота теперь сохраняются как <strong>история Replay только для отображения</strong>. В списке видны слот, исходное и скорректированное значения, тип события, время и ожидающий перезапуск. Такие записи никогда не применяются автоматически к игре или профилю.</p>
+<h3>Обзор корректировок Replay <span style="color:var(--gold);">(Новое в v0.99.2)</span></h3>
+<p>В Game Browser появилась отдельная вкладка <strong>Корректировки Replay</strong>. Она показывает игру и процесс, профиль или слот, исходное и скорректированное значения, количество обнаруженных сбоев, тип последнего события и его время. Безопасно распознанные ограничения игра/профиль можно сбросить, а записи только для истории — удалить.</p>
+<p>Отдельные корректировки можно сбросить прямо в списке. Кнопка <strong>Reset All</strong> после подтверждения очищает всю историю корректировок Game Replay. Обзор также открывается напрямую правым кликом по переключателю Game Replay в главном окне или MiniWindow.</p>
 <h3>Два режима сбоя</h3>
 <table>
 <tr><th>Тип</th><th>Что происходит</th></tr>
 <tr><td><strong>Soft Crash (TDR)</strong></td><td>Драйвер восстанавливается, cooldown 15 s, downstep записывается live, можно продолжать играть</td></tr>
-<tr><td><strong>Hard Crash (Page Fault)</strong></td><td>Downstep сохраняется и автоматически применяется при следующем запуске NV-UV</td></tr>
+<tr><td><strong>Hard Crash (Page Fault)</strong></td><td>Первый downstep сохраняется и применяется при следующем запуске NV-UV. До успешной записи Game Replay блокирует дальнейшие downstep, чтобы всё ещё активная старая частота не снижалась повторно.</td></tr>
 </table>
 <h3>Settings</h3>
 <p>Переключатель 🎮 Replay на toolbar, правый клик — settings. Strategy: снижать частоту (default), повышать напряжение или делать оба действия. Step sizes и safety limits настраиваются, с v0.99 frequency step можно уменьшить до 15 MHz (аппаратно-нативный шаг V/F-таблицы).</p>
-<div class="info">Игровой Реплей работает независимо от UV-Пилота. Просто включите 🎮 Replay — он работает с любым активным UV profile.</div>
+<div class="info">Game Replay работает независимо от UV-Пилота. Просто включите 🎮 Replay — он работает с любым активным UV profile.</div>
 </section>
 <section>
 <h2 class="orange"><span class="icon">🔥</span>3D Stress Test Engine</h2>
@@ -629,8 +671,9 @@
 <h3>Custom Profiles</h3>
 <p>Правый клик по слоту: "Add to UV-Пилот" создаёт custom profile. Его можно назначать играм в game database.</p>
 <h3>Game Database</h3>
-<p>Правый клик по UV-Пилот → 🎮 Game Database. 632 игры + benchmarks, tier assignments можно менять, custom games можно добавлять.</p>
-<p><strong>Новое в v0.99.2:</strong> Game Browser стал шире и получил отдельную вкладку <strong>Replay Adjustments</strong> для значений, автоматически скорректированных Игровым Реплеем.</p>
+<p>Правый клик по UV-Пилот → 🎮 Game Database. 646 игр + benchmarks, tier assignments можно менять, custom games можно добавлять.</p>
+<p><strong>Game Pass / Microsoft Store:</strong> сначала запустите игру, затем в окне добавления игры нажмите <strong>🎮</strong> и по возможности выберите процесс с видимым окном игры. NV-UV копирует только имя процесса и не открывает ни <code>WindowsApps</code>, ни защищённый путь EXE. После распознавания этого процесса UV-Пилотом Smart Hz может корректно перейти в режим Gaming. Общие хосты, компоненты Xbox/Game Bar и постоянно работающие службы, включая <code>ApplicationFrameHost.exe</code>, <code>GamingServices.exe</code>, <code>GamingServicesNet.exe</code> и <code>GameInputSvc.exe</code>, удаляются из списка и также отклоняются при ручном вводе и последующем распознавании UV-Пилотом. App ID в этой версии не поддерживаются; если отдельный процесс игры не отображается, безопасно распознать игру нельзя.</p>
+<p><strong>Новое в v0.99.2:</strong> Game Browser стал шире и получил отдельную вкладку <strong>Корректировки Replay</strong> для значений, автоматически скорректированных Game Replay.</p>
 <h3>Benchmarks (3DMark и др.)</h3>
 <p>3DMark распознаётся, но UV tier ему не назначен — ваш active profile остаётся как есть. Это позволяет запускать benchmark с выбранным вами UV без переключения профилей Pilot. При желании через Game Browser можно назначить custom profile.</p>
 <h3>Auto-Mini on Gaming</h3>
@@ -697,21 +740,21 @@
 <h2 class="cyan"><span class="icon">🖥</span>Смарт Hz</h2>
 <p>Автоматически переключает рабочий стол на низкую частоту обновления, когда игра не запущена, и возвращает native rate при запуске игры. Экономит примерно 10–25 W в idle. Toggle находится на toolbar.</p>
 <p><strong>Выбор idle rate (новое):</strong> правый клик по кнопке Смарт Hz позволяет выбрать одну из частот обновления, которые реально поддерживает монитор (например, 60 / 120 / 144 Hz). Выбор частоты сразу активирует Смарт Hz, поэтому отдельно включать toggle не нужно. Выбранная частота сохраняется между перезапусками.</p>
-<div class="warn">Может вызывать проблемы в multi-monitor setups. Если сомневаетесь — оставьте выключенным. Для определения игр требуется UV-Пилот.</div>
+<div class="warn">Может вызывать проблемы в multi-monitor setups. Если сомневаетесь — оставьте выключенным. Для определения игр требуется UV-Пилот. Поэтому игры Game Pass / Store нужно добавлять через запущенный игровой процесс, чтобы Смарт Hz мог перейти в игровой режим.</div>
 </section>
 <section>
 <h2 class="cyan"><span class="icon">⚡</span>UV⚡Проба (Community UV Database)</h2>
-<p>UV⚡Проба открывает browsable database community undervolt values для вашей GPU, сгруппированную по Eco, Balanced и UV+OC. Каждая entry показывает voltage, clock, power limit, VRAM offset, board, confidence label и source link. Список заранее выбирает обнаруженную карту.</p>
+<p>UV⚡Проба открывает browsable database community undervolt values для вашей GPU, сгруппированную по Eco, Balanced и UV+OC. Каждая entry показывает voltage, clock, power limit, VRAM offset, вариант видеокарты, confidence label и source link. Список заранее выбирает обнаруженную карту.</p>
 <p>Открывается кнопкой <strong>UV⚡Проба</strong> рядом с presets (Eco / Bal / Perf / Max). Чтобы применить значение, нажмите правой кнопкой по entry и выберите profile slot (1–5), как в scanner history.</p>
 <p><strong>Rating и community-votes (НОВОЕ в v0.99):</strong> Клик по звезде делает и то и другое: сохраняет вашу личную пометку локально и одновременно считается анонимным community-vote. Новая колонка <strong>Community</strong> показывает средний балл всех голосов с количеством в скобках, например "★ 4.2 (17)", и обновляется два раза в день. Повторный клик по той же звезде (0 звёзд) удаляет ваш голос и на сервере.</p>
-<p><strong>Отправка собственных настроек (НОВОЕ в v0.99):</strong> Правый клик по занятому profile slot → <strong>Share to Community DB</strong>. Значения берутся из слота как есть (то есть реально проверенный профиль), опциональны только вариант платы и короткая заметка. После короткой проверки ваш preset появляется у всех в UV⚡Пробе с пометкой "user-submitted". Подробнее о передаваемых данных — в разделе Community-функции и данные.</p>
+<p><strong>Отправка собственных настроек (НОВОЕ в v0.99):</strong> Правый клик по занятому profile slot → <strong>Share to Community DB</strong>. Значения берутся из слота как есть (то есть реально проверенный профиль), опциональны только вариант видеокарты и короткая заметка. После короткой проверки ваш preset появляется у всех в UV⚡Пробе с пометкой "user-submitted". Подробнее о передаваемых данных — в разделе Community-функции и данные.</p>
 <div class="warn">Community values — только отправная точка. Каждая карта отличается (silicon lottery), поэтому всегда проверяйте значение на собственной карте, прежде чем на него полагаться.</div>
 </section>
 <section>
 <h2 class="cyan"><span class="icon">🔒</span>Community-функции и данные</h2>
 <p>В NV-UV <strong>нет аккаунтов, нет телеметрии и никакой автоматической отправки данных</strong>. Данные передаются только тогда, когда вы сами используете одну из двух community-функций:</p>
 <p><strong>Оценка звёздами в UV⚡Пробе:</strong> При клике по звезде оценка сохраняется локально и дополнительно отправляется анонимный community-vote. Передаются только: preset ID, ваша оценка и случайный client ID (случайный GUID, создаваемый локально, без какой-либо привязки к железу или личности). Повторный клик по той же звезде (0 звёзд) удаляет ваш голос и на сервере.</p>
-<p><strong>Отправка настроек (правый клик по слоту профиля):</strong> Передаются UV-значения из слота (частота, напряжение, при наличии power limit и VRAM offset), определённая модель GPU, опционально вариант платы и короткая заметка, а также тот же случайный client ID. <strong>Важно:</strong> После одобрения эти данные становятся публично видимыми в community-базе на GitHub. Не пишите личную информацию в заметку.</p>
+<p><strong>Отправка настроек (правый клик по слоту профиля):</strong> Передаются UV-значения из слота (частота, напряжение, при наличии power limit и VRAM offset), определённая модель GPU, опционально вариант видеокарты и короткая заметка, а также тот же случайный client ID. <strong>Важно:</strong> После одобрения эти данные становятся публично видимыми в community-базе на GitHub. Не пишите личную информацию в заметку.</p>
 <p><strong>Техническое:</strong> Как и любой интернет-сервис, сервер (Cloudflare Worker) видит ваш IP-адрес. Он обрабатывается исключительно как ежедневно пересаливаемый хеш для защиты от злоупотреблений и <strong>никогда не сохраняется в открытом виде</strong>. Отображение community-оценок, обновление базы и проверка обновлений при запуске (раз в день загружается с GitHub информация о том, вышла ли новая версия NV-UV) — это обычная загрузка с GitHub, при этом ничего не отправляется. Случайный client ID лежит в <code>%LocalAppData%\NV-UV\nv-uv_client_id.txt</code> и может быть удалён в любой момент (при следующем голосе создаётся новый).</p>
 
 <h2 class="cyan"><span class="icon">🌍</span>Global Override &amp; No Override</h2>
@@ -768,7 +811,7 @@
 <tr><td>🔥 Max</td><td>975 mV</td><td>3000 MHz</td><td>100%</td></tr>
 </table>
 <p style="font-size:0.9em;color:var(--text-dim);">Примечание: 5060 (non-Ti) использует эту таблицу как fallback. Так как это меньший GB206 cut с более низким TBP, карта сама ограничивает себя через power limit, и значения остаются безопасными.</p>
-<div class="info" style="margin-top:1em;"><strong>🧪 Статус Ada (v0.95):</strong> Ada write path (byte-exact VF-curve encoding) проверен на KFA2 RTX 4070 Ti (чип AD104) и полностью работает в цепочке Apply / Scanner / Игровой Реплей / UV-Пилот. Значения presets ниже основаны на community data. Тестеры Ada для AD102 (4090) и AD103 (4080) приветствуются на PCGH subforum и Discord.</div>
+<div class="info" style="margin-top:1em;"><strong>🧪 Статус Ada (v0.95):</strong> Ada write path (byte-exact VF-curve encoding) проверен на KFA2 RTX 4070 Ti (чип AD104) и полностью работает в цепочке Apply / Scanner / Game Replay / UV-Пилот. Значения presets ниже основаны на community data. Тестеры Ada для AD102 (4090) и AD103 (4080) приветствуются на PCGH subforum и Discord.</div>
 <h3>RTX 4090</h3>
 <table>
 <tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
@@ -820,7 +863,7 @@
 </table>
 <p style="font-size:0.9em; opacity:0.8;">Примечание по RTX 4060: чип AD107 необычно слабо масштабируется от дополнительного напряжения. Больше mV почти не даёт больше MHz, поэтому значения tiers расположены ближе друг к другу, чем на более крупных чипах Ada.</p>
 <div class="warn"><strong>Что означает "experimental" для RTX 5060 и RTX 4060?</strong> Эти карты поддерживаются кодом NV-UV, но preset values ещё не проверены на реальном железе через tester programme. Они основаны на AI-DeepSearch research по community data (Reddit, Hardwareluxx, Igor's Lab, OCN). Начинайте тест с Balanced и сообщайте результаты на PCGH forum или Discord, чтобы значения можно было уточнить.</div>
-<div class="info" style="margin-top:1em;"><strong>🟢 Статус Ampere начиная с v0.99.3:</strong> RTX 30 Series входит в обычный список поддерживаемых GPU. Значения presets являются консервативными community-based стартовыми точками и могут отличаться в зависимости от платы, охлаждения и качества silicon. При сомнениях начинайте с Balanced и проверяйте результат scanner, Игровым Реплеем и реальными играми. При сообщении о проблеме приложите diagnostics ZIP.</div>
+<div class="info" style="margin-top:1em;"><strong>🟢 Статус Ampere начиная с v0.99.3:</strong> RTX 30 Series входит в обычный список поддерживаемых GPU. Значения presets являются консервативными community-based стартовыми точками и могут отличаться в зависимости от платы, охлаждения и качества silicon. При сомнениях начинайте с Balanced и проверяйте результат scanner, Game Replay и реальными играми. При сообщении о проблеме приложите diagnostics ZIP.</div>
 <h3>RTX 3090 <span style="color:var(--cyan);">(reference card, integration verified)</span></h3>
 <table>
 <tr><th>Preset</th><th>Напряжение</th><th>Частота</th><th>PL</th></tr>
@@ -907,7 +950,7 @@
     </div>
 <p><strong>Быстрая проверка:</strong> посмотрите на главное окно Afterburner. Поле "VOLT" тоже показывает <code>0 mV</code>? Значит, сам AB тоже не читает напряжение — проблема в AB, а не в NV-UV. Исправление:</p>
 <ol>
-<li>AB → Settings (⚙) → вкладка <strong>General</strong> → <code>Unlock Voltage Control</code> ✓ и <code>Unlock Voltage Monitoring</code> ✓</li>
+<li>AB → Settings (⚙) → вкладка <strong>General</strong> → <code>Unlock Voltage Control</code> ✓ и <code>Unlock Voltage Monitoring</code> ✓; <code>Force Constant Voltage</code> должен быть отключён</li>
 <li>AB → Settings (⚙) → вкладка <strong>Monitoring</strong> → прокрутите вниз и включите <code>GPU voltage</code> ✓</li>
 <li>Нажмите OK (не Cancel) и <strong>полностью перезапустите Afterburner</strong></li>
 <li>Главное окно AB теперь должно показывать реальное значение в "VOLT" (например, <code>905 mV</code>). Только после этого NV-UV тоже сможет видеть напряжение.</li>
@@ -923,7 +966,7 @@
 <h3>Scanner продолжает повышать шаги, но частота GPU не растёт</h3>
 <p>Исправлено в Antares. Plateau detection автоматически останавливает scanner, когда GPU уже не может буститься выше. Если у вас более старая версия — обновитесь до Antares.</p>
 <h3>Игра падает после UV, что делать?</h3>
-<p>Это нормально: не каждая GPU выдерживает каждый preset. Попробуйте следующий более высокий preset или используйте scanner для индивидуальной оптимизации. С Игровой Реплей можно просто продолжать играть: частота снижается автоматически — в идеале прямо во время игры или после сбоя при следующем запуске.</p>
+<p>Это нормально: не каждая GPU выдерживает каждый preset. Попробуйте следующий более высокий preset или используйте scanner для индивидуальной оптимизации. С Game Replay можно просто продолжать играть: частота снижается автоматически — в идеале прямо во время игры или после сбоя при следующем запуске.</p>
 <h3>Разница между V-Лок и Multi-Point?</h3>
 <p><strong>V-Лок</strong> фиксирует GPU в одной точке напряжения/частоты. Простой, надёжный и рекомендуемый метод.<br/>
 <strong>Multi-Point</strong> задаёт несколько точек на кривой (например, из OCS Import). Сложнее, но потенциально эффективнее по всему диапазону напряжений.</p>
@@ -932,7 +975,7 @@
 <h3>Поддержка Windows 10?</h3>
 <p>Не планируется. Для DXR stress testing требуется Windows 11.</p>
 <h3>Поддержка RTX 40 series?</h3>
-<p><strong>Полностью поддерживается.</strong> Начиная с "Ada improved" (v0.94), активен native Ada write path. Byte-exact curve encoder проверен на KFA2 RTX 4070 Ti (AD104) и работает по всей цепочке — Apply, Scanner, Игровой Реплей и UV-Пилот. Preset values (цели frequency/voltage) основаны на community data; особенно нужны тестеры Ada с RTX 4090 (AD102) и RTX 4080 / 4080 Super (AD103), чтобы уточнить per-chip constants — пишите на PCGH forum или Discord. RTX 4060 Ti (AD106) и RTX 4060 (AD107) также поддерживаются с experimental preset values из AI-DeepSearch research; тестеры с этими картами тоже приветствуются.</p>
+<p><strong>Полностью поддерживается.</strong> Начиная с "Ada improved" (v0.94), активен native Ada write path. Byte-exact curve encoder проверен на KFA2 RTX 4070 Ti (AD104) и работает по всей цепочке — Apply, Scanner, Game Replay и UV-Пилот. Preset values (цели frequency/voltage) основаны на community data; особенно нужны тестеры Ada с RTX 4090 (AD102) и RTX 4080 / 4080 Super (AD103), чтобы уточнить per-chip constants — пишите на PCGH forum или Discord. RTX 4060 Ti (AD106) и RTX 4060 (AD107) также поддерживаются с experimental preset values из AI-DeepSearch research; тестеры с этими картами тоже приветствуются.</p>
 <h3>Почему Boost Override / Фикс V-шага / Оптимизация простоя отсутствуют на картах Ada?</h3>
 <p>Это компенсации, специфичные для Blackwell:</p>
 <ul>
@@ -946,7 +989,7 @@
 <h3>Antivirus flags NV-UV</h3>
 <p>False positive. Self-contained .NET SingleFile EXE иногда помечаются антивирусами. NV-UV безопасен, можно добавить исключение.</p>
 <h3>Где хранятся мои настройки?</h3>
-<p><code>%LocalAppData%\NV-UV\</code> содержит UV profiles, slot names, Игровой Реплей adjustments, scanner history, OCS data, stock curve, CCB cache и logs.</p>
+<p><code>%LocalAppData%\NV-UV\</code> содержит UV profiles, slot names, корректировки Game Replay, scanner history, OCS data, stock curve, CCB cache и logs.</p>
 <p>Постоянные данные восстановления экспериментального Blackwell hotspot хранятся отдельно в <code>%ProgramData%\NV-UV\BlackwellHotspot\</code>. Не удаляйте эту папку вручную, пока hotspot активен.</p>
 <h3>Как экспортировать log files?</h3>
 <p>Используйте кнопку <strong>Log Export</strong> под log panel. NV-UV создаёт diagnostics ZIP с <code>activity.log</code>, <code>activity-previous.log</code>, <code>diagnostic.log</code>, <code>diagnostic-previous.log</code> и <code>system-info.txt</code>. Этот ZIP можно напрямую отправить Christian.</p>
@@ -967,7 +1010,7 @@
 <h3>Apply ничего не делает / напряжение не меняется</h3>
 <p>Включите <code>Unlock Voltage Control</code> в AB. Нет stock curve? Нажмите 🔄 Рекалибровка. Если Blackwell hotspot активен, fix сначала удаляется через контролируемый rollback, и только затем начинается настоящая калибровка.</p>
 <h3>Игра падает после UV</h3>
-<p>Попробуйте более высокий preset или используйте scanner. Игровой Реплей снижает частоту автоматически.</p>
+<p>Попробуйте более высокий preset или используйте scanner. Game Replay снижает частоту автоматически.</p>
 </section>
 <section>
 <h2 class="orange"><span class="icon">💬</span>Обратная связь</h2>
