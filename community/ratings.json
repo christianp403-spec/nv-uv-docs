@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-08-09",
+  "updated": "2026-08-10",
   "ratings": {
     "ada-4060-483e3d92acd8": {
       "avg": 3.67,
@@ -136,7 +136,7 @@
     },
     "bw-5070-ti-3e54c50c9ebc": {
       "avg": 1,
-      "votes": 1
+      "votes": 2
     },
     "bw-5070-ti-4603c6f35e05": {
       "avg": 5,
@@ -147,8 +147,8 @@
       "votes": 7
     },
     "bw-5070-ti-8278b3c61fef": {
-      "avg": 5,
-      "votes": 3
+      "avg": 4.5,
+      "votes": 4
     },
     "bw-5070-ti-82851d73c7d4": {
       "avg": 4,
@@ -159,8 +159,8 @@
       "votes": 4
     },
     "bw-5070-ti-a59db40d4b47": {
-      "avg": 2.5,
-      "votes": 2
+      "avg": 2.33,
+      "votes": 3
     },
     "bw-5070-ti-b3db2b3c0949": {
       "avg": 3.5,
@@ -176,6 +176,10 @@
     },
     "bw-5070-ti-ea5d0e2b8afd": {
       "avg": 1,
+      "votes": 1
+    },
+    "bw-5070-ti-f339b3fe0155": {
+      "avg": 5,
       "votes": 1
     },
     "bw-5080-03f0895c54ff": {
