@@ -931,6 +931,23 @@
               },
               "date_found": "2026-08-09",
               "notes": "Stable across ~50hrs BF6 @Insane settings w/DLSS"
+            },
+            {
+              "preset_id": "bw-5080-05ddbdcf5d4d",
+              "board": "Zotac RTX 5080 Solid",
+              "freq_mhz": 2752,
+              "voltage_mv": 900,
+              "power_limit_pct": 80,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-11",
+              "notes": ""
             }
           ]
         },
