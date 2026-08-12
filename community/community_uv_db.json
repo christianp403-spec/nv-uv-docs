@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-08-11",
+  "updated": "2026-08-12",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -484,6 +484,40 @@
               },
               "date_found": "2026-08-07",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5090-b32861629560",
+              "board": "ASUS",
+              "freq_mhz": 2850,
+              "voltage_mv": 940,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-11",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5090-4bdbfa1b03a9",
+              "board": "ASUS TUF",
+              "freq_mhz": 3082,
+              "voltage_mv": 1035,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-12",
+              "notes": ""
             }
           ]
         },
@@ -947,6 +981,23 @@
                 "url": ""
               },
               "date_found": "2026-08-11",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-64dde70afc75",
+              "board": "MSI VANGUARD SOC",
+              "freq_mhz": 3150,
+              "voltage_mv": 950,
+              "power_limit_pct": 110,
+              "vram_offset_mhz": 2500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-12",
               "notes": ""
             }
           ]
