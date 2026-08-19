@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-08-16",
+  "updated": "2026-08-19",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -1016,6 +1016,23 @@
               },
               "date_found": "2026-08-12",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-72a1628e2493",
+              "board": "Gigabyte Master Aorus 5080",
+              "freq_mhz": 3172,
+              "voltage_mv": 990,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-18",
+              "notes": ""
             }
           ]
         },
@@ -1706,6 +1723,23 @@
               },
               "date_found": "2026-08-02",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-b041994a09e8",
+              "board": "MSI Gaming trio oc",
+              "freq_mhz": 3112,
+              "voltage_mv": 940,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-18",
+              "notes": "Stable overclocking"
             }
           ]
         },
