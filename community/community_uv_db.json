@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-08-19",
+  "updated": "2026-08-25",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -1033,6 +1033,23 @@
               },
               "date_found": "2026-08-18",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-6f80d2e4341d",
+              "board": "Gigabyte",
+              "freq_mhz": 3127,
+              "voltage_mv": 940,
+              "power_limit_pct": 90,
+              "vram_offset_mhz": 1500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-23",
+              "notes": "Windforce SFF, flashed with Aorus Master BIOS"
             }
           ]
         },
@@ -1740,6 +1757,40 @@
               },
               "date_found": "2026-08-18",
               "notes": "Stable overclocking"
+            },
+            {
+              "preset_id": "bw-5070-305d237e5694",
+              "board": "MSI Ventus 2X OC BLACK",
+              "freq_mhz": 3037,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-22",
+              "notes": "Alan Wake 2 - 2x MFG & Path Tracing set to High"
+            },
+            {
+              "preset_id": "bw-5070-31b666fe7182",
+              "board": "MSI Gaming trio OC",
+              "freq_mhz": 3150,
+              "voltage_mv": 960,
+              "power_limit_pct": 112,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-24",
+              "notes": ""
             }
           ]
         },
@@ -2437,6 +2488,40 @@
                 "url": ""
               },
               "date_found": "2026-08-10",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4090-4b972d206edb",
+              "board": "MSI RTX 4090 Suprim X",
+              "freq_mhz": 2857,
+              "voltage_mv": 1000,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-21",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4090-e71000da9b4b",
+              "board": "MSI RTX 4090 Suprim X",
+              "freq_mhz": 2602,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-21",
               "notes": ""
             }
           ]
@@ -3759,6 +3844,23 @@
                 "url": ""
               },
               "date_found": "2026-07-20",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4070-9252f016eee7",
+              "board": "Zotac",
+              "freq_mhz": 2715,
+              "voltage_mv": 985,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-22",
               "notes": ""
             }
           ]
