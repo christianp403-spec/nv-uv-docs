@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NV-UV · User Guide · Build 22 · Cantor</title>
+<title>NV-UV · Tester Guide · Build 22 · Cantor</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
 
@@ -356,7 +356,7 @@
   <!-- ═══ WHAT IS NV-UV ═══ -->
   <section>
     <h2 class="orange"><span class="icon">⚡</span>What is NV-UV?</h2>
-    <p>NV-UV is a GPU undervolting tool for modern NVIDIA GPUs: <strong>RTX 50 Series</strong> (Blackwell), <strong>RTX 40 Series</strong> (Ada) and, new in v0.98, <strong>RTX 30 Series</strong> (Ampere). It simplifies the undervolting process, which normally requires manually editing MSI Afterburner's curve editor.</p>
+    <p>NV-UV is a GPU undervolting tool for modern NVIDIA GPUs: <strong>RTX 50 Series</strong> (Blackwell), <strong>RTX 40 Series</strong> (Ada) and <strong>RTX 30 Series</strong> (Ampere). It simplifies the undervolting process, which normally requires manually editing MSI Afterburner's curve editor.</p>
     <p>NV-UV uses Afterburner as its backend, so you need <strong>MSI Afterburner + RTSS</strong> installed.</p>
 
     <h3>Features</h3>
@@ -366,98 +366,40 @@
       <tr><td>🔍 <strong>Stock Curve Discovery</strong></td><td>Automatically reads the real VF curve of your specific GPU from AB</td></tr>
       <tr><td>🔬 <strong>OCS → UV</strong></td><td>Import AB OC Scanner results, build chip-specific UV curve</td></tr>
       <tr><td>🎮 <strong>Game Replay</strong></td><td>Automatic step-down on crash, per-game learning loop and a dedicated Replay Adjustments overview</td></tr>
-      <tr><td>🌡️ <strong>Blackwell Hotspot</strong> <span style="color:var(--gold);">NEW in v0.99.2</span></td><td>Experimental hotspot temperature for supported RTX 50 Series GPUs with automatic MSI Afterburner plugin setup</td></tr>
+      <tr><td>◇ <strong>DCC</strong> <span style="color:var(--gold);">NEW in v0.99.5</span></td><td>Gradually finds an efficient GPU clock in recognized games and remembers the result for each game</td></tr>
+      <tr><td>⚡ <strong>NVIDIA Auto-UV</strong> <span style="color:var(--gold);">NEW in v0.99.5</span></td><td>First shows a UV starting point for your GPU and applies it only after you confirm</td></tr>
+      <tr><td>🔄 <strong>Verified Updates</strong> <span style="color:var(--gold);">NEW in v0.99.5</span></td><td>Checks for and downloads official updates when requested; installation always remains your choice</td></tr>
+      <tr><td>🧾 <strong>Diagnostics &amp; Error Reports</strong> <span style="color:var(--gold);">NEW in v0.99.5</span></td><td>Creates a local ZIP first, with optional images and voluntary private sending</td></tr>
+      <tr><td>🌡️ <strong>Blackwell Hotspot</strong></td><td>Experimental hotspot temperature for supported RTX 50 Series GPUs with automatic MSI Afterburner plugin setup</td></tr>
       <tr><td>✈️ <strong>UV-Pilot</strong></td><td>Detects games automatically, switches to the optimal preset</td></tr>
-      <tr><td>⚡ <strong>UV⚡Try</strong> <span style="color:var(--gold);">NEW</span></td><td>Browse community UV values for your card and apply them to a slot</td></tr>
-      <tr><td>🌍 <strong>Global / No Override</strong> <span style="color:var(--gold);">NEW</span></td><td>One tier for all games, or exempt single games from it</td></tr>
+      <tr><td>⚡ <strong>UV⚡Try</strong></td><td>Browse community UV values for your card and apply them to a slot</td></tr>
+      <tr><td>🌍 <strong>Global / No Override</strong></td><td>One tier for all games, or exempt single games from it</td></tr>
       <tr><td>⚡ <strong>Voltage Step Scanner</strong></td><td>Stage 1 (highest stable frequency) + Stage 2 (lowest stable voltage), DX12/DXR stress engine</td></tr>
-      <tr><td>🎯 <strong>Optimize Point</strong> <span style="color:var(--gold);">NEW</span></td><td>Stage 2 — find the lowest voltage for a fixed frequency, fine-tuning after Stage 1</td></tr>
-      <tr><td>📐 <strong>V-Step Compensation</strong> <span style="color:var(--gold);">NEW</span></td><td>Scanner automatically compensates V-Droop for more precise tests</td></tr>
+      <tr><td>🎯 <strong>Optimize Point</strong></td><td>Stage 2 — find the lowest voltage for a fixed frequency, fine-tuning after Stage 1</td></tr>
+      <tr><td>📐 <strong>V-Step Compensation</strong></td><td>Scanner automatically compensates V-Droop for more precise tests</td></tr>
       <tr><td>🖥 <strong>Smart Hz</strong></td><td>Low desktop refresh rate, native Hz while gaming. Right-click to choose the idle rate. Saves ~10-25W idle.</td></tr>
-      <tr><td>🌍 <strong>DE/EN/RU/ES</strong></td><td>Full UI in German/English/Russian/Spanish, live toggle in the footer (cycles DE → EN → RU → ES). <strong>NEW in v0.99.1:</strong> Russian and Spanish (fully localized UI including feature names)</td></tr>
+      <tr><td>🌍 <strong>DE/EN/RU/ES</strong></td><td>Complete interface in German, English, Russian and Spanish; switch languages directly in the footer</td></tr>
       <tr><td>🔥 <strong>3D Stress Test</strong></td><td>DX12 + DXR render engine (headless) with heartbeat load patterns</td></tr>
       <tr><td>⚓ <strong>Anchor Profile</strong></td><td>Right-click on slot — applied at startup, restored by UV-Pilot after games end</td></tr>
       <tr><td>🧊 <strong>Idle Optimization</strong></td><td>Low voltages = stock, saves power at desktop/idle</td></tr>
       <tr><td>🔧 <strong>V-Step Fix</strong></td><td>Compensates for the Blackwell point-before-flatten bug</td></tr>
       <tr><td>📐 <strong>Mini View</strong></td><td>Compact view, perfect alongside AB's curve editor</td></tr>
-      <tr><td>🎨 <strong>5 Skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity + Summer26. <strong>Improved in v0.99.2:</strong> brighter lime V/F curve for better Summer26 readability</td></tr>
+      <tr><td>🎨 <strong>5 Skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity + Summer26; a clearly readable V/F curve in every design</td></tr>
       <tr><td>⏻ <strong>System Tray and autostart</strong></td><td>Runs in the background. Windows autostart uses a validated Scheduled Task and launches NV-UV minimized.</td></tr>
     </table>
   </section>
 
-  <!-- ═══ NEW IN v0.99.4 ═══ -->
+  <!-- ═══ CURRENT VERSION ═══ -->
   <section>
-    <h2 class="orange"><span class="icon">🆕</span>New in v0.99.4</h2>
-
-    <h3>🧙 MSI Afterburner Setup assistant</h3>
-    <p>The days of preparing MSI Afterburner completely by hand for NV-UV should now be over. The new assistant finds Afterburner and its configuration even in custom installation paths, first inspects the <em>General</em> and <em>Monitoring</em> pages read-only, and shows exactly which items are missing. It supports the real-hardware validated builds 4.6.6.16757, 4.6.7 Beta 2 (16935), Beta 3 (17352) and Beta 4 (17439), localized sensor names, and iGPU/multi-GPU systems.</p>
-    <p><strong>Automatic setup</strong> changes only the list shown beforehand, backs up both Afterburner configurations, uses the real Apply button, then rechecks the UI, GPU mapping and live telemetry. If an Afterburner update or reset removes required settings, NV-UV detects this and offers a controlled repair.</p>
-
-    <h3>🌡️ Native GPUProbe hotspot with Afterburner Beta 4</h3>
-    <p>With MSI Afterburner 4.6.7 Beta 4 Build 17439, NV-UV can use Afterburner's native GPUProbe path for the first time. NV-UV enables the registered GPU and VRAM sources, restarts Afterburner in a controlled way, and accepts the sensor only after five plausible live samples. A previously NV-UV-managed legacy plugin is removed only after a successful pre-test; if validation fails, NV-UV automatically restores the previous state.</p>
-    <div class="info"><strong>Compatibility:</strong> Beta 2 and Beta 3 continue to use the proven NV-UV legacy hotspot path. Beta 4 prefers the native GPUProbe path. Disabling hotspot support removes only changes managed by NV-UV.</div>
-
-    <h3>📊 Expanded and collapsible telemetry</h3>
-    <p>Together with Beta 4, telemetry has been expanded considerably. The compact view shows the most important values at a glance, while additional details can be expanded when needed. These include GPU and VRAM clocks, hotspot temperature and delta, the hottest available VRAM channel, individual VRAM IC/module temperatures and their spread, plus multiple fan-control channels and RPM values.</p>
-
-    <h3>🎯 Curve point → Quick-Lock</h3>
-    <p>Clicking a V/F curve point transfers its voltage and clock directly into Quick-Lock. Mode, voltage slider, reference value, target and derived offset are updated together. Selecting a point does not write anything to the GPU; only <strong>Apply UV</strong> applies the change.</p>
-
-    <h3>🧭 GPU-agnostic mapping and iGPU changes</h3>
-    <p>NV-UV no longer binds its target card rigidly to “GPU1” or “GPU2”. The uniquely identified NVIDIA Blackwell GPU is what matters — it may just as well appear as GPU3, GPU4 or higher in Afterburner. If enabling or disabling an Intel/AMD iGPU changes the numbering, the assistant can safely switch Afterburner's primary GPU and the matching voltage source back to the correct card.</p>
-
-    <h3>🛡️ GPU, VBIOS and crossflash protection</h3>
-    <p>Hotspot states are bound to the GPU, SUBSYS, VBIOS and Afterburner build. A GPU or VBIOS change pauses presets, slots, Game Library, UV-Pilot, Replay and automatic profile starts until the correct identity returns or a controlled recalibration is completed. Real RTX 5090 dual-BIOS/crossflash round trips, a swap to an RTX 5070 Ti and different iGPU states were tested.</p>
-
-    <h3>🔁 Replay history and hard-crash recovery</h3>
-    <p>Replay Adjustments now also shows corrections made without UV-Pilot or an identified game. Manual and unknown cases remain display-only history and are never reused blindly. After a hard crash, exactly one downstep stays pending; further corrections are blocked until the value has been written successfully after a restart.</p>
-
-    <h3>🎮 Game Pass and Microsoft Store</h3>
-    <p>A running game process can be selected without accessing its protected installation folder. The list prioritizes the process with the visible game window. Once UV-Pilot recognizes it, Smart Hz can also switch from Desktop to Gaming mode. Shared hosts and always-running Xbox/Gaming services are rejected centrally.</p>
-
-    <h3>🔥 Afterburner's new V/F Hit Map</h3>
-    <p>One Beta 4 feature I personally really like is MSI Afterburner's new <strong>V/F Hit Map</strong>, created by Unwinder. It shows which areas of the V/F curve your GPU has actually been using and how frequently those points were hit. Anyone who enjoys refining GPU curves should try it: open Afterburner's Curve Editor and press <strong>M</strong>. This feature alone makes Beta 4 well worth checking out.</p>
-    <p>A huge thank you to Alexey “Unwinder” Nicolaychuk for GPUProbe, the new Hit Map and his continued work on MSI Afterburner. <a href="https://forums.guru3d.com/threads/msi-afterburner-v4-6-7-beta-1-is-approaching.458132/post-6453140" target="_blank" rel="noopener">Beta 4 download and full notes on the Guru3D forum</a>.</p>
-  </section>
-
-  <!-- ═══ NEW IN v0.99.3 ═══ -->
-  <section>
-    <h2 class="orange"><span class="icon">🆕</span>New in v0.99.3</h2>
-
-    <h3>🌡️ Refined hotspot display</h3>
-    <p>The experimental Blackwell hotspot temperature is now also available in Mini View. Hotspot keeps one decimal place, while the regular GPU temperature is again shown in whole degrees. The setup border now reflects the actual activation state more reliably.</p>
-
-    <h3>🛡️ Hotspot recovery and protected recalibration</h3>
-    <p>Existing hotspot installations are migrated automatically to durable recovery storage under <code>%ProgramData%\NV-UV\BlackwellHotspot\</code>. Recalibrate detects an active hotspot fix, removes it through the controlled rollback and restarts NV-UV first. The actual calibration begins only after Recalibrate is clicked again; hotspot can then be installed for the newly created Afterburner profile.</p>
-
-    <h3>🎮 Edit and delete user-added games</h3>
-    <p>Manually added games can now be visibly edited and deleted. Name, process and base tier remain stored correctly when a tier assignment is reset. The add/edit dialog also handles Windows display scaling and limited vertical space more reliably.</p>
-
-    <h3>🧾 Activity and Diagnostics</h3>
-    <p>The log area is now separated into a localized <strong>Activity</strong> view for clear user-facing events and a complete technical <strong>Diagnostics</strong> view. Export creates one ZIP containing current and previous activity logs, current and previous diagnostic logs, and system information including the NVIDIA driver, autostart state and hotspot lifecycle.</p>
-
-    <h3>⏻ More reliable Windows autostart</h3>
-    <p>NV-UV now validates the Scheduled Task target, arguments, enabled state, logon trigger, highest privileges and startup delay, and repairs stale configurations. While Afterburner starts, NV-UV also gives MAHM time to initialize instead of immediately presenting a transient startup state as a red error.</p>
-
-    <h3>🟢 Ampere is regularly supported</h3>
-    <p>RTX 30 Series is part of the regular supported GPU range. Presets remain conservative community-based starting points and should be validated with the scanner, Game Replay and real games like any other GPU profile.</p>
-  </section>
-
-  <!-- ═══ NEW IN v0.99.2 ═══ -->
-  <section>
-    <h2 class="orange"><span class="icon">🆕</span>New in v0.99.2</h2>
-
-    <h3>🎨 Summer26 Special Skin</h3>
-    <p>The green V/F curve segment now uses a brighter lime color. This provides much better contrast against the green lawn in the Summer26 background.</p>
-
-    <h3>🎮 Wider Game Browser</h3>
-    <p>The Game Browser now provides more room for the search field, game list and additional information. Its default width increased from 920 to 1040 pixels and its minimum width from 820 to 940 pixels. Window height is unchanged.</p>
-
-    <h3>🔁 Replay Adjustments</h3>
-    <p>The Game Browser now includes a dedicated tab for every value Game Replay has automatically corrected after detected game or driver crashes. Individual entries or the complete adjustment history can be reset directly.</p>
-
-    <h3>🌡️ Experimental Blackwell Hotspot Temperature</h3>
-    <p>Supported NVIDIA GeForce RTX 50 Series GPUs can now display an experimental hotspot temperature. NV-UV automatically installs and configures the required MSI Afterburner monitoring plugin.</p>
+    <h2 class="orange"><span class="icon">🆕</span>What's New in v0.99.5?</h2>
+    <table>
+      <tr><th>New</th><th>In brief</th></tr>
+      <tr><td><strong>DCC</strong></td><td>Optimizes the GPU clock while recognized games are running and remembers suitable values for each game and GPU. NVIDIA Ultra Efficiency is included as an experimental second mode.</td></tr>
+      <tr><td><strong>NVIDIA Auto-UV</strong></td><td>First shows an individual UV starting point and applies it to a selected Afterburner slot only after you confirm.</td></tr>
+      <tr><td><strong>Verified Updates</strong></td><td>Checks for and downloads official updates when requested. You always start the installation yourself; the previous version can be restored if something goes wrong.</td></tr>
+      <tr><td><strong>Diagnostics &amp; Error Reports</strong></td><td>Saves diagnostics locally first and can send them privately to NV-UV with optional images after you review them.</td></tr>
+      <tr><td><strong>More Improvements</strong></td><td>Improved Afterburner and hotspot setup, game detection, scanner fan handling, VRAM display and interface. Game Database 2.15 contains 647 games.</td></tr>
+    </table>
   </section>
 
   <!-- ═══ REQUIREMENTS ═══ -->
@@ -465,18 +407,24 @@
     <h2 class="gold"><span class="icon">📋</span>Requirements</h2>
     <table>
       <tr><th>What</th><th>Details</th></tr>
-      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, or 5060 Ti / 5060 (experimental)<br>Ada cards (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) also supported<br>RTX 4060 Ti / 4060 (experimental)<br>RTX 30 Series (Ampere) <span style="color:var(--gold);">NEW in v0.98</span></td></tr>
+      <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5090, 5080, 5070 Ti, 5070, or 5060 Ti / 5060 (experimental)<br>Ada cards (RTX 4090 / 4080 / 4070 Ti Super / 4070 Ti / 4070 Super / 4070) also supported<br>RTX 4060 Ti / 4060 (experimental)<br>RTX 30 Series (Ampere)</td></tr>
       <tr><td><strong>Driver</strong></td><td>Latest NVIDIA driver</td></tr>
-      <tr><td><strong>MSI Afterburner</strong></td><td>With RTSS. Automatic setup is live-validated for the exact builds 4.6.6.16757, 4.6.7 Beta 2 (16935) and Beta 3 (17352). Other versions or mismatching SHA-256 hashes are rejected safely.</td></tr>
+      <tr><td><strong>MSI Afterburner</strong></td><td>With RTSS. Automatic setup is live-validated for the exact builds 4.6.6.16757 and 4.6.7 Beta 2 (16935), Beta 3 (17352) and Beta 4 (17439). Other versions or mismatching SHA-256 hashes are rejected safely.</td></tr>
       <tr><td><strong>Windows</strong></td><td>Windows 11 (64-bit)</td></tr>
     </table>
     <div class="warn">NV-UV requires MSI Afterburner running in the background. Without AB, NV-UV cannot change voltages!</div>
-    <div class="info" style="margin-top:1em;"><strong>Ampere note:</strong> Ampere support was hardware-verified on an RTX 3090 (GA102). The preset values below are based on community research. Feedback from Ampere users is very welcome on the PCGH subforum and Discord. Please attach a log (Export button, bottom right) when reporting a problem.</div>
+    <div class="info" style="margin-top:1em;"><strong>Ampere note:</strong> Ampere support was hardware-verified on an RTX 3090 (GA102). The preset values below are community-based starting points. Feedback from Ampere users is very welcome on the PCGH subforum and Discord. Please attach a diagnostics ZIP when reporting a problem.</div>
   </section>
 
   <!-- ═══ INSTALLATION ═══ -->
   <section>
     <h2 class="cyan"><span class="icon">🔧</span>Installation</h2>
+
+    <div class="info">
+      <strong>💾 Back up AB profiles (optional, recommended):</strong><br>
+      If you have custom Afterburner profiles or fan curves, back up this folder first:<br>
+      <code>C:\Program Files (x86)\MSI Afterburner\Profiles\</code>
+    </div>
 
     <div class="warn" style="border-left-width:6px; padding:18px 20px; margin:20px 0; font-size:1.05em;">
       <strong>IMPORTANT, please don't skip:</strong> For NV-UV to read and write GPU
@@ -486,7 +434,7 @@
       <strong>mandatory</strong>, not optional.
     </div>
     <div class="info">
-      <strong>New in v0.99.4:</strong> Clicking <strong>MSI Afterburner Setup</strong>
+      Clicking <strong>MSI Afterburner Setup</strong>
       first verifies General and Monitoring live and read-only in an isolated worker. The first
       visible assistant therefore already contains the complete authoritative list. For a manual
       adjustment, choose <strong>Open General</strong> or <strong>Open Monitoring</strong>;
@@ -508,6 +456,7 @@
         ✓ <code>Enable hardware control and monitoring</code><br>
         ✓ <code>Enable low-level IO driver</code><br>
         ✓ <code>Enable low-level hardware access interface</code> → <strong>user mode</strong><br>
+        ✓ <code>Restore settings after suspended mode</code><br>
         ✓ <strong><code>Unlock voltage control</code> → standard MSI</strong> &nbsp;⬅ critical<br>
         ✓ <strong><code>Unlock voltage monitoring</code></strong> &nbsp;⬅ critical<br>
         ☐ <strong><code>Force constant voltage</code> must be disabled</strong><br><br>
@@ -611,10 +560,12 @@
   <!-- ═══ UPDATE ═══ -->
   <section>
     <h2 class="gold"><span class="icon">🔄</span>Updating to a New Version</h2>
-    <p>NV-UV is portable, just copy the new EXE over the old one. Settings are preserved (<code>%LocalAppData%\NV-UV\</code>).</p>
-    <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Close NV-UV</strong></div></div>
-    <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Extract new ZIP</strong> (same or new folder)</div></div>
-    <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Run NV-UV.exe</strong>, done!</div></div>
+    <p>Open <strong>Updates</strong> and click <strong>Check now</strong>. If a new version is available, you can download it and then choose when to install it.</p>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Download the update.</strong> NV-UV can optionally check once a day and download new versions in the background.</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content">Click <strong>Install update</strong> and confirm. Installation never starts by itself.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content">NV-UV closes, installs the verified package and starts again.</div></div>
+    <div class="info">If the first start of the new version fails, NV-UV restores the previous program files. It does not simply delete your own files from the Portable folder.</div>
+    <p>The manual method remains available: close NV-UV, extract the official Portable ZIP to a new folder, and run <code>NV-UV.exe</code> there. Settings under <code>%LocalAppData%\NV-UV\</code> are preserved.</p>
     <div class="info">If something looks wrong after an update, export a diagnostics ZIP first. You can then use <strong>🔄 Recalibrate</strong>; with Blackwell hotspot active, NV-UV removes the fix through the controlled rollback and starts calibration only after the restart.</div>
   </section>
 
@@ -629,6 +580,20 @@
     <div class="info"><strong>Curve point as a starting value:</strong> Click a point in the chart to load its displayed MHz and mV values into the currently active V-Lock or Direct mode. Nothing is applied automatically; adjust the value if needed, then press <strong>Apply UV</strong>. Select Direct mode first for points below 850 mV.</div>
   </section>
 
+  <!-- ═══ NVIDIA AUTO-UV ═══ -->
+  <section>
+    <h2 class="orange"><span class="icon">⚡</span>NVIDIA Auto-UV</h2>
+    <p>NVIDIA Auto-UV uses your GPU's individual curve to determine an experimental UV starting point. Differences in silicon quality and cooling can affect the result, so this value is a starting point rather than a guarantee of stability.</p>
+
+    <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Open NVIDIA Auto-UV.</strong> The preview is read-only and does not change the GPU.</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Review the voltage and clock.</strong> If the value looks suitable, click <strong>Apply Auto-UV</strong>. This opens the slot selection first.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Select Afterburner slot 1–5 and confirm.</strong> Only then is the value applied and saved as a UV profile. If the slot is already occupied, NV-UV asks before replacing it.</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content"><strong>Test in real games.</strong> If needed, you can restore the previous curve or adjust the value further.</div></div>
+
+    <div class="info">NV-UV applies and saves the value like a regular UV profile. This keeps the main view, saved slot and Afterburner curve in sync.</div>
+    <div class="warn"><strong>Laptop GPUs:</strong> The preview is available, but applying the curve is currently disabled.</div>
+  </section>
+
   <!-- ═══ OCS → UV ═══ -->
   <section>
     <h2 class="purple"><span class="icon">🔬</span>OCS → UV Import</h2>
@@ -637,17 +602,21 @@
     <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Click OCS → UV</strong>, select the profile with the scanner result.</div></div>
     <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Apply:</strong> V-Lock (best single point) or Multi-Point (full curve).</div></div>
     <p>Right-click for options: V-Lock / Multi-Point / Verify with Scanner.</p>
-    <div class="info">OCS data is stored permanently and survives Recalibrate, AB resets and reinstalls.</div>
+    <div class="info">OCS data is stored permanently and survives Recalibrate, AB resets and reinstalls. If AB profiles are lost, the Restore button in the slot dialog loads the saved curve.</div>
   </section>
 
   <!-- ═══ SCANNER ═══ -->
   <section>
     <h2 class="purple"><span class="icon">⚡</span>Voltage Step Scanner</h2>
     <p>The scanner tests a <strong>single voltage point</strong> and finds the maximum stable frequency. Ideal for validating a UV setting or finding the sweet spot for your GPU.</p>
+    <h3>How it works</h3>
     <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Open Scanner</strong> (⚡ button in main window or Mini View)</div></div>
     <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Settings:</strong> Voltage, render resolution (1440p for 5070/5080, 4K for 5090), test duration (2-5 min)</div></div>
     <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Start test.</strong> Scanner starts high and works down until it finds the stable frequency.</div></div>
     <div class="step"><div class="step-num">4</div><div class="step-content"><strong>Apply result</strong> to slot 1-5, directly or via right-click in history.</div></div>
+
+    <h3>Persistent History</h3>
+    <p>All test results are saved, up to 50 entries. Delete individual entries with 🗑, or right-click an entry to apply it to a slot or verify it.</p>
 
     <h3>🎯 Stage 2 — Optimize Point <span style="color:var(--gold);">(New in Cantor)</span></h3>
 
@@ -686,7 +655,7 @@
       duration.
     </div>
 
-    <h3>🎯 Expandable Optimize History <span style="color:var(--gold);">(New in Cantor)</span></h3>
+    <h3>🎯 Expandable Optimize History <span style="color:var(--gold);">(New in Cantor v0.126)</span></h3>
 
     <p>Until recently, NV-UV would only save the single point you picked in the
     optimize result dialog — all the other measured voltage probes were thrown away
@@ -774,7 +743,7 @@
     <div class="info">On the first start of v0.94 the existing <code>nv-uv_game_replay_adjustments.json</code> is detected as the old format and cleared once (log warning: "Old adjustment format detected — discarded"). After that the history rebuilds per profile. No manual action needed.</div>
     <p style="font-size:0.9em;color:var(--text-dim);">Manual applies and crashes without an unambiguous UV-Pilot context are now stored as <strong>display-only Replay history</strong>. The list shows the slot, original and corrected values, event type, time and any pending restart. These entries are never applied automatically to a game or profile.</p>
 
-    <h3>Replay Adjustments Overview <span style="color:var(--gold);">(New in v0.99.2)</span></h3>
+    <h3>Replay Adjustments Overview</h3>
     <p>The Game Browser now includes a separate <strong>Replay Adjustments</strong> tab. It shows the game and process, tier or custom profile, original and adjusted values, the number of detected crashes and the time of the most recent crash.</p>
     <p>Individual adjustments can be reset directly from the list. <strong>Reset All</strong> clears the complete Game Replay adjustment history after confirmation. The overview can also be opened directly by right-clicking the Game Replay toggle in the main window or MiniWindow.</p>
 
@@ -819,9 +788,9 @@
     <h3>Custom Profiles</h3>
     <p>Right-click a slot: "Add to UV-Pilot" creates a custom profile. Assignable per game in the game database.</p>
     <h3>Game Database</h3>
-    <p>Right-click UV-Pilot → 🎮 Game Database. 646 games + benchmarks, tier assignments adjustable, custom games addable.</p>
+    <p>Right-click UV-Pilot → 🎮 Game Database. 647 games + benchmarks, tier assignments adjustable, custom games addable.</p>
     <p><strong>Game Pass / Microsoft Store:</strong> start the game first, then click <strong>🎮</strong> in the Add Game dialog and preferably select the process with the visible game window. NV-UV copies only the process name and opens neither <code>WindowsApps</code> nor the protected executable path. Once UV-Pilot recognizes that process, Smart Hz can switch correctly to Gaming mode. Shared hosts, Xbox/Game Bar components and always-running services such as <code>ApplicationFrameHost.exe</code>, <code>GamingServices.exe</code>, <code>GamingServicesNet.exe</code> and <code>GameInputSvc.exe</code> are removed from the list and are also rejected by manual entry and later UV-Pilot detection. App IDs are not supported in this version; if no distinct game process appears, the title cannot be identified safely.</p>
-    <p><strong>New in v0.99.2:</strong> The Game Browser is wider and now includes a separate <strong>Replay Adjustments</strong> tab for values automatically corrected by Game Replay.</p>
+    <p>The Game Browser includes a separate <strong>Replay Adjustments</strong> tab for values automatically corrected by Game Replay.</p>
     <h3>Benchmarks (3DMark etc.)</h3>
     <p>3DMark is recognized but no UV tier is assigned — your active profile stays as-is. This lets you benchmark with your chosen UV without the Pilot switching profiles. A custom profile can optionally be assigned via the Game Browser.</p>
     <h3>Auto-Mini on Gaming</h3>
@@ -832,6 +801,34 @@
     <p><strong>Before:</strong> Chrome was open (Eco tier), you launched a game → the Chrome-Eco profile stayed active until Chrome was fully closed.<br>
     <strong>Now:</strong> As soon as the game window is focused, the Pilot detects the switch and applies the matching game profile. The switch back works the same way — Alt-Tab to Chrome switches to Eco, Alt-Tab into the game switches back to Performance.</p>
     <div class="info">Fallback: if the foreground process is not a DB entry (Explorer, Desktop, etc.), the Pilot keeps the current lock. Alt-Tab to the desktop therefore doesn't kill a gaming lock.</div>
+  </section>
+
+  <!-- ═══ DCC ═══ -->
+  <section>
+    <h2 class="orange"><span class="icon">◇</span>DCC – Dynamic Clock Clapping</h2>
+    <p>DCC gradually searches for a sensible lower GPU clock while a recognized game is running and remembers the result for each game. Your existing NV-UV undervolt can remain active while it works.</p>
+
+    <h3>Controls</h3>
+    <ul>
+      <li><strong>Left-click DCC:</strong> turn it on or off.</li>
+      <li><strong>Right-click DCC:</strong> open the settings.</li>
+      <li>Your selected on/off state is kept after NV-UV restarts.</li>
+      <li>The status can show <strong>Waiting</strong>, <strong>Learning</strong>, <strong>Checking Profile</strong>, <strong>Optimizing</strong>, <strong>Adjusting Clock</strong> or <strong>Regulated</strong>.</li>
+    </ul>
+
+    <h3>Automatic DCC Mode</h3>
+    <p>DCC starts only when a game is clearly recognized, is in the foreground and is actually presenting new frames. When you switch to the desktop, DCC waits; after you return, it checks the game again. This mode does not regulate the desktop.</p>
+    <p>Detection uses NVIDIA driver game profiles first. The NV-UV game database and your own games extend that list. This allows titles from Steam, Game Pass, GOG, Epic and other launchers to be recognized.</p>
+    <p>Learned values are saved separately for each game and GPU. You can reset individual learning profiles in the settings. An already active NV-UV profile can remain active in this automatic mode. Optional performance logging stores measurement data locally only.</p>
+
+    <h3>NVIDIA Ultra Efficiency – Experimental</h3>
+    <p>This mode is global and remains active until DCC is turned off. <strong>AUTO</strong> follows the refresh rate of the primary Windows monitor. If your game runs on another monitor or you want a different target, set it manually. If an NV-UV profile was active before, NV-UV applies it again after Ultra Efficiency is turned off.</p>
+    <div class="warn">The efficiency target is not an FPS limiter. Enable the mode before starting the game. After enabling it or changing the target, restart the game completely.</div>
+
+    <h3>FPS Limiter and VSync</h3>
+    <p>The NVIDIA FPS limiter and global VSync are independent of the selected DCC mode. A limit, VSync or both are recommended; VSync is especially useful with Frame Generation. If the setting you want is already active in the game or NVIDIA driver, you do not need to enable it again here.</p>
+
+    <div class="info"><strong>Important:</strong> Do not run the standalone DCC version and the DCC module in NV-UV at the same time. On first start, NV-UV imports existing learning data from the standalone DCC version once without deleting the old files.</div>
   </section>
 
   <!-- ═══ ANCHOR PROFILE ═══ -->
@@ -911,6 +908,12 @@
     <h2 class="cyan"><span class="icon">🖥</span>Smart Hz</h2>
     <p>Automatically switches the desktop to a low refresh rate when no game is running, and back to the native rate when a game starts. Saves roughly 10-25W at idle. The toggle is in the toolbar.</p>
     <p><strong>Choosing the idle rate (new):</strong> right-click the Smart Hz button to pick from the refresh rates your monitor actually supports (for example 60 / 120 / 144 Hz). Picking a rate also activates Smart Hz right away, so there is no need to toggle it on separately. The chosen rate is remembered across restarts.</p>
+    <table>
+      <tr><td><strong>Desktop/Idle</strong></td><td>Selected rate (for example 60/120 Hz)</td></tr>
+      <tr><td><strong>Game detected</strong></td><td>Native rate (for example 120/144/165 Hz)</td></tr>
+      <tr><td><strong>Game closed</strong></td><td>Returns to the selected idle rate</td></tr>
+      <tr><td><strong>NV-UV closed</strong></td><td>Restores the native rate</td></tr>
+    </table>
     <div class="warn">May cause issues with multi-monitor setups. When in doubt, leave it off. Requires UV-Pilot for game detection. Game Pass / Store titles must therefore be added through their running game process so Smart Hz can enter Gaming mode.</div>
   </section>
 
@@ -919,18 +922,23 @@
     <h2 class="cyan"><span class="icon">⚡</span>UV⚡Try (Community UV Database)</h2>
     <p>UV⚡Try opens a browsable database of community undervolt values for your GPU, grouped into Eco, Balanced and UV+OC. Each entry shows voltage, clock, power limit, VRAM offset, card variant, a confidence label and the source link. The list pre-selects your detected card.</p>
     <p>Open it via the <strong>UV⚡Try</strong> button next to the presets (Eco / Bal / Perf / Max). To apply a value, right-click an entry and pick a profile slot (1-5), exactly like the scanner history.</p>
-    <p><strong>Rating &amp; community votes (NEW in v0.99):</strong> A star click does both: it stores your personal note locally and counts as an anonymous community vote at the same time. The new <strong>Community</strong> column shows the average of all votes with the count in brackets, e.g. "★ 4.2 (17)", updated twice a day. Clicking the same star again (0 stars) also deletes your vote on the server.</p>
-    <p><strong>Sharing your own settings (NEW in v0.99):</strong> Right-click a filled profile slot → <strong>Share to Community DB</strong>. The values are taken from the slot as-is (a profile you actually run), only the graphics card variant and a short note are optional free text. After a short review your preset shows up for everyone in UV⚡Try, labeled "user-submitted". See the Community Features &amp; Data section for details on what is transmitted.</p>
+    <p><strong>Rating &amp; community votes:</strong> A star click does both: it stores your personal note locally and counts as an anonymous community vote at the same time. The <strong>Community</strong> column shows the average of all votes with the count in brackets, e.g. "★ 4.2 (17)", updated twice a day. Clicking the same star again (0 stars) also deletes your vote on the server.</p>
+    <p><strong>Sharing your own settings:</strong> Right-click a filled profile slot → <strong>Share to Community DB</strong>. The values are taken from the slot as-is (a profile you actually run), only the graphics card variant and a short note are optional free text. After a short review your preset shows up for everyone in UV⚡Try, labeled "user-submitted". See the Online Features &amp; Privacy section for details on what is transmitted.</p>
     <div class="warn">Community values are a starting point only. Every card is different (silicon lottery) - always verify a value on your own card before relying on it.</div>
   </section>
 
   <!-- ═══ GLOBAL / NO OVERRIDE ═══ -->
   <section>
-    <h2 class="cyan"><span class="icon">🔒</span>Community Features &amp; Data</h2>
-    <p>NV-UV has <strong>no accounts, no telemetry and no automatic "phoning home"</strong>. Data is only ever transmitted when you actively use one of the two community features:</p>
+    <h2 class="cyan"><span class="icon">🔒</span>Online Features &amp; Privacy</h2>
+    <p>NV-UV has <strong>no accounts and never uploads diagnostics automatically</strong>. Online connections happen only through clearly visible features such as community content, update checks or an error report you explicitly choose to send.</p>
+    <h3>Community Features</h3>
     <p><strong>Star rating in UV⚡Try:</strong> Clicking a star stores your rating locally and additionally sends an anonymous community vote. Only these values are transmitted: the preset ID, your star value and a random client ID (a locally generated random GUID with no hardware or personal reference whatsoever). Clicking the same star again (0 stars) also deletes your vote on the server.</p>
     <p><strong>Submitting settings (right-click on a profile slot):</strong> The transmission contains the UV values from the slot (frequency, voltage, power limit and VRAM offset if set), the detected GPU model, optionally your graphics card variant and short note, plus the same random client ID. <strong>Important:</strong> After approval these details become publicly visible in the community database on GitHub. Do not put personal information into the note.</p>
-    <p><strong>Technical:</strong> As with any internet service, the server (a Cloudflare Worker) sees your IP address. It is processed exclusively as a daily re-salted hash for abuse limiting and is <strong>never stored in plaintext</strong>. Displaying community ratings, refreshing the database and the update check on startup (a once-a-day GitHub download that checks whether a new NV-UV version has been released) are pure downloads from GitHub, nothing is sent. The random client ID lives in <code>%LocalAppData%\NV-UV\nv-uv_client_id.txt</code> and can be deleted at any time (a new one is created on your next vote).</p>
+    <h3>Updates</h3>
+    <p>Manual or optional daily update checks ask GitHub whether a new version is available. NV-UV attaches no hardware, profile, diagnostics or client-ID data. As with any internet connection, GitHub technically receives IP and connection data.</p>
+    <h3>Private Error Reports</h3>
+    <p>A diagnostic report is always saved locally first. Only after previewing it, giving consent and clicking <strong>Send error report</strong> is the selected package sent privately to NV-UV through Cloudflare. You can optionally add images and contact details. Without your action, everything remains local.</p>
+    <p><strong>Technical:</strong> As with any internet service, the server sees your IP address. The NV-UV service processes it exclusively as a daily re-salted hash for abuse limiting and does <strong>not store it in plaintext</strong>. The random community client ID lives in <code>%LocalAppData%\NV-UV\nv-uv_client_id.txt</code> and can be deleted at any time; a new one is created on your next vote.</p>
 
     <h2 class="cyan"><span class="icon">🌍</span>Global Override &amp; No Override</h2>
     <p>In the Game Library you can set a <strong>Global Override</strong> (toolbar dropdown): it forces every running game to the chosen tier (Eco / Bal / Perf / Max), overriding their individual assignments. Handy if you only use UV-Pilot and just want one tier everywhere.</p>
@@ -940,7 +948,7 @@
   <!-- ═══ MINI VIEW ═══ -->
   <section>
     <h2 class="cyan"><span class="icon">📐</span>Mini View</h2>
-    <p>Compact view without curve. 📐 Mini in toolbar, ↩ Full to return. Always on top. All features available: Slots, Presets, V-Lock, PL, VRAM, Scanner, OCS → UV.</p>
+    <p>Compact view without the curve. Use 📐 Mini in the toolbar and ↩ Full to return. It stays on top. The most important UV features remain available: slots, presets, V-Lock, PL, VRAM, Scanner and OCS → UV.</p>
     <div class="info"><strong>Performance tip:</strong> The main window uses WPF rendering which can measurably cost GPU performance in benchmarks. When gaming or benchmarking, use the Mini View or minimize NV-UV to tray. The Mini View has significantly less rendering overhead.</div>
     <h3>Auto-Mini on Gaming</h3>
     <p>Right-click UV-Pilot → "📐 Mini View on Gaming" enables automatic switch to Mini View when a game is detected. Returns to full view when the game exits. Disabled by default.</p>
@@ -1053,7 +1061,7 @@
     </table>
     <p style="font-size:0.9em; opacity:0.8;">Note on the RTX 4060: the AD107 chip scales unusually weakly with additional voltage. Higher mV barely yields more MHz, so the tier values sit closer together than on larger Ada chips.</p>
 
-    <div class="warn"><strong>What does "experimental" mean for the RTX 5060 and RTX 4060 cards?</strong> These cards are supported by the NV-UV code, but the preset values have not yet been verified on real hardware through our tester programme. They are based on AI-DeepSearch research from community data (Reddit, Hardwareluxx, Igor's Lab, OCN). Please test using Balanced as a starting point and report back on the PCGH forum or Discord so the values can be tightened up.</div>
+    <div class="warn"><strong>What does "experimental" mean for the RTX 5060 and RTX 4060 cards?</strong> These cards are supported, but their preset values have not yet been verified on real hardware through the tester programme. Treat them as community-based starting points, begin with Balanced, and share your results through the PCGH forum or Discord.</div>
 
     <div class="info" style="margin-top:1em;"><strong>🟢 Ampere status from v0.99.3:</strong> RTX 30 Series is part of the regular supported GPU range. The preset values are conservative community-based starting points and can vary with board design, cooling and silicon quality. Start with Balanced when unsure and validate the result with the scanner, Game Replay and real games. Please attach the diagnostics ZIP when reporting a problem.</div>
 
@@ -1141,6 +1149,20 @@
     <div class="info">Preset values are based on community experience. Not every GPU can handle every preset, silicon lottery. When in doubt, start with Balanced.</div>
   </section>
 
+  <!-- ═══ DIAGNOSTICS AND ERROR REPORTS ═══ -->
+  <section>
+    <h2 class="cyan"><span class="icon">🧾</span>Diagnostics and Error Reports</h2>
+    <p><strong>Export diagnostics</strong> always creates a local ZIP first. It contains the information needed for troubleshooting, including the current state of newer features such as DCC and NVIDIA Auto-UV.</p>
+
+    <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Briefly describe the problem</strong> and create the diagnostics ZIP.</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Review the preview and ZIP.</strong> You can always keep the file locally without sending it.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Optionally add images:</strong> up to four PNG, JPG or WebP files, each no larger than 5 MB and no more than 10 MB combined.</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content">The package is sent privately only if you give consent and click <strong>Send error report</strong>.</div></div>
+
+    <div class="info">After a successful upload, NV-UV shows a report ID. Keep it for follow-up questions. The local ZIP remains on your PC.</div>
+    <div class="warn"><strong>No automatic upload:</strong> Nothing is sent without your consent and click. DCC performance logs also remain local until you export them yourself.</div>
+  </section>
+
   <!-- ═══ FAQ ═══ -->
   <section>
     <h2 class="gold"><span class="icon">❓</span>FAQ</h2>
@@ -1205,8 +1227,20 @@
     <h3>Windows 10 support?</h3>
     <p>Not planned. DXR stress testing requires Windows 11.</p>
 
-    <h3>RTX 40 series support?</h3>
-    <p><strong>Fully supported.</strong> Since "Ada improved" (v0.94) the native Ada write path is active. The byte-exact curve encoder has been verified on a KFA2 RTX 4070 Ti (AD104) and runs end-to-end — Apply, Scanner, Game Replay and UV-Pilot all work. The preset values (frequency/voltage targets) are community-based; Ada testers with RTX 4090 (AD102) and RTX 4080 / 4080 Super (AD103) especially welcome to help refine the per-chip constants — reach out on the PCGH forum or Discord. RTX 4060 Ti (AD106) and RTX 4060 (AD107) are also supported with experimental preset values from AI-DeepSearch research; testers with these cards welcome too.</p>
+    <h3>RTX 40 Series support?</h3>
+    <p><strong>Fully supported.</strong> Since "Ada improved" (v0.94), the native Ada write path has been active. The curve encoder was verified on a KFA2 RTX 4070 Ti (AD104), and Apply, Scanner, Game Replay and UV-Pilot work end to end.</p>
+    <p>Current status by GPU chip:</p>
+    <ul>
+      <li><strong>AD104</strong> (RTX 4070 / 4070 Super / 4070 Ti) — verified on a KFA2 RTX 4070 Ti.</li>
+      <li><strong>AD103</strong> (RTX 4080 / 4080 Super / 4070 Ti Super) — supported; additional tester feedback is welcome.</li>
+      <li><strong>AD102</strong> (RTX 4090) — supported; additional tester feedback is welcome.</li>
+      <li><strong>AD106</strong> (RTX 4060 Ti, 8 GB and 16 GB) — supported with experimental preset values.</li>
+      <li><strong>AD107</strong> (RTX 4060) — supported with experimental preset values.</li>
+    </ul>
+    <p>The presets are based on community values. If you have an RTX 4090, 4080, 4060 Ti or 4060 and would like to help refine them, please get in touch through the PCGH forum or Discord.</p>
+
+    <h3>Will NV-UV become open source?</h3>
+    <p>NV-UV is currently closed source. An open-source version may be considered in the future, but there is no timeline.</p>
 
     <h3>Why are Boost Override / V-Step Fix / Idle Optimization missing on Ada cards?</h3>
     <p>These are Blackwell-specific compensations:</p>
@@ -1223,11 +1257,14 @@
     <h3>Antivirus flags NV-UV</h3>
     <p>False positive. Self-contained .NET SingleFile EXEs are sometimes flagged. NV-UV is safe, you can add an exception.</p>
 
+    <h3>Afterburner's Curve Editor minimizes when NV-UV writes a profile</h3>
+    <p>This is expected behavior. NV-UV interacts with Afterburner's profile system, which can minimize the Curve Editor. Simply open it again.</p>
+
     <h3>Where are my settings stored?</h3>
-    <p><code>%LocalAppData%\NV-UV\</code> contains UV profiles, slot names, Game Replay adjustments, scanner history, OCS data, the stock curve, CCB cache and logs.</p>
+    <p><code>%LocalAppData%\NV-UV\</code> contains UV profiles, slot names, Game Replay adjustments, scanner history, OCS data, the stock curve, DCC learning profiles and logs.</p>
     <p>Durable recovery data for the experimental Blackwell hotspot fix is stored separately under <code>%ProgramData%\NV-UV\BlackwellHotspot\</code>. Do not delete this folder manually while hotspot is active.</p>
     <h3>How do I export log files?</h3>
-    <p>Use the <strong>Log Export</strong> button below the log panel. NV-UV creates a diagnostics ZIP containing <code>activity.log</code>, <code>activity-previous.log</code>, <code>diagnostic.log</code>, <code>diagnostic-previous.log</code> and <code>system-info.txt</code>. The ZIP can be sent directly to Christian.</p>
+    <p>Use <strong>Export diagnostics</strong> below the Activity area. NV-UV creates a local diagnostics ZIP first and shows a preview. You can then keep it locally or voluntarily send it through the error-report window.</p>
 
     <h3>Help, my profiles are gone!</h3>
     <p>Always back up your profiles manually before experimenting. If profiles are lost: check the NV-UV folder at <code>%LocalAppData%\NV-UV\</code>, that's where saved data, OCS curves and scanner history are stored.</p>
@@ -1257,11 +1294,11 @@
   <!-- ═══ FEEDBACK ═══ -->
   <section>
     <h2 class="orange"><span class="icon">💬</span>Feedback</h2>
-    <p>Please post feedback directly in the <strong>Feedback thread on the PCGH forum</strong> or to <strong>Christian</strong> on Discord, screenshot + text.</p>
-    <div class="info">Log file: <code>%LocalAppData%\NV-UV\nv-uv.log</code>, please include with bug reports! Exportable via the <strong>Log Export</strong> button below the log panel.</div>
+    <p>Please post feedback in the <strong>Feedback thread on the PCGH forum</strong> or send it to <strong>Christian</strong> on Discord. A short description and screenshot are usually very helpful.</p>
+    <div class="info">For technical problems, please use <strong>Export diagnostics</strong>. You can share the ZIP yourself or voluntarily send it through the private error-report window after reviewing the preview.</div>
     <div class="info">
       <strong>PCGH Forum:</strong><br>
-      Deutsch: <a href="https://extreme.pcgameshardware.de/threads/support-faq-bugs.673164/" style="color:var(--cyan)">Support / FAQ / Bugs</a><br>
+      German: <a href="https://extreme.pcgameshardware.de/threads/support-faq-bugs.673164/" style="color:var(--cyan)">Support / FAQ / Bugs</a><br>
       English: <a href="https://extreme.pcgameshardware.de/threads/nv-uv-open-alpha-english-thread.673165/" style="color:var(--cyan)">NV-UV Open Alpha English Thread</a>
     </div>
   </section>
@@ -1269,13 +1306,10 @@
   <div class="led-bar gold"></div>
 
   <div class="footer">
-    NV-UV · Build 22 · Cantor · Open Alpha · Invited testers only<br>
-    Please do not redistribute · GPU undervolting at your own risk<br><br>
+    NV-UV · Build 22 · Cantor · v0.99.5<br>
+    GPU undervolting and experimental features at your own risk<br><br>
     <span style="color:var(--dim)">NV-UV is free. If you like it:</span> <a href="https://paypal.me/christianpapaioannou" style="color:var(--cyan)">PayPal</a>
   </div>
-
-</div>
-
 
   <h2 id="third-party">🔖 Third-Party Components</h2>
   <p>NV-UV uses <strong>NvApiNative.dll</strong>, a native NVAPI bridge derived from the open-source project <strong>Green Curve</strong> by <strong>aufkrawall</strong>. Green Curve demonstrated how to access the VF curve on Blackwell GPUs directly via NVAPI entry points. NV-UV applies this approach for Scanner Direct Mode and Point Optimization.</p>
@@ -1303,6 +1337,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</pre>
   <p>Many thanks to aufkrawall for Green Curve and for making the project available under an open license.</p>
+
+</div>
 
 </body>
 
