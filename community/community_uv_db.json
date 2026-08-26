@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-08-25",
+  "updated": "2026-08-26",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -535,6 +535,40 @@
               },
               "date_found": "2026-08-13",
               "notes": "Rock solid stable in Crimson Desert+RenoDX @ 4K ~170FPS"
+            },
+            {
+              "preset_id": "bw-5090-08a7de3a37d9",
+              "board": "NVIDIA FE",
+              "freq_mhz": 2842,
+              "voltage_mv": 915,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-25",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5090-d8342fcd58bd",
+              "board": "NVIDIA FE",
+              "freq_mhz": 2955,
+              "voltage_mv": 915,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-25",
+              "notes": "Curve made with Voltage Step Scanner"
             }
           ]
         },
