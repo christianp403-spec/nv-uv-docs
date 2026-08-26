@@ -3772,6 +3772,23 @@
               },
               "date_found": "2026-07-18",
               "notes": ""
+            },
+            {
+              "preset_id": "ada-4070-super-2674e82e7fee",
+              "board": "Palit",
+              "freq_mhz": 2535,
+              "voltage_mv": 940,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-26",
+              "notes": "Nvidia Auto-UV"
             }
           ]
         },
