@@ -1,8 +1,8 @@
 {
-  "version": "2.16",
+  "version": "2.17",
   "source": "nvidia-drs-profiles + dlss-all-versions",
-  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup + Jul 2026: removed generic BugSplat crash-reporter alias (bssndrpt64.exe) from Company of Heroes 3 (false UV-Pilot detection after crashes) + Game Ready additions Jul 2026: Halo: Campaign Evolved, Gears of War: E-Day, Mistfall Hunter + Freelancer (HD) and The Witcher (2007) + Game Ready 610.88 addition Aug 2026: SILENT HILL f + Game Ready 616.56 additions Aug 2026: Hell Let Loose: Vietnam, Resonance: A Plague Tale Legacy, STAR WARS Zero Company + PowerWash Simulator 2 (Balanced)",
-  "generated": "2026-08-27",
+  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup + Jul 2026: removed generic BugSplat crash-reporter alias (bssndrpt64.exe) from Company of Heroes 3 (false UV-Pilot detection after crashes) + Game Ready additions Jul 2026: Halo: Campaign Evolved, Gears of War: E-Day, Mistfall Hunter + Freelancer (HD) and The Witcher (2007) + Game Ready 610.88 addition Aug 2026: SILENT HILL f + Game Ready 616.56 additions Aug 2026: Hell Let Loose: Vietnam, Resonance: A Plague Tale Legacy, STAR WARS Zero Company + PowerWash Simulator 2 (Balanced) + v2.17: stable DCC identities for Marvel Rivals and Wuthering Waves",
+  "generated": "2026-08-29",
   "games": [
     {
       "name": "007 First Light",
@@ -2962,6 +2962,7 @@
       "scaling": "light"
     },
     {
+      "id": "marvel-rivals",
       "name": "Marvel Rivals",
       "process": "marvel.exe",
       "tier": "Eco",
@@ -5431,6 +5432,7 @@
       "scaling": "gpu-heavy"
     },
     {
+      "id": "wuthering-waves",
       "name": "Wuthering Waves",
       "process": "wuthering waves.exe",
       "tier": "Balanced",
