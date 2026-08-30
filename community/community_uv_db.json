@@ -586,6 +586,23 @@
               },
               "date_found": "2026-08-29",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5090-1b07991f011c",
+              "board": "Gigabyte Aorus Master",
+              "freq_mhz": 3000,
+              "voltage_mv": 935,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-30",
+              "notes": "Stable UV with 2900+Mhz. Works in every AAA game I've tested."
             }
           ]
         },
