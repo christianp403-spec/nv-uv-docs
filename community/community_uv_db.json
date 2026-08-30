@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-08-28",
+  "updated": "2026-08-30",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -569,6 +569,23 @@
               },
               "date_found": "2026-08-25",
               "notes": "Curve made with Voltage Step Scanner"
+            },
+            {
+              "preset_id": "bw-5090-46dcbbcd4d38",
+              "board": "FE",
+              "freq_mhz": 2902,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-29",
+              "notes": ""
             }
           ]
         },
@@ -1100,6 +1117,23 @@
                 "url": ""
               },
               "date_found": "2026-08-27",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-88277559cd62",
+              "board": "Palit Gamerock",
+              "freq_mhz": 2940,
+              "voltage_mv": 910,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-29",
               "notes": ""
             }
           ]
@@ -4410,6 +4444,23 @@
                 "url": ""
               },
               "date_found": "2026-07-18",
+              "notes": ""
+            },
+            {
+              "preset_id": "amp-3090-2563dd9ca6e8",
+              "board": "Zotac RTX 3090 Trinity",
+              "freq_mhz": 1770,
+              "voltage_mv": 875,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-28",
               "notes": ""
             }
           ]
