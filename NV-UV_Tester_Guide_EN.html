@@ -368,8 +368,9 @@
       <tr><td>🎮 <strong>Game Replay</strong></td><td>Automatic step-down on crash, per-game learning loop and a dedicated Replay Adjustments overview</td></tr>
       <tr><td>◇ <strong>DCC</strong> <span style="color:var(--gold);">NEW in v0.99.5</span></td><td>Gradually finds an efficient GPU clock in recognized games and remembers the result for each game</td></tr>
       <tr><td>⚡ <strong>NVIDIA Auto-UV</strong> <span style="color:var(--gold);">NEW in v0.99.5</span></td><td>First shows a UV starting point for your GPU and applies it only after you confirm</td></tr>
-      <tr><td>🔄 <strong>Verified Updates</strong> <span style="color:var(--gold);">NEW in v0.99.5</span></td><td>Checks for and downloads official updates when requested; installation always remains your choice</td></tr>
+      <tr><td>🔄 <strong>Updates</strong> <span style="color:var(--gold);">NEW in v0.99.5</span></td><td>Checks for and downloads official updates when requested; installation always remains your choice</td></tr>
       <tr><td>🧾 <strong>Diagnostics &amp; Error Reports</strong> <span style="color:var(--gold);">NEW in v0.99.5</span></td><td>Creates a local ZIP first, with optional images and voluntary private sending</td></tr>
+      <tr><td>🛠 <strong>Fix NV-Overlay</strong></td><td>Repairs the NVIDIA Overlay if it no longer appears in games</td></tr>
       <tr><td>🌡️ <strong>Blackwell Hotspot</strong></td><td>Experimental hotspot temperature for supported RTX 50 Series GPUs with automatic MSI Afterburner plugin setup</td></tr>
       <tr><td>✈️ <strong>UV-Pilot</strong></td><td>Detects games automatically, switches to the optimal preset</td></tr>
       <tr><td>⚡ <strong>UV⚡Try</strong></td><td>Browse community UV values for your card and apply them to a slot</td></tr>
@@ -394,11 +395,13 @@
     <h2 class="orange"><span class="icon">🆕</span>What's New in v0.99.5?</h2>
     <table>
       <tr><th>New</th><th>In brief</th></tr>
-      <tr><td><strong>DCC</strong></td><td>Optimizes the GPU clock while recognized games are running and remembers suitable values for each game and GPU. NVIDIA Ultra Efficiency is included as an experimental second mode.</td></tr>
+      <tr><td><strong>DCC</strong></td><td>Optimizes the GPU clock while recognized games are running and remembers suitable values for each game and GPU. NVIDIA Power Efficiency Mode is included as an experimental second mode.</td></tr>
       <tr><td><strong>NVIDIA Auto-UV</strong></td><td>First shows an individual UV starting point and applies it to a selected Afterburner slot only after you confirm.</td></tr>
-      <tr><td><strong>Verified Updates</strong></td><td>Checks for and downloads official updates when requested. You always start the installation yourself; the previous version can be restored if something goes wrong.</td></tr>
+      <tr><td><strong>Updates</strong></td><td>Checks for and downloads official updates when requested. You always start the installation yourself; the previous version can be restored if something goes wrong.</td></tr>
       <tr><td><strong>Diagnostics &amp; Error Reports</strong></td><td>Saves diagnostics locally first and can send them privately to NV-UV with optional images after you review them.</td></tr>
-      <tr><td><strong>More Improvements</strong></td><td>Improved Afterburner and hotspot setup, game detection, scanner fan handling, VRAM display and interface. Game Database 2.15 contains 647 games.</td></tr>
+      <tr><td><strong>Safe profile detection</strong></td><td>Existing Afterburner slots are read only during first launch. An already active manual V/F curve and occupied slots remain unchanged.</td></tr>
+      <tr><td><strong>Fix NV-Overlay</strong></td><td>Repairs the NVIDIA Overlay after your confirmation if it no longer appears in games.</td></tr>
+      <tr><td><strong>More Improvements</strong></td><td>Improved Afterburner and hotspot setup, game detection, scanner fan handling, VRAM display and interface. Game Database 2.18 contains 652 games.</td></tr>
     </table>
   </section>
 
@@ -788,7 +791,7 @@
     <h3>Custom Profiles</h3>
     <p>Right-click a slot: "Add to UV-Pilot" creates a custom profile. Assignable per game in the game database.</p>
     <h3>Game Database</h3>
-    <p>Right-click UV-Pilot → 🎮 Game Database. 647 games + benchmarks, tier assignments adjustable, custom games addable.</p>
+    <p>Right-click UV-Pilot → 🎮 Game Database. 652 games + benchmarks, tier assignments adjustable, custom games addable.</p>
     <p><strong>Game Pass / Microsoft Store:</strong> start the game first, then click <strong>🎮</strong> in the Add Game dialog and preferably select the process with the visible game window. NV-UV copies only the process name and opens neither <code>WindowsApps</code> nor the protected executable path. Once UV-Pilot recognizes that process, Smart Hz can switch correctly to Gaming mode. Shared hosts, Xbox/Game Bar components and always-running services such as <code>ApplicationFrameHost.exe</code>, <code>GamingServices.exe</code>, <code>GamingServicesNet.exe</code> and <code>GameInputSvc.exe</code> are removed from the list and are also rejected by manual entry and later UV-Pilot detection. App IDs are not supported in this version; if no distinct game process appears, the title cannot be identified safely.</p>
     <p>The Game Browser includes a separate <strong>Replay Adjustments</strong> tab for values automatically corrected by Game Replay.</p>
     <h3>Benchmarks (3DMark etc.)</h3>
@@ -821,8 +824,8 @@
     <p>Detection uses NVIDIA driver game profiles first. The NV-UV game database and your own games extend that list. This allows titles from Steam, Game Pass, GOG, Epic and other launchers to be recognized.</p>
     <p>Learned values are saved separately for each game and GPU. You can reset individual learning profiles in the settings. An already active NV-UV profile can remain active in this automatic mode. Optional performance logging stores measurement data locally only.</p>
 
-    <h3>NVIDIA Ultra Efficiency – Experimental</h3>
-    <p>This mode is global and remains active until DCC is turned off. <strong>AUTO</strong> follows the refresh rate of the primary Windows monitor. If your game runs on another monitor or you want a different target, set it manually. If an NV-UV profile was active before, NV-UV applies it again after Ultra Efficiency is turned off.</p>
+    <h3>NVIDIA Power Efficiency Mode – Experimental</h3>
+    <p>This mode is global and remains active until DCC is turned off. The NVIDIA driver uses an intelligently adjusted power budget to try to reach and maintain the selected efficiency target. <strong>AUTO</strong> follows the refresh rate of the primary Windows monitor. If your game runs on another monitor or you want a different target, set it manually. If an NV-UV profile was active before, NV-UV applies it again after Power Efficiency Mode is turned off.</p>
     <div class="warn">The efficiency target is not an FPS limiter. Enable the mode before starting the game. After enabling it or changing the target, restart the game completely.</div>
 
     <h3>FPS Limiter and VSync</h3>
@@ -1286,6 +1289,8 @@
     <div class="info">Thanks to Martin from the PCGH forum for this finding.</div>
     <h3>Apply does nothing / voltage unchanged</h3>
     <p>Enable <code>Unlock Voltage Control</code> in AB. Missing stock curve? Click 🔄 Recalibrate. If Blackwell hotspot is active, the fix is removed through the controlled rollback before the actual calibration begins.</p>
+    <h3>NVIDIA Overlay does not appear in games</h3>
+    <p>Close all games and stop any active recordings first. Then click <strong>Fix NV-Overlay</strong> in the top toolbar and confirm the repair. Afterwards, test the overlay in a game with <code>Alt+Z</code> or <code>Alt+R</code>. An active recording or the current Instant Replay buffer is stopped during the repair and may be lost; the NVIDIA App and graphics driver are neither updated nor reinstalled.</p>
     <h3>Game crashes after UV</h3>
     <p>Try a higher preset, or use the scanner. Game Replay lowers frequency automatically.</p>
   </section>
@@ -1306,7 +1311,7 @@
   <div class="led-bar gold"></div>
 
   <div class="footer">
-    NV-UV · Build 22 · Cantor · v0.99.5<br>
+    NV-UV · Build 22 · Cantor · v0.99.5.5<br>
     GPU undervolting and experimental features at your own risk<br><br>
     <span style="color:var(--dim)">NV-UV is free. If you like it:</span> <a href="https://paypal.me/christianpapaioannou" style="color:var(--cyan)">PayPal</a>
   </div>
