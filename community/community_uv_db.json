@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-08-30",
+  "updated": "2026-09-03",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -603,6 +603,91 @@
               },
               "date_found": "2026-08-30",
               "notes": "Stable UV with 2900+Mhz. Works in every AAA game I've tested."
+            },
+            {
+              "preset_id": "bw-5090-1fe0e0df7e7f",
+              "board": "NVIDIA Reference",
+              "freq_mhz": 2850,
+              "voltage_mv": 920,
+              "power_limit_pct": 104,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-01",
+              "notes": "Ultra stable. Super estable."
+            },
+            {
+              "preset_id": "bw-5090-bada69e55bc5",
+              "board": "MSI Lightning Z",
+              "freq_mhz": 2797,
+              "voltage_mv": 865,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-01",
+              "notes": "2600mhz effective in-game, under 400W in PT, under 300W in raster"
+            },
+            {
+              "preset_id": "bw-5090-50072b8ed1bb",
+              "board": "MSI Lightning Z",
+              "freq_mhz": 3075,
+              "voltage_mv": 965,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-01",
+              "notes": "2980mhz in-game, 600W+ in PT, 500W+ in raster"
+            },
+            {
+              "preset_id": "bw-5090-709ae8b808b3",
+              "board": "MSI Lightning Z",
+              "freq_mhz": 3202,
+              "voltage_mv": 1010,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-01",
+              "notes": "3180mhz in-game, better than stock, hotspot remains manageable"
+            },
+            {
+              "preset_id": "bw-5090-dc6639a2a022",
+              "board": "NVIDIA Reference",
+              "freq_mhz": 3045,
+              "voltage_mv": 995,
+              "power_limit_pct": 104,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-02",
+              "notes": "Extreme full stable. Extremo 100% estable."
             }
           ]
         },
@@ -1152,6 +1237,40 @@
               },
               "date_found": "2026-08-29",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-bbabed119878",
+              "board": "Palit Gamingpro",
+              "freq_mhz": 2850,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-31",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-75cbba027751",
+              "board": "Palit gamingpro non-oc",
+              "freq_mhz": 2797,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 2500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-01",
+              "notes": "99.5% stresstest nomad"
             }
           ]
         },
@@ -1582,6 +1701,23 @@
               },
               "date_found": "2026-08-06",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-f602e8017205",
+              "board": "Gigabyte WINDFORCE OC SFF",
+              "freq_mhz": 2850,
+              "voltage_mv": 860,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-03",
+              "notes": "GV-N507TWF3OC-16GD 1.0"
             }
           ]
         },
@@ -4479,6 +4615,23 @@
               },
               "date_found": "2026-08-28",
               "notes": ""
+            },
+            {
+              "preset_id": "amp-3090-08ceb02dea7a",
+              "board": "Gigabyte Master Rev2.0 Bios Xtreme",
+              "freq_mhz": 2040,
+              "voltage_mv": 1031,
+              "power_limit_pct": 107,
+              "vram_offset_mhz": 300,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-08-31",
+              "notes": "Max Performance"
             }
           ]
         },
@@ -5370,6 +5523,23 @@
                 "url": ""
               },
               "date_found": "2026-07-19",
+              "notes": ""
+            },
+            {
+              "preset_id": "amp-3070-c1f4eaa14139",
+              "board": "Gigabyte  аорус мастер",
+              "freq_mhz": 1740,
+              "voltage_mv": 862,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-01",
               "notes": ""
             }
           ]
