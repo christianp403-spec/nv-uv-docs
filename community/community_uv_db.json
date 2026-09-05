@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-03",
+  "updated": "2026-09-05",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -1271,6 +1271,23 @@
               },
               "date_found": "2026-09-01",
               "notes": "99.5% stresstest nomad"
+            },
+            {
+              "preset_id": "bw-5080-ac83013c3739",
+              "board": "Gigabyte RTX 5080 Gaming OC",
+              "freq_mhz": 2745,
+              "voltage_mv": 875,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-05",
+              "notes": "Стабильно месяц работает, низкий уровень шума работы охлаждения"
             }
           ]
         },
@@ -3247,6 +3264,23 @@
               },
               "date_found": "2023-05",
               "notes": "Curve flat after, uses less power than RTX 3080. Stock AD103-300 ref 2205 base/2505 boost, 320W"
+            },
+            {
+              "preset_id": "ada-4080-2e2ed9591148",
+              "board": "inno3d 4080 ichill",
+              "freq_mhz": 2850,
+              "voltage_mv": 990,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-05",
+              "notes": ""
             }
           ]
         },
