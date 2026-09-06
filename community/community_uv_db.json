@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-05",
+  "updated": "2026-09-06",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -1288,6 +1288,23 @@
               },
               "date_found": "2026-09-05",
               "notes": "Стабильно месяц работает, низкий уровень шума работы охлаждения"
+            },
+            {
+              "preset_id": "bw-5080-5b6091534703",
+              "board": "GeForce RTX™ 5080 16G GAMING TRIO OC",
+              "freq_mhz": 2977,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-05",
+              "notes": "Работает стабильно, проходит все тесты, второй месяц использовании в играх."
             }
           ]
         },
@@ -3281,6 +3298,23 @@
               },
               "date_found": "2026-09-05",
               "notes": ""
+            },
+            {
+              "preset_id": "ada-4080-25620cce2550",
+              "board": "Inno3D 4080 ICHILL",
+              "freq_mhz": 2835,
+              "voltage_mv": 995,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-05",
+              "notes": "Test replay"
             }
           ]
         },
@@ -4167,6 +4201,40 @@
                 "url": ""
               },
               "date_found": "2026-08-22",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4070-d15d636528d5",
+              "board": "PNY",
+              "freq_mhz": 2790,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-05",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4070-732ab796f3e7",
+              "board": "ICRAFT 4070 OC",
+              "freq_mhz": 2730,
+              "voltage_mv": 965,
+              "power_limit_pct": 110,
+              "vram_offset_mhz": 1250,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-06",
               "notes": ""
             }
           ]
