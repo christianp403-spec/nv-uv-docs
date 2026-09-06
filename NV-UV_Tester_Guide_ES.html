@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -331,7 +331,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="sep">—</span><span class="uv">UV</span></h1>
     <div class="subtitle">GPU Undervolt · Guía del Usuario</div>
-    <div class="build">Build 22 · Cantor · Open Alpha · Agosto 2026</div>
+    <div class="build">Build 22 · Cantor · Open Alpha · v0.99.5.6 · Septiembre de 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -351,6 +351,29 @@
     <p>Un agradecimiento especial a <strong>mi comunidad de Discord de NV-UV</strong>: testers que pasaron horas llevando el escáner al límite, testers que me ayudaron a pulir la interfaz, y todos aquellos cuyo feedback fue mejorando NV-UV pieza a pieza. También a mis amigos y familia, que soportaron que estuviera bastante ausente estas últimas semanas. Y un agradecimiento muy especial a la prensa técnica, sobre todo a <strong>Raphael</strong> (PCGH), que descubrió la herramienta y la dio a conocer a un público más amplio, y a <strong>Andreas</strong> (Hardwareluxx), que analizó NV-UV en detalle. Gracias también a <strong>PCGH Hardware</strong> por darle a NV-UV un hogar en su foro. Esto es exactamente de lo que va la comunidad del PC desde hace años: trastear, testear, jugar y pasarlo bien. Gracias de todo corazón. ❤️</p>
 
     <p class="dim">— Christian</p>
+  </section>
+
+  <!-- ═══ V0.99.5 BRANCH OVERVIEW ═══ -->
+  <section id="branch-overview">
+    <h2 class="orange"><span class="icon">🆕</span>Novedades de la rama v0.99.5</h2>
+    <p>La rama v0.99.5 incorpora funciones y correcciones a lo largo de sus actualizaciones. Este resumen abarca desde v0.99.5 hasta v0.99.5.6; los apartados siguientes explican cómo utilizarlas.</p>
+    <table>
+      <tr><th>Novedad</th><th>Resumen</th></tr>
+      <tr><td><strong>DCC</strong></td><td>Optimiza el reloj de la GPU durante los juegos reconocidos y recuerda valores adecuados para cada juego y GPU. NVIDIA Power Efficiency Mode se incluye como segundo modo experimental.</td></tr>
+      <tr><td><strong>NVIDIA Auto-UV</strong></td><td>Muestra primero un valor inicial de UV individual y solo lo aplica a un slot de Afterburner elegido después de tu confirmación.</td></tr>
+      <tr><td><strong>Actualizaciones</strong></td><td>Paquetes de actualización firmados, instalación iniciada por ti y restauración de la versión anterior si la nueva no arranca. Las notas se abren tras una actualización verificada y siguen disponibles en la ventana de actualizaciones.</td></tr>
+      <tr><td><strong>Diagnóstico e informe de errores</strong></td><td>Guarda primero el diagnóstico de forma local y, después de que lo revises, permite enviarlo de forma privada a NV-UV con imágenes opcionales.</td></tr>
+      <tr><td><strong>Detección segura de perfiles</strong></td><td>La lectura inicial de la curva de fábrica conserva las curvas V/F manuales activas y los slots ocupados de Afterburner. Mejora la detección de perfiles manuales y la velocidad de los cambios; un archivo de configuración temporalmente ocupado ya no bloquea el inicio.</td></tr>
+      <tr><td><strong>Fix NV-Overlay</strong></td><td>Repara NVIDIA Overlay después de tu confirmación si deja de aparecer en los juegos.</td></tr>
+      <tr><td><strong>Integración de DCC</strong></td><td>DCC permanece activado tras reiniciar y funciona mejor con UV-Pilot y Smart Hz. DCC y Game Replay no pueden ejecutarse a la vez. Se corrigieron juegos que quedaban en “Esperando” y bloqueos del inicio por una ruta de datos DCC no disponible.</td></tr>
+      <tr><td><strong>Curvas Blackwell y Ada</strong></td><td>Corregidas las curvas del modo Directo de Blackwell a voltajes bajos de hasta 875 mV y la detección de perfiles ajustados manualmente. La recalibración Ada ya no añade un punto inválido; en RTX 40 se puede desbloquear opcionalmente el rango adicional de OC Ada.</td></tr>
+      <tr><td><strong>Game Replay</strong></td><td>Los ajustes de recuperación pendientes se guardan de forma más fiable y solo se eliminan tras aplicar correctamente el perfil.</td></tr>
+      <tr><td><strong>Configuración y recuperación de Hotspot</strong></td><td>Configuración de Afterburner específica para la GPU, actualización protegida de instalaciones antiguas gestionadas por NV-UV con copia de seguridad y restauración, y recuperación del indicador Hotspot tras una pérdida de datos.</td></tr>
+      <tr><td><strong>Interfaz flexible</strong></td><td>Barras que se distribuyen en filas, sensores que se arrastran individualmente con opción de restablecer y tamaño, posición y disposición de ventana guardados. La escala incluye 80% y 90%. La curva, los ejes, la barra de estado y el botón de informes se adaptan a ventanas pequeñas; la imagen UV-Party permanece dentro del gráfico. Véase <a href="#interface-layout">Interfaz y disposición</a>.</td></tr>
+      <tr><td><strong>Lecturas de sensores en directo</strong></td><td>Se detectan datos obsoletos de Afterburner y NV-UV se reconecta cuando vuelven a estar disponibles lecturas recientes.</td></tr>
+      <tr><td><strong>Base de juegos y solicitudes</strong></td><td>Las actualizaciones conservan los juegos y cambios personalizados y ya no sustituyen datos recientes por una copia incluida más antigua. Hay un botón para solicitar juegos. La versión 2.20 incluye 655 juegos, entre ellos Avatar: Frontiers of Pandora, NBA 2K27 y Onimusha: Way of the Sword.</td></tr>
+      <tr><td><strong>Otras mejoras</strong></td><td>Mejoras en la configuración de Afterburner, el control del ventilador durante el escaneo, la visualización de VRAM, los botones en los temas y los textos de ayuda. El botón de informes indica claramente las opciones de enviar o exportar.</td></tr>
+    </table>
   </section>
 
   <!-- ═══ WHAT IS NV-UV ═══ -->
@@ -387,21 +410,6 @@
       <tr><td>📐 <strong>Vista Mini</strong></td><td>Vista compacta, perfecta junto al editor de curvas de AB</td></tr>
       <tr><td>🎨 <strong>5 skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity + Summer26; curva V/F claramente legible en todos los diseños</td></tr>
       <tr><td>⏻ <strong>Bandeja del sistema e inicio automático</strong></td><td>Funciona en segundo plano. El inicio automático de Windows usa un Scheduled Task validado e inicia NV-UV minimizado.</td></tr>
-    </table>
-  </section>
-
-  <!-- ═══ VERSIÓN ACTUAL ═══ -->
-  <section>
-    <h2 class="orange"><span class="icon">🆕</span>¿Qué novedades incluye v0.99.5?</h2>
-    <table>
-      <tr><th>Novedad</th><th>Resumen</th></tr>
-      <tr><td><strong>DCC</strong></td><td>Optimiza el reloj de la GPU durante los juegos reconocidos y recuerda valores adecuados para cada juego y GPU. NVIDIA Power Efficiency Mode se incluye como segundo modo experimental.</td></tr>
-      <tr><td><strong>NVIDIA Auto-UV</strong></td><td>Muestra primero un valor inicial de UV individual y solo lo aplica a un slot de Afterburner elegido después de tu confirmación.</td></tr>
-      <tr><td><strong>Actualizaciones</strong></td><td>Busca y descarga actualizaciones oficiales cuando tú lo decidas. La instalación siempre la inicias tú; si surge un problema, se puede restaurar la versión anterior.</td></tr>
-      <tr><td><strong>Diagnóstico e informe de errores</strong></td><td>Guarda primero el diagnóstico de forma local y, después de que lo revises, permite enviarlo de forma privada a NV-UV con imágenes opcionales.</td></tr>
-      <tr><td><strong>Detección segura de perfiles</strong></td><td>En el primer inicio, los slots existentes de Afterburner solo se leen. La curva V/F manual activa y los slots ocupados permanecen sin cambios.</td></tr>
-      <tr><td><strong>Fix NV-Overlay</strong></td><td>Repara NVIDIA Overlay después de tu confirmación si deja de aparecer en los juegos.</td></tr>
-      <tr><td><strong>Más mejoras</strong></td><td>Mejoras en la configuración de Afterburner y del hotspot, la detección de juegos, el control del ventilador durante el escaneo, la visualización de VRAM y la interfaz. Game Database 2.18 incluye 652 juegos.</td></tr>
     </table>
   </section>
 
@@ -579,6 +587,29 @@
     <div class="warn">¡Empieza con <strong>Balanced</strong>! Eco puede ser demasiado agresivo para algunas GPUs.</div>
     <div class="warn" style="margin-top:0.6em;"><strong>⚠ Suelo de voltaje de Blackwell (RTX 50):</strong> A partir de aproximadamente 875 mV hacia abajo, el driver de Blackwell no mantiene el V-Lock: vuelve a subir a un punto de voltaje mayor, con lo que el undervolt no queda fijado como se configuró (un lock a 845 mV acaba funcionando más alto de lo elegido). Para un lock estable en Blackwell, elige más de 875 mV. NV-UV muestra un aviso en línea en la pestaña V-Lock en este valor y por debajo. Es comportamiento del driver, no algo que la herramienta pueda anular.</div>
     <div class="info"><strong>Punto de curva como valor inicial:</strong> haz clic en un punto del gráfico para cargar sus valores mostrados de MHz y mV en el modo V-Lock o Directo que esté activo. No se aplica nada automáticamente; ajusta el valor si lo necesitas y después pulsa <strong>Aplicar UV</strong>. Para puntos por debajo de 850 mV, selecciona primero el modo Directo.</div>
+  </section>
+
+  <!-- ═══ INTERFACE AND LAYOUT ═══ -->
+  <section id="interface-layout">
+    <h2 class="orange"><span class="icon">🖥</span>Interfaz y disposición</h2>
+    <p>Las posiciones de los botones se adaptan al ancho de la ventana y a la escala de la interfaz. Las dos barras sobre la curva conservan su orden y se distribuyen automáticamente en más filas. Busca las funciones por su nombre y su área de control.</p>
+    <table>
+      <thead><tr><th>Área de control</th><th>Controles disponibles</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Barra de perfiles sobre la curva</strong></td><td>Slots AB 1–5, Stock, AB←, OCS → UV, Recalibrate, MSI Afterburner Setup y Fix NV-Overlay.</td></tr>
+      <tr><td><strong>Barra de funciones debajo de la barra de perfiles</strong></td><td>Mini, selector de tema, Updates, Smart Hz, DCC, AB Silent, Start, Replay y UV-Pilot.</td></tr>
+      <tr><td><strong>Área Quick-Lock</strong></td><td>Presets, UV⚡Try, V-Lock/Directo, Power Limit, VRAM y escáner. Se sitúa a la derecha de la curva cuando hay suficiente ancho y debajo de ella en ventanas estrechas.</td></tr>
+      <tr><td><strong>Actividad / Diagnóstico</strong></td><td>El botón para enviar o exportar un informe de error está debajo del registro. Si falta altura, el registro y los controles superiores se desplazan por separado.</td></tr>
+      <tr><td><strong>Barra de estado al pie de la ventana</strong></td><td>Estado de conexión, versión, botón de porcentaje para la escala y selector de idioma. Estos controles se distribuyen en varias filas cuando falta espacio.</td></tr>
+      </tbody>
+    </table>
+    <h3>Mover los sensores</h3>
+    <p>Puedes mover cada sensor de la cabecera de forma individual: temperatura, frecuencia de GPU, frecuencia de VRAM, carga, potencia, voltaje, Hotspot, temperatura de VRAM y ventiladores. Mantén pulsado el botón izquierdo sobre un sensor, arrástralo a la posición deseada de la cuadrícula y suéltalo. La disposición se guarda automáticamente. Un clic breve sigue abriendo los detalles de VRAM y ventiladores.</p>
+    <p>Clic derecho sobre los sensores → <strong>Restablecer</strong> recupera la disposición predeterminada. Si hay suficiente espacio, Hotspot, VRAM y ventiladores se centran en la segunda fila. Solo se restablece la disposición de los sensores; los perfiles UV y la escala se conservan.</p>
+    <h3>Tamaño de ventana y disposición guardada</h3>
+    <p>La curva, el eje X y la información se adaptan a la altura de la ventana; la barra de estado permanece visible.</p>
+    <p>El tamaño, la posición y el estado maximizado de la ventana, la disposición de los sensores y la escala se conservan al reiniciar y tras una actualización normal con los mismos ajustes de usuario. NV-UV recalcula las filas de las barras según el ancho disponible. Los botones de las barras mantienen su orden fijo; los sensores de la cabecera se pueden mover con el ratón.</p>
+    <p>Cambia el tamaño del texto y los controles con el botón de porcentaje de la barra de estado inferior. Consulta <a href="#ui-scaling">Escalado de UI</a> para ver los niveles disponibles y los controles del ratón.</p>
   </section>
 
   <!-- ═══ NVIDIA AUTO-UV ═══ -->
@@ -790,7 +821,7 @@
     <h3>Perfiles personalizados</h3>
     <p>Clic derecho en un slot: "Añadir a UV-Piloto" crea un perfil personalizado. Asignable por juego en la base de datos de juegos.</p>
     <h3>Base de datos de juegos</h3>
-    <p>Clic derecho en UV-Piloto → 🎮 Base de datos de juegos. 652 juegos + benchmarks, asignaciones de nivel ajustables, juegos propios añadibles.</p>
+    <p>Clic derecho en UV-Piloto → 🎮 Base de datos de juegos. 655 juegos + benchmarks, asignaciones de nivel ajustables, juegos propios añadibles.</p>
     <p><strong>Game Pass / Microsoft Store:</strong> inicia primero el juego, después pulsa <strong>🎮</strong> en el diálogo Añadir juego y selecciona preferiblemente el proceso con la ventana visible del juego. NV-UV copia solo el nombre del proceso y no abre ni <code>WindowsApps</code> ni la ruta protegida del ejecutable. Cuando UV-Piloto reconoce ese proceso, Smart Hz puede cambiar correctamente al modo Gaming. Los hosts compartidos, los componentes de Xbox/Game Bar y los servicios permanentes como <code>ApplicationFrameHost.exe</code>, <code>GamingServices.exe</code>, <code>GamingServicesNet.exe</code> y <code>GameInputSvc.exe</code> se eliminan de la lista y también se rechazan en la entrada manual y en la detección posterior de UV-Piloto. Los App ID no se admiten en esta versión; si no aparece un proceso propio del juego, el título no puede identificarse de forma segura.</p>
     <p>Además de la lista de juegos, el navegador incluye la pestaña <strong>Ajustes de Replay</strong> con los valores corregidos automáticamente por Game Replay.</p>
     <h3>Benchmarks (3DMark, etc.)</h3>
@@ -901,8 +932,9 @@
     <p>Offset de frecuencia de memoria. Por defecto: 0 MHz. GDDR7 rara vez se beneficia del OC de memoria.</p>
     <h3>🔓 Anular límite seguro</h3>
     <p>Elimina el margen de seguridad de 50 MHz bajo el máximo stock. Solo para usuarios avanzados.</p>
-    <h3>🖥 Escalado de UI</h3>
-    <p>Botón % en el pie de ventana, junto al selector de idioma. Niveles: 100% → 110% → 125% → 150% → 200% → 250% → 300%. Todas las ventanas cambian de escala a la vez.</p>
+    <h3 id="ui-scaling">🖥 Escalado de UI</h3>
+    <p>Usa el botón de porcentaje de la barra de estado inferior para cambiar la escala: clic izquierdo para el siguiente nivel y clic derecho para el anterior. Niveles: 80%, 90%, 100%, 110%, 125%, 150%, 175%, 200%, 225%, 250%, 300%. La selección se guarda y se aplica a las ventanas de NV-UV. Las filas de las barras también se adaptan a la escala elegida.</p>
+    <p>Para las áreas de control y la disposición de los sensores, consulta <a href="#interface-layout">Interfaz y disposición</a>.</p>
   </section>
 
   <!-- ═══ SMART HZ ═══ -->
@@ -1278,6 +1310,8 @@
   <!-- ═══ TROUBLESHOOTING ═══ -->
   <section>
     <h2 class="red"><span class="icon">🛠</span>Solución de problemas</h2>
+    <h3>Los sensores dejan de actualizarse</h3>
+    <p>Si las lecturas se detienen, NV-UV comprueba la antigüedad de los datos de Afterburner y se reconecta cuando hay datos nuevos. Si Afterburner deja de publicar datos, comprueba su monitorización o reinícialo.</p>
     <h3>NV-UV arranca pero no muestra ninguna GPU</h3>
     <p>¿Está instalado el controlador NVIDIA más reciente? Inicia NV-UV después de que el escritorio de Windows haya cargado.</p>
     <h3>Sin conexión MAHM (sin lectura de voltaje)</h3>
@@ -1309,7 +1343,7 @@
   <div class="led-bar gold"></div>
 
   <div class="footer">
-    NV-UV · Build 22 · Cantor · v0.99.5.5<br>
+    NV-UV · Build 22 · Cantor · v0.99.5.6<br>
     Undervolting de GPU y funciones experimentales bajo tu propia responsabilidad<br><br>
     <span style="color:var(--dim)">NV-UV es gratuito. Si te gusta:</span> <a href="https://paypal.me/christianpapaioannou" style="color:var(--cyan)">PayPal</a>
   </div>

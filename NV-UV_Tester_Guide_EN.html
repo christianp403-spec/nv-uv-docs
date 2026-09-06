@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -331,7 +331,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="sep">—</span><span class="uv">UV</span></h1>
     <div class="subtitle">GPU Undervolt · User Guide</div>
-    <div class="build">Build 22 · Cantor · Open Alpha · August 2026</div>
+    <div class="build">Build 22 · Cantor · Open Alpha · v0.99.5.6 · September 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -351,6 +351,29 @@
     <p>Special thanks go to <strong>my NV-UV Discord community</strong>, testers who spent hours pushing the scanner to its limits, testers who helped me refine the UI, and everyone whose feedback made NV-UV better piece by piece. Also to my friends and family who put up with me being pretty scarce these past weeks. And a special thank you to the tech press, especially <strong>Raphael</strong> (PCGH) who discovered the tool and brought it to a wider audience, and <strong>Andreas</strong> (Hardwareluxx) who took a closer look at NV-UV. Thanks also to <strong>PCGH Hardware</strong> for giving NV-UV a home in their forum. This is exactly what the PC community has been about for years: tweaking, testing, gaming and having fun. Thank you, from the bottom of my heart. ❤️</p>
 
     <p class="dim">— Christian</p>
+  </section>
+
+  <!-- ═══ V0.99.5 BRANCH OVERVIEW ═══ -->
+  <section id="branch-overview">
+    <h2 class="orange"><span class="icon">🆕</span>What's New in v0.99.5 Branch</h2>
+    <p>The v0.99.5 branch brings new features and fixes across its updates. This overview covers v0.99.5 through v0.99.5.6; the sections below explain how to use them.</p>
+    <table>
+      <tr><th>New</th><th>In brief</th></tr>
+      <tr><td><strong>DCC</strong></td><td>Optimizes the GPU clock while recognized games are running and remembers suitable values for each game and GPU. NVIDIA Power Efficiency Mode is included as an experimental second mode.</td></tr>
+      <tr><td><strong>NVIDIA Auto-UV</strong></td><td>First shows an individual UV starting point and applies it to a selected Afterburner slot only after you confirm.</td></tr>
+      <tr><td><strong>Updates</strong></td><td>Signed update packages, installation started by you and rollback if the new version fails to start. Patch notes open after a verified update and remain available in the Updates window.</td></tr>
+      <tr><td><strong>Diagnostics &amp; Error Reports</strong></td><td>Saves diagnostics locally first and can send them privately to NV-UV with optional images after you review them.</td></tr>
+      <tr><td><strong>Safe profile detection</strong></td><td>First-launch stock discovery preserves active manual V/F curves and occupied Afterburner slots. Manual profiles are recognized more reliably, switching is faster, and a temporarily busy configuration file no longer stalls startup.</td></tr>
+      <tr><td><strong>Fix NV-Overlay</strong></td><td>Repairs the NVIDIA Overlay after your confirmation if it no longer appears in games.</td></tr>
+      <tr><td><strong>DCC integration</strong></td><td>DCC stays enabled after restarting and works more reliably with UV-Pilot and Smart Hz. DCC and Game Replay cannot run simultaneously. Fixes cover games stuck at “Waiting” and startup blocked by an unavailable DCC data path.</td></tr>
+      <tr><td><strong>Blackwell and Ada curves</strong></td><td>Corrected Blackwell Direct Mode curves at low voltages up to 875 mV and detection of manually tuned profiles. Ada recalibration no longer adds an invalid curve point; RTX 40 users can optionally unlock the additional Ada OC range.</td></tr>
+      <tr><td><strong>Game Replay</strong></td><td>Pending recovery adjustments are stored more reliably and are cleared only after the profile update succeeds.</td></tr>
+      <tr><td><strong>Hotspot setup and recovery</strong></td><td>GPU-specific Afterburner setup, safer updates of older NV-UV-managed installations with backup and rollback, and recovery of the Hotspot display after missing sensor data.</td></tr>
+      <tr><td><strong>Flexible interface</strong></td><td>Wrapping toolbars, individually draggable sensor displays with reset, and saved window size, position and layout. Scaling includes 80% and 90%. The curve, axes, footer and report controls adapt to smaller windows; the UV-Party image stays inside the chart. See <a href="#interface-layout">Interface and layout</a>.</td></tr>
+      <tr><td><strong>Live sensor readings</strong></td><td>Stale Afterburner readings are detected and NV-UV reconnects when fresh data returns.</td></tr>
+      <tr><td><strong>Game Database and requests</strong></td><td>Database updates preserve custom games and edits and no longer replace newer data with an older bundled copy. A game-request button is available. Version 2.20 includes 655 games, including Avatar: Frontiers of Pandora, NBA 2K27 and Onimusha: Way of the Sword.</td></tr>
+      <tr><td><strong>Further refinements</strong></td><td>Improved Afterburner setup, scanner fan handling, VRAM display, button rendering across skins and help text. The error-report button now clearly offers sending or exporting a report.</td></tr>
+    </table>
   </section>
 
   <!-- ═══ WHAT IS NV-UV ═══ -->
@@ -387,21 +410,6 @@
       <tr><td>📐 <strong>Mini View</strong></td><td>Compact view, perfect alongside AB's curve editor</td></tr>
       <tr><td>🎨 <strong>5 Skins</strong></td><td>Dark + UV-Party + Royal Blue + Infinity + Summer26; a clearly readable V/F curve in every design</td></tr>
       <tr><td>⏻ <strong>System Tray and autostart</strong></td><td>Runs in the background. Windows autostart uses a validated Scheduled Task and launches NV-UV minimized.</td></tr>
-    </table>
-  </section>
-
-  <!-- ═══ CURRENT VERSION ═══ -->
-  <section>
-    <h2 class="orange"><span class="icon">🆕</span>What's New in v0.99.5?</h2>
-    <table>
-      <tr><th>New</th><th>In brief</th></tr>
-      <tr><td><strong>DCC</strong></td><td>Optimizes the GPU clock while recognized games are running and remembers suitable values for each game and GPU. NVIDIA Power Efficiency Mode is included as an experimental second mode.</td></tr>
-      <tr><td><strong>NVIDIA Auto-UV</strong></td><td>First shows an individual UV starting point and applies it to a selected Afterburner slot only after you confirm.</td></tr>
-      <tr><td><strong>Updates</strong></td><td>Checks for and downloads official updates when requested. You always start the installation yourself; the previous version can be restored if something goes wrong.</td></tr>
-      <tr><td><strong>Diagnostics &amp; Error Reports</strong></td><td>Saves diagnostics locally first and can send them privately to NV-UV with optional images after you review them.</td></tr>
-      <tr><td><strong>Safe profile detection</strong></td><td>Existing Afterburner slots are read only during first launch. An already active manual V/F curve and occupied slots remain unchanged.</td></tr>
-      <tr><td><strong>Fix NV-Overlay</strong></td><td>Repairs the NVIDIA Overlay after your confirmation if it no longer appears in games.</td></tr>
-      <tr><td><strong>More Improvements</strong></td><td>Improved Afterburner and hotspot setup, game detection, scanner fan handling, VRAM display and interface. Game Database 2.18 contains 652 games.</td></tr>
     </table>
   </section>
 
@@ -581,6 +589,29 @@
     <div class="warn">Start with <strong>Balanced</strong>! Eco can be too aggressive for some GPUs.</div>
     <div class="warn" style="margin-top:0.6em;"><strong>⚠ Blackwell voltage floor (RTX 50):</strong> At roughly 875 mV and below, the Blackwell driver does not hold the V-Lock - it boosts back up to a higher voltage point, so the undervolt does not stick as set (a lock at 845 mV ends up running higher than you chose). For a stable lock on Blackwell, choose above 875 mV. NV-UV shows an inline hint in the V-Lock tab at this value and below. This is driver behavior, not something the tool can override.</div>
     <div class="info"><strong>Curve point as a starting value:</strong> Click a point in the chart to load its displayed MHz and mV values into the currently active V-Lock or Direct mode. Nothing is applied automatically; adjust the value if needed, then press <strong>Apply UV</strong>. Select Direct mode first for points below 850 mV.</div>
+  </section>
+
+  <!-- ═══ INTERFACE AND LAYOUT ═══ -->
+  <section id="interface-layout">
+    <h2 class="orange"><span class="icon">🖥</span>Interface and layout</h2>
+    <p>Button positions adapt to window width and UI scaling. The two toolbars above the curve keep their order and wrap automatically onto additional rows. Use the button names and control areas to find a feature.</p>
+    <table>
+      <thead><tr><th>Control area</th><th>Available controls</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Profile toolbar above the curve</strong></td><td>AB profile slots 1–5, Stock, AB←, OCS → UV, Recalibrate, MSI Afterburner Setup and Fix NV-Overlay.</td></tr>
+      <tr><td><strong>Feature toolbar below the profile toolbar</strong></td><td>Mini, skin selector, Updates, Smart Hz, DCC, AB Silent, Start, Replay and UV-Pilot.</td></tr>
+      <tr><td><strong>Quick-Lock area</strong></td><td>Presets, UV⚡Try, V-Lock/Direct, Power Limit, VRAM and the scanner. This area sits beside the curve when there is enough width and below it in narrow windows.</td></tr>
+      <tr><td><strong>Activity / Diagnostics</strong></td><td>The button for sending or exporting an error report is below the log. When height is limited, the log and the controls above scroll separately.</td></tr>
+      <tr><td><strong>Status bar at the bottom of the window</strong></td><td>Connection status, version, percentage button for UI scaling and language selection. These controls wrap when space is limited.</td></tr>
+      </tbody>
+    </table>
+    <h3>Moving sensor displays</h3>
+    <p>You can move each sensor display in the header individually: temperature, GPU clock, VRAM clock, load, power, voltage, Hotspot, VRAM temperature and fans. Hold the left mouse button on a display, drag it to the desired grid position and release. The arrangement is saved automatically. A short click still opens the VRAM and fan details.</p>
+    <p>Right-click the sensor displays → <strong>Reset</strong> to restore their default arrangement. With enough space, Hotspot, VRAM and fans are centered in the second row. This resets only the sensor arrangement; UV profiles and UI scaling are preserved.</p>
+    <h3>Window size and saved layout</h3>
+    <p>The curve, X-axis and information strip adapt to window height; the status bar remains visible.</p>
+    <p>Window size, position, maximized state, sensor arrangement and scaling are restored on the next start and preserved through a normal update using the same user settings. NV-UV recalculates toolbar wrapping for the available width. Toolbar buttons retain their fixed order; the sensor displays in the header can be moved with the mouse.</p>
+    <p>For text and control sizes, use the percentage button in the bottom status bar. See <a href="#ui-scaling">UI Scaling</a> for the available steps and mouse controls.</p>
   </section>
 
   <!-- ═══ NVIDIA AUTO-UV ═══ -->
@@ -791,7 +822,7 @@
     <h3>Custom Profiles</h3>
     <p>Right-click a slot: "Add to UV-Pilot" creates a custom profile. Assignable per game in the game database.</p>
     <h3>Game Database</h3>
-    <p>Right-click UV-Pilot → 🎮 Game Database. 652 games + benchmarks, tier assignments adjustable, custom games addable.</p>
+    <p>Right-click UV-Pilot → 🎮 Game Database. 655 games + benchmarks, tier assignments adjustable, custom games addable.</p>
     <p><strong>Game Pass / Microsoft Store:</strong> start the game first, then click <strong>🎮</strong> in the Add Game dialog and preferably select the process with the visible game window. NV-UV copies only the process name and opens neither <code>WindowsApps</code> nor the protected executable path. Once UV-Pilot recognizes that process, Smart Hz can switch correctly to Gaming mode. Shared hosts, Xbox/Game Bar components and always-running services such as <code>ApplicationFrameHost.exe</code>, <code>GamingServices.exe</code>, <code>GamingServicesNet.exe</code> and <code>GameInputSvc.exe</code> are removed from the list and are also rejected by manual entry and later UV-Pilot detection. App IDs are not supported in this version; if no distinct game process appears, the title cannot be identified safely.</p>
     <p>The Game Browser includes a separate <strong>Replay Adjustments</strong> tab for values automatically corrected by Game Replay.</p>
     <h3>Benchmarks (3DMark etc.)</h3>
@@ -902,8 +933,9 @@
     <p>Memory clock offset. Default: 0 MHz. GDDR7 rarely benefits from memory OC.</p>
     <h3>🔓 Override Safe Limit</h3>
     <p>Removes the 50 MHz safety margin below stock maximum. Advanced users only.</p>
-    <h3>🖥 UI Scaling</h3>
-    <p>% button in the footer. Steps: 100% through 300%. All windows scale together.</p>
+    <h3 id="ui-scaling">🖥 UI Scaling</h3>
+    <p>Use the percentage button in the bottom status bar to change UI scaling: left-click for the next step, right-click for the previous step. Steps: 80%, 90%, 100%, 110%, 125%, 150%, 175%, 200%, 225%, 250%, 300%. The selection is saved and applies to NV-UV windows. Toolbar wrapping also adapts to the selected scale.</p>
+    <p>For the control areas and sensor layout, see <a href="#interface-layout">Interface and layout</a>.</p>
   </section>
 
   <!-- ═══ SMART HZ ═══ -->
@@ -1280,6 +1312,8 @@
   <!-- ═══ TROUBLESHOOTING ═══ -->
   <section>
     <h2 class="red"><span class="icon">🛠</span>Troubleshooting</h2>
+    <h3>Sensor readings stop updating</h3>
+    <p>If sensor readings stop updating, NV-UV checks the age of the Afterburner data and reconnects when fresh readings become available. If Afterburner itself stops publishing data, check its monitoring or restart Afterburner.</p>
     <h3>NV-UV starts but shows no GPU</h3>
     <p>Latest NVIDIA driver installed? Start NV-UV after Windows desktop has loaded.</p>
     <h3>No MAHM connection (no voltage reading)</h3>
@@ -1290,7 +1324,7 @@
     <h3>Apply does nothing / voltage unchanged</h3>
     <p>Enable <code>Unlock Voltage Control</code> in AB. Missing stock curve? Click 🔄 Recalibrate. If Blackwell hotspot is active, the fix is removed through the controlled rollback before the actual calibration begins.</p>
     <h3>NVIDIA Overlay does not appear in games</h3>
-    <p>Close all games and stop any active recordings first. Then click <strong>Fix NV-Overlay</strong> in the top toolbar and confirm the repair. Afterwards, test the overlay in a game with <code>Alt+Z</code> or <code>Alt+R</code>. An active recording or the current Instant Replay buffer is stopped during the repair and may be lost; the NVIDIA App and graphics driver are neither updated nor reinstalled.</p>
+    <p>Close all games and stop any active recordings first. Then click <strong>Fix NV-Overlay</strong> in the profile toolbar above the curve and confirm the repair. Afterwards, test the overlay in a game with <code>Alt+Z</code> or <code>Alt+R</code>. An active recording or the current Instant Replay buffer is stopped during the repair and may be lost; the NVIDIA App and graphics driver are neither updated nor reinstalled.</p>
     <h3>Game crashes after UV</h3>
     <p>Try a higher preset, or use the scanner. Game Replay lowers frequency automatically.</p>
   </section>
@@ -1311,7 +1345,7 @@
   <div class="led-bar gold"></div>
 
   <div class="footer">
-    NV-UV · Build 22 · Cantor · v0.99.5.5<br>
+    NV-UV · Build 22 · Cantor · v0.99.5.6<br>
     GPU undervolting and experimental features at your own risk<br><br>
     <span style="color:var(--dim)">NV-UV is free. If you like it:</span> <a href="https://paypal.me/christianpapaioannou" style="color:var(--cyan)">PayPal</a>
   </div>
