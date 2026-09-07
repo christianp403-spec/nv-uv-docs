@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-06",
+  "updated": "2026-09-07",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -5643,6 +5643,23 @@
               },
               "date_found": "2026-09-01",
               "notes": ""
+            },
+            {
+              "preset_id": "amp-3070-e625fe802e4d",
+              "board": "Aorus Master",
+              "freq_mhz": 1950,
+              "voltage_mv": 925,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 800,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-06",
+              "notes": "Стабильно. 58 градусов в играх, 170-180 ватт"
             }
           ]
         },
