@@ -1,20 +1,21 @@
 {
-  "version": "2.20",
+  "version": "2.21",
   "source": "nvidia-drs-profiles + dlss-all-versions",
-  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup + Jul 2026: removed generic BugSplat crash-reporter alias (bssndrpt64.exe) from Company of Heroes 3 (false UV-Pilot detection after crashes) + Game Ready additions Jul 2026: Halo: Campaign Evolved, Gears of War: E-Day, Mistfall Hunter + Freelancer (HD) and The Witcher (2007) + Game Ready 610.88 addition Aug 2026: SILENT HILL f + Game Ready 616.56 additions Aug 2026: Hell Let Loose: Vietnam, Resonance: A Plague Tale Legacy, STAR WARS Zero Company + PowerWash Simulator 2 (Balanced) + v2.17: stable DCC identities for Marvel Rivals and Wuthering Waves + v2.18: Halo: The Master Chief Collection (Eco, community-verified) + v2.19: Game Ready 616.64 additions Sep 2026: NBA 2K27 and Onimusha: Way of the Sword + v2.20: Avatar: Frontiers of Pandora (Performance)",
-  "generated": "2026-09-05",
+  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup + Jul 2026: removed generic BugSplat crash-reporter alias (bssndrpt64.exe) from Company of Heroes 3 (false UV-Pilot detection after crashes) + Game Ready additions Jul 2026: Halo: Campaign Evolved, Gears of War: E-Day, Mistfall Hunter + Freelancer (HD) and The Witcher (2007) + Game Ready 610.88 addition Aug 2026: SILENT HILL f + Game Ready 616.56 additions Aug 2026: Hell Let Loose: Vietnam, Resonance: A Plague Tale Legacy, STAR WARS Zero Company + PowerWash Simulator 2 (Balanced) + v2.17: stable DCC identities for Marvel Rivals and Wuthering Waves + v2.18: Halo: The Master Chief Collection (Eco, community-verified) + v2.19: Game Ready 616.64 additions Sep 2026: NBA 2K27 and Onimusha: Way of the Sword + v2.20: Avatar: Frontiers of Pandora (Performance) + v2.21: Game Ready 616.92 additions: Active Matter, Aniimo and WARDOGS; refreshed 007 First Light and PUBG: BATTLEGROUNDS",
+  "generated": "2026-09-09",
   "games": [
     {
       "name": "007 First Light",
       "process": "engine.exe",
       "tier": "Performance",
       "scaling": "glacier",
-      "confidence": "estimated",
-      "note": "DLSS 4.5 + Path Tracing, IO Interactive Glacier engine",
+      "confidence": "nvidia-verified",
+      "note": "Glacier engine; DLSS 4.5 Super Resolution and Dynamic Multi Frame Generation; path tracing and DLSS 4.5 Ray Reconstruction update announced for 2026-09-15",
       "aliases": [
         "007firstlight.exe"
       ],
-      "ambiguous": true
+      "ambiguous": true,
+      "source": "nvidia-drs"
     },
     {
       "name": "2XKO",
@@ -134,6 +135,15 @@
       "confidence": "community",
       "source": "nvidia-drs",
       "scaling": "light"
+    },
+    {
+      "name": "Active Matter",
+      "process": "active_matter.exe",
+      "tier": "Balanced",
+      "scaling": "mixed",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Game Ready 616.92; DLSS 4.5 Super Resolution, Ray Reconstruction, Dynamic Multi Frame Generation, NVIDIA Reflex and ray tracing; Steam launch 2026-09-15"
     },
     {
       "name": "Against the Storm",
@@ -337,6 +347,15 @@
       "confidence": "community",
       "source": "nvidia-drs",
       "scaling": "gpu"
+    },
+    {
+      "name": "Aniimo",
+      "process": "aniimo.exe",
+      "tier": "Performance",
+      "scaling": "mixed",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Game Ready 616.92; open-world RPG with DLSS 4.5 Super Resolution and Dynamic Multi Frame Generation; launch 2026-09-16"
     },
     {
       "name": "Anno 117: Pax Romana",
@@ -3725,7 +3744,8 @@
       "process": "tslgame.exe",
       "tier": "Performance",
       "confidence": "nvidia-verified",
-      "source": "steam-library"
+      "source": "nvidia-drs",
+      "note": "Game Ready 616.92; DLSS Super Resolution update announced for 2026-09-10; Performance default retained"
     },
     {
       "name": "Quake (2021)",
@@ -5296,6 +5316,18 @@
       "aliases": [
         "aces64.exe"
       ]
+    },
+    {
+      "name": "WARDOGS",
+      "process": "wardogsclient-win64-shipping.exe",
+      "tier": "Performance",
+      "scaling": "mixed",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "aliases": [
+        "wardogsclient.exe"
+      ],
+      "note": "Game Ready 616.92; 100-player FPS with DLSS 4.5 Super Resolution, Dynamic Multi Frame Generation and NVIDIA Reflex; Early Access 2026-09-10"
     },
     {
       "name": "Warframe",
