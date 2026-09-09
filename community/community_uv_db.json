@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-08",
+  "updated": "2026-09-09",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -2063,6 +2063,40 @@
               },
               "date_found": "2026-08-24",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-b5d1aa135007",
+              "board": "PNY",
+              "freq_mhz": 2895,
+              "voltage_mv": 915,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-08",
+              "notes": "PNY GeForce RTX 5070 Triple Fan 12GB"
+            },
+            {
+              "preset_id": "bw-5070-a7e0c4de8689",
+              "board": "MSI Ventus 2X OC",
+              "freq_mhz": 3090,
+              "voltage_mv": 960,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-08",
+              "notes": "DCC learned"
             }
           ]
         },
