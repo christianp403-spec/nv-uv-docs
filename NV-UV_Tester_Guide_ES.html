@@ -331,7 +331,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="sep">—</span><span class="uv">UV</span></h1>
     <div class="subtitle">GPU Undervolt · Guía del Usuario</div>
-    <div class="build">Build 22 · Cantor · Open Alpha · v0.99.5.6 · Septiembre de 2026</div>
+    <div class="build">Build 22 · Cantor · Open Alpha · v0.99.5.7 · Septiembre de 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -356,7 +356,16 @@
   <!-- ═══ V0.99.5 BRANCH OVERVIEW ═══ -->
   <section id="branch-overview">
     <h2 class="orange"><span class="icon">🆕</span>Novedades de la rama v0.99.5</h2>
-    <p>La rama v0.99.5 incorpora funciones y correcciones a lo largo de sus actualizaciones. Este resumen abarca desde v0.99.5 hasta v0.99.5.6; los apartados siguientes explican cómo utilizarlas.</p>
+    <p>La rama v0.99.5 incorpora funciones y correcciones a lo largo de sus actualizaciones. Este resumen abarca desde v0.99.5 hasta v0.99.5.7; los apartados siguientes explican cómo utilizarlas.</p>
+    <h3>v0.99.5.7</h3>
+    <ul>
+      <li>El asistente de configuraci&#243;n de Afterburner tambi&#233;n comprueba la temperatura del n&#250;cleo de la GPU NVIDIA activa y ofrece activar su monitorizaci&#243;n. Las temperaturas no disponibles se muestran como un guion.</li>
+      <li>La barra de sensores conserva espacio para lecturas largas cuando se interrumpe la conexi&#243;n. Si un sensor desaparece al arrastrarlo, se cancela el movimiento sin cambiar la disposici&#243;n guardada.</li>
+      <li>La telemetr&#237;a es m&#225;s resistente a errores del controlador y reinicios de la GPU, lo que reduce el riesgo de que NV-UV se cierre al leer los valores de la tarjeta.</li>
+      <li>El esc&#225;ner y la optimizaci&#243;n comprueban que se pueda aplicar el punto de curva solicitado y que las mediciones recientes de tensi&#243;n bajo carga coincidan con el objetivo. Los intentos no v&#225;lidos se excluyen de los puntos de medici&#243;n v&#225;lidos.</li>
+      <li>Los resultados muestran la tensi&#243;n solicitada y medida, junto con la frecuencia bajo carga. Los puntos fallidos del historial se marcan claramente y no se pueden asignar a un perfil. Sigue siendo necesaria una verificaci&#243;n de estabilidad independiente.</li>
+      <li>La Game Database 2.21 incluida contiene 658 juegos.</li>
+    </ul>
     <table>
       <tr><th>Novedad</th><th>Resumen</th></tr>
       <tr><td><strong>DCC</strong></td><td>Optimiza el reloj de la GPU durante los juegos reconocidos y recuerda valores adecuados para cada juego y GPU. NVIDIA Power Efficiency Mode se incluye como segundo modo experimental.</td></tr>
@@ -371,7 +380,7 @@
       <tr><td><strong>Configuración y recuperación de Hotspot</strong></td><td>Configuración de Afterburner específica para la GPU, actualización protegida de instalaciones antiguas gestionadas por NV-UV con copia de seguridad y restauración, y recuperación del indicador Hotspot tras una pérdida de datos.</td></tr>
       <tr><td><strong>Interfaz flexible</strong></td><td>Barras que se distribuyen en filas, sensores que se arrastran individualmente con opción de restablecer y tamaño, posición y disposición de ventana guardados. La escala incluye 80% y 90%. La curva, los ejes, la barra de estado y el botón de informes se adaptan a ventanas pequeñas; la imagen UV-Party permanece dentro del gráfico. Véase <a href="#interface-layout">Interfaz y disposición</a>.</td></tr>
       <tr><td><strong>Lecturas de sensores en directo</strong></td><td>Se detectan datos obsoletos de Afterburner y NV-UV se reconecta cuando vuelven a estar disponibles lecturas recientes.</td></tr>
-      <tr><td><strong>Base de juegos y solicitudes</strong></td><td>Las actualizaciones conservan los juegos y cambios personalizados y ya no sustituyen datos recientes por una copia incluida más antigua. Hay un botón para solicitar juegos. La versión 2.20 incluye 655 juegos, entre ellos Avatar: Frontiers of Pandora, NBA 2K27 y Onimusha: Way of the Sword.</td></tr>
+      <tr><td><strong>Base de juegos y solicitudes</strong></td><td>Las actualizaciones conservan los juegos y cambios personalizados y ya no sustituyen datos recientes por una copia incluida más antigua. Hay un botón para solicitar juegos. La versión 2.21 incluye 658 juegos, entre ellos Avatar: Frontiers of Pandora, NBA 2K27 y Onimusha: Way of the Sword.</td></tr>
       <tr><td><strong>Otras mejoras</strong></td><td>Mejoras en la configuración de Afterburner, el control del ventilador durante el escaneo, la visualización de VRAM, los botones en los temas y los textos de ayuda. El botón de informes indica claramente las opciones de enviar o exportar.</td></tr>
     </table>
   </section>
@@ -821,7 +830,7 @@
     <h3>Perfiles personalizados</h3>
     <p>Clic derecho en un slot: "Añadir a UV-Piloto" crea un perfil personalizado. Asignable por juego en la base de datos de juegos.</p>
     <h3>Base de datos de juegos</h3>
-    <p>Clic derecho en UV-Piloto → 🎮 Base de datos de juegos. 655 juegos + benchmarks, asignaciones de nivel ajustables, juegos propios añadibles.</p>
+    <p>Clic derecho en UV-Piloto → 🎮 Base de datos de juegos. 658 juegos + benchmarks, asignaciones de nivel ajustables, juegos propios añadibles.</p>
     <p><strong>Game Pass / Microsoft Store:</strong> inicia primero el juego, después pulsa <strong>🎮</strong> en el diálogo Añadir juego y selecciona preferiblemente el proceso con la ventana visible del juego. NV-UV copia solo el nombre del proceso y no abre ni <code>WindowsApps</code> ni la ruta protegida del ejecutable. Cuando UV-Piloto reconoce ese proceso, Smart Hz puede cambiar correctamente al modo Gaming. Los hosts compartidos, los componentes de Xbox/Game Bar y los servicios permanentes como <code>ApplicationFrameHost.exe</code>, <code>GamingServices.exe</code>, <code>GamingServicesNet.exe</code> y <code>GameInputSvc.exe</code> se eliminan de la lista y también se rechazan en la entrada manual y en la detección posterior de UV-Piloto. Los App ID no se admiten en esta versión; si no aparece un proceso propio del juego, el título no puede identificarse de forma segura.</p>
     <p>Además de la lista de juegos, el navegador incluye la pestaña <strong>Ajustes de Replay</strong> con los valores corregidos automáticamente por Game Replay.</p>
     <h3>Benchmarks (3DMark, etc.)</h3>
@@ -1343,7 +1352,7 @@
   <div class="led-bar gold"></div>
 
   <div class="footer">
-    NV-UV · Build 22 · Cantor · v0.99.5.6<br>
+    NV-UV · Build 22 · Cantor · v0.99.5.7<br>
     Undervolting de GPU y funciones experimentales bajo tu propia responsabilidad<br><br>
     <span style="color:var(--dim)">NV-UV es gratuito. Si te gusta:</span> <a href="https://paypal.me/christianpapaioannou" style="color:var(--cyan)">PayPal</a>
   </div>
