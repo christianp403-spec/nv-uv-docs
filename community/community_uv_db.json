@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-09",
+  "updated": "2026-09-12",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -3852,6 +3852,23 @@
               },
               "date_found": "2026-07-24",
               "notes": ""
+            },
+            {
+              "preset_id": "ada-4070-ti-c008dbe4199b",
+              "board": "MSI",
+              "freq_mhz": 2662,
+              "voltage_mv": 940,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-10",
+              "notes": ""
             }
           ]
         },
@@ -4433,6 +4450,23 @@
               },
               "date_found": "2024-06",
               "notes": "~65C, ~55% fan, negligible perf change"
+            },
+            {
+              "preset_id": "ada-4060-610015ed09b9",
+              "board": "ASUS TUF Gaming A15 (2023)",
+              "freq_mhz": 2355,
+              "voltage_mv": 850,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 800,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-11",
+              "notes": ""
             }
           ]
         }
