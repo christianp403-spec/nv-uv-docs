@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-12",
+  "updated": "2026-09-13",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -688,6 +688,23 @@
               },
               "date_found": "2026-09-02",
               "notes": "Extreme full stable. Extremo 100% estable."
+            },
+            {
+              "preset_id": "bw-5090-78dad45e65f1",
+              "board": "Gigabyte Aorus Master",
+              "freq_mhz": 2895,
+              "voltage_mv": 915,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-12",
+              "notes": ""
             }
           ]
         },
