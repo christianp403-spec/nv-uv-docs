@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-12",
+  "updated": "2026-09-13",
   "ratings": {
     "ada-4060-483e3d92acd8": {
       "avg": 3.67,
@@ -20,7 +20,7 @@
     },
     "ada-4070-aaddc72b727d": {
       "avg": 5,
-      "votes": 1
+      "votes": 2
     },
     "ada-4070-super-43c1e29e93c7": {
       "avg": 5,
