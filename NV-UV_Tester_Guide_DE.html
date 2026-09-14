@@ -331,7 +331,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="sep">—</span><span class="uv">UV</span></h1>
     <div class="subtitle">GPU Undervolt · User Guide</div>
-    <div class="build">Build 22 · Cantor · Open Alpha · v0.99.5.7 · September 2026</div>
+    <div class="build">Build 22 · Cantor · Open Alpha · v0.99.5.8 · September 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -356,7 +356,19 @@
   <!-- ═══ V0.99.5 BRANCH OVERVIEW ═══ -->
   <section id="branch-overview">
     <h2 class="orange"><span class="icon">🆕</span>Neues im v0.99.5-Zweig</h2>
-    <p>Der v0.99.5-Zweig bringt neue Funktionen und Korrekturen über mehrere Updates hinweg. Diese Übersicht umfasst v0.99.5 bis v0.99.5.7; die folgenden Abschnitte erklären die Bedienung.</p>
+    <p>Der v0.99.5-Zweig bringt neue Funktionen und Korrekturen über mehrere Updates hinweg. Diese Übersicht umfasst v0.99.5 bis v0.99.5.8; die folgenden Abschnitte erklären die Bedienung.</p>
+    <h3>v0.99.5.8</h3>
+    <ul>
+      <li>Nicht behebbare Darstellungsfehler nach einem Treiberabsturz werden gezielt behandelt: laufende Scans werden gestoppt und NV-UV fordert zum Neustart auf. Eine vollständige Erholung ohne Neustart ist nicht in jedem Fall möglich.</li>
+      <li>Fehlgeschlagene oder unterbrochene Punktverifikationen bleiben auch nach einem Neustart für die Übernahme gesperrt. Nur tatsächlich bestandene Takt-/Spannungspaare werden als erfolgreiche Scannerpunkte gespeichert.</li>
+      <li>Auf erkannten Notebook-GPUs arbeiten Punkt-Scanner und Optimierer wieder ohne Spannungsmessung, sofern frische Takt- und Lastdaten vorliegen und der Lasttest bestanden wird. Die fehlende Spannungsbestätigung wird ausdrücklich angezeigt.</li>
+      <li>Ungültige Spannungswerte aus Sensorbrücken werden verworfen, statt als echte Messwerte angezeigt oder zur Validierung verwendet zu werden.</li>
+      <li>Scanner-Meldungen zur Treiber-Wiederherstellung, Verifizierung und Ergebnisanzeige folgen der gewählten Oberflächensprache.</li>
+      <li>Ein Hinweis beim nächsten NV-UV-Start erinnert nach erkannten NVIDIA-Treiberupdates oder Neuinstallationen an den Windows-Neustart. Die Hotspot-Hilfe enthält denselben Hinweis.</li>
+      <li>Diagnoseberichte protokollieren den erfassten Windows-Start, NVIDIA-Treiberinstallationszeitpunkte und Änderungen der Afterburner-Version zur besseren Einordnung von Sensorausfällen.</li>
+      <li>Behebt eine mögliche Hotspot-Sperre nach fehlgeschlagener Einrichtung: Änderungen an Darstellung und gespeicherten Kurven machen einen gültigen Rollback nicht mehr ungültig. Diagnoseberichte nennen genauere Prüfgründe.</li>
+      <li>Der Voltage Step Scanner passt seine Fenstergröße und Position an die Arbeitsfläche des aktuellen Monitors an. Titelleiste und Bedienung bleiben auch nach Monitorwechseln und wechselnden Scanansichten erreichbar.</li>
+    </ul>
     <h3>v0.99.5.7</h3>
     <ul>
       <li>Der Afterburner-Einrichtungsassistent pr&#252;ft auch die GPU-Temperatur der aktiven NVIDIA-GPU und bietet an, deren &#220;berwachung zu aktivieren. Fehlende Temperaturwerte erscheinen als Strich.</li>
@@ -1384,7 +1396,7 @@
   <div class="led-bar gold"></div>
 
   <div class="footer">
-    NV-UV · Build 22 · Cantor · v0.99.5.7<br>
+    NV-UV · Build 22 · Cantor · v0.99.5.8<br>
     GPU-Undervolting und experimentelle Funktionen auf eigene Gefahr<br><br>
     <span style="color:var(--dim)">NV-UV ist kostenlos. Wenn es euch gefällt:</span> <a href="https://paypal.me/christianpapaioannou" style="color:var(--cyan)">PayPal</a>
   </div>

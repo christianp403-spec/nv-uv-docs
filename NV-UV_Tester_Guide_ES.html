@@ -331,7 +331,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="sep">—</span><span class="uv">UV</span></h1>
     <div class="subtitle">GPU Undervolt · Guía del Usuario</div>
-    <div class="build">Build 22 · Cantor · Open Alpha · v0.99.5.7 · Septiembre de 2026</div>
+    <div class="build">Build 22 · Cantor · Open Alpha · v0.99.5.8 · Septiembre de 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -356,7 +356,19 @@
   <!-- ═══ V0.99.5 BRANCH OVERVIEW ═══ -->
   <section id="branch-overview">
     <h2 class="orange"><span class="icon">🆕</span>Novedades de la rama v0.99.5</h2>
-    <p>La rama v0.99.5 incorpora funciones y correcciones a lo largo de sus actualizaciones. Este resumen abarca desde v0.99.5 hasta v0.99.5.7; los apartados siguientes explican cómo utilizarlas.</p>
+    <p>La rama v0.99.5 incorpora funciones y correcciones a lo largo de sus actualizaciones. Este resumen abarca desde v0.99.5 hasta v0.99.5.8; los apartados siguientes explican cómo utilizarlas.</p>
+    <h3>v0.99.5.8</h3>
+    <ul>
+      <li>Los errores de renderizado irrecuperables tras un fallo del controlador se gestionan de forma explícita: se detienen los escaneos activos y NV-UV solicita reiniciar la aplicación. La recuperación sin reiniciar sigue sin ser posible en todos los casos.</li>
+      <li>Las verificaciones de puntos fallidas o interrumpidas siguen bloqueadas para su aplicación incluso después de reiniciar. Solo se guardan como correctos los pares de frecuencia y voltaje que realmente superaron la prueba.</li>
+      <li>En las GPU de portátiles detectadas, el escáner de puntos y el optimizador vuelven a funcionar sin lecturas de voltaje cuando hay datos recientes de frecuencia y carga y se supera la prueba de carga. La falta de confirmación del voltaje se indica claramente.</li>
+      <li>Los valores de voltaje no válidos procedentes de puentes de sensores se descartan en lugar de mostrarse como mediciones reales o usarse para validar.</li>
+      <li>Los mensajes del escáner sobre recuperación del controlador, verificación y resultados siguen el idioma seleccionado de la interfaz.</li>
+      <li>Un aviso en el siguiente inicio de NV-UV recuerda reiniciar Windows tras detectar una actualización o reinstalación del controlador NVIDIA. La misma indicación está disponible en la ayuda del hotspot.</li>
+      <li>Los diagnósticos registran el inicio de Windows observado, las fechas de instalación del controlador NVIDIA y los cambios de versión de Afterburner para investigar fallos de sensores.</li>
+      <li>Corrige un posible bloqueo de Hotspot tras una configuración fallida: los cambios de visualización y curvas guardadas ya no invalidan una reversión válida. Los diagnósticos incluyen detalles de validación más precisos.</li>
+      <li>Voltage Step Scanner ajusta el tamaño y la posición de su ventana al área de trabajo del monitor actual. La barra de título y los controles siguen accesibles al cambiar de monitor o de vista del escaneo.</li>
+    </ul>
     <h3>v0.99.5.7</h3>
     <ul>
       <li>El asistente de configuraci&#243;n de Afterburner tambi&#233;n comprueba la temperatura del n&#250;cleo de la GPU NVIDIA activa y ofrece activar su monitorizaci&#243;n. Las temperaturas no disponibles se muestran como un guion.</li>
@@ -1352,7 +1364,7 @@
   <div class="led-bar gold"></div>
 
   <div class="footer">
-    NV-UV · Build 22 · Cantor · v0.99.5.7<br>
+    NV-UV · Build 22 · Cantor · v0.99.5.8<br>
     Undervolting de GPU y funciones experimentales bajo tu propia responsabilidad<br><br>
     <span style="color:var(--dim)">NV-UV es gratuito. Si te gusta:</span> <a href="https://paypal.me/christianpapaioannou" style="color:var(--cyan)">PayPal</a>
   </div>

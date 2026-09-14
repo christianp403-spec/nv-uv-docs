@@ -331,7 +331,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="sep">—</span><span class="uv">UV</span></h1>
     <div class="subtitle">GPU Undervolt · User Guide</div>
-    <div class="build">Build 22 · Cantor · Open Alpha · v0.99.5.7 · September 2026</div>
+    <div class="build">Build 22 · Cantor · Open Alpha · v0.99.5.8 · September 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -356,7 +356,19 @@
   <!-- ═══ V0.99.5 BRANCH OVERVIEW ═══ -->
   <section id="branch-overview">
     <h2 class="orange"><span class="icon">🆕</span>What's New in v0.99.5 Branch</h2>
-    <p>The v0.99.5 branch brings new features and fixes across its updates. This overview covers v0.99.5 through v0.99.5.7; the sections below explain how to use them.</p>
+    <p>The v0.99.5 branch brings new features and fixes across its updates. This overview covers v0.99.5 through v0.99.5.8; the sections below explain how to use them.</p>
+    <h3>v0.99.5.8</h3>
+    <ul>
+      <li>Unrecoverable rendering errors after a driver crash are handled explicitly: active scans are stopped and NV-UV asks you to restart. Recovery without restarting is still not possible in every case.</li>
+      <li>Failed or interrupted point verifications remain blocked from applying even after a restart. Only clock/voltage pairs that actually passed are saved as successful scanner points.</li>
+      <li>On detected notebook GPUs, the point scanner and optimizer can run without voltage readings again when fresh clock and load data are available and the load test passes. Missing voltage confirmation is clearly indicated.</li>
+      <li>Invalid voltage values from sensor bridges are rejected instead of being displayed as real readings or used for validation.</li>
+      <li>Scanner messages for driver recovery, verification and results follow the selected interface language.</li>
+      <li>A notice at the next NV-UV startup reminds users to restart Windows after detected NVIDIA driver updates or reinstallations. The same guidance is available in hotspot help.</li>
+      <li>Diagnostics record the observed Windows startup, NVIDIA driver installation timestamps and Afterburner version changes to help investigate sensor failures.</li>
+      <li>Fixes a possible Hotspot lock after failed setup: display settings and saved curve changes no longer invalidate a valid rollback. Diagnostics include more precise validation details.</li>
+      <li>The Voltage Step Scanner adjusts its window size and position to the current monitor’s work area. The title bar and controls remain accessible after monitor changes and scan-view transitions.</li>
+    </ul>
     <h3>v0.99.5.7</h3>
     <ul>
       <li>The Afterburner setup wizard also checks the active NVIDIA GPU&#39;s core temperature and offers to enable its monitoring. Missing temperature readings are shown as a dash.</li>
@@ -1354,7 +1366,7 @@
   <div class="led-bar gold"></div>
 
   <div class="footer">
-    NV-UV · Build 22 · Cantor · v0.99.5.7<br>
+    NV-UV · Build 22 · Cantor · v0.99.5.8<br>
     GPU undervolting and experimental features at your own risk<br><br>
     <span style="color:var(--dim)">NV-UV is free. If you like it:</span> <a href="https://paypal.me/christianpapaioannou" style="color:var(--cyan)">PayPal</a>
   </div>
