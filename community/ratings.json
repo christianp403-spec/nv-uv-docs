@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-14",
+  "updated": "2026-09-15",
   "ratings": {
     "ada-4060-483e3d92acd8": {
       "avg": 3.67,
@@ -101,6 +101,10 @@
     "amp-3060-150c942c39c0": {
       "avg": 3,
       "votes": 2
+    },
+    "amp-3060-f468f43dda5f": {
+      "avg": 5,
+      "votes": 1
     },
     "amp-3060-ti-35ad8bb0f226": {
       "avg": 5,
@@ -204,7 +208,7 @@
     },
     "bw-5070-305d237e5694": {
       "avg": 2,
-      "votes": 1
+      "votes": 2
     },
     "bw-5070-440f7fa0491e": {
       "avg": 4.5,
