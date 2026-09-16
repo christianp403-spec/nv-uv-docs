@@ -1837,6 +1837,23 @@
               },
               "date_found": "2026-09-03",
               "notes": "GV-N507TWF3OC-16GD 1.0"
+            },
+            {
+              "preset_id": "bw-5070-ti-0027adb956bd",
+              "board": "Colorful",
+              "freq_mhz": 2865,
+              "voltage_mv": 885,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-16",
+              "notes": ""
             }
           ]
         },
