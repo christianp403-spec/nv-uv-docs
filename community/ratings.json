@@ -10,6 +10,10 @@
       "avg": 3,
       "votes": 7
     },
+    "ada-4060-cc6cdcd32fc7": {
+      "avg": 3,
+      "votes": 1
+    },
     "ada-4060-ti-d2c54c155651": {
       "avg": 4,
       "votes": 1
@@ -130,6 +134,10 @@
       "avg": 4,
       "votes": 2
     },
+    "amp-3070-e625fe802e4d": {
+      "avg": 5,
+      "votes": 1
+    },
     "amp-3070-ed4498d9d172": {
       "avg": 3,
       "votes": 1
@@ -173,6 +181,10 @@
     "amp-3080-ecb4dbf5b843": {
       "avg": 3,
       "votes": 2
+    },
+    "amp-3080-ti-242e231bca95": {
+      "avg": 4,
+      "votes": 1
     },
     "amp-3080-ti-902f216cbeda": {
       "avg": 2.67,
@@ -237,6 +249,10 @@
     "bw-5070-c22a4b5e349d": {
       "avg": 4.25,
       "votes": 4
+    },
+    "bw-5070-c2e2285a7418": {
+      "avg": 5,
+      "votes": 1
     },
     "bw-5070-e5c2a463f32e": {
       "avg": 1.5,
@@ -395,8 +411,8 @@
       "votes": 2
     },
     "bw-5080-ef6d4f0f6e81": {
-      "avg": 3.5,
-      "votes": 2
+      "avg": 2,
+      "votes": 1
     },
     "bw-5080-f2842aee9441": {
       "avg": 2,
