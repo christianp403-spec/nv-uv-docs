@@ -1,8 +1,8 @@
 {
-  "version": "2.22",
+  "version": "2.23",
   "source": "nvidia-drs-profiles + dlss-all-versions",
-  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup + Jul 2026: removed generic BugSplat crash-reporter alias (bssndrpt64.exe) from Company of Heroes 3 (false UV-Pilot detection after crashes) + Game Ready additions Jul 2026: Halo: Campaign Evolved, Gears of War: E-Day, Mistfall Hunter + Freelancer (HD) and The Witcher (2007) + Game Ready 610.88 addition Aug 2026: SILENT HILL f + Game Ready 616.56 additions Aug 2026: Hell Let Loose: Vietnam, Resonance: A Plague Tale Legacy, STAR WARS Zero Company + PowerWash Simulator 2 (Balanced) + v2.17: stable DCC identities for Marvel Rivals and Wuthering Waves + v2.18: Halo: The Master Chief Collection (Eco, community-verified) + v2.19: Game Ready 616.64 additions Sep 2026: NBA 2K27 and Onimusha: Way of the Sword + v2.20: Avatar: Frontiers of Pandora (Performance) + v2.21: Game Ready 616.92 additions: Active Matter, Aniimo and WARDOGS; refreshed 007 First Light and PUBG: BATTLEGROUNDS + v2.22: The Blood of Dawnwalker (Performance)",
-  "generated": "2026-09-14",
+  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup + Jul 2026: removed generic BugSplat crash-reporter alias (bssndrpt64.exe) from Company of Heroes 3 (false UV-Pilot detection after crashes) + Game Ready additions Jul 2026: Halo: Campaign Evolved, Gears of War: E-Day, Mistfall Hunter + Freelancer (HD) and The Witcher (2007) + Game Ready 610.88 addition Aug 2026: SILENT HILL f + Game Ready 616.56 additions Aug 2026: Hell Let Loose: Vietnam, Resonance: A Plague Tale Legacy, STAR WARS Zero Company + PowerWash Simulator 2 (Balanced) + v2.17: stable DCC identities for Marvel Rivals and Wuthering Waves + v2.18: Halo: The Master Chief Collection (Eco, community-verified) + v2.19: Game Ready 616.64 additions Sep 2026: NBA 2K27 and Onimusha: Way of the Sword + v2.20: Avatar: Frontiers of Pandora (Performance) + v2.21: Game Ready 616.92 additions: Active Matter, Aniimo and WARDOGS; refreshed 007 First Light and PUBG: BATTLEGROUNDS + v2.22: The Blood of Dawnwalker (Performance) + v2.23: 11 community-requested games; Apex Legends (Performance); shared Path of Exile / Path of Exile 2 Steam executable (Balanced)",
+  "generated": "2026-09-19",
   "games": [
     {
       "name": "007 First Light",
@@ -135,6 +135,14 @@
       "confidence": "community",
       "source": "nvidia-drs",
       "scaling": "light"
+    },
+    {
+      "name": "Acting Lessons",
+      "process": "actinglessons.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Community-reported executable; estimated Eco starting preset."
     },
     {
       "name": "Active Matter",
@@ -393,6 +401,14 @@
       "scaling": "light"
     },
     {
+      "name": "Apex Legends",
+      "process": "r5apex_dx12.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Performance starting preset for high-FPS play."
+    },
+    {
       "name": "Arc Raiders",
       "process": "arcraiders.exe",
       "tier": "Balanced",
@@ -403,6 +419,14 @@
         "pioneergame-d.exe",
         "pioneergame-e.exe"
       ]
+    },
+    {
+      "name": "Arknights: Endfield",
+      "process": "endfield.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Estimated Balanced starting preset."
     },
     {
       "name": "ArmA 3",
@@ -644,6 +668,14 @@
       "confidence": "community",
       "source": "steam-library",
       "scaling": "light"
+    },
+    {
+      "name": "Being a DIK",
+      "process": "beingadik.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Shared game entry for seasons using this executable; estimated Eco starting preset."
     },
     {
       "name": "Bellwright",
@@ -2494,6 +2526,14 @@
       "source": "steam-library"
     },
     {
+      "name": "Heart of the Machine",
+      "process": "heartofthemachine.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Community-reported executable; estimated Balanced starting preset."
+    },
+    {
       "name": "Hell Let Loose: Vietnam",
       "process": "hllvietnam-win64-shipping.exe",
       "tier": "Performance",
@@ -2519,6 +2559,14 @@
       "confidence": "nvidia-verified",
       "source": "steam-library",
       "scaling": "gpu-heavy"
+    },
+    {
+      "name": "Hellforged",
+      "process": "hellforged.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Executable corroborated for the demo; provisional Balanced starting preset."
     },
     {
       "name": "Heroes & Generals",
@@ -3146,6 +3194,14 @@
       "scaling": "gpu-heavy"
     },
     {
+      "name": "Mewgenics",
+      "process": "mewgenics.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Estimated Eco starting preset."
+    },
+    {
       "name": "Microsoft Flight Simulator",
       "process": "flightsimulator.exe",
       "tier": "Balanced",
@@ -3541,16 +3597,18 @@
       "source": "steam-library"
     },
     {
-      "name": "Path of Exile 2",
+      "name": "Path of Exile / Path of Exile 2",
       "process": "pathofexile.exe",
       "tier": "Balanced",
-      "confidence": "nvidia-verified",
-      "source": "nvidia-drs",
+      "confidence": "community",
+      "source": "nvidia-drs + community-request",
       "aliases": [
         "pathofexile_kg.exe",
         "pathofexileegs.exe",
-        "pathofexile_x64.exe"
-      ]
+        "pathofexile_x64.exe",
+        "pathofexilesteam.exe"
+      ],
+      "note": "Shared executable names used by Path of Exile and Path of Exile 2; Balanced starting preset for both."
     },
     {
       "name": "PAYDAY 3",
@@ -4007,6 +4065,14 @@
       "confidence": "community",
       "source": "steam-library",
       "scaling": "light"
+    },
+    {
+      "name": "RimWorld",
+      "process": "rimworldwin64.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Estimated Eco starting preset."
     },
     {
       "name": "Rise of the Tomb Raider",
@@ -5179,6 +5245,22 @@
       "source": "nvidia-drs"
     },
     {
+      "name": "Total War: MEDIEVAL II - Definitive Edition",
+      "process": "medieval2.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Estimated Eco starting preset for the base game."
+    },
+    {
+      "name": "Total War: MEDIEVAL II - Definitive Edition - Kingdoms",
+      "process": "kingdoms.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Legacy or mod-compatible Kingdoms executable; current Steam campaigns can also use medieval2.exe. Estimated Eco starting preset."
+    },
+    {
       "name": "Total War: Warhammer III",
       "process": "warhammer3.exe",
       "tier": "Balanced",
@@ -5400,6 +5482,15 @@
         "watchdogs_clang_r64_dx11.exe",
         "watchdogs_clang_r64_dx12.exe"
       ]
+    },
+    {
+      "name": "Where Winds Meet",
+      "process": "wwm.exe",
+      "tier": "Performance",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Estimated Performance starting preset.",
+      "ambiguous": true
     },
     {
       "name": "Windrose",
