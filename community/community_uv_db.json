@@ -2250,6 +2250,23 @@
               },
               "date_found": "2026-09-08",
               "notes": "DCC learned"
+            },
+            {
+              "preset_id": "bw-5070-c8eb980b0ea2",
+              "board": "MSI 5070 GAMING TRIO",
+              "freq_mhz": 3000,
+              "voltage_mv": 950,
+              "power_limit_pct": 112,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-19",
+              "notes": "MSI 5070 GAMING TRIO By DzSET"
             }
           ]
         },
@@ -6231,6 +6248,23 @@
               },
               "date_found": "2022-01",
               "notes": "Desktop unit, stable from Windows"
+            },
+            {
+              "preset_id": "amp-3060-671a7efcee4d",
+              "board": "51RISK 12Gb RAM",
+              "freq_mhz": 1980,
+              "voltage_mv": 925,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 800,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-18",
+              "notes": ""
             }
           ]
         }
