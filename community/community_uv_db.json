@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-16",
+  "updated": "2026-09-19",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -705,6 +705,23 @@
               },
               "date_found": "2026-09-12",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5090-d8adc3fc8a97",
+              "board": "Zotac 5090 Solid",
+              "freq_mhz": 3022,
+              "voltage_mv": 950,
+              "power_limit_pct": 104,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-18",
+              "notes": ""
             }
           ]
         },
@@ -1390,6 +1407,40 @@
               },
               "date_found": "2026-09-15",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-0db25c4f07b9",
+              "board": "Gigabyte Aorus Master Ice 5800",
+              "freq_mhz": 3157,
+              "voltage_mv": 990,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-17",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-cb6e7e3f45d3",
+              "board": "MSI RTX 5080 Gaming Trio OC",
+              "freq_mhz": 2992,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-17",
+              "notes": "tested in 5MHz increments"
             }
           ]
         },
@@ -2947,6 +2998,23 @@
                 "url": ""
               },
               "date_found": "2026-09-15",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4090-c37ca993d68d",
+              "board": "MSI RTX 4090 Surprim Liquid X",
+              "freq_mhz": 2835,
+              "voltage_mv": 970,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-18",
               "notes": ""
             }
           ]
@@ -4603,6 +4671,23 @@
               },
               "date_found": "2026-09-11",
               "notes": ""
+            },
+            {
+              "preset_id": "ada-4060-cc6cdcd32fc7",
+              "board": "Galax 1-Click OC 2X Teclab Lite",
+              "freq_mhz": 2895,
+              "voltage_mv": 1000,
+              "power_limit_pct": 113,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-18",
+              "notes": ""
             }
           ]
         }
@@ -5028,6 +5113,23 @@
               },
               "date_found": "2022-06",
               "notes": "366W PL, just under power throttling"
+            },
+            {
+              "preset_id": "amp-3080-ti-242e231bca95",
+              "board": "EVGA FTW3 Ultra",
+              "freq_mhz": 1890,
+              "voltage_mv": 875,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-17",
+              "notes": "not sure about Arc Raiders. other than that it's fine"
             }
           ]
         },
@@ -5881,6 +5983,23 @@
               },
               "date_found": "2026-09-06",
               "notes": "Стабильно. 58 градусов в играх, 170-180 ватт"
+            },
+            {
+              "preset_id": "amp-3070-90b9778f2a14",
+              "board": "NVIDIA Reference 3070FE",
+              "freq_mhz": 2010,
+              "voltage_mv": 994,
+              "power_limit_pct": 109,
+              "vram_offset_mhz": 850,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-18",
+              "notes": "максимум"
             }
           ]
         },
