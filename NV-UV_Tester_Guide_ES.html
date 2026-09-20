@@ -331,7 +331,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="sep">—</span><span class="uv">UV</span></h1>
     <div class="subtitle">GPU Undervolt · Guía del Usuario</div>
-    <div class="build">Build 22 · Cantor · Open Alpha · v0.99.5.8 · Septiembre de 2026</div>
+    <div class="build">Build 22 · Cantor · Open Alpha · v0.99.5.9 · Septiembre de 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -356,7 +356,19 @@
   <!-- ═══ V0.99.5 BRANCH OVERVIEW ═══ -->
   <section id="branch-overview">
     <h2 class="orange"><span class="icon">🆕</span>Novedades de la rama v0.99.5</h2>
-    <p>La rama v0.99.5 incorpora funciones y correcciones a lo largo de sus actualizaciones. Este resumen abarca desde v0.99.5 hasta v0.99.5.8; los apartados siguientes explican cómo utilizarlas.</p>
+    <p>La rama v0.99.5 incorpora funciones y correcciones a lo largo de sus actualizaciones. Este resumen abarca desde v0.99.5 hasta v0.99.5.9; los apartados siguientes explican cómo utilizarlas.</p>
+    <h3>v0.99.5.9</h3>
+    <ul>
+      <li>Una asignación de Hotspot cuya ausencia se haya verificado se puede reparar mediante el botón Hotspot usando su copia de seguridad comprobada, sin restablecer perfiles UV. Este conflicto de asignación ya no bloquea las demás funciones UV.</li>
+      <li>La recuperación de Hotspot verifica los archivos restaurados y recupera el estado anterior correspondiente. Una recuperación incompleta no se considera correcta.</li>
+      <li>Las teclas de OSD, las opciones de captura, la visualización de otros sensores y los perfiles guardados ya no provocan un bloqueo falso tras revertir la configuración de Hotspot. Se mantienen las comprobaciones de configuración, identidad de GPU y copias de seguridad.</li>
+      <li>El asistente de Afterburner también detecta sensores desactivados de frecuencia del núcleo y de la memoria de la GPU y ofrece activarlos.</li>
+      <li>Después de Apply UV, la selección pendiente de ranura puede descartarse con Cancelar o Escape en las vistas principal y mini, sin guardar un perfil.</li>
+      <li>Al pasar de la prueba de GPU a la de VRAM, el escáner vuelve a leer el estado del núcleo y la memoria. Los ajustes ya confirmados no se escriben de nuevo innecesariamente; se mantiene la segunda prueba de carga.</li>
+      <li><strong>Nueva limitación: si no se puede leer o confirmar de forma fiable el estado del controlador, la prueba de VRAM se detiene. Un estado sin confirmar no se acepta como prueba superada.</strong></li>
+      <li>UV-Pilot y DCC admiten procesos adicionales de juegos mediante la ruta de instalación y un archivo requerido. Necesse incorpora una regla específica de Java sin identificar otras aplicaciones Java como juegos. La validación con Necesse en ejecución sigue pendiente.</li>
+      <li>La base de datos de juegos 2.26 incluida contiene 695 entradas.</li>
+    </ul>
     <h3>v0.99.5.8</h3>
     <ul>
       <li>Los errores de renderizado irrecuperables tras un fallo del controlador se gestionan de forma explícita: se detienen los escaneos activos y NV-UV solicita reiniciar la aplicación. La recuperación sin reiniciar sigue sin ser posible en todos los casos.</li>
@@ -842,7 +854,7 @@
     <h3>Perfiles personalizados</h3>
     <p>Clic derecho en un slot: "Añadir a UV-Piloto" crea un perfil personalizado. Asignable por juego en la base de datos de juegos.</p>
     <h3>Base de datos de juegos</h3>
-    <p>Clic derecho en UV-Piloto → 🎮 Base de datos de juegos. 658 juegos + benchmarks, asignaciones de nivel ajustables, juegos propios añadibles.</p>
+    <p>Clic derecho en UV-Piloto → 🎮 Base de datos de juegos. 695 juegos + benchmarks, asignaciones de nivel ajustables, juegos propios añadibles.</p>
     <p><strong>Game Pass / Microsoft Store:</strong> inicia primero el juego, después pulsa <strong>🎮</strong> en el diálogo Añadir juego y selecciona preferiblemente el proceso con la ventana visible del juego. NV-UV copia solo el nombre del proceso y no abre ni <code>WindowsApps</code> ni la ruta protegida del ejecutable. Cuando UV-Piloto reconoce ese proceso, Smart Hz puede cambiar correctamente al modo Gaming. Los hosts compartidos, los componentes de Xbox/Game Bar y los servicios permanentes como <code>ApplicationFrameHost.exe</code>, <code>GamingServices.exe</code>, <code>GamingServicesNet.exe</code> y <code>GameInputSvc.exe</code> se eliminan de la lista y también se rechazan en la entrada manual y en la detección posterior de UV-Piloto. Los App ID no se admiten en esta versión; si no aparece un proceso propio del juego, el título no puede identificarse de forma segura.</p>
     <p>Además de la lista de juegos, el navegador incluye la pestaña <strong>Ajustes de Replay</strong> con los valores corregidos automáticamente por Game Replay.</p>
     <h3>Benchmarks (3DMark, etc.)</h3>
@@ -1364,7 +1376,7 @@
   <div class="led-bar gold"></div>
 
   <div class="footer">
-    NV-UV · Build 22 · Cantor · v0.99.5.8<br>
+    NV-UV · Build 22 · Cantor · v0.99.5.9<br>
     Undervolting de GPU y funciones experimentales bajo tu propia responsabilidad<br><br>
     <span style="color:var(--dim)">NV-UV es gratuito. Si te gusta:</span> <a href="https://paypal.me/christianpapaioannou" style="color:var(--cyan)">PayPal</a>
   </div>
