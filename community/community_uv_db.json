@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-19",
+  "updated": "2026-09-20",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -1441,6 +1441,74 @@
               },
               "date_found": "2026-09-17",
               "notes": "tested in 5MHz increments"
+            },
+            {
+              "preset_id": "bw-5080-cfb91a3cb767",
+              "board": "PNY OC Triple Fan",
+              "freq_mhz": 2985,
+              "voltage_mv": 895,
+              "power_limit_pct": 110,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-19",
+              "notes": "110% PL"
+            },
+            {
+              "preset_id": "bw-5080-8be0ef19164e",
+              "board": "PNY",
+              "freq_mhz": 3082,
+              "voltage_mv": 925,
+              "power_limit_pct": 110,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-19",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-13ca112efa92",
+              "board": "MSI RTX 5080 Gaming Trio OC",
+              "freq_mhz": 3105,
+              "voltage_mv": 950,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 2250,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-20",
+              "notes": "9429 steel nomad score w/9800x3d"
+            },
+            {
+              "preset_id": "bw-5080-0e9a8dda4582",
+              "board": "Gigabyte Gaming 0C",
+              "freq_mhz": 2977,
+              "voltage_mv": 925,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-20",
+              "notes": "Stable 2 Months optimised in NV-UV 9637 score in SpeedWay 52`c Max"
             }
           ]
         },
@@ -1904,6 +1972,23 @@
                 "url": ""
               },
               "date_found": "2026-09-16",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-8fce93ff6c83",
+              "board": "ASUS PRIME",
+              "freq_mhz": 2730,
+              "voltage_mv": 825,
+              "power_limit_pct": 117,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-20",
               "notes": ""
             }
           ]
@@ -3711,6 +3796,40 @@
               },
               "date_found": "2026-08-26",
               "notes": ""
+            },
+            {
+              "preset_id": "ada-4070-ti-super-ddee4034b2e2",
+              "board": "MSI RTX 4070Ti Super Ventus 3X",
+              "freq_mhz": 2715,
+              "voltage_mv": 970,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-19",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4070-ti-super-2866208335c5",
+              "board": "MSI Ventus 3X",
+              "freq_mhz": 2715,
+              "voltage_mv": 970,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-20",
+              "notes": "My setting for a 3 monitor (2x1440p & 1x1080p) gaming and streaming setup."
             }
           ]
         },
@@ -4704,6 +4823,23 @@
                 "url": ""
               },
               "date_found": "2026-09-18",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4060-b15c3d91a84b",
+              "board": "ASUS",
+              "freq_mhz": 2700,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-19",
               "notes": ""
             }
           ]
