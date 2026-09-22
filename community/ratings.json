@@ -82,12 +82,20 @@
       "avg": 1,
       "votes": 1
     },
+    "ada-4070-ti-super-2866208335c5": {
+      "avg": 5,
+      "votes": 1
+    },
     "ada-4070-ti-super-bf82bfa592ac": {
       "avg": 1,
       "votes": 1
     },
     "ada-4070-ti-super-c2fdfc35ea21": {
       "avg": 1,
+      "votes": 1
+    },
+    "ada-4070-ti-super-ddee4034b2e2": {
+      "avg": 5,
       "votes": 1
     },
     "ada-4080-602825c7db9d": {
@@ -367,12 +375,12 @@
       "votes": 1
     },
     "bw-5080-21b9eb381c58": {
-      "avg": 4,
-      "votes": 1
+      "avg": 4.5,
+      "votes": 2
     },
     "bw-5080-45fa2161c86e": {
-      "avg": 2,
-      "votes": 1
+      "avg": 1.5,
+      "votes": 2
     },
     "bw-5080-4f7d809c6a71": {
       "avg": 4.67,
