@@ -1,8 +1,8 @@
 {
-  "version": "2.26",
+  "version": "2.27",
   "source": "nvidia-drs-profiles + dlss-all-versions",
-  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup + Jul 2026: removed generic BugSplat crash-reporter alias (bssndrpt64.exe) from Company of Heroes 3 (false UV-Pilot detection after crashes) + Game Ready additions Jul 2026: Halo: Campaign Evolved, Gears of War: E-Day, Mistfall Hunter + Freelancer (HD) and The Witcher (2007) + Game Ready 610.88 addition Aug 2026: SILENT HILL f + Game Ready 616.56 additions Aug 2026: Hell Let Loose: Vietnam, Resonance: A Plague Tale Legacy, STAR WARS Zero Company + PowerWash Simulator 2 (Balanced) + v2.17: stable DCC identities for Marvel Rivals and Wuthering Waves + v2.18: Halo: The Master Chief Collection (Eco, community-verified) + v2.19: Game Ready 616.64 additions Sep 2026: NBA 2K27 and Onimusha: Way of the Sword + v2.20: Avatar: Frontiers of Pandora (Performance) + v2.21: Game Ready 616.92 additions: Active Matter, Aniimo and WARDOGS; refreshed 007 First Light and PUBG: BATTLEGROUNDS + v2.22: The Blood of Dawnwalker (Performance) + v2.23: 11 community-requested games; Apex Legends (Performance); shared Path of Exile / Path of Exile 2 Steam executable (Balanced) + v2.24: 15 community-requested games and NVIDIA executable aliases; DiRT Rally and DiRT Rally 2.0 (Balanced); shared Kingdom Come: Deliverance / Deliverance II entry (Performance) + v2.25: INDUSTRIA shipping executable alias + v2.26: 10 community-requested games; SMITE and King's Bounty II (Balanced); eight Eco entries; path-qualified Necesse Java runtime",
-  "generated": "2026-09-20",
+  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup + Jul 2026: removed generic BugSplat crash-reporter alias (bssndrpt64.exe) from Company of Heroes 3 (false UV-Pilot detection after crashes) + Game Ready additions Jul 2026: Halo: Campaign Evolved, Gears of War: E-Day, Mistfall Hunter + Freelancer (HD) and The Witcher (2007) + Game Ready 610.88 addition Aug 2026: SILENT HILL f + Game Ready 616.56 additions Aug 2026: Hell Let Loose: Vietnam, Resonance: A Plague Tale Legacy, STAR WARS Zero Company + PowerWash Simulator 2 (Balanced) + v2.17: stable DCC identities for Marvel Rivals and Wuthering Waves + v2.18: Halo: The Master Chief Collection (Eco, community-verified) + v2.19: Game Ready 616.64 additions Sep 2026: NBA 2K27 and Onimusha: Way of the Sword + v2.20: Avatar: Frontiers of Pandora (Performance) + v2.21: Game Ready 616.92 additions: Active Matter, Aniimo and WARDOGS; refreshed 007 First Light and PUBG: BATTLEGROUNDS + v2.22: The Blood of Dawnwalker (Performance) + v2.23: 11 community-requested games; Apex Legends (Performance); shared Path of Exile / Path of Exile 2 Steam executable (Balanced) + v2.24: 15 community-requested games and NVIDIA executable aliases; DiRT Rally and DiRT Rally 2.0 (Balanced); shared Kingdom Come: Deliverance / Deliverance II entry (Performance) + v2.25: INDUSTRIA shipping executable alias + v2.26: 10 community-requested games; SMITE and King's Bounty II (Balanced); eight Eco entries; path-qualified Necesse Java runtime + v2.27: Game Ready 617.14 additions: AION 2 (Balanced) and CONTROL Resonant (Performance); refreshed Gears of War: E-Day and The Witcher 3 guidance",
+  "generated": "2026-09-23",
   "games": [
     {
       "name": "007 First Light",
@@ -218,6 +218,15 @@
       "confidence": "community",
       "source": "steam-library",
       "scaling": "light"
+    },
+    {
+      "name": "AION 2",
+      "process": "aion2.exe",
+      "tier": "Balanced",
+      "scaling": "ue5",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Estimated Balanced starting preset. Unreal Engine 5 MMORPG; consider Performance for higher resolutions or high frame-rate targets."
     },
     {
       "name": "Akimbot",
@@ -1196,6 +1205,15 @@
         "control_dx11.exe",
         "game_rmdwin10_r.exe"
       ]
+    },
+    {
+      "name": "CONTROL Resonant",
+      "process": "controlresonant.exe",
+      "tier": "Performance",
+      "scaling": "gpu-heavy",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Estimated Performance starting preset for demanding rendering including optional path tracing. Separate from Control (2019)."
     },
     {
       "name": "Counter-Strike 2",
@@ -5342,7 +5360,8 @@
       "source": "nvidia-drs",
       "aliases": [
         "witcher3release.exe"
-      ]
+      ],
+      "note": "Estimated Balanced starting preset. Driver 617.14 exposes no separate Remastered executable; a distinct edition or rendering mode cannot be inferred from the process name. Consider Performance when using path tracing."
     },
     {
       "name": "Thief (2014)",
@@ -5948,7 +5967,7 @@
       "scaling": "ue5",
       "confidence": "nvidia-verified",
       "source": "nvidia-drs",
-      "note": "Unreal Engine 5 with Lumen, Nanite and ray-traced shadows; Performance default",
+      "note": "Estimated Performance starting preset. Unreal Engine 5 with Lumen, Nanite, MegaLights and RTX Mega Geometry; existing executable mappings retained.",
       "aliases": [
         "goweday-steam.exe",
         "fairlightconcept.exe",
