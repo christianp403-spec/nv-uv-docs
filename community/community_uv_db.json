@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-21",
+  "updated": "2026-09-24",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -721,6 +721,40 @@
                 "url": ""
               },
               "date_found": "2026-09-18",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5090-bc66d5bb20af",
+              "board": "ASUS Astral OC",
+              "freq_mhz": 3045,
+              "voltage_mv": 910,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-23",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5090-54d3ccb6c19c",
+              "board": "ASUS TUF",
+              "freq_mhz": 2932,
+              "voltage_mv": 895,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 2999,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-23",
               "notes": ""
             }
           ]
@@ -1990,6 +2024,23 @@
               },
               "date_found": "2026-09-20",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-e2495b8ad909",
+              "board": "ASUS TUF Gaming OC",
+              "freq_mhz": 3105,
+              "voltage_mv": 975,
+              "power_limit_pct": 117,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-24",
+              "notes": ""
             }
           ]
         },
@@ -2368,6 +2419,40 @@
                 "url": ""
               },
               "date_found": "2026-09-20",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-0599e88c1a1c",
+              "board": "MSI",
+              "freq_mhz": 2820,
+              "voltage_mv": 945,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-24",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-54d88097642c",
+              "board": "ASUS",
+              "freq_mhz": 2910,
+              "voltage_mv": 910,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-24",
               "notes": ""
             }
           ]
@@ -3135,6 +3220,40 @@
               },
               "date_found": "2026-09-18",
               "notes": ""
+            },
+            {
+              "preset_id": "ada-4090-ab128606e739",
+              "board": "ICHILL Frostbite",
+              "freq_mhz": 2467,
+              "voltage_mv": 875,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-22",
+              "notes": "Stable in DLSS5 load"
+            },
+            {
+              "preset_id": "ada-4090-2a7c1a066e81",
+              "board": "ICHILL Frostbite",
+              "freq_mhz": 2617,
+              "voltage_mv": 920,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-22",
+              "notes": "Stable in DLSS5 load"
             }
           ]
         },
@@ -3847,6 +3966,40 @@
               },
               "date_found": "2026-09-20",
               "notes": "My setting for a 3 monitor (2x1440p & 1x1080p) gaming and streaming setup."
+            },
+            {
+              "preset_id": "ada-4070-ti-super-3990237cceba",
+              "board": null,
+              "freq_mhz": 2782,
+              "voltage_mv": 1000,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-21",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4070-ti-super-c389e9d6461a",
+              "board": "MSI",
+              "freq_mhz": 2715,
+              "voltage_mv": 970,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-22",
+              "notes": ""
             }
           ]
         },
@@ -4768,6 +4921,23 @@
               },
               "date_found": "2026-07-18",
               "notes": ""
+            },
+            {
+              "preset_id": "ada-4060-ti-95ae5085abac",
+              "board": "INNO3D GeForce RTX 4060 Ti Twin X2 16 GB",
+              "freq_mhz": 2752,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 400,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-21",
+              "notes": "stabil in DX11/12 Spielen, auch mit DLSS5 Mod"
             }
           ]
         },
@@ -5300,6 +5470,23 @@
               },
               "date_found": "2026-09-17",
               "notes": "not sure about Arc Raiders. other than that it's fine"
+            },
+            {
+              "preset_id": "amp-3080-ti-2dcfa425f11e",
+              "board": "ROG-STRIX-RTX3080TI-O12G-GAMING",
+              "freq_mhz": 1965,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-22",
+              "notes": ""
             }
           ]
         },
@@ -5837,6 +6024,23 @@
               },
               "date_found": "2026-06",
               "notes": "Per referenced YouTube video; FE 320W limit drew only 231W at this UV"
+            },
+            {
+              "preset_id": "amp-3080-417c278c1561",
+              "board": "Zotac OC",
+              "freq_mhz": 1770,
+              "voltage_mv": 806,
+              "power_limit_pct": 105,
+              "vram_offset_mhz": 400,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-21",
+              "notes": ""
             }
           ]
         },
