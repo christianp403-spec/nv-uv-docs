@@ -1,8 +1,8 @@
 {
-  "version": "2.27",
+  "version": "2.28",
   "source": "nvidia-drs-profiles + dlss-all-versions",
-  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup + Jul 2026: removed generic BugSplat crash-reporter alias (bssndrpt64.exe) from Company of Heroes 3 (false UV-Pilot detection after crashes) + Game Ready additions Jul 2026: Halo: Campaign Evolved, Gears of War: E-Day, Mistfall Hunter + Freelancer (HD) and The Witcher (2007) + Game Ready 610.88 addition Aug 2026: SILENT HILL f + Game Ready 616.56 additions Aug 2026: Hell Let Loose: Vietnam, Resonance: A Plague Tale Legacy, STAR WARS Zero Company + PowerWash Simulator 2 (Balanced) + v2.17: stable DCC identities for Marvel Rivals and Wuthering Waves + v2.18: Halo: The Master Chief Collection (Eco, community-verified) + v2.19: Game Ready 616.64 additions Sep 2026: NBA 2K27 and Onimusha: Way of the Sword + v2.20: Avatar: Frontiers of Pandora (Performance) + v2.21: Game Ready 616.92 additions: Active Matter, Aniimo and WARDOGS; refreshed 007 First Light and PUBG: BATTLEGROUNDS + v2.22: The Blood of Dawnwalker (Performance) + v2.23: 11 community-requested games; Apex Legends (Performance); shared Path of Exile / Path of Exile 2 Steam executable (Balanced) + v2.24: 15 community-requested games and NVIDIA executable aliases; DiRT Rally and DiRT Rally 2.0 (Balanced); shared Kingdom Come: Deliverance / Deliverance II entry (Performance) + v2.25: INDUSTRIA shipping executable alias + v2.26: 10 community-requested games; SMITE and King's Bounty II (Balanced); eight Eco entries; path-qualified Necesse Java runtime + v2.27: Game Ready 617.14 additions: AION 2 (Balanced) and CONTROL Resonant (Performance); refreshed Gears of War: E-Day and The Witcher 3 guidance",
-  "generated": "2026-09-23",
+  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup + Jul 2026: removed generic BugSplat crash-reporter alias (bssndrpt64.exe) from Company of Heroes 3 (false UV-Pilot detection after crashes) + Game Ready additions Jul 2026: Halo: Campaign Evolved, Gears of War: E-Day, Mistfall Hunter + Freelancer (HD) and The Witcher (2007) + Game Ready 610.88 addition Aug 2026: SILENT HILL f + Game Ready 616.56 additions Aug 2026: Hell Let Loose: Vietnam, Resonance: A Plague Tale Legacy, STAR WARS Zero Company + PowerWash Simulator 2 (Balanced) + v2.17: stable DCC identities for Marvel Rivals and Wuthering Waves + v2.18: Halo: The Master Chief Collection (Eco, community-verified) + v2.19: Game Ready 616.64 additions Sep 2026: NBA 2K27 and Onimusha: Way of the Sword + v2.20: Avatar: Frontiers of Pandora (Performance) + v2.21: Game Ready 616.92 additions: Active Matter, Aniimo and WARDOGS; refreshed 007 First Light and PUBG: BATTLEGROUNDS + v2.22: The Blood of Dawnwalker (Performance) + v2.23: 11 community-requested games; Apex Legends (Performance); shared Path of Exile / Path of Exile 2 Steam executable (Balanced) + v2.24: 15 community-requested games and NVIDIA executable aliases; DiRT Rally and DiRT Rally 2.0 (Balanced); shared Kingdom Come: Deliverance / Deliverance II entry (Performance) + v2.25: INDUSTRIA shipping executable alias + v2.26: 10 community-requested games; SMITE and King's Bounty II (Balanced); eight Eco entries; path-qualified Necesse Java runtime + v2.27: Game Ready 617.14 additions: AION 2 (Balanced) and CONTROL Resonant (Performance); refreshed Gears of War: E-Day and The Witcher 3 guidance + v2.28: community requests CODE VEIN II (Performance) and Valheim (Balanced)",
+  "generated": "2026-09-26",
   "games": [
     {
       "name": "007 First Light",
@@ -1136,6 +1136,15 @@
       "confidence": "community",
       "source": "nvidia-drs",
       "scaling": "gpu"
+    },
+    {
+      "name": "CODE VEIN II",
+      "process": "codevein2-win64-shipping.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs + community-request",
+      "scaling": "gpu-heavy",
+      "note": "Estimated Performance starting preset. Uses the Steam game executable, separate from Code Vein (2019); hardware validation pending."
     },
     {
       "name": "Cogs",
@@ -5596,6 +5605,15 @@
       "tier": "Eco",
       "confidence": "nvidia-verified",
       "source": "nvidia-drs"
+    },
+    {
+      "name": "Valheim",
+      "process": "valheim.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs + community-request",
+      "scaling": "mixed",
+      "note": "Estimated Balanced starting preset for the Steam game client. Dedicated servers are excluded; adjust for resolution and frame-rate target."
     },
     {
       "name": "Valorant",
