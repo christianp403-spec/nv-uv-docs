@@ -331,7 +331,7 @@
   <div class="header">
     <h1><span class="nv">NV</span><span class="sep">—</span><span class="uv">UV</span></h1>
     <div class="subtitle">GPU Undervolt · User Guide</div>
-    <div class="build">Build 22 · Cantor · Open Alpha · v0.99.5.9 · September 2026</div>
+    <div class="build">Build 22 · Cantor · Open Alpha · v0.99.6.0 · September 2026</div>
   </div>
 
   <div class="led-bar gold"></div>
@@ -356,7 +356,30 @@
   <!-- ═══ V0.99.5 BRANCH OVERVIEW ═══ -->
   <section id="branch-overview">
     <h2 class="orange"><span class="icon">🆕</span>What's New in v0.99.5 Branch</h2>
-    <p>The v0.99.5 branch brings new features and fixes across its updates. This overview covers v0.99.5 through v0.99.5.9; the sections below explain how to use them.</p>
+    <p>The v0.99.5 branch brings new features and fixes across its updates. This overview covers v0.99.5 through v0.99.6.0; the sections below explain how to use them.</p>
+    <h3>v0.99.6.0</h3>
+    <h4>Sensors and improvements</h4>
+    <ul>
+      <li>NV-UV displays Hotspot and individual VRAM temperatures through PawnIO. If PawnIO is missing, applying the sensor options downloads and installs it automatically; internet access and Windows administrator confirmation are required. Afterburner remains required for other NV-UV features.</li>
+      <li>Migration preserves UV profiles and respects disabled displays. Missing optional sensor readings do not block UV features. Recalibration and repair account for the new display source.</li>
+      <li>A separate option keeps the Hotspot source for Afterburner/RTSS or sets it up for supported Afterburner installations. Select its OSD assignment in Afterburner afterwards.</li>
+      <li>The VRAM Hotspot display shows the highest individual temperature read. Click it to open the individual sensor list.</li>
+      <li>Starting a second instance displays a warning. Window restoration from the system tray has been corrected.</li>
+      <li>Scanner supervision continues when the interface is busy. If previously working readings disappear during a test, this is reported explicitly. The cause of a persistent MAHM failure on the affected PC is still under investigation.</li>
+      <li>In-place updates clean up the temporary replacement file after a failed file replacement.</li>
+      <li>Improved DCC detection for games with restricted process access, including The Division 2.</li>
+      <li>Game Database 2.28 contains 699 entries, adding CODE VEIN II (Performance) and Valheim (Balanced). AION 2 and CONTROL Resonant are also included.</li>
+    </ul>
+    <h4>NV-UV Play (Standalone)</h4>
+    <ul>
+      <li>I am thrilled by your positive feedback, emails, criticism and suggestions. One recurring request was a standalone client without Afterburner.</li>
+      <li>Play Version 2 (Kilby) works entirely without Afterburner. Profiles offer a quick start, with a curve editor, the familiar Voltage Step Scanner, its own overlay and extended voltage settings (experimental) for advanced users.</li>
+      <li>Play is free and currently available as an Alpha prerelease.</li>
+      <li><a href="https://christianp403-spec.github.io/NV-UV-Play/en.html">https://christianp403-spec.github.io/NV-UV-Play/en.html</a></li>
+      <li><a href="https://github.com/christianp403-spec/NV-UV-Play">https://github.com/christianp403-spec/NV-UV-Play</a></li>
+      <li>Before trying Play: 1. Disable automatic UV/OC profile application at Windows startup in Afterburner. 2. Remove Afterburner from Windows autostart. 3. Exit Afterburner completely, including its system tray instance. Do not control the GPU with both programs simultaneously, as settings can overwrite each other.</li>
+      <li>Thank you for your feedback, bug reports and diagnostic data!</li>
+    </ul>
     <h3>v0.99.5.9</h3>
     <ul>
       <li>A verified missing Hotspot mapping can be repaired through the Hotspot button using its checked backup, without resetting UV profiles. This mapping-only conflict no longer blocks other UV features.</li>
@@ -401,7 +424,7 @@
       <tr><td><strong>DCC integration</strong></td><td>DCC stays enabled after restarting and works more reliably with UV-Pilot and Smart Hz. DCC and Game Replay cannot run simultaneously. Fixes cover games stuck at “Waiting” and startup blocked by an unavailable DCC data path.</td></tr>
       <tr><td><strong>Blackwell and Ada curves</strong></td><td>Corrected Blackwell Direct Mode curves at low voltages up to 875 mV and detection of manually tuned profiles. Ada recalibration no longer adds an invalid curve point; RTX 40 users can optionally unlock the additional Ada OC range.</td></tr>
       <tr><td><strong>Game Replay</strong></td><td>Pending recovery adjustments are stored more reliably and are cleared only after the profile update succeeds.</td></tr>
-      <tr><td><strong>Hotspot setup and recovery</strong></td><td>GPU-specific Afterburner setup, safer updates of older NV-UV-managed installations with backup and rollback, and recovery of the Hotspot display after missing sensor data.</td></tr>
+      <tr><td><strong>Hotspot setup and recovery</strong></td><td>On supported RTX 50 Series GPUs, NV-UV reads hotspot and individual VRAM temperatures through PawnIO. Normal telemetry and internal UV verification continue to use the existing Afterburner/MAHM connection.</td></tr>
       <tr><td><strong>Flexible interface</strong></td><td>Wrapping toolbars, individually draggable sensor displays with reset, and saved window size, position and layout. Scaling includes 80% and 90%. The curve, axes, footer and report controls adapt to smaller windows; the UV-Party image stays inside the chart. See <a href="#interface-layout">Interface and layout</a>.</td></tr>
       <tr><td><strong>Live sensor readings</strong></td><td>Stale Afterburner readings are detected and NV-UV reconnects when fresh data returns.</td></tr>
       <tr><td><strong>Game Database and requests</strong></td><td>Database updates preserve custom games and edits and no longer replace newer data with an older bundled copy. A game-request button is available. Version 2.21 includes 658 games, including Avatar: Frontiers of Pandora, NBA 2K27 and Onimusha: Way of the Sword.</td></tr>
@@ -427,7 +450,7 @@
       <tr><td>🔄 <strong>Updates</strong> <span style="color:var(--gold);">NEW in v0.99.5</span></td><td>Checks for and downloads official updates when requested; installation always remains your choice</td></tr>
       <tr><td>🧾 <strong>Diagnostics &amp; Error Reports</strong> <span style="color:var(--gold);">NEW in v0.99.5</span></td><td>Creates a local ZIP first, with optional images and voluntary private sending</td></tr>
       <tr><td>🛠 <strong>Fix NV-Overlay</strong></td><td>Repairs the NVIDIA Overlay if it no longer appears in games</td></tr>
-      <tr><td>🌡️ <strong>Blackwell Hotspot</strong></td><td>Experimental hotspot temperature for supported RTX 50 Series GPUs with automatic MSI Afterburner plugin setup</td></tr>
+      <tr><td>🌡️ <strong>Blackwell Hotspot</strong></td><td>On supported RTX 50 Series GPUs, NV-UV reads hotspot and individual VRAM temperatures through PawnIO. Normal telemetry and internal UV verification continue to use the existing Afterburner/MAHM connection.</td></tr>
       <tr><td>✈️ <strong>UV-Pilot</strong></td><td>Detects games automatically, switches to the optimal preset</td></tr>
       <tr><td>⚡ <strong>UV⚡Try</strong></td><td>Browse community UV values for your card and apply them to a slot</td></tr>
       <tr><td>🌍 <strong>Global / No Override</strong></td><td>One tier for all games, or exempt single games from it</td></tr>
@@ -571,34 +594,19 @@
 
     <div class="info">
       <strong>🔄 Recalibrate (Toolbar):</strong><br>
-      Full reset: backs up AB profiles automatically, deletes only GPU-specific profiles and NV-UV cache, and restarts. Overlay settings, fan curves and other AB settings are preserved. <strong>With Blackwell hotspot active:</strong> the first click removes the hotspot fix through the controlled rollback and restarts NV-UV; only the second click starts the actual calibration. After successful calibration, hotspot can be installed for the new profile. Right-click the button to open the folder containing the automatic AB profile backups.
+      Full reset: backs up AB profiles automatically, deletes only GPU-specific profiles and NV-UV cache, and restarts. Overlay settings, fan curves and other AB settings are preserved. Recalibrate and repair handle any pending migration first. After migration, calibration can be started again; the old sensor backend is not reinstalled. The new display does not require changes to the Afterburner hardware profile.
     </div>
   </section>
 
   <!-- ═══ BLACKWELL HOTSPOT ═══ -->
   <section>
-    <h2 class="orange"><span class="icon">🌡️</span>Experimental Blackwell Hotspot Temperature</h2>
-
-    <p>A dedicated hotspot toggle is available on supported NVIDIA GeForce RTX 50 Series GPUs. After explicit confirmation, NV-UV installs the required monitoring plugin in MSI Afterburner and automatically adjusts the required configuration files.</p>
-
-    <h3>Display</h3>
-    <p>After a successful sensor check, the hotspot temperature appears in the regular NV-UV telemetry area. Hotspot sensors already exposed by MSI Afterburner on older GPU generations can also appear there; automatic plugin installation itself is limited to supported Blackwell GPUs.</p>
-
+    <h2 class="orange"><span class="icon">🌡️</span>Hotspot and VRAM: independent sensor source</h2>
+    <p>On supported RTX 50 Series GPUs, NV-UV reads hotspot and individual VRAM temperatures through PawnIO. Normal telemetry and internal UV verification continue to use the existing Afterburner/MAHM connection.</p>
+    <p>The first visible launch explains the migration. Hotspot and individual VRAM sensors can be selected separately. Installed PawnIO is reused; required installation starts only with “Apply” and may request administrator permission. Disabled displays stay disabled. Missing readings are treated as unavailable and never block UV.</p>
+    <p>During migration, you can keep the existing Afterburner/RTSS sensor source; keeping it is selected by default. Disabled sources and existing OSD settings remain unchanged. Only unchecking that choice removes the old NV-UV-managed source using backed-up file changes. Without an existing setup, “Set up for Afterburner/RTSS” offers optional hotspot activation in a supported Afterburner version with GPUProbe. Afterwards, choose the OSD display in Afterburner. NV-UV keeps using PawnIO for its own display. Missing overlay readings do not block UV; incomplete file changes still require recovery.</p>
+    <p>Recalibrate and repair handle any pending migration first. After migration, calibration can be started again; the old sensor backend is not reinstalled. The new display does not require changes to the Afterburner hardware profile.</p>
+    <p>Keep recovery data in %ProgramData%\NV-UV\BlackwellHotspot\ until migration is complete. Sensor choices remain available through the hotspot button.</p>
     <div class="warn"><strong>Experimental reading:</strong> The displayed value is not officially confirmed. It must not be used as the basis for warranty or RMA cases, or for changes and modifications to the graphics card. A hotspot temperature higher than the other temperature readings is not by itself an indication of a defect or reduced graphics card functionality.</div>
-
-    <h3>Durable recovery data</h3>
-    <p>The manifest, backups, transaction state and detected GPU/profile identities are stored under <code>%ProgramData%\NV-UV\BlackwellHotspot\</code>. Active installations created by older NV-UV versions are migrated automatically from <code>%LocalAppData%\NV-UV\hotspot\</code> on first start. This keeps the information required for a safe rollback even if the normal NV-UV user-data folder is deleted.</p>
-
-    <h3>After an MSI Afterburner update</h3>
-    <p>Do not clean anything first and do not delete the folder under <code>%ProgramData%</code>. If a supported Afterburner update has reset parts of the managed hotspot setup, NV-UV offers a safe repair. After confirmation it removes the old transaction in a controlled way, uses the current Afterburner files as the new rollback baseline, performs a complete hotspot reinstall, restarts Afterburner and requires five plausible sensor samples.</p>
-
-    <h3>Recalibrate and profile creation</h3>
-    <p>An active hotspot fix can interfere with MSI Afterburner hardware-profile recreation. Recalibrate therefore does not start immediately while hotspot is active: NV-UV first requires a controlled removal, restarts, and starts the actual calibration only after Recalibrate is clicked a second time. After calibration completes, NV-UV offers to install hotspot again for the new profile.</p>
-    <div class="info"><strong>GPU or VBIOS change:</strong> After a change, Afterburner may create a profile with a different subsystem identity. NV-UV records this identity and does not recreate a deleted old hardware profile from a hotspot backup.</div>
-    <div class="warn"><strong>Orphaned installation:</strong> If hotspot traces are detected but the manifest or original backups are missing, NV-UV cannot safely guess the previous Afterburner values. Recalibrate is blocked and a clean MSI Afterburner reinstall is recommended.</div>
-
-    <h3>Disabling</h3>
-    <p>When the feature is disabled, NV-UV performs a rollback and removes the plugin automatically.</p>
   </section>
 
   <!-- ═══ UPDATE ═══ -->
@@ -610,7 +618,7 @@
     <div class="step"><div class="step-num">3</div><div class="step-content">NV-UV closes, installs the verified package and starts again.</div></div>
     <div class="info">If the first start of the new version fails, NV-UV restores the previous program files. It does not simply delete your own files from the Portable folder.</div>
     <p>The manual method remains available: close NV-UV, extract the official Portable ZIP to a new folder, and run <code>NV-UV.exe</code> there. Settings under <code>%LocalAppData%\NV-UV\</code> are preserved.</p>
-    <div class="info">If something looks wrong after an update, export a diagnostics ZIP first. You can then use <strong>🔄 Recalibrate</strong>; with Blackwell hotspot active, NV-UV removes the fix through the controlled rollback and starts calibration only after the restart.</div>
+    <div class="info">Recalibrate and repair handle any pending migration first. After migration, calibration can be started again; the old sensor backend is not reinstalled. The new display does not require changes to the Afterburner hardware profile.</div>
   </section>
 
   <!-- ═══ QUICKSTART ═══ -->
@@ -855,7 +863,7 @@
     <h3>Custom Profiles</h3>
     <p>Right-click a slot: "Add to UV-Pilot" creates a custom profile. Assignable per game in the game database.</p>
     <h3>Game Database</h3>
-    <p>Right-click UV-Pilot → 🎮 Game Database. 695 games + benchmarks, tier assignments adjustable, custom games addable.</p>
+    <p>Right-click UV-Pilot → 🎮 Game Database. 699 games + benchmarks, tier assignments adjustable, custom games addable.</p>
     <p><strong>Game Pass / Microsoft Store:</strong> start the game first, then click <strong>🎮</strong> in the Add Game dialog and preferably select the process with the visible game window. NV-UV copies only the process name and opens neither <code>WindowsApps</code> nor the protected executable path. Once UV-Pilot recognizes that process, Smart Hz can switch correctly to Gaming mode. Shared hosts, Xbox/Game Bar components and always-running services such as <code>ApplicationFrameHost.exe</code>, <code>GamingServices.exe</code>, <code>GamingServicesNet.exe</code> and <code>GameInputSvc.exe</code> are removed from the list and are also rejected by manual entry and later UV-Pilot detection. App IDs are not supported in this version; if no distinct game process appears, the title cannot be identified safely.</p>
     <p>The Game Browser includes a separate <strong>Replay Adjustments</strong> tab for values automatically corrected by Game Replay.</p>
     <h3>Benchmarks (3DMark etc.)</h3>
@@ -1330,7 +1338,7 @@
 
     <h3>Where are my settings stored?</h3>
     <p><code>%LocalAppData%\NV-UV\</code> contains UV profiles, slot names, Game Replay adjustments, scanner history, OCS data, the stock curve, DCC learning profiles and logs.</p>
-    <p>Durable recovery data for the experimental Blackwell hotspot fix is stored separately under <code>%ProgramData%\NV-UV\BlackwellHotspot\</code>. Do not delete this folder manually while hotspot is active.</p>
+    <p>Keep recovery data in %ProgramData%\NV-UV\BlackwellHotspot\ until migration is complete. Sensor choices remain available through the hotspot button.</p>
     <h3>How do I export log files?</h3>
     <p>Use <strong>Export diagnostics</strong> below the Activity area. NV-UV creates a local diagnostics ZIP first and shows a preview. You can then keep it locally or voluntarily send it through the error-report window.</p>
 
@@ -1355,7 +1363,7 @@
     <p>In AB under <strong>Settings → Monitoring → Active hardware monitoring graphs</strong>, disable the plug-ins <code>GPU.dll</code> and <code>HwInfo.dll</code>. These access the same GPU sensors in parallel that NV-UV uses via MAHM, which causes conflicting sensor reads. MAHM then only returns valid values sporadically (voltage jumps, shows 0 or unrealistic numbers).</p>
     <div class="info">Thanks to Martin from the PCGH forum for this finding.</div>
     <h3>Apply does nothing / voltage unchanged</h3>
-    <p>Enable <code>Unlock Voltage Control</code> in AB. Missing stock curve? Click 🔄 Recalibrate. If Blackwell hotspot is active, the fix is removed through the controlled rollback before the actual calibration begins.</p>
+    <p>Recalibrate and repair handle any pending migration first. After migration, calibration can be started again; the old sensor backend is not reinstalled. The new display does not require changes to the Afterburner hardware profile.</p>
     <h3>NVIDIA Overlay does not appear in games</h3>
     <p>Close all games and stop any active recordings first. Then click <strong>Fix NV-Overlay</strong> in the profile toolbar above the curve and confirm the repair. Afterwards, test the overlay in a game with <code>Alt+Z</code> or <code>Alt+R</code>. An active recording or the current Instant Replay buffer is stopped during the repair and may be lost; the NVIDIA App and graphics driver are neither updated nor reinstalled.</p>
     <h3>Game crashes after UV</h3>
@@ -1378,7 +1386,7 @@
   <div class="led-bar gold"></div>
 
   <div class="footer">
-    NV-UV · Build 22 · Cantor · v0.99.5.9<br>
+    NV-UV · Build 22 · Cantor · v0.99.6.0<br>
     GPU undervolting and experimental features at your own risk<br><br>
     <span style="color:var(--dim)">NV-UV is free. If you like it:</span> <a href="https://paypal.me/christianpapaioannou" style="color:var(--cyan)">PayPal</a>
   </div>
