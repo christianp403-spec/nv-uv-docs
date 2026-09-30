@@ -22,6 +22,10 @@
       "avg": 4,
       "votes": 1
     },
+    "ada-4070-732ab796f3e7": {
+      "avg": 3,
+      "votes": 1
+    },
     "ada-4070-9b5565557cd2": {
       "avg": 4,
       "votes": 1
@@ -126,13 +130,21 @@
       "avg": 5,
       "votes": 2
     },
+    "ada-4090-62022214aec7": {
+      "avg": 4,
+      "votes": 1
+    },
     "ada-4090-d4c567ad82ae": {
       "avg": 4.25,
       "votes": 4
     },
+    "ada-4090-e71000da9b4b": {
+      "avg": 3,
+      "votes": 1
+    },
     "ada-4090-f1bd63a06245": {
       "avg": 2,
-      "votes": 2
+      "votes": 3
     },
     "amp-3060-150c942c39c0": {
       "avg": 3,
@@ -219,8 +231,8 @@
       "votes": 1
     },
     "amp-3080-ecb4dbf5b843": {
-      "avg": 3,
-      "votes": 2
+      "avg": 2.33,
+      "votes": 3
     },
     "amp-3080-ti-242e231bca95": {
       "avg": 4,
@@ -283,8 +295,8 @@
       "votes": 1
     },
     "bw-5070-440f7fa0491e": {
-      "avg": 3.5,
-      "votes": 6
+      "avg": 3.43,
+      "votes": 7
     },
     "bw-5070-460b6677c38e": {
       "avg": 5,
@@ -308,7 +320,7 @@
     },
     "bw-5070-b8753ff8a9d8": {
       "avg": 5,
-      "votes": 5
+      "votes": 6
     },
     "bw-5070-bca7fcff913f": {
       "avg": 5,
@@ -412,7 +424,7 @@
     },
     "bw-5080-05ddbdcf5d4d": {
       "avg": 5,
-      "votes": 1
+      "votes": 2
     },
     "bw-5080-15dfbe9e24ab": {
       "avg": 4.5,
@@ -453,6 +465,10 @@
     "bw-5080-84e0efa0162d": {
       "avg": 5,
       "votes": 2
+    },
+    "bw-5080-88277559cd62": {
+      "avg": 2,
+      "votes": 1
     },
     "bw-5080-8dfb8e7697e1": {
       "avg": 5,
@@ -543,8 +559,8 @@
       "votes": 1
     },
     "bw-5090-895105acb4a6": {
-      "avg": 3.78,
-      "votes": 9
+      "avg": 3.8,
+      "votes": 10
     },
     "bw-5090-9c80cae12504": {
       "avg": 5,
