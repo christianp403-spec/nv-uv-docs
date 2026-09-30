@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-29",
+  "updated": "2026-09-30",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -1543,6 +1543,23 @@
               },
               "date_found": "2026-09-20",
               "notes": "Stable 2 Months optimised in NV-UV 9637 score in SpeedWay 52`c Max"
+            },
+            {
+              "preset_id": "bw-5080-6e11441c8643",
+              "board": "PNY (OC)",
+              "freq_mhz": 3172,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-29",
+              "notes": ""
             }
           ]
         },
@@ -2092,6 +2109,40 @@
               },
               "date_found": "2026-09-27",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-d5db598e1a9a",
+              "board": "Gigabyte",
+              "freq_mhz": 3150,
+              "voltage_mv": 990,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 2500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-29",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-6ca0a3f425cf",
+              "board": "ASUS Prime OC",
+              "freq_mhz": 2947,
+              "voltage_mv": 925,
+              "power_limit_pct": 105,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-29",
+              "notes": ""
             }
           ]
         },
@@ -2539,6 +2590,40 @@
               },
               "date_found": "2026-09-26",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-6d79add813c1",
+              "board": "ASUS TUF",
+              "freq_mhz": 3157,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-30",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-8560958919cb",
+              "board": "Gigabyte",
+              "freq_mhz": 2700,
+              "voltage_mv": 970,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-30",
+              "notes": ""
             }
           ]
         },
@@ -2731,6 +2816,23 @@
               },
               "date_found": "2026-09-28",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5060-ti-e0614d457b50",
+              "board": "Gigabyte Windforce OC 16 GB",
+              "freq_mhz": 2797,
+              "voltage_mv": 875,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-30",
+              "notes": "Stable OCCT and Furmark tests"
             }
           ]
         }
@@ -3356,6 +3458,23 @@
               },
               "date_found": "2026-09-22",
               "notes": "Stable in DLSS5 load"
+            },
+            {
+              "preset_id": "ada-4090-098317efea44",
+              "board": "ASUS STRIX OC",
+              "freq_mhz": 2647,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 900,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-29",
+              "notes": ""
             }
           ]
         },
@@ -5147,6 +5266,23 @@
               },
               "date_found": "2026-09-28",
               "notes": ""
+            },
+            {
+              "preset_id": "ada-4060-9f65da209383",
+              "board": "ASUS",
+              "freq_mhz": 2400,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 800,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-29",
+              "notes": "ROG Strix G16 G614JV"
             }
           ]
         }
