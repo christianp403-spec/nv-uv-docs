@@ -118,6 +118,10 @@
       "avg": 5,
       "votes": 1
     },
+    "ada-4080-super-18155dfdbf59": {
+      "avg": 2,
+      "votes": 1
+    },
     "ada-4080-super-8e8bd74e293e": {
       "avg": 3,
       "votes": 2
@@ -136,6 +140,10 @@
     },
     "ada-4090-62022214aec7": {
       "avg": 4,
+      "votes": 1
+    },
+    "ada-4090-83694ee71e44": {
+      "avg": 5,
       "votes": 1
     },
     "ada-4090-d4c567ad82ae": {
@@ -256,15 +264,15 @@
     },
     "amp-3090-e68735dfe12a": {
       "avg": 5,
-      "votes": 5
+      "votes": 6
     },
     "amp-3090-f416876811f1": {
       "avg": 3,
       "votes": 1
     },
     "bw-5060-ti-0d8f9e2b0c24": {
-      "avg": 3.5,
-      "votes": 2
+      "avg": 3.33,
+      "votes": 3
     },
     "bw-5060-ti-4934be43b218": {
       "avg": 1.33,
@@ -513,6 +521,10 @@
     "bw-5080-e82458dab83d": {
       "avg": 3.5,
       "votes": 2
+    },
+    "bw-5080-e95159a23c1b": {
+      "avg": 5,
+      "votes": 1
     },
     "bw-5080-ef6d4f0f6e81": {
       "avg": 3.5,
