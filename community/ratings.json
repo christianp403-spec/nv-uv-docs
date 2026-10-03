@@ -348,7 +348,7 @@
     },
     "bw-5070-b8753ff8a9d8": {
       "avg": 5,
-      "votes": 6
+      "votes": 7
     },
     "bw-5070-bca7fcff913f": {
       "avg": 5,
@@ -453,6 +453,10 @@
     "bw-5080-05ddbdcf5d4d": {
       "avg": 5,
       "votes": 2
+    },
+    "bw-5080-13ca112efa92": {
+      "avg": 5,
+      "votes": 1
     },
     "bw-5080-15dfbe9e24ab": {
       "avg": 4.5,
@@ -639,8 +643,8 @@
       "votes": 2
     },
     "bw-5090-f964df0d05ed": {
-      "avg": 3.5,
-      "votes": 4
+      "avg": 3.6,
+      "votes": 5
     },
     "bw-5090-fae26904b28e": {
       "avg": 3.5,
