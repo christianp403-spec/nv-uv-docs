@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-30",
+  "updated": "2026-10-03",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -2143,6 +2143,23 @@
               },
               "date_found": "2026-09-29",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-ec272e580a85",
+              "board": "Colorful GeForce RTX 5070 Ti Ultra W OC",
+              "freq_mhz": 3030,
+              "voltage_mv": 950,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-01",
+              "notes": "3DMark Steel Nomad Score 7122"
             }
           ]
         },
@@ -2624,6 +2641,40 @@
               },
               "date_found": "2026-09-30",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-c5e4dce85220",
+              "board": "Palit GamingPro",
+              "freq_mhz": 2752,
+              "voltage_mv": 860,
+              "power_limit_pct": 120,
+              "vram_offset_mhz": 500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-09-30",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-c078a5209243",
+              "board": "PNY Triple Fan",
+              "freq_mhz": 3247,
+              "voltage_mv": 1025,
+              "power_limit_pct": 110,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-01",
+              "notes": "Tested on OCCT (3D Adaptive - Variable) for 1h: no errors"
             }
           ]
         },
@@ -6821,6 +6872,40 @@
               },
               "date_found": "2026-07-20",
               "notes": ""
+            },
+            {
+              "preset_id": "amp-3060-ti-1f1ab87af75c",
+              "board": "GDDR6X",
+              "freq_mhz": 2010,
+              "voltage_mv": 985,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 600,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-01",
+              "notes": ""
+            },
+            {
+              "preset_id": "amp-3060-ti-4137a5be505b",
+              "board": "Inno3D RTX 3060 Ti TWIN X2 OC LHR",
+              "freq_mhz": 2025,
+              "voltage_mv": 1038,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1950,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-01",
+              "notes": "MAX TEMP 69 ON CALL OF DUTY GHOSTS 4K RESOLUTION ULTRA SETTING WITH DLSS 5 NEURAL RANDERING WITH RHI TOOL 70/80 FPS"
             }
           ]
         },
