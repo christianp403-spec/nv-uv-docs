@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-02",
+  "updated": "2026-10-03",
   "ratings": {
     "ada-4060-483e3d92acd8": {
       "avg": 3.67,
@@ -134,6 +134,10 @@
       "avg": 3,
       "votes": 1
     },
+    "ada-4090-4393212b0bde": {
+      "avg": 5,
+      "votes": 1
+    },
     "ada-4090-5a43b1f836f7": {
       "avg": 5,
       "votes": 2
@@ -143,8 +147,8 @@
       "votes": 1
     },
     "ada-4090-83694ee71e44": {
-      "avg": 5,
-      "votes": 1
+      "avg": 3,
+      "votes": 2
     },
     "ada-4090-d4c567ad82ae": {
       "avg": 4.25,
@@ -173,6 +177,14 @@
     "amp-3060-ti-35ad8bb0f226": {
       "avg": 4.5,
       "votes": 2
+    },
+    "amp-3060-ti-4a6d094d8d80": {
+      "avg": 2,
+      "votes": 1
+    },
+    "amp-3060-ti-bbcfdd1d076a": {
+      "avg": 2,
+      "votes": 1
     },
     "amp-3070-16c9cafbfbdb": {
       "avg": 5,
