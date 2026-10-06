@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-05",
+  "updated": "2026-10-06",
   "ratings": {
     "ada-4060-483e3d92acd8": {
       "avg": 3.67,
@@ -184,7 +184,7 @@
     },
     "amp-3060-f468f43dda5f": {
       "avg": 5,
-      "votes": 1
+      "votes": 2
     },
     "amp-3060-ti-35ad8bb0f226": {
       "avg": 4.5,
@@ -347,8 +347,8 @@
       "votes": 9
     },
     "bw-5070-8880f1c42165": {
-      "avg": 3.86,
-      "votes": 7
+      "avg": 4,
+      "votes": 8
     },
     "bw-5070-a7e0c4de8689": {
       "avg": 4.5,
@@ -364,7 +364,7 @@
     },
     "bw-5070-bca7fcff913f": {
       "avg": 5,
-      "votes": 1
+      "votes": 2
     },
     "bw-5070-c22a4b5e349d": {
       "avg": 4.25,
@@ -372,6 +372,10 @@
     },
     "bw-5070-c2e2285a7418": {
       "avg": 5,
+      "votes": 1
+    },
+    "bw-5070-c5e4dce85220": {
+      "avg": 3,
       "votes": 1
     },
     "bw-5070-e5c2a463f32e": {
@@ -387,8 +391,8 @@
       "votes": 2
     },
     "bw-5070-ti-0c6b217dfe39": {
-      "avg": 5,
-      "votes": 2
+      "avg": 4.67,
+      "votes": 3
     },
     "bw-5070-ti-252f48ec15bb": {
       "avg": 4.8,
@@ -534,6 +538,10 @@
       "avg": 3,
       "votes": 1
     },
+    "bw-5080-c47931bcf5af": {
+      "avg": 5,
+      "votes": 1
+    },
     "bw-5080-c89ffed42a58": {
       "avg": 3,
       "votes": 1
@@ -619,8 +627,8 @@
       "votes": 1
     },
     "bw-5090-bada69e55bc5": {
-      "avg": 3,
-      "votes": 2
+      "avg": 3.33,
+      "votes": 3
     },
     "bw-5090-c23bf7e413c0": {
       "avg": 5,
