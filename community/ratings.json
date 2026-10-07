@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-06",
+  "updated": "2026-10-07",
   "ratings": {
     "ada-4060-483e3d92acd8": {
       "avg": 3.67,
@@ -515,8 +515,8 @@
       "votes": 2
     },
     "bw-5080-84e0efa0162d": {
-      "avg": 5,
-      "votes": 2
+      "avg": 4.33,
+      "votes": 3
     },
     "bw-5080-88277559cd62": {
       "avg": 2,
