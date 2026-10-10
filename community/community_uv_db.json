@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-07",
+  "updated": "2026-10-10",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -2692,6 +2692,23 @@
               },
               "date_found": "2026-10-01",
               "notes": "Tested on OCCT (3D Adaptive - Variable) for 1h: no errors"
+            },
+            {
+              "preset_id": "bw-5070-3cb4592304d2",
+              "board": "MSI",
+              "freq_mhz": 2122,
+              "voltage_mv": 850,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-09",
+              "notes": ""
             }
           ]
         },
@@ -5119,6 +5136,23 @@
                 "url": ""
               },
               "date_found": "2026-09-06",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4070-d8a131227e50",
+              "board": "Zotac",
+              "freq_mhz": 2602,
+              "voltage_mv": 885,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-08",
               "notes": ""
             }
           ]
