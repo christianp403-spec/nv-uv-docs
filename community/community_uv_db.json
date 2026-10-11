@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-10",
+  "updated": "2026-10-11",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -2709,6 +2709,40 @@
               },
               "date_found": "2026-10-09",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-b2d056b92bba",
+              "board": "PNY",
+              "freq_mhz": 2752,
+              "voltage_mv": 860,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-10",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-df73e2df84fe",
+              "board": "Palit",
+              "freq_mhz": 2842,
+              "voltage_mv": 850,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-10",
+              "notes": "Infinity 3 75 fps DLAA Forza 5"
             }
           ]
         },
@@ -2918,6 +2952,23 @@
               },
               "date_found": "2026-09-30",
               "notes": "Stable OCCT and Furmark tests"
+            },
+            {
+              "preset_id": "bw-5060-ti-dd679c0d3121",
+              "board": "MSI",
+              "freq_mhz": 2190,
+              "voltage_mv": 850,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-10",
+              "notes": ""
             }
           ]
         }
@@ -5154,6 +5205,57 @@
               },
               "date_found": "2026-10-08",
               "notes": ""
+            },
+            {
+              "preset_id": "ada-4070-d3f073087569",
+              "board": "Zotac",
+              "freq_mhz": 2610,
+              "voltage_mv": 885,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 50,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-10",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4070-6ca335661436",
+              "board": "Zotac NVIDIA GeForce RTX 4070 sur AD104-A GPU",
+              "freq_mhz": 2752,
+              "voltage_mv": 950,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 100,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-10",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4070-257c68e20d57",
+              "board": "Zotac NVIDIA GeForce RTX 4070 sur AD104-A GPU",
+              "freq_mhz": 2752,
+              "voltage_mv": 935,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 50,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-10",
+              "notes": "optimised"
             }
           ]
         },
