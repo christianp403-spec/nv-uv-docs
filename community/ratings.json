@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-11",
+  "updated": "2026-10-12",
   "ratings": {
     "ada-4060-483e3d92acd8": {
       "avg": 3.67,
@@ -17,6 +17,10 @@
     "ada-4060-cc6cdcd32fc7": {
       "avg": 3.33,
       "votes": 3
+    },
+    "ada-4060-ti-02cd8ddae77e": {
+      "avg": 5,
+      "votes": 1
     },
     "ada-4060-ti-5297122458ee": {
       "avg": 2,
@@ -57,6 +61,10 @@
     "ada-4070-super-cdbe9577d677": {
       "avg": 3,
       "votes": 2
+    },
+    "ada-4070-super-f1bab3a69cc1": {
+      "avg": 2,
+      "votes": 1
     },
     "ada-4070-super-fd78d2eff112": {
       "avg": 1,
@@ -344,7 +352,7 @@
     },
     "bw-5070-460b6677c38e": {
       "avg": 5,
-      "votes": 1
+      "votes": 2
     },
     "bw-5070-4f3bccce3f52": {
       "avg": 3,
@@ -352,6 +360,10 @@
     },
     "bw-5070-54d88097642c": {
       "avg": 1,
+      "votes": 1
+    },
+    "bw-5070-6d79add813c1": {
+      "avg": 5,
       "votes": 1
     },
     "bw-5070-8880f1c42165": {
@@ -591,8 +603,8 @@
       "votes": 1
     },
     "bw-5080-f4a0e13fd2b4": {
-      "avg": 3.25,
-      "votes": 4
+      "avg": 3.2,
+      "votes": 5
     },
     "bw-5090-06561735fea2": {
       "avg": 4,
@@ -604,6 +616,10 @@
     },
     "bw-5090-1fe0e0df7e7f": {
       "avg": 4,
+      "votes": 1
+    },
+    "bw-5090-26e6de5a9fc8": {
+      "avg": 5,
       "votes": 1
     },
     "bw-5090-2d3ea365a88d": {
