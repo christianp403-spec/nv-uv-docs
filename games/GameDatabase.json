@@ -1,8 +1,8 @@
 {
-  "version": "2.36",
+  "version": "2.37",
   "source": "nvidia-drs-profiles + dlss-all-versions",
-  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup + Jul 2026: removed generic BugSplat crash-reporter alias (bssndrpt64.exe) from Company of Heroes 3 (false UV-Pilot detection after crashes) + Game Ready additions Jul 2026: Halo: Campaign Evolved, Gears of War: E-Day, Mistfall Hunter + Freelancer (HD) and The Witcher (2007) + Game Ready 610.88 addition Aug 2026: SILENT HILL f + Game Ready 616.56 additions Aug 2026: Hell Let Loose: Vietnam, Resonance: A Plague Tale Legacy, STAR WARS Zero Company + PowerWash Simulator 2 (Balanced) + v2.17: stable DCC identities for Marvel Rivals and Wuthering Waves + v2.18: Halo: The Master Chief Collection (Eco, community-verified) + v2.19: Game Ready 616.64 additions Sep 2026: NBA 2K27 and Onimusha: Way of the Sword + v2.20: Avatar: Frontiers of Pandora (Performance) + v2.21: Game Ready 616.92 additions: Active Matter, Aniimo and WARDOGS; refreshed 007 First Light and PUBG: BATTLEGROUNDS + v2.22: The Blood of Dawnwalker (Performance) + v2.23: 11 community-requested games; Apex Legends (Performance); shared Path of Exile / Path of Exile 2 Steam executable (Balanced) + v2.24: 15 community-requested games and NVIDIA executable aliases; DiRT Rally and DiRT Rally 2.0 (Balanced); shared Kingdom Come: Deliverance / Deliverance II entry (Performance) + v2.25: INDUSTRIA shipping executable alias + v2.26: 10 community-requested games; SMITE and King's Bounty II (Balanced); eight Eco entries; path-qualified Necesse Java runtime + v2.27: Game Ready 617.14 additions: AION 2 (Balanced) and CONTROL Resonant (Performance); refreshed Gears of War: E-Day and The Witcher 3 guidance + v2.28: community requests CODE VEIN II (Performance) and Valheim (Balanced) + v2.29: community request Marathon (Balanced) + v2.30: You Suck at Parking Steam executable alias (Eco); shared Call of Duty executable (Balanced) + v2.31: community request DCS World (Balanced) + v2.32: community request Arena Breakout: Infinite (Balanced) + v2.33: Space Marine 2 retail executable alias; Siralim Ultimate (Eco); Modern Warfare 4 (Balanced); STAR WARS: Galactic Racer and Valor Mortis (Performance), checked against the supplied 617.42 export + v2.34: Total War: WARHAMMER II (Balanced) + v2.35: community requests ACE COMBAT ZERO: THE BELKAN WAR (Eco) and ACE COMBAT 8: WINGS OF THEVE (Performance) + v2.36: community request Lessaria: Fantasy Kingdom Sim (Balanced)",
-  "generated": "2026-10-13",
+  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup + Jul 2026: removed generic BugSplat crash-reporter alias (bssndrpt64.exe) from Company of Heroes 3 (false UV-Pilot detection after crashes) + Game Ready additions Jul 2026: Halo: Campaign Evolved, Gears of War: E-Day, Mistfall Hunter + Freelancer (HD) and The Witcher (2007) + Game Ready 610.88 addition Aug 2026: SILENT HILL f + Game Ready 616.56 additions Aug 2026: Hell Let Loose: Vietnam, Resonance: A Plague Tale Legacy, STAR WARS Zero Company + PowerWash Simulator 2 (Balanced) + v2.17: stable DCC identities for Marvel Rivals and Wuthering Waves + v2.18: Halo: The Master Chief Collection (Eco, community-verified) + v2.19: Game Ready 616.64 additions Sep 2026: NBA 2K27 and Onimusha: Way of the Sword + v2.20: Avatar: Frontiers of Pandora (Performance) + v2.21: Game Ready 616.92 additions: Active Matter, Aniimo and WARDOGS; refreshed 007 First Light and PUBG: BATTLEGROUNDS + v2.22: The Blood of Dawnwalker (Performance) + v2.23: 11 community-requested games; Apex Legends (Performance); shared Path of Exile / Path of Exile 2 Steam executable (Balanced) + v2.24: 15 community-requested games and NVIDIA executable aliases; DiRT Rally and DiRT Rally 2.0 (Balanced); shared Kingdom Come: Deliverance / Deliverance II entry (Performance) + v2.25: INDUSTRIA shipping executable alias + v2.26: 10 community-requested games; SMITE and King's Bounty II (Balanced); eight Eco entries; path-qualified Necesse Java runtime + v2.27: Game Ready 617.14 additions: AION 2 (Balanced) and CONTROL Resonant (Performance); refreshed Gears of War: E-Day and The Witcher 3 guidance + v2.28: community requests CODE VEIN II (Performance) and Valheim (Balanced) + v2.29: community request Marathon (Balanced) + v2.30: You Suck at Parking Steam executable alias (Eco); shared Call of Duty executable (Balanced) + v2.31: community request DCS World (Balanced) + v2.32: community request Arena Breakout: Infinite (Balanced) + v2.33: Space Marine 2 retail executable alias; Siralim Ultimate (Eco); Modern Warfare 4 (Balanced); STAR WARS: Galactic Racer and Valor Mortis (Performance), checked against the supplied 617.42 export + v2.34: Total War: WARHAMMER II (Balanced) + v2.35: community requests ACE COMBAT ZERO: THE BELKAN WAR (Eco) and ACE COMBAT 8: WINGS OF THEVE (Performance) + v2.36: community request Lessaria: Fantasy Kingdom Sim (Balanced) + v2.37: 20 community-requested games and mods; 16 Eco, three Balanced and one Performance starting presets",
+  "generated": "2026-10-14",
   "games": [
     {
       "name": "007 First Light",
@@ -6149,6 +6149,198 @@
       "confidence": "community",
       "source": "community-request",
       "note": "Kingdom-building RTS; Balanced starting point."
+    },
+    {
+      "id": "lotr-battle-for-middle-earth",
+      "name": "The Lord of the Rings: The Battle for Middle-earth",
+      "process": "lotrbfme.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Eco starting point. Legacy launch executable; in-game DCC detection requires verification for the installed version."
+    },
+    {
+      "id": "lotr-battle-for-middle-earth-ii",
+      "name": "The Lord of the Rings: The Battle for Middle-earth II",
+      "process": "lotrbfme2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Eco starting point. Legacy launch executable; in-game DCC detection requires verification for the installed version."
+    },
+    {
+      "id": "lotr-rise-of-the-witch-king",
+      "name": "The Lord of the Rings: The Battle for Middle-earth II: The Rise of the Witch-king",
+      "process": "lotrbfme2ep1.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Eco starting point. Legacy launch executable; in-game DCC detection requires verification for the installed version."
+    },
+    {
+      "id": "sacred-2",
+      "name": "Sacred 2",
+      "process": "sacred2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Eco starting point."
+    },
+    {
+      "id": "last-epoch",
+      "name": "Last Epoch",
+      "process": "last epoch.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Balanced starting point."
+    },
+    {
+      "id": "sons-of-the-forest",
+      "name": "Sons of the Forest",
+      "process": "sonsoftheforest.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Performance starting point."
+    },
+    {
+      "id": "the-forest",
+      "name": "The Forest",
+      "process": "theforest.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Balanced starting point."
+    },
+    {
+      "id": "spellforce",
+      "name": "SpellForce",
+      "process": "spellforce.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Eco starting point."
+    },
+    {
+      "id": "spellforce-2",
+      "name": "SpellForce 2",
+      "process": "spellforce2.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Eco starting point."
+    },
+    {
+      "id": "spellforce-2-faith-in-destiny",
+      "name": "SpellForce 2: Faith in Destiny",
+      "process": "spellforce2faithindestiny.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Eco starting point."
+    },
+    {
+      "id": "spellforce-2-demons-of-the-past",
+      "name": "SpellForce 2: Demons of the Past",
+      "process": "spellforce2demonsofthepast.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Eco starting point."
+    },
+    {
+      "id": "dishonored",
+      "name": "Dishonored",
+      "process": "dishonored.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Eco starting point.",
+      "aliases": [
+        "dishonoredgame.exe",
+        "shippingpc-dishonoredgame.exe"
+      ]
+    },
+    {
+      "id": "dishonored-2",
+      "name": "Dishonored 2",
+      "process": "dishonored2.exe",
+      "tier": "Balanced",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Balanced starting point.",
+      "aliases": [
+        "dishonored2_x64retail.exe",
+        "dishonored2_x64.exe",
+        "dishonored2_x64shippingretail.exe"
+      ]
+    },
+    {
+      "id": "heroes-of-might-and-magic-iii",
+      "name": "Heroes of Might and Magic III",
+      "process": "heroes3.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Eco starting point. Original GOG edition. DCC FPS detection depends on the selected renderer or wrapper."
+    },
+    {
+      "id": "heroes-of-might-and-magic-iii-horn-of-the-abyss",
+      "name": "Heroes of Might and Magic III: Horn of the Abyss",
+      "process": "h3hota hd.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Eco starting point. Horn of the Abyss mod with HD executable. DCC FPS detection depends on the selected renderer or wrapper."
+    },
+    {
+      "id": "heroes-of-might-and-magic-iv",
+      "name": "Heroes of Might and Magic IV",
+      "process": "heroes4.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Eco starting point. DCC FPS detection depends on the selected renderer or wrapper."
+    },
+    {
+      "id": "heroes-of-might-and-magic-iv-ultimate",
+      "name": "Heroes of Might and Magic IV: Ultimate Mod",
+      "process": "[patched]h4_ultimate.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Eco starting point. Ultimate mod executable. DCC FPS detection depends on the selected renderer or wrapper."
+    },
+    {
+      "id": "disciples-iii",
+      "name": "Disciples III",
+      "process": "disciplesiii.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Eco starting point."
+    },
+    {
+      "id": "heroes-of-might-and-magic-v",
+      "name": "Heroes of Might and Magic V",
+      "process": "h5_game.exe",
+      "tier": "Eco",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "note": "Eco starting point. Mods renamed to h5_game.exe share this detection entry."
+    },
+    {
+      "id": "might-and-magic-heroes-55",
+      "name": "Might & Magic: Heroes 5.5",
+      "process": "mmh55_64.exe",
+      "tier": "Eco",
+      "confidence": "community",
+      "source": "community-request",
+      "note": "Eco starting point. Use the dedicated mod executable; copies renamed to h5_game.exe resolve as Heroes V.",
+      "aliases": [
+        "mmh55_utility_64.exe"
+      ]
     }
   ]
 }
