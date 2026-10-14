@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-11",
+  "updated": "2026-10-14",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -773,6 +773,23 @@
               },
               "date_found": "2026-10-07",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5090-07a5b9da4ffa",
+              "board": "MSI",
+              "freq_mhz": 2880,
+              "voltage_mv": 900,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-11",
+              "notes": "gaming with dlss5"
             }
           ]
         },
@@ -1577,6 +1594,23 @@
               },
               "date_found": "2026-09-29",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-05293baf57a0",
+              "board": "MSI Trio",
+              "freq_mhz": 3037,
+              "voltage_mv": 940,
+              "power_limit_pct": 110,
+              "vram_offset_mhz": 1500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-12",
+              "notes": "up VRAM if ok with heat"
             }
           ]
         },
@@ -2177,6 +2211,23 @@
               },
               "date_found": "2026-10-01",
               "notes": "3DMark Steel Nomad Score 7122"
+            },
+            {
+              "preset_id": "bw-5070-ti-408aa98525ba",
+              "board": "Palit",
+              "freq_mhz": 3082,
+              "voltage_mv": 945,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-11",
+              "notes": "4k dlss5"
             }
           ]
         },
@@ -2743,6 +2794,23 @@
               },
               "date_found": "2026-10-10",
               "notes": "Infinity 3 75 fps DLAA Forza 5"
+            },
+            {
+              "preset_id": "bw-5070-f1bc4670213a",
+              "board": "Gigabyte 5070 Gaming OC",
+              "freq_mhz": 2947,
+              "voltage_mv": 910,
+              "power_limit_pct": 120,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-13",
+              "notes": "Silent profile"
             }
           ]
         },
@@ -5504,6 +5572,40 @@
               },
               "date_found": "2026-09-29",
               "notes": "ROG Strix G16 G614JV"
+            },
+            {
+              "preset_id": "ada-4060-c717093aa69b",
+              "board": "Zotac",
+              "freq_mhz": 2580,
+              "voltage_mv": 925,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-12",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4060-abd820bc988a",
+              "board": "Zotac",
+              "freq_mhz": 2520,
+              "voltage_mv": 935,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-13",
+              "notes": ""
             }
           ]
         }
