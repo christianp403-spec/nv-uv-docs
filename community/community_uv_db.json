@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -2228,6 +2228,23 @@
               },
               "date_found": "2026-10-11",
               "notes": "4k dlss5"
+            },
+            {
+              "preset_id": "bw-5070-ti-63e4fef61877",
+              "board": "Palit",
+              "freq_mhz": 2602,
+              "voltage_mv": 915,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-16",
+              "notes": ""
             }
           ]
         },
@@ -3956,6 +3973,23 @@
               },
               "date_found": "2026-08-02",
               "notes": "CP2077 Stable 4K, DLSS 4.5 Perf, FG, RTUltra"
+            },
+            {
+              "preset_id": "ada-4080-super-8e32e3cb7107",
+              "board": "ASUS",
+              "freq_mhz": 2835,
+              "voltage_mv": 995,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1200,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-16",
+              "notes": ""
             }
           ]
         },
