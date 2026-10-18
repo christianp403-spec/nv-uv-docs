@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-16",
+  "updated": "2026-10-18",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -1611,6 +1611,40 @@
               },
               "date_found": "2026-10-12",
               "notes": "up VRAM if ok with heat"
+            },
+            {
+              "preset_id": "bw-5080-ba539c5169f4",
+              "board": "Palit",
+              "freq_mhz": 3015,
+              "voltage_mv": 935,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-16",
+              "notes": "GameRock OC [NE75080T19T2-GB2030G]"
+            },
+            {
+              "preset_id": "bw-5080-af5171816651",
+              "board": "Zotac",
+              "freq_mhz": 2700,
+              "voltage_mv": 945,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-17",
+              "notes": ""
             }
           ]
         },
@@ -5358,6 +5392,23 @@
               },
               "date_found": "2026-10-10",
               "notes": "optimised"
+            },
+            {
+              "preset_id": "ada-4070-dfcb43303e3f",
+              "board": "Zotac",
+              "freq_mhz": 2955,
+              "voltage_mv": 1095,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 200,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-17",
+              "notes": "OC power stable"
             }
           ]
         },
@@ -5482,6 +5533,23 @@
               },
               "date_found": "2026-09-21",
               "notes": "stabil in DX11/12 Spielen, auch mit DLSS5 Mod"
+            },
+            {
+              "preset_id": "ada-4060-ti-db8d3a63734a",
+              "board": "Gigabyte",
+              "freq_mhz": 2745,
+              "voltage_mv": 950,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 800,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-18",
+              "notes": "stable4060tieagleoc"
             }
           ]
         },
