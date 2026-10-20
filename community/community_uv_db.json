@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-18",
+  "updated": "2026-10-20",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -790,6 +790,40 @@
               },
               "date_found": "2026-10-11",
               "notes": "gaming with dlss5"
+            },
+            {
+              "preset_id": "bw-5090-620115ae6944",
+              "board": "ASUS 5090 Astral LC",
+              "freq_mhz": 2947,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-18",
+              "notes": "cant go above 1500mhz on memory under UE.5"
+            },
+            {
+              "preset_id": "bw-5090-382e90734b7a",
+              "board": "PNY",
+              "freq_mhz": 2992,
+              "voltage_mv": 975,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-19",
+              "notes": "Stability"
             }
           ]
         },
@@ -4301,6 +4335,40 @@
               },
               "date_found": "2026-10-06",
               "notes": "Le Mans Ultimate"
+            },
+            {
+              "preset_id": "ada-4080-131bafbc43c3",
+              "board": "Zotac",
+              "freq_mhz": 2790,
+              "voltage_mv": 950,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-19",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4080-5ac4fa3ee954",
+              "board": "Gigabyte",
+              "freq_mhz": 2640,
+              "voltage_mv": 925,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-19",
+              "notes": ""
             }
           ]
         },
