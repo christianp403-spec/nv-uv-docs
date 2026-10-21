@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -1678,6 +1678,23 @@
                 "url": ""
               },
               "date_found": "2026-10-17",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-a2cf9c99cec3",
+              "board": "NVIDIA 5080 FE",
+              "freq_mhz": 2917,
+              "voltage_mv": 925,
+              "power_limit_pct": 108,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-20",
               "notes": ""
             }
           ]
