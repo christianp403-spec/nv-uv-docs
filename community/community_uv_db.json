@@ -2381,6 +2381,40 @@
               },
               "date_found": "2026-10-21",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-2fc70cf1ca1a",
+              "board": "Inno3D RTX 5070 Ti X3 OC SFF",
+              "freq_mhz": 2700,
+              "voltage_mv": 825,
+              "power_limit_pct": 83,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-22",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-46a0848f9a4a",
+              "board": "Inno3D RTX 5070 Ti X3 OC SFF",
+              "freq_mhz": 2797,
+              "voltage_mv": 875,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-22",
+              "notes": ""
             }
           ]
         },
