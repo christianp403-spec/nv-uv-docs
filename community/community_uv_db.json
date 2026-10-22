@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -2329,6 +2329,57 @@
                 "url": ""
               },
               "date_found": "2026-10-16",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-f02a13d13c17",
+              "board": "Inno3D X3 OC RTX 5070 Ti SFF",
+              "freq_mhz": 2902,
+              "voltage_mv": 900,
+              "power_limit_pct": 85,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-21",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-036c887dfbb9",
+              "board": "Inno3D RTX 5070 Ti X3 OC SFF",
+              "freq_mhz": 2940,
+              "voltage_mv": 915,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-21",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-6c413b61e900",
+              "board": "Inno3D RTX 5070 Ti X3 OC SFF",
+              "freq_mhz": 3045,
+              "voltage_mv": 950,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-21",
               "notes": ""
             }
           ]
