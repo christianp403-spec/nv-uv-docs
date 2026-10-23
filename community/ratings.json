@@ -462,6 +462,10 @@
       "avg": 4.86,
       "votes": 7
     },
+    "bw-5070-ti-2fc70cf1ca1a": {
+      "avg": 5,
+      "votes": 1
+    },
     "bw-5070-ti-3e54c50c9ebc": {
       "avg": 1.75,
       "votes": 4
@@ -469,6 +473,10 @@
     "bw-5070-ti-4603c6f35e05": {
       "avg": 3.4,
       "votes": 5
+    },
+    "bw-5070-ti-46a0848f9a4a": {
+      "avg": 5,
+      "votes": 1
     },
     "bw-5070-ti-538c133f65ec": {
       "avg": 4.11,
@@ -552,7 +560,7 @@
     },
     "bw-5080-05ddbdcf5d4d": {
       "avg": 5,
-      "votes": 2
+      "votes": 3
     },
     "bw-5080-13ca112efa92": {
       "avg": 5,
