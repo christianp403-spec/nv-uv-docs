@@ -172,7 +172,7 @@
     },
     "ada-4090-5a43b1f836f7": {
       "avg": 5,
-      "votes": 4
+      "votes": 5
     },
     "ada-4090-62022214aec7": {
       "avg": 4,
@@ -219,6 +219,10 @@
       "votes": 1
     },
     "amp-3060-ti-5a10e7b8d8f1": {
+      "avg": 3.5,
+      "votes": 2
+    },
+    "amp-3060-ti-91a56505a3da": {
       "avg": 3,
       "votes": 1
     },
@@ -479,8 +483,8 @@
       "votes": 4
     },
     "bw-5070-ti-252f48ec15bb": {
-      "avg": 4.88,
-      "votes": 8
+      "avg": 4.67,
+      "votes": 9
     },
     "bw-5070-ti-2fc70cf1ca1a": {
       "avg": 5,
