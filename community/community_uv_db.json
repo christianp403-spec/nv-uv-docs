@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-22",
+  "updated": "2026-10-25",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -7573,6 +7573,23 @@
                 "url": ""
               },
               "date_found": "2026-10-14",
+              "notes": ""
+            },
+            {
+              "preset_id": "amp-3060-957c939181aa",
+              "board": "Zotac 12GB",
+              "freq_mhz": 1995,
+              "voltage_mv": 950,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-24",
               "notes": ""
             }
           ]
