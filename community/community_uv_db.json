@@ -1696,6 +1696,23 @@
               },
               "date_found": "2026-10-20",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-cc4914db5799",
+              "board": "MSI",
+              "freq_mhz": 2752,
+              "voltage_mv": 900,
+              "power_limit_pct": 90,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-25",
+              "notes": ""
             }
           ]
         },
@@ -2998,6 +3015,23 @@
               },
               "date_found": "2026-10-13",
               "notes": "Silent profile"
+            },
+            {
+              "preset_id": "bw-5070-3466afe3b7da",
+              "board": "MSI Gaming Trio OC",
+              "freq_mhz": 3150,
+              "voltage_mv": 975,
+              "power_limit_pct": 105,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-25",
+              "notes": "Tested for 4+ months in AAA games without crashes"
             }
           ]
         },
@@ -6907,6 +6941,23 @@
                 "url": ""
               },
               "date_found": "2026-09-24",
+              "notes": ""
+            },
+            {
+              "preset_id": "amp-3080-b3338fec406f",
+              "board": null,
+              "freq_mhz": 1890,
+              "voltage_mv": 875,
+              "power_limit_pct": 90,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-25",
               "notes": ""
             }
           ]
