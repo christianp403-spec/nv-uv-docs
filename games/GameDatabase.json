@@ -1,8 +1,8 @@
 {
-  "version": "2.42",
+  "version": "2.44",
   "source": "nvidia-drs-profiles + dlss-all-versions",
-  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup + Jul 2026: removed generic BugSplat crash-reporter alias (bssndrpt64.exe) from Company of Heroes 3 (false UV-Pilot detection after crashes) + Game Ready additions Jul 2026: Halo: Campaign Evolved, Gears of War: E-Day, Mistfall Hunter + Freelancer (HD) and The Witcher (2007) + Game Ready 610.88 addition Aug 2026: SILENT HILL f + Game Ready 616.56 additions Aug 2026: Hell Let Loose: Vietnam, Resonance: A Plague Tale Legacy, STAR WARS Zero Company + PowerWash Simulator 2 (Balanced) + v2.17: stable DCC identities for Marvel Rivals and Wuthering Waves + v2.18: Halo: The Master Chief Collection (Eco, community-verified) + v2.19: Game Ready 616.64 additions Sep 2026: NBA 2K27 and Onimusha: Way of the Sword + v2.20: Avatar: Frontiers of Pandora (Performance) + v2.21: Game Ready 616.92 additions: Active Matter, Aniimo and WARDOGS; refreshed 007 First Light and PUBG: BATTLEGROUNDS + v2.22: The Blood of Dawnwalker (Performance) + v2.23: 11 community-requested games; Apex Legends (Performance); shared Path of Exile / Path of Exile 2 Steam executable (Balanced) + v2.24: 15 community-requested games and NVIDIA executable aliases; DiRT Rally and DiRT Rally 2.0 (Balanced); shared Kingdom Come: Deliverance / Deliverance II entry (Performance) + v2.25: INDUSTRIA shipping executable alias + v2.26: 10 community-requested games; SMITE and King's Bounty II (Balanced); eight Eco entries; path-qualified Necesse Java runtime + v2.27: Game Ready 617.14 additions: AION 2 (Balanced) and CONTROL Resonant (Performance); refreshed Gears of War: E-Day and The Witcher 3 guidance + v2.28: community requests CODE VEIN II (Performance) and Valheim (Balanced) + v2.29: community request Marathon (Balanced) + v2.30: You Suck at Parking Steam executable alias (Eco); shared Call of Duty executable (Balanced) + v2.31: community request DCS World (Balanced) + v2.32: community request Arena Breakout: Infinite (Balanced) + v2.33: Space Marine 2 retail executable alias; Siralim Ultimate (Eco); Modern Warfare 4 (Balanced); STAR WARS: Galactic Racer and Valor Mortis (Performance), checked against the supplied 617.42 export + v2.34: Total War: WARHAMMER II (Balanced) + v2.35: community requests ACE COMBAT ZERO: THE BELKAN WAR (Eco) and ACE COMBAT 8: WINGS OF THEVE (Performance) + v2.36: community request Lessaria: Fantasy Kingdom Sim (Balanced) + v2.37: 20 community-requested games and mods; 16 Eco, three Balanced and one Performance starting presets + v2.38: Life is Strange, Life is Strange Remastered and path-qualified Blitzkrieg + v2.39: Golf It! shipping executable alias + v2.40: RUST retiered to Balanced; Clive Barker's Hellraiser: Revival added (Balanced) + v2.41: Assetto Corsa with path-qualified race executable and Transport Fever 3 (Balanced starting presets) + v2.42: Phantom Blade Zero (Performance) and Castlevania: Belmont's Curse (Balanced); Crimson Desert engine metadata corrected; Hellraiser shipping alias and ACE COMBAT 8 verification updated",
-  "generated": "2026-10-21",
+  "description": "NVIDIA DRS profiles + DLSS games + Steam community library + curated GRD additions Apr 2026 + Game Ready 600.x additions May 2026 + GTA V (Legacy/Enhanced) & Anno 117 May 2026 | NV-UV-Play: Max defaults curated to Performance | v2.6: Chrome retiered to Stock, GZDoom added (Balanced) Jun 2026 + F1 25 dedup + Jul 2026: removed generic BugSplat crash-reporter alias (bssndrpt64.exe) from Company of Heroes 3 (false UV-Pilot detection after crashes) + Game Ready additions Jul 2026: Halo: Campaign Evolved, Gears of War: E-Day, Mistfall Hunter + Freelancer (HD) and The Witcher (2007) + Game Ready 610.88 addition Aug 2026: SILENT HILL f + Game Ready 616.56 additions Aug 2026: Hell Let Loose: Vietnam, Resonance: A Plague Tale Legacy, STAR WARS Zero Company + PowerWash Simulator 2 (Balanced) + v2.17: stable DCC identities for Marvel Rivals and Wuthering Waves + v2.18: Halo: The Master Chief Collection (Eco, community-verified) + v2.19: Game Ready 616.64 additions Sep 2026: NBA 2K27 and Onimusha: Way of the Sword + v2.20: Avatar: Frontiers of Pandora (Performance) + v2.21: Game Ready 616.92 additions: Active Matter, Aniimo and WARDOGS; refreshed 007 First Light and PUBG: BATTLEGROUNDS + v2.22: The Blood of Dawnwalker (Performance) + v2.23: 11 community-requested games; Apex Legends (Performance); shared Path of Exile / Path of Exile 2 Steam executable (Balanced) + v2.24: 15 community-requested games and NVIDIA executable aliases; DiRT Rally and DiRT Rally 2.0 (Balanced); shared Kingdom Come: Deliverance / Deliverance II entry (Performance) + v2.25: INDUSTRIA shipping executable alias + v2.26: 10 community-requested games; SMITE and King's Bounty II (Balanced); eight Eco entries; path-qualified Necesse Java runtime + v2.27: Game Ready 617.14 additions: AION 2 (Balanced) and CONTROL Resonant (Performance); refreshed Gears of War: E-Day and The Witcher 3 guidance + v2.28: community requests CODE VEIN II (Performance) and Valheim (Balanced) + v2.29: community request Marathon (Balanced) + v2.30: You Suck at Parking Steam executable alias (Eco); shared Call of Duty executable (Balanced) + v2.31: community request DCS World (Balanced) + v2.32: community request Arena Breakout: Infinite (Balanced) + v2.33: Space Marine 2 retail executable alias; Siralim Ultimate (Eco); Modern Warfare 4 (Balanced); STAR WARS: Galactic Racer and Valor Mortis (Performance), checked against the supplied 617.42 export + v2.34: Total War: WARHAMMER II (Balanced) + v2.35: community requests ACE COMBAT ZERO: THE BELKAN WAR (Eco) and ACE COMBAT 8: WINGS OF THEVE (Performance) + v2.36: community request Lessaria: Fantasy Kingdom Sim (Balanced) + v2.37: 20 community-requested games and mods; 16 Eco, three Balanced and one Performance starting presets + v2.38: Life is Strange, Life is Strange Remastered and path-qualified Blitzkrieg + v2.39: Golf It! shipping executable alias + v2.40: RUST retiered to Balanced; Clive Barker's Hellraiser: Revival added (Balanced) + v2.41: Assetto Corsa with path-qualified race executable and Transport Fever 3 (Balanced starting presets) + v2.42: Phantom Blade Zero (Performance) and Castlevania: Belmont's Curse (Balanced); Crimson Desert engine metadata corrected; Hellraiser shipping alias and ACE COMBAT 8 verification updated + v2.43: shared Total War: PHARAOH / PHARAOH DYNASTIES entry (Balanced) and RoboCop: Rogue City - Unfinished Business with shipping executable alias (Performance) + v2.44: Unigine Heaven 4.0 benchmark (Performance) with path-qualified executable detection",
+  "generated": "2026-10-26",
   "games": [
     {
       "name": "007 First Light",
@@ -4380,6 +4380,18 @@
       ]
     },
     {
+      "name": "RoboCop: Rogue City - Unfinished Business",
+      "process": "robocopunfinishedbusiness.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs",
+      "id": "robocop-rogue-city-unfinished-business",
+      "aliases": [
+        "robocopunfinishedbusiness-win64-shipping.exe"
+      ],
+      "note": "Estimated Performance starting preset for this standalone game; gameplay and undervolt stability not tested."
+    },
+    {
       "name": "Rock of Ages",
       "process": "rockofages.exe",
       "tier": "Eco",
@@ -5612,6 +5624,15 @@
       "note": "Estimated Eco starting preset. Community-reported executable for the M2EX engine variant; demanding mods may need Balanced."
     },
     {
+      "name": "Total War: PHARAOH / PHARAOH DYNASTIES",
+      "process": "pharaoh.exe",
+      "tier": "Balanced",
+      "confidence": "community",
+      "source": "nvidia-drs + community-request",
+      "id": "total-war-pharaoh",
+      "note": "Shared executable for Total War: PHARAOH and PHARAOH DYNASTIES. Estimated Balanced starting preset; gameplay and undervolt stability not tested."
+    },
+    {
       "name": "Total War: WARHAMMER II",
       "process": "warhammer2.exe",
       "tier": "Balanced",
@@ -5684,6 +5705,23 @@
       "aliases": [
         "undecember-win64-shipping.exe"
       ]
+    },
+    {
+      "id": "unigine-heaven-4",
+      "name": "Unigine Heaven 4.0",
+      "process": "unigine.heaven.exe",
+      "tier": "Performance",
+      "confidence": "nvidia-verified",
+      "source": "nvidia-drs + community-request",
+      "scaling": "gpu",
+      "ambiguous": true,
+      "conditionalProcesses": [
+        {
+          "process": "heaven.exe",
+          "pathSuffix": "heaven benchmark 4.0/bin/heaven.exe"
+        }
+      ],
+      "note": "UNIGINE 1 benchmark. Performance starting preset. Automatic detection requires the Heaven Benchmark 4.0/bin folder; the launcher is excluded. Benchmark and undervolt stability not tested."
     },
     {
       "name": "Universe Sandbox Legacy",
