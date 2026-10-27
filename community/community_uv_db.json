@@ -1713,6 +1713,23 @@
               },
               "date_found": "2026-10-25",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-29733e3c9e0d",
+              "board": "Palit Gamerock",
+              "freq_mhz": 3015,
+              "voltage_mv": 925,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-27",
+              "notes": ""
             }
           ]
         },
@@ -7693,6 +7710,57 @@
               },
               "date_found": "2026-10-24",
               "notes": ""
+            },
+            {
+              "preset_id": "amp-3060-38eee1811a06",
+              "board": "EVGA",
+              "freq_mhz": 1912,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-27",
+              "notes": ""
+            },
+            {
+              "preset_id": "amp-3060-2f5841745761",
+              "board": "EVGA",
+              "freq_mhz": 1905,
+              "voltage_mv": 906,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-27",
+              "notes": "stock max"
+            },
+            {
+              "preset_id": "amp-3060-8cfc1559d91d",
+              "board": "EVGA",
+              "freq_mhz": 1860,
+              "voltage_mv": 850,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-27",
+              "notes": "eco"
             }
           ]
         }
