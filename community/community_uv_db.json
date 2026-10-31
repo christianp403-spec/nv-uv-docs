@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-27",
+  "updated": "2026-10-31",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -2448,6 +2448,23 @@
                 "url": ""
               },
               "date_found": "2026-10-22",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-5bf7e447f634",
+              "board": "Palit",
+              "freq_mhz": 2950,
+              "voltage_mv": 925,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-30",
               "notes": ""
             }
           ]
