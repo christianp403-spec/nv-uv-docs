@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-31",
+  "updated": "2026-11-02",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -1730,6 +1730,23 @@
               },
               "date_found": "2026-10-27",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-558ad583fd39",
+              "board": "ASUS ROG ASTRAL",
+              "freq_mhz": 3052,
+              "voltage_mv": 925,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-01",
+              "notes": ""
             }
           ]
         },
@@ -2465,6 +2482,23 @@
                 "url": ""
               },
               "date_found": "2026-10-30",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-8b90c6957e56",
+              "board": "ASUS TUF",
+              "freq_mhz": 3007,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-02",
               "notes": ""
             }
           ]
@@ -4573,6 +4607,23 @@
               },
               "date_found": "2026-10-19",
               "notes": ""
+            },
+            {
+              "preset_id": "ada-4080-15befc56ef22",
+              "board": "4080 Gigabyte",
+              "freq_mhz": 2580,
+              "voltage_mv": 910,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1500,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-10-31",
+              "notes": ""
             }
           ]
         },
@@ -5681,6 +5732,23 @@
               },
               "date_found": "2026-10-17",
               "notes": "OC power stable"
+            },
+            {
+              "preset_id": "ada-4070-b3fee78d3512",
+              "board": "NVIDIA Reference 4070",
+              "freq_mhz": 2617,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 350,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-02",
+              "notes": "Best for Gaming/Energy"
             }
           ]
         },
@@ -5979,6 +6047,23 @@
                 "url": ""
               },
               "date_found": "2026-10-13",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4060-d1964c3c78b3",
+              "board": "Zotac",
+              "freq_mhz": 2887,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-01",
               "notes": ""
             }
           ]
