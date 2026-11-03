@@ -1,4 +1,14 @@
 {
   "version": "0.1.9.5",
-  "url": "https://github.com/christianp403-spec/NV-UV-Play/releases/latest"
+  "url": "https://github.com/christianp403-spec/NV-UV-Play/releases/latest",
+  "notice": {
+    "schema": 1,
+    "active": true,
+    "id": "play-notice-test-20261103-r10",
+    "title": "Test message: emergency notice channel",
+    "message": "This is a test of the emergency notice channel in Play 2.1.9. The project notice channel is working. No action or download is required. You can use Visit project on GitHub below to open the official project.",
+    "expiresUtc": "2026-11-03T02:16:26.000Z",
+    "minVersion": "2.1.9",
+    "maxVersion": "2.1.9"
+  }
 }
