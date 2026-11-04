@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-02",
+  "updated": "2026-11-04",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -2499,6 +2499,23 @@
                 "url": ""
               },
               "date_found": "2026-11-02",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-e71dca69d741",
+              "board": "Gigabyte",
+              "freq_mhz": 2950,
+              "voltage_mv": 925,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-03",
               "notes": ""
             }
           ]
@@ -5195,6 +5212,23 @@
               },
               "date_found": "2026-09-10",
               "notes": ""
+            },
+            {
+              "preset_id": "ada-4070-ti-f9320eb6c1a7",
+              "board": "Gigabyte Eagle OC",
+              "freq_mhz": 2805,
+              "voltage_mv": 975,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 1600,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-03",
+              "notes": ""
             }
           ]
         },
@@ -6524,6 +6558,23 @@
               },
               "date_found": "2026-09-22",
               "notes": ""
+            },
+            {
+              "preset_id": "amp-3080-ti-a4eff5b8e1f0",
+              "board": null,
+              "freq_mhz": 1920,
+              "voltage_mv": 900,
+              "power_limit_pct": 108,
+              "vram_offset_mhz": 1120,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-04",
+              "notes": "Hybrid +105 OC with UV 900mv@1920mhz"
             }
           ]
         },
