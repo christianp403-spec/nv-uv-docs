@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "ratings": {
     "ada-4060-483e3d92acd8": {
       "avg": 3.67,
@@ -151,6 +151,10 @@
       "votes": 1
     },
     "ada-4080-d8611dc6915f": {
+      "avg": 5,
+      "votes": 1
+    },
+    "ada-4080-f6ae7c168edd": {
       "avg": 5,
       "votes": 1
     },
@@ -531,8 +535,8 @@
       "votes": 10
     },
     "bw-5070-ti-6c413b61e900": {
-      "avg": 5,
-      "votes": 1
+      "avg": 4.5,
+      "votes": 2
     },
     "bw-5070-ti-719e2e9bb16d": {
       "avg": 2,
@@ -551,8 +555,8 @@
       "votes": 2
     },
     "bw-5070-ti-82c93d4b84f4": {
-      "avg": 3.86,
-      "votes": 7
+      "avg": 3.88,
+      "votes": 8
     },
     "bw-5070-ti-84f02792805a": {
       "avg": 3,
