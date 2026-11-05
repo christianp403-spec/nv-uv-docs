@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -4019,6 +4019,23 @@
               },
               "date_found": "2026-09-29",
               "notes": ""
+            },
+            {
+              "preset_id": "ada-4090-67cc0b59d02b",
+              "board": "Gainward Phantom RTX 4090",
+              "freq_mhz": 2850,
+              "voltage_mv": 990,
+              "power_limit_pct": 65,
+              "vram_offset_mhz": 1100,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-05",
+              "notes": "BF6\r\nCrimson Desert\r\nEnshrouded\r\nArc Raiders\r\nBodycam\r\nKCD 2\r\nDeath Standing 2"
             }
           ]
         },
@@ -6575,6 +6592,23 @@
               },
               "date_found": "2026-11-04",
               "notes": "Hybrid +105 OC with UV 900mv@1920mhz"
+            },
+            {
+              "preset_id": "amp-3080-ti-97edf6be47d0",
+              "board": "EVGA FTW3 Ultra",
+              "freq_mhz": 1830,
+              "voltage_mv": 825,
+              "power_limit_pct": 95,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-05",
+              "notes": ""
             }
           ]
         },
@@ -7513,6 +7547,23 @@
               },
               "date_found": "2026-09-18",
               "notes": "максимум"
+            },
+            {
+              "preset_id": "amp-3070-bb3d16c9962a",
+              "board": "Gigabyte",
+              "freq_mhz": 1980,
+              "voltage_mv": 912,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-05",
+              "notes": ""
             }
           ]
         },
