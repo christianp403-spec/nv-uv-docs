@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-05",
+  "updated": "2026-11-07",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -2517,6 +2517,23 @@
               },
               "date_found": "2026-11-03",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-06126cf14651",
+              "board": "Gigabyte",
+              "freq_mhz": 2805,
+              "voltage_mv": 885,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-06",
+              "notes": "stability"
             }
           ]
         },
@@ -4036,6 +4053,23 @@
               },
               "date_found": "2026-11-05",
               "notes": "BF6\r\nCrimson Desert\r\nEnshrouded\r\nArc Raiders\r\nBodycam\r\nKCD 2\r\nDeath Standing 2"
+            },
+            {
+              "preset_id": "ada-4090-055f57b544fe",
+              "board": "Gainward Phantom RTX 4090",
+              "freq_mhz": 2797,
+              "voltage_mv": 950,
+              "power_limit_pct": 65,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-06",
+              "notes": ""
             }
           ]
         },
@@ -4657,6 +4691,23 @@
                 "url": ""
               },
               "date_found": "2026-10-31",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4080-6f6f04222076",
+              "board": "Gigabyte RTX 4080 Gaming OC",
+              "freq_mhz": 2767,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-06",
               "notes": ""
             }
           ]
@@ -7965,6 +8016,23 @@
               },
               "date_found": "2026-10-27",
               "notes": "eco"
+            },
+            {
+              "preset_id": "amp-3060-0dafe0437349",
+              "board": null,
+              "freq_mhz": 1740,
+              "voltage_mv": 900,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-06",
+              "notes": ""
             }
           ]
         }
