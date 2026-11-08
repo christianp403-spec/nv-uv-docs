@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -1747,6 +1747,23 @@
               },
               "date_found": "2026-11-01",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5080-866077fa2826",
+              "board": "MSI VANGUARD SOC",
+              "freq_mhz": 3112,
+              "voltage_mv": 950,
+              "power_limit_pct": 111,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-08",
+              "notes": "Stable 10 k Speedway 4K"
             }
           ]
         },
@@ -2534,6 +2551,91 @@
               },
               "date_found": "2026-11-06",
               "notes": "stability"
+            },
+            {
+              "preset_id": "bw-5070-ti-3419d1c3dd06",
+              "board": "ASUS (Generic)",
+              "freq_mhz": 2662,
+              "voltage_mv": 940,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-07",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-526b5638a3f6",
+              "board": "MSI RTX 5070 Ti Expert OC",
+              "freq_mhz": 3172,
+              "voltage_mv": 990,
+              "power_limit_pct": 110,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-07",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-657a7344e168",
+              "board": "ASUS TUF",
+              "freq_mhz": 3232,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-07",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-64b8700fa70b",
+              "board": "ASUS TUF GAMING OC",
+              "freq_mhz": 3187,
+              "voltage_mv": 950,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-07",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-30a0b3e39074",
+              "board": "ASUS (Generic)",
+              "freq_mhz": 1920,
+              "voltage_mv": 800,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-08",
+              "notes": ""
             }
           ]
         },
@@ -3168,6 +3270,40 @@
               },
               "date_found": "2026-10-26",
               "notes": "Fresh and stable OC-UV"
+            },
+            {
+              "preset_id": "bw-5070-c3e243e57253",
+              "board": "Palit",
+              "freq_mhz": 3000,
+              "voltage_mv": 940,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-07",
+              "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-5beb442cec6b",
+              "board": "Palit",
+              "freq_mhz": 1860,
+              "voltage_mv": 850,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-07",
+              "notes": ""
             }
           ]
         },
@@ -4708,6 +4844,23 @@
                 "url": ""
               },
               "date_found": "2026-11-06",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4080-ffdde99afe47",
+              "board": "MSI Ventus 3x OC",
+              "freq_mhz": 2730,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-07",
               "notes": ""
             }
           ]
@@ -6519,6 +6672,23 @@
               },
               "date_found": "2026-08-31",
               "notes": "Max Performance"
+            },
+            {
+              "preset_id": "amp-3090-43c8c7fc4b62",
+              "board": null,
+              "freq_mhz": 1785,
+              "voltage_mv": 900,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-07",
+              "notes": ""
             }
           ]
         },
