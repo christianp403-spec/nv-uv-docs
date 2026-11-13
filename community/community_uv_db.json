@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-10",
+  "updated": "2026-11-13",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -3566,6 +3566,381 @@
               "notes": ""
             }
           ]
+        },
+        {
+          "model": "RTX 5050 Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "bw-5050-laptop-gpu-acbf354d101a",
+              "board": "Lenovo LOQ 15IRX10",
+              "freq_mhz": 2600,
+              "voltage_mv": 925,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 250,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/LenovoLOQ/comments/1qmqwvc/loq_15irx10_how_i_dropped_temps_by_15c_in_a/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "No-Chain-6302: Balanced mode; requested 2600 MHz, often 2400-2550 MHz observed. CPU tuning also changed; one-hour OCCT claim does not separate CPU/GPU scope."
+            },
+            {
+              "preset_id": "bw-5050-laptop-gpu-a7e1bd00d18c",
+              "board": "Lenovo LOQ (i5-13450HX)",
+              "freq_mhz": 2500,
+              "voltage_mv": 925,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/ThrottleStop/comments/1u3sl3a/ho_bisogno_di_aiuto_mi_conviene_fare_undervolt/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "Historical_Fish_6265, comment: same LOQ configuration as the thread starter, Performance mode, 1080p Ultra at 120 fps cap. CPU undervolt and clock limits also changed. Game and test duration unspecified."
+            }
+          ]
+        },
+        {
+          "model": "RTX 5060 Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "bw-5060-laptop-gpu-5a310f5c0d99",
+              "board": "Lenovo Legion 5a (Ryzen AI 7 450)",
+              "freq_mhz": 2610,
+              "voltage_mv": 830,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/LenovoLegion/comments/1x1t5hg/today_i_undervolted_and_overclocked_my_rtx_5060/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "Fnt4st1c: Cyberpunk 2077, 1600p Ultra, DLSS Balanced, no RT; cooling pad and maximum fans. Includes substantial memory OC; no long stability test."
+            },
+            {
+              "preset_id": "bw-5060-laptop-gpu-693952d76ed2",
+              "board": "ASUS ROG Strix G16 G614PM (Ryzen 9 8940HX)",
+              "freq_mhz": 2940,
+              "voltage_mv": 890,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 0,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/GamingLaptops/comments/1xdozwp/rtx_5060_laptop_gpu_undervolt_on_rog_strix_g16/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "Top_Yogurtcloset437: 115 W rating (100+15 Dynamic Boost); four to five Superposition 1080p Extreme runs, about 68-72 W reported. Stock memory. No long gaming stability test specified."
+            },
+            {
+              "preset_id": "bw-5060-laptop-gpu-e2fda0f86a33",
+              "board": "Lenovo LOQ (i5-13450HX)",
+              "freq_mhz": 2650,
+              "voltage_mv": 885,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/ThrottleStop/comments/1rpj7im/undervolting_legion_5i_i714700hx_rtx_5060/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "navrc1555, comment: LOQ with 100 W GPU, not the thread starter's Legion. Reports daily use, about 5 C lower temperatures and 1-2% lower performance. CPU tuning also changed; notebook SKU and driver unknown."
+            },
+            {
+              "preset_id": "bw-5060-laptop-gpu-3fffc9358bc6",
+              "board": "Razer (exact notebook model not reported)",
+              "freq_mhz": 2600,
+              "voltage_mv": 825,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/Undervolting/comments/1mhb004/undervolting_rtx_5070_laptop/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "RhoOmegaBeta, comment: one of two owned notebooks using this target and memory offset; Resident Evil Requiem mentioned. Razer model and TGP not provided. Same author also reports a Legion 5070."
+            },
+            {
+              "preset_id": "bw-5060-laptop-gpu-39abe87cd332",
+              "board": "NV-UV Performance (desktop reference)",
+              "freq_mhz": 2900,
+              "voltage_mv": 925,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 0,
+              "entry_kind": "desktop_reference",
+              "confidence": "experimental",
+              "report_count": 0,
+              "verified": false,
+              "source": {
+                "site": "NV-UV Play",
+                "url": ""
+              },
+              "date_found": "2026-11-10",
+              "notes": "Built-in NV-UV Play desktop Performance values, explicitly made available as an experimental reference. Not tested on this laptop GPU; no notebook stability report. Notebook power limit is not imported. Desktop RTX 5060 uses the RTX 5060 Ti table."
+            }
+          ]
+        },
+        {
+          "model": "RTX 5070 Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "bw-5070-laptop-gpu-8a3811276cd6",
+              "board": "Lenovo LOQ 15IRX10 (i7-13650HX)",
+              "freq_mhz": 2300,
+              "voltage_mv": 925,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/Undervolting/comments/1mhb004/undervolting_rtx_5070_laptop/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "adrengs: reports this working target; lower than 925 mV around 2325 MHz caused problems. Other commenters report different results on other notebooks."
+            },
+            {
+              "preset_id": "bw-5070-laptop-gpu-267b1d618475",
+              "board": "Lenovo Legion (exact model not reported)",
+              "freq_mhz": 2600,
+              "voltage_mv": 825,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1000,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/Undervolting/comments/1mhb004/undervolting_rtx_5070_laptop/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "RhoOmegaBeta, comment: one of two owned notebooks using this target and memory offset; Resident Evil Requiem mentioned. Exact Legion model and TGP unknown. Same author also reports a Razer 5060."
+            },
+            {
+              "preset_id": "bw-5070-laptop-gpu-f73c15b88bfa",
+              "board": "NV-UV Performance (desktop reference)",
+              "freq_mhz": 3000,
+              "voltage_mv": 940,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 0,
+              "entry_kind": "desktop_reference",
+              "confidence": "experimental",
+              "report_count": 0,
+              "verified": false,
+              "source": {
+                "site": "NV-UV Play",
+                "url": ""
+              },
+              "date_found": "2026-11-10",
+              "notes": "Built-in NV-UV Play desktop Performance values, explicitly made available as an experimental reference. Not tested on this laptop GPU; no notebook stability report. Notebook power limit is not imported."
+            }
+          ]
+        },
+        {
+          "model": "RTX 5070 Ti Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "bw-5070-ti-laptop-gpu-4e3633baa486",
+              "board": "MSI Vector 16 HX AI",
+              "freq_mhz": 2500,
+              "voltage_mv": 800,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/MSILaptops/comments/1r797kp/msi_vector_16_hx_ai_gpu_undervolt_result/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "F4rewell: Afterburner target reported; no comprehensive stability procedure or driver specified. Same author later reported a different lower-power target."
+            },
+            {
+              "preset_id": "bw-5070-ti-laptop-gpu-41a84186f743",
+              "board": "ASUS ROG Zephyrus G14 (2025)",
+              "freq_mhz": 1900,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 400,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/ZephyrusG14/comments/1mo4frm/anyone_here_undervolting_their_rtx_5070_ti_in_the/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "Aimsmix: preliminary Adobe Creative Cloud workload report, curve flattened above this point. Gaming and comprehensive stress testing not reported."
+            },
+            {
+              "preset_id": "bw-5070-ti-laptop-gpu-a37977a2bd8f",
+              "board": "MSI notebook (model not confirmed in follow-up)",
+              "freq_mhz": 2300,
+              "voltage_mv": 770,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/GamingLaptops/comments/1t61mpx/what_is_your_experience_with_undervolting_the_rtx/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "F4rewell: MSI Center Balanced, Crimson Desert at 120 fps cap. PTM/thermal putty and CPU tuning also changed. Same author as the Vector 16 HX AI 800 mV report; not an independent hardware confirmation."
+            },
+            {
+              "preset_id": "bw-5070-ti-laptop-gpu-f2807d7277e6",
+              "board": "NV-UV Performance (desktop reference)",
+              "freq_mhz": 2950,
+              "voltage_mv": 925,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 0,
+              "entry_kind": "desktop_reference",
+              "confidence": "experimental",
+              "report_count": 0,
+              "verified": false,
+              "source": {
+                "site": "NV-UV Play",
+                "url": ""
+              },
+              "date_found": "2026-11-10",
+              "notes": "Built-in NV-UV Play desktop Performance values, explicitly made available as an experimental reference. Not tested on this laptop GPU; no notebook stability report. Notebook power limit is not imported."
+            }
+          ]
+        },
+        {
+          "model": "RTX 5080 Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "bw-5080-laptop-gpu-c0cd6ac7aa22",
+              "board": "MSI Vector 16 (Ryzen 9 8940HX)",
+              "freq_mhz": 2515,
+              "voltage_mv": 875,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/overclocking/comments/1px3b56/rtx_5080_laptop_gpu_undervolting_help/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "aaron_godane: approximate clock, one week of daily testing reported. Balanced/Extreme modes differ in power budget. Driver and exhaustive test coverage unknown."
+            },
+            {
+              "preset_id": "bw-5080-laptop-gpu-7e87b72ed7ee",
+              "board": "MSI Vector 16",
+              "freq_mhz": 2792,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/overclocking/comments/1px3b56/rtx_5080_laptop_gpu_undervolting_help/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "strz314, update 2026-04-06: 175 W context; lower voltage caused driver crashes. Different owner from the 875 mV report; no comprehensive stability test specified."
+            },
+            {
+              "preset_id": "bw-5080-laptop-gpu-df6eb80ac459",
+              "board": "NV-UV Performance (desktop reference)",
+              "freq_mhz": 2980,
+              "voltage_mv": 925,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 0,
+              "entry_kind": "desktop_reference",
+              "confidence": "experimental",
+              "report_count": 0,
+              "verified": false,
+              "source": {
+                "site": "NV-UV Play",
+                "url": ""
+              },
+              "date_found": "2026-11-10",
+              "notes": "Built-in NV-UV Play desktop Performance values, explicitly made available as an experimental reference. Not tested on this laptop GPU; no notebook stability report. Notebook power limit is not imported."
+            }
+          ]
+        },
+        {
+          "model": "RTX 5090 Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "bw-5090-laptop-gpu-bd424fa765a4",
+              "board": "HP Omen Max 16 (Core Ultra 9 275HX)",
+              "freq_mhz": 2302,
+              "voltage_mv": 775,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 0,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/HPOmen/comments/1txcd6a/datapoint_successful_omen_max_16_5090_undervolt/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "larrytheevilbunnie: Performance mode, PTM replaced; Time Spy/Steel Nomad scores reported with maximum fans. Benchmark links not independently verified."
+            },
+            {
+              "preset_id": "bw-5090-laptop-gpu-f68373515b0b",
+              "board": "Lenovo Legion Pro 7i",
+              "freq_mhz": 2800,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 900,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/GamingLaptops/comments/1x0u12q/lenovo_legion_7i_pro_rtx_5090_time_spy_results/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "Normal-Honeydew5272: Time Spy and games reported; also mentions ten hours of mixed use including 4K video. This is not a ten-hour GPU stress test. CPU undervolt also active; generation and TGP unspecified."
+            },
+            {
+              "preset_id": "bw-5090-laptop-gpu-e5f1f076beba",
+              "board": "NV-UV Performance (desktop reference)",
+              "freq_mhz": 3000,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 0,
+              "entry_kind": "desktop_reference",
+              "confidence": "experimental",
+              "report_count": 0,
+              "verified": false,
+              "source": {
+                "site": "NV-UV Play",
+                "url": ""
+              },
+              "date_found": "2026-11-10",
+              "notes": "Built-in NV-UV Play desktop Performance values, explicitly made available as an experimental reference. Not tested on this laptop GPU; no notebook stability report. Notebook power limit is not imported."
+            }
+          ]
         }
       ]
     },
@@ -6373,6 +6748,184 @@
               "notes": ""
             }
           ]
+        },
+        {
+          "model": "RTX 4050 Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "ada-4050-laptop-gpu-4b7117f7567e",
+              "board": "ASUS ROG Flow Z13 (65 W)",
+              "freq_mhz": 2350,
+              "voltage_mv": 850,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/FlowZ13/comments/15ph28c/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "Owner: Red Dead Redemption 2, custom fan curve; reports 54 W instead of 65 W and 78 C instead of 83 C. No broad stability test."
+            },
+            {
+              "preset_id": "ada-4050-laptop-gpu-b241b35d4323",
+              "board": "Lenovo LOQ 15APH8 (Ryzen 7 7840HS)",
+              "freq_mhz": 2700,
+              "voltage_mv": 975,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 200,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/GamingLaptops/comments/18i6ay7/lenovo_loq_rtx_4050_performance_undervolting/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "Gabrieltk5: 95 W maximum, around 70 W gaming; Time Spy 8154 to 9068 reported. Cooling pad, 30-35 C ambient and CPU power capped at 60 W. No long stability test specified."
+            },
+            {
+              "preset_id": "ada-4050-laptop-gpu-7d538c1418c2",
+              "board": "HP Victus 15-fb2082wm",
+              "freq_mhz": 2625,
+              "voltage_mv": 970,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/HPVictus/comments/1gdgk3b/i_undervolt_my_gpu_on_the_victus_15_and_it_is/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "-Krotik-, comment: identifies the same notebook model, reports 2625 MHz at 970 mV working; 960 mV felt less smooth. This is not the thread starter's different setting or two-day test. Longer stability coverage unknown."
+            }
+          ]
+        },
+        {
+          "model": "RTX 4060 Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "ada-4060-laptop-gpu-cafa16570dbd",
+              "board": "Notebook model not reported",
+              "freq_mhz": 2370,
+              "voltage_mv": 875,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/GamingLaptops/comments/1kv6j4o/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "bankyll: QHD gaming, reports 80-85 W and about 5% lower performance than stock. Exact notebook, driver and test duration not provided."
+            },
+            {
+              "preset_id": "ada-4060-laptop-gpu-da36d356a953",
+              "board": "Gigabyte G5 KF (i5-12500H)",
+              "freq_mhz": 2475,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 800,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Tom's Hardware Forum",
+                "url": "https://forums.tomshardware.com/threads/performance-mode-has-better-scores-in-benches-but-worse-fps-in-games.3872252/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "redzo: PTM7950, laptop stand and cool room; CS2, Marvel Rivals and benchmarks. Reports inconsistent FPS between OEM power modes, still unresolved in the thread. This is a reported setting, not a confirmed performance fix."
+            }
+          ]
+        },
+        {
+          "model": "RTX 4070 Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "ada-4070-laptop-gpu-9506479f551d",
+              "board": "Notebook model not reported (105 W)",
+              "freq_mhz": 2520,
+              "voltage_mv": 915,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/overclocking/comments/1izdws0/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "rennardboi: reports this as the more stable daily target for a 105 W 4070; higher 2700 MHz target was not sustained. Notebook SKU and test duration unknown."
+            }
+          ]
+        },
+        {
+          "model": "RTX 4080 Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "ada-4080-laptop-gpu-de2c13b68161",
+              "board": "ASUS ROG Zephyrus G14",
+              "freq_mhz": 2325,
+              "voltage_mv": 825,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 200,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/GamingLaptops/comments/13lo8uc/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "Metalogic_95: 125 W maximum, Time Spy graphics 16509 reported; seems stable. Raised stand, no cooling pad. No independent verification."
+            },
+            {
+              "preset_id": "ada-4080-laptop-gpu-afdfe86bb129",
+              "board": "HP Omen 17 (2023)",
+              "freq_mhz": 2160,
+              "voltage_mv": 815,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 1200,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/nvidia/comments/17z2rjc/rtx_4080_laptop_voltage_frequency_curve_for_uv_oc/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "hydrophile-fish: upper flat point of a tuned full curve. Alan Wake 2 with maximum ray tracing, 120-140 W and 70-75 C; Speed Way 4611 reported. UV Try stores this target, not the original full curve."
+            }
+          ]
+        },
+        {
+          "model": "RTX 4090 Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "ada-4090-laptop-gpu-86edd2d66962",
+              "board": "Lenovo Legion Pro 7i Gen 8 (13900HX)",
+              "freq_mhz": 2040,
+              "voltage_mv": 775,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/GamingLaptops/comments/13hjvw8/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "rayw_reddit: Battlefield V/2042 stutters reduced. CPU UV later added; custom-mode issues remained under investigation. Not a confirmed fix for other laptops."
+            }
+          ]
         }
       ]
     },
@@ -8254,6 +8807,245 @@
               },
               "date_found": "2026-11-06",
               "notes": ""
+            }
+          ]
+        },
+        {
+          "model": "RTX 3050 Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "amp-3050-laptop-gpu-c14b640bbaab",
+              "board": "Lenovo IdeaPad Gaming 3 15ACH6",
+              "freq_mhz": 1600,
+              "voltage_mv": 725,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/GamingLaptops/comments/xgyc2w/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "Sava42069: 85 W model; gaming report, FurMark still thermally throttled. Later disclosed dust buildup. No comprehensive stability test."
+            }
+          ]
+        },
+        {
+          "model": "RTX 3050 Ti Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "amp-3050-ti-laptop-gpu-cd33d79951b7",
+              "board": "ASUS TUF F15 (i7-12700H)",
+              "freq_mhz": 1900,
+              "voltage_mv": 850,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/pcmasterrace/comments/1h4sd9o/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "Owner reports apparently stable operation and lower temperatures on 95 W model; test duration and driver not provided."
+            }
+          ]
+        },
+        {
+          "model": "RTX 3060 Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "amp-3060-laptop-gpu-bca70f72ad57",
+              "board": "Lenovo Legion 5 Pro 16ACH6H",
+              "freq_mhz": 1900,
+              "voltage_mv": 925,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/LenovoLegion/comments/18z4kya/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "Owner: CS2, Performance mode, Ryzen 5 5600H. Reports 70-80 W, 80-82 C with higher peaks. No long stability test specified."
+            }
+          ]
+        },
+        {
+          "model": "RTX 3070 Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "amp-3070-laptop-gpu-46aaf1213004",
+              "board": "Lenovo Legion 5 Pro (Ryzen 7 5800H)",
+              "freq_mhz": 1755,
+              "voltage_mv": 825,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 800,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/Lenovo/comments/r6ea1k/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "jovial_hamilton: 140 W GPU, reported working target. CPU boost/OS changes also discussed; later used a different full curve. Not a universal preset."
+            },
+            {
+              "preset_id": "amp-3070-laptop-gpu-5d21556d86b9",
+              "board": "Lenovo Legion 5 (Ryzen 7 5800H, 130 W)",
+              "freq_mhz": 1950,
+              "voltage_mv": 950,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 400,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/LenovoLegion/comments/13zdasi/ill_never_regret_undervolting_my_gpu/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "chippyt, comment: upper point of a full curve from 1650 MHz at 775 mV to 1950 MHz at 950 mV; memory +400. Games often use lower points. UV Try stores the upper target, not the original full curve; long test coverage unknown."
+            }
+          ]
+        },
+        {
+          "model": "RTX 3070 Ti Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "amp-3070-ti-laptop-gpu-b38fe4ad7436",
+              "board": "Notebook model not reported (150 W)",
+              "freq_mhz": 1724,
+              "voltage_mv": 800,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 600,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/GamingLaptops/comments/1iu88jk/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "Owner report: 150 W model, GPU-heavy games; reported 3-5% gain with memory OC. Lower voltage at this clock crashed. Driver and notebook SKU unknown."
+            },
+            {
+              "preset_id": "amp-3070-ti-laptop-gpu-145289a86b5f",
+              "board": "Lenovo Legion 5i Pro 16IAH7H",
+              "freq_mhz": 1500,
+              "voltage_mv": 700,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/LenovoLegion/comments/1jci885/3070ti_undervolt/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "Original poster: GTA V FiveM with heavy graphics mods, about 45 fps before/after; reports 86 to 76 C after changing the voltage from 800 to 700 mV. PTM7950 repaste also performed. No broader stability test."
+            },
+            {
+              "preset_id": "amp-3070-ti-laptop-gpu-c95fbd8eb00c",
+              "board": "HP Omen 16 (Ryzen 9 6900HX, 140 W)",
+              "freq_mhz": 1830,
+              "voltage_mv": 875,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 800,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/overclocking/comments/1i85d3b/3070ti_and_ryzen_9_6900hx_omen_16_laptop_timespy/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "cufishguy: Time Spy and Fire Strike results, explicit 1830 MHz/+800 memory/875 mV setting in comment; identifies 140 W GPU. CPU undervolt also active. Independent stability verification unavailable."
+            }
+          ]
+        },
+        {
+          "model": "RTX 3080 Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "amp-3080-laptop-gpu-f9cc8610d639",
+              "board": "Lenovo Legion (exact model not reported)",
+              "freq_mhz": 1725,
+              "voltage_mv": 775,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Hardwareluxx",
+                "url": "https://www.hardwareluxx.de/community/threads/lenovo-legion-5-pro-legion-7-optimierung-ram-overclocking-undervolting-repaste-mods.1305245/page-30"
+              },
+              "date_found": "2026-11-10",
+              "notes": "streetjumper16, 2022-02-07: Final Fantasy benchmark passed after enabling BIOS OC. 1800 MHz at 800 mV crashed. No longer gaming stability test."
+            },
+            {
+              "preset_id": "amp-3080-laptop-gpu-f485482a3130",
+              "board": "Lenovo Legion 7i (165 W)",
+              "freq_mhz": 1845,
+              "voltage_mv": 837,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/GamingLaptops/comments/rwf8wi/legion_7i_3080_gpu_undervolting_results_why_you/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "braxtonjames: Unigine benchmark, 2560x1600 Ultra/8xAA, 72% fans, raised rear and repaste. Reports 101.8 fps, 162 W and 66 C. Same notebook as the 781 mV entry; no long gaming stability test specified."
+            },
+            {
+              "preset_id": "amp-3080-laptop-gpu-fed3c5237412",
+              "board": "Lenovo Legion 7i (165 W)",
+              "freq_mhz": 1710,
+              "voltage_mv": 781,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Reddit",
+                "url": "https://www.reddit.com/r/GamingLaptops/comments/rwf8wi/legion_7i_3080_gpu_undervolting_results_why_you/"
+              },
+              "date_found": "2026-11-10",
+              "notes": "braxtonjames: same notebook and Unigine test as the 837 mV entry; reports 97.5 fps, 131 W and 59 C. Fixed fans, raised rear and repaste. Two targets from one owner, not independent confirmations."
+            }
+          ]
+        },
+        {
+          "model": "RTX 3080 Ti Laptop GPU",
+          "entries": [
+            {
+              "preset_id": "amp-3080-ti-laptop-gpu-478e20d51f10",
+              "board": "Notebook model not reported (175 W)",
+              "freq_mhz": 1520,
+              "voltage_mv": 750,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "low",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "Hardwareluxx",
+                "url": "https://www.hardwareluxx.de/community/threads/nvidia-ampere-rtx3000-undervolting-sammler.1283626/page-42"
+              },
+              "date_found": "2026-11-10",
+              "notes": "BmwM3michi, 2023-02-28: Time Spy only, other workloads explicitly untested; reported less frequent power limiting. Notebook SKU and driver unknown."
             }
           ]
         }
