@@ -1798,6 +1798,23 @@
               },
               "date_found": "2026-11-09",
               "notes": "seit 2 Monaten alle aktuellen Games mit Max Einstellungen RT/PT zu 100% stabil :) \r\nHW-Luxx/Zuchtmaista"
+            },
+            {
+              "preset_id": "bw-5080-30623d9baea0",
+              "board": "PNY",
+              "freq_mhz": 3255,
+              "voltage_mv": 1050,
+              "power_limit_pct": 110,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-12",
+              "notes": "50800000000000000000"
             }
           ]
         },
