@@ -6892,6 +6892,23 @@
               },
               "date_found": "2026-11-10",
               "notes": "redzo: PTM7950, laptop stand and cool room; CS2, Marvel Rivals and benchmarks. Reports inconsistent FPS between OEM power modes, still unresolved in the thread. This is a reported setting, not a confirmed performance fix."
+            },
+            {
+              "preset_id": "ada-4060-laptop-gpu-4e5c4432ca2c",
+              "board": "ASUS ROG Strix G16 (2023) G614JV",
+              "freq_mhz": 2400,
+              "voltage_mv": 900,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 800,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-15",
+              "notes": ""
             }
           ]
         },
