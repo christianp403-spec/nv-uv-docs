@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-13",
+  "updated": "2026-11-15",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -1815,6 +1815,23 @@
               },
               "date_found": "2026-11-12",
               "notes": "50800000000000000000"
+            },
+            {
+              "preset_id": "bw-5080-d499cd311777",
+              "board": "Gigabyte AERO OC SFF RTX 5080",
+              "freq_mhz": 2842,
+              "voltage_mv": 885,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-14",
+              "notes": ""
             }
           ]
         },
@@ -2687,6 +2704,23 @@
               },
               "date_found": "2026-11-08",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-ti-e6be75b8cf73",
+              "board": "PNY",
+              "freq_mhz": 2842,
+              "voltage_mv": 865,
+              "power_limit_pct": 83,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-15",
+              "notes": "max ~235w using dlss5 dlaa"
             }
           ]
         },
