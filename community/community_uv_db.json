@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-15",
+  "updated": "2026-11-17",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -841,6 +841,23 @@
               },
               "date_found": "2026-11-09",
               "notes": "For Tensor/Cuda operations as well as local LLM"
+            },
+            {
+              "preset_id": "bw-5090-a03babb70b6f",
+              "board": "ASUS RoG Astral 5090",
+              "freq_mhz": 2902,
+              "voltage_mv": 935,
+              "power_limit_pct": null,
+              "vram_offset_mhz": null,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-16",
+              "notes": "Crimson Desert 4K all max. + DLSS 5.0 (DLSSNR 310.9.16)"
             }
           ]
         },
@@ -6796,6 +6813,23 @@
                 "url": ""
               },
               "date_found": "2026-11-01",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4060-f5b989fb017e",
+              "board": "Inno3D",
+              "freq_mhz": 2475,
+              "voltage_mv": 925,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-16",
               "notes": ""
             }
           ]
