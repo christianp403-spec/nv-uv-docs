@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-18",
+  "updated": "2026-11-20",
   "ratings": {
     "ada-4060-483e3d92acd8": {
       "avg": 3.67,
@@ -382,10 +382,6 @@
       "avg": 3,
       "votes": 1
     },
-    "bw-5050-laptop-gpu-acbf354d101a": {
-      "avg": 5,
-      "votes": 1
-    },
     "bw-5060-ti-0d8f9e2b0c24": {
       "avg": 3.75,
       "votes": 4
@@ -479,8 +475,8 @@
       "votes": 3
     },
     "bw-5070-c22a4b5e349d": {
-      "avg": 4.57,
-      "votes": 7
+      "avg": 4.38,
+      "votes": 8
     },
     "bw-5070-c2e2285a7418": {
       "avg": 4,
