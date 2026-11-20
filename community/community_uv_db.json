@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-18",
+  "updated": "2026-11-20",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -6532,6 +6532,23 @@
               },
               "date_found": "2026-11-08",
               "notes": ""
+            },
+            {
+              "preset_id": "ada-4070-14dc80a1b106",
+              "board": "ASUS",
+              "freq_mhz": 2685,
+              "voltage_mv": 1010,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 750,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-20",
+              "notes": ""
             }
           ]
         },
@@ -6864,6 +6881,23 @@
                 "url": ""
               },
               "date_found": "2026-11-16",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4060-8da00ddf48aa",
+              "board": "Gigabyte",
+              "freq_mhz": 2077,
+              "voltage_mv": 845,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-19",
               "notes": ""
             }
           ]
