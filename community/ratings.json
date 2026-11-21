@@ -263,10 +263,14 @@
       "votes": 1
     },
     "amp-3070-16c9cafbfbdb": {
-      "avg": 4.67,
-      "votes": 3
+      "avg": 3.75,
+      "votes": 4
     },
     "amp-3070-1a0869a4b8e8": {
+      "avg": 4,
+      "votes": 1
+    },
+    "amp-3070-286ee568b704": {
       "avg": 4,
       "votes": 1
     },
@@ -274,9 +278,13 @@
       "avg": 4,
       "votes": 2
     },
-    "amp-3070-6eefbe072994": {
+    "amp-3070-5a263f7e2939": {
       "avg": 2,
       "votes": 1
+    },
+    "amp-3070-6eefbe072994": {
+      "avg": 3.5,
+      "votes": 2
     },
     "amp-3070-72d8634566df": {
       "avg": 2,
@@ -345,6 +353,10 @@
     "amp-3080-f399b1e4c45c": {
       "avg": 5,
       "votes": 2
+    },
+    "amp-3080-f432ea0b00d3": {
+      "avg": 4,
+      "votes": 1
     },
     "amp-3080-ti-242e231bca95": {
       "avg": 3.5,
