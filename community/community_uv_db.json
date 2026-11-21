@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-20",
+  "updated": "2026-11-21",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -3423,6 +3423,23 @@
               },
               "date_found": "2026-11-07",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-538e6aa43abc",
+              "board": "MSI GeForce RTX 5070 Shadow X2 OC 12Gb",
+              "freq_mhz": 3037,
+              "voltage_mv": 1020,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 3000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-20",
+              "notes": "MSI Pro B650-S WiFi + Ryzen 7 7700X + 32Gb DDR5 34CL + Optimal Cooling Conditions"
             }
           ]
         },
