@@ -9062,6 +9062,23 @@
               },
               "date_found": "2026-11-06",
               "notes": ""
+            },
+            {
+              "preset_id": "amp-3060-160c492d7f4b",
+              "board": null,
+              "freq_mhz": 1850,
+              "voltage_mv": 950,
+              "power_limit_pct": 100,
+              "vram_offset_mhz": 0,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-23",
+              "notes": ""
             }
           ]
         },
