@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-23",
+  "updated": "2026-11-25",
   "disclaimer_key": "CommunityDbDisclaimer",
   "generations": [
     {
@@ -3474,6 +3474,23 @@
               },
               "date_found": "2026-11-21",
               "notes": ""
+            },
+            {
+              "preset_id": "bw-5070-f14aa7562ad6",
+              "board": "ASUS RTX 5070 Prime",
+              "freq_mhz": 2932,
+              "voltage_mv": 920,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 2000,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-24",
+              "notes": "Balance+"
             }
           ]
         },
@@ -6616,6 +6633,23 @@
                 "url": ""
               },
               "date_found": "2026-11-20",
+              "notes": ""
+            },
+            {
+              "preset_id": "ada-4070-7c477b728c73",
+              "board": "Zotac",
+              "freq_mhz": 2895,
+              "voltage_mv": 1085,
+              "power_limit_pct": null,
+              "vram_offset_mhz": 200,
+              "confidence": "user-submitted",
+              "report_count": 1,
+              "verified": false,
+              "source": {
+                "site": "NV-UV App",
+                "url": ""
+              },
+              "date_found": "2026-11-25",
               "notes": ""
             }
           ]
