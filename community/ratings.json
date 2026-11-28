@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-27",
+  "updated": "2026-11-28",
   "ratings": {
     "ada-4050-laptop-gpu-b241b35d4323": {
       "avg": 4,
@@ -535,8 +535,8 @@
       "votes": 2
     },
     "bw-5070-f323b566cb69": {
-      "avg": 2,
-      "votes": 1
+      "avg": 3,
+      "votes": 2
     },
     "bw-5070-ti-0027adb956bd": {
       "avg": 1.5,
